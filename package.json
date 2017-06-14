@@ -1,0 +1,10 @@
+{
+  "name": "difi-norge-profil",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-bootstrap": "^0.29.5",
+    "react-dom": "^0.14.7",
+  }
+}
