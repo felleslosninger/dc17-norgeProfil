@@ -1,6 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-import infocard from './components/ContactInfoCard';
+var hei = require('./components/hei.jsx');
 
-ReactDOM.render(<infocard/>, document.getElementById('content'));
+class App extends React.Component {
+    render(){
+        return(
+            <div>
+                <hei/>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<App/>, document.getElementById('react'));

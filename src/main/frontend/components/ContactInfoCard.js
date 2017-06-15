@@ -1,20 +1,14 @@
-import React from "react";
-import Paper from 'material-ui/Paper';
+var React = require("react");
 
 class ContactInfoCard extends React.Component {
-
-    constructor(props) {
-        super(props);
-    };
-
 
     render () {
         return (
             <div>
-                hei
+                <h1>Hei</h1>
             </div>
         )
     }
 }
 
-export default ContactInfoCard;
+module.exports = ContactInfoCard;
