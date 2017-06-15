@@ -25,3 +25,6 @@ nbdist/
 
 # Dependency directories
 node_modules/
+
+## bundle ##
+src/main/resources/static/built/
