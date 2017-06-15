@@ -57,7 +57,7 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(37);
 	
-	var Hei = __webpack_require__(184);
+	var ContactInfo = __webpack_require__(184);
 	
 	var App = function (_React$Component) {
 	    _inherits(App, _React$Component);
@@ -74,7 +74,7 @@
 	            return React.createElement(
 	                'div',
 	                null,
-	                React.createElement(Hei, null)
+	                React.createElement(ContactInfo, null)
 	            );
 	        }
 	    }]);
@@ -22221,7 +22221,7 @@
 /* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -22233,34 +22233,34 @@
 	
 	var React = __webpack_require__(1);
 	
-	var Hei = function (_React$Component) {
-	    _inherits(Hei, _React$Component);
+	var ContactInfoCard = function (_React$Component) {
+	    _inherits(ContactInfoCard, _React$Component);
 	
-	    function Hei() {
-	        _classCallCheck(this, Hei);
+	    function ContactInfoCard() {
+	        _classCallCheck(this, ContactInfoCard);
 	
-	        return _possibleConstructorReturn(this, (Hei.__proto__ || Object.getPrototypeOf(Hei)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (ContactInfoCard.__proto__ || Object.getPrototypeOf(ContactInfoCard)).apply(this, arguments));
 	    }
 	
-	    _createClass(Hei, [{
-	        key: 'render',
+	    _createClass(ContactInfoCard, [{
+	        key: "render",
 	        value: function render() {
 	            return React.createElement(
-	                'div',
+	                "div",
 	                null,
 	                React.createElement(
-	                    'h1',
+	                    "h1",
 	                    null,
-	                    'Hello there'
+	                    "Hei"
 	                )
 	            );
 	        }
 	    }]);
 	
-	    return Hei;
+	    return ContactInfoCard;
 	}(React.Component);
 	
-	module.exports = Hei;
+	module.exports = ContactInfoCard;
 
 /***/ })
 /******/ ]);
