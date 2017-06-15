@@ -29691,6 +29691,9 @@
 	
 	var React = __webpack_require__(89);
 	
+	// import '../../resources/static/styles/CardStyles'
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"css!./../../resources/static/styles/CardStyles.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
 	var ContactInfoCard = function (_React$Component) {
 	    _inherits(ContactInfoCard, _React$Component);
 	
@@ -29705,14 +29708,14 @@
 	        value: function render() {
 	            return React.createElement(
 	                _Card.Card,
-	                null,
-	                React.createElement(_Card.CardHeader, {
+	                { "class": "Card" },
+	                React.createElement(_Card.CardHeader, { "class": "CardHeader",
 	                    title: "Din kontaktinformasjon",
 	                    subtitle: "Subtitle"
 	                }),
 	                React.createElement(
 	                    _Card.CardText,
-	                    null,
+	                    { "class": "CardText" },
 	                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio."
 	                )
 	            );
