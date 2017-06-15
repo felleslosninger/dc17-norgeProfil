@@ -57,7 +57,7 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(37);
 	
-	var hei = __webpack_require__(184);
+	var Hei = __webpack_require__(184);
 	
 	var App = function (_React$Component) {
 	    _inherits(App, _React$Component);
@@ -74,7 +74,7 @@
 	            return React.createElement(
 	                'div',
 	                null,
-	                React.createElement('hei', null)
+	                React.createElement(Hei, null)
 	            );
 	        }
 	    }]);

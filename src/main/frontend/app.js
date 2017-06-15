@@ -1,13 +1,13 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var hei = require('./components/hei.jsx');
+var Hei = require('./components/hei.jsx');
 
 class App extends React.Component {
     render(){
         return(
             <div>
-                <hei/>
+                <Hei/>
             </div>
         );
     }
