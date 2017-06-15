@@ -1,18 +1,26 @@
+
 var React = require("react");
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+
 
 class EID extends React.Component {
-    render () {
-        const divStyle = {
-            color: 'blue',
-        };
 
+    render () {
         return (
-            <div>
-                <h1 style={divStyle}>Hello, world</h1>
-            </div>
-        );
+            <Card>
+                <CardHeader
+                    title="eID"
+                    subtitle="Subtitle"
+                />
+                <CardText>
+                    minID
+                    bankID
+                </CardText>
+            </Card>
+        )
     }
 }
+
 
 module.exports = EID;
 

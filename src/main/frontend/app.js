@@ -5,12 +5,19 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 var ContactInfo = require('./components/ContactInfoCard.js');
+var EID = require('./components/eID.js');
 
-const App = () => (
-    <MuiThemeProvider muiTheme={muiTheme}>
-        <ContactInfo/>
-    </MuiThemeProvider>
-);
+
+const App = () => {
+    return (
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <div>
+                <ContactInfo/>
+                <EID/>
+            </div>
+        </MuiThemeProvider>
+    );
+};
 
 const muiTheme = getMuiTheme({
     palette: {

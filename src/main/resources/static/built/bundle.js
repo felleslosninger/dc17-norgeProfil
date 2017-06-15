@@ -60,12 +60,18 @@
 	var ReactDOM = __webpack_require__(184);
 	
 	var ContactInfo = __webpack_require__(331);
+	var EID = __webpack_require__(388);
 	
 	var App = function App() {
 	    return React.createElement(
 	        _MuiThemeProvider2.default,
 	        { muiTheme: muiTheme },
-	        React.createElement(ContactInfo, null)
+	        React.createElement(
+	            'div',
+	            null,
+	            React.createElement(ContactInfo, null),
+	            React.createElement(EID, null)
+	        )
 	    );
 	};
 	
@@ -35077,6 +35083,57 @@
 	} : {};
 	exports.default = CardActions;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 388 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _Card = __webpack_require__(332);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var React = __webpack_require__(89);
+	
+	var EID = function (_React$Component) {
+	    _inherits(EID, _React$Component);
+	
+	    function EID() {
+	        _classCallCheck(this, EID);
+	
+	        return _possibleConstructorReturn(this, (EID.__proto__ || Object.getPrototypeOf(EID)).apply(this, arguments));
+	    }
+	
+	    _createClass(EID, [{
+	        key: "render",
+	        value: function render() {
+	            return React.createElement(
+	                _Card.Card,
+	                null,
+	                React.createElement(_Card.CardHeader, {
+	                    title: "eID",
+	                    subtitle: "Subtitle"
+	                }),
+	                React.createElement(
+	                    _Card.CardText,
+	                    null,
+	                    "minID bankID"
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return EID;
+	}(React.Component);
+	
+	module.exports = EID;
 
 /***/ })
 /******/ ]);
