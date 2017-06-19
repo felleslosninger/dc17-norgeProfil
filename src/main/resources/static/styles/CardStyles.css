@@ -1,6 +1,7 @@
 .Card {
     height: 25em;
     widht: 25em;
+    color: pink;
 }
 
 .CardHeader {
