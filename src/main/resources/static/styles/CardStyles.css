@@ -12,3 +12,38 @@
     border-bottom: 3px solid lightgrey;
 }
 
+.Card2 {
+    background-color: fuchsia;
+}
+
+.CardInfoText {
+    background-color: aqua;
+    color: red;
+}
+
+.CardHeader {
+    border-bottom: 3px solid lightgrey;
+}
+
+.cardStyle {
+    height: 20em;
+    width: 25em;
+}
+
+.rowCardHeaderStyle {
+    borderBottom: 1px solid lightgrey;
+    paddingTop: 15px;
+    paddingBottom: 15px;
+    marginRight: 1em;
+    marginLeft: 1em
+}
+
+.cardHeaderStyle {
+    padding: 0px ;
+    marginRight: 1em;
+    marginLeft: 1em
+}
+
+.colIconStyle {
+    marginLeft: -15px
+}
