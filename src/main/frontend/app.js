@@ -1,5 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Row = require('react-bootstrap/lib/Row');
+var Col = require('react-bootstrap/lib/Col');
+var Grid = require('react-bootstrap/lib/Grid');
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -11,10 +14,10 @@ var EID = require('./components/eID.js');
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
-            <div>
-                <ContactInfo/>
-                <EID/>
-            </div>
+            <Grid><Row className="show-grid">
+                <Col sm={6} md={4} ><ContactInfo/></Col>
+                <Col sm={6} md={4} ><EID/></Col>
+            </Row></Grid>
         </MuiThemeProvider>
     );
 };

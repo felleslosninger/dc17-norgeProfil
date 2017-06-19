@@ -1,0 +1,8 @@
+.Card {
+    height: 25em;
+    widht: 25em;
+}
+
+.CardHeader {
+    border-bottom: 3px solid lightgrey;
+}

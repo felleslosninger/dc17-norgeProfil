@@ -1,20 +1,31 @@
 
 var React = require("react");
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import {Card, CardHeader, CardText} from 'material-ui/Card';
 import AlarmIcon from 'react-material-icons/icons/action/alarm';
+
 
 class EID extends React.Component {
 
     render () {
+        const cardStyle = {
+            height: '20em',
+            width: '25em'
+        };
+
+        const cardHeaderStyle = {
+            borderBottom: '1px solid lightgrey',
+            marginRight: '1em',
+            marginLeft: '1em'
+        };
+
         return (
-            <Card>
-                <AlarmIcon/>
-                <CardHeader
-                    title="Hallo"
+            <Card style={cardStyle} className="Card">
+                    <AlarmIcon/>
+                <CardHeader style={cardHeaderStyle} className="CardHeader"
+                    title="eID"
                     subtitle="Subtitle"
                 />
-                <CardText>
-                    <AlarmIcon/>
+                <CardText className="CardText">
                     minID
                     bankID
                 </CardText>
@@ -25,4 +36,3 @@ class EID extends React.Component {
 
 
 module.exports = EID;
-
