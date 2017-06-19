@@ -1,9 +1,14 @@
-.Card {
-    height: 25em;
-    widht: 25em;
-    color: pink;
+
+.Card2 {
+    background-color: fuchsia;
+}
+
+.CardInfoText {
+    background-color: aqua;
+    color: red;
 }
 
 .CardHeader {
     border-bottom: 3px solid lightgrey;
 }
+

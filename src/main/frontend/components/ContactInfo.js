@@ -18,25 +18,15 @@ class ContactInfoCard extends React.Component {
 
     render () {
 
-        const cardStyle = {
-            height: '20em',
-            width: '25em'
-        };
-
-        const cardHeaderStyle = {
-            borderBottom: '1px solid lightgrey',
-            marginRight: '1em',
-            marginLeft: '1em'
-        };
-
         let phoneNumer = "12345678";
 
         let eMail = "ola.normann@gmail.com";
 
 
         return (
-           <Card style={cardStyle} className="Card">
-               <Row style={cardHeaderStyle}>
+           <Card className="Card">
+               <div className="Card2">
+               <Row >
                    <Col md={1}><AlarmIcon/></Col>
                    <Col md={9}><h3>Registert kontaktinformasjon</h3></Col>
                </Row>
@@ -46,7 +36,9 @@ class ContactInfoCard extends React.Component {
                     <div className="email">E-post: {eMail}</div>
                     <button type="button" className="btn btn-primary" onClick={this.props.changePhone}>edit</button>
                 </CardText>
+               </div>
             </Card>
+
         )
     }
 }
