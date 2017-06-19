@@ -1,4 +1,3 @@
-
 var React = require("react");
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
@@ -7,7 +6,7 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 import AlarmIcon from 'react-material-icons/icons/action/alarm';
 
 
-class EID extends React.Component {
+class Mail extends React.Component {
 
     render () {
         const cardStyle = {
@@ -15,33 +14,20 @@ class EID extends React.Component {
             width: '25em'
         };
 
-        const rowCardHeaderStyle = {
-            borderBottom: '1px solid lightgrey',
-            paddingTop: '15px',
-            paddingBottom: '15px',
-            marginRight: '1em',
-            marginLeft: '1em'
-        };
-
         const cardHeaderStyle = {
-            padding: '0px' ,
+            borderBottom: '1px solid lightgrey',
             marginRight: '1em',
             marginLeft: '1em'
-        };
-
-        const colIconStyle = {
-            marginLeft: '-15px'
         };
 
         return (
             <Card style={cardStyle} className="Card">
-                <Row style={rowCardHeaderStyle}>
-                    <Col style={colIconStyle} md={1}><AlarmIcon/></Col>
-                    <Col md={9}><h3>eID</h3></Col>
+                <Row style={cardHeaderStyle}>
+                    <Col md={1}><AlarmIcon/></Col>
+                    <Col md={9}><h3>Din digitale postkasse:</h3></Col>
                 </Row>
                 <CardText className="CardText">
-                    minID
-                    bankID
+                    Du mottar idag post fra det offentlige til din digitale postkasse hos Digipost...
                 </CardText>
             </Card>
         )
@@ -49,4 +35,4 @@ class EID extends React.Component {
 }
 
 
-module.exports = EID;
+module.exports = Mail;
