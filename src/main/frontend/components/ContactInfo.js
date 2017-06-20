@@ -2,11 +2,13 @@ var React = require("react");
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
+
 import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import Modal from 'react-modal';
 import AlarmIcon from 'react-material-icons/icons/action/alarm';
 import {Glyphicon} from "react-bootstrap";
+
 
 
 class ContactInfoCard extends React.Component {
@@ -67,7 +69,6 @@ class ContactInfoCard extends React.Component {
         let phoneNumer = "12345678";
 
         let eMail = "ola.normann@gmail.com";
-
 
         return (
            <Card style={cardStyle} className="Card">

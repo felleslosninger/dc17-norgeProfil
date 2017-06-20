@@ -6,6 +6,7 @@ var Col = require('react-bootstrap/lib/Col');
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 var ContactInfo = require('./components/ContactInfo.js');
 var EID = require('./components/eID.js');
@@ -35,5 +36,5 @@ const muiTheme = getMuiTheme({
         primary1Color: '#3F51B5',
     },
 });
-
+injectTapEventPlugin();
 ReactDOM.render(<App/>, document.getElementById('react'));
