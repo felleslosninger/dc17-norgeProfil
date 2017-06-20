@@ -15,8 +15,13 @@ class ContactInfoCard extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { modalIsOpen: false };
+        this.state = {
+            modalIsOpen: false,
+            email: '',
+            phone: ''
+        };
 
+        this.handleChange = this.handleChange.bind(this);
         this.saveInfo = this.saveInfo.bind(this);
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -33,11 +38,20 @@ class ContactInfoCard extends React.Component {
     }
 
     closeModal() {
+        console.log("close");
         this.setState({modalIsOpen: false});
+    }
+
+    handleChange({target}) {
+        this.setState({
+            [target.name]: target.value
+        });
     }
 
 
     saveInfo () {
+        console.log("saved");
+        console.log("Email: ", this.state.email, "Phone: ", this.state.phone)
         this.setState({modalIsOpen: false});
 
     };
@@ -66,9 +80,9 @@ class ContactInfoCard extends React.Component {
             }
         };
 
-        let phoneNumer = "12345678";
+        let phoneNumer = this.state.phone;
 
-        let eMail = "ola.normann@gmail.com";
+        let eMail = this.state.email;
 
         return (
            <Card style={cardStyle} className="Card">
@@ -92,10 +106,16 @@ class ContactInfoCard extends React.Component {
                    <TextField
                        hintText={phoneNumer}
                        floatingLabelText="Mobilnummer"
+                       name = "phone"
+                       value = { this.state.phone }
+                       onChange = { this.handleChange}
                    />
                    <TextField
                        hintText={eMail}
                        floatingLabelText="E-post"
+                       name = "email"
+                       value = { this.state.email }
+                       onChange = { this.handleChange }
                    />
                    <button className="btn btn-success" onClick={this.saveInfo}>Lagre</button>
                    <button className="btn btn-secondary" onClick={this.closeModal}>Lukk</button>
