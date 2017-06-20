@@ -3,7 +3,6 @@ var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
 import {Card, CardHeader, CardText} from 'material-ui/Card';
-import AlarmIcon from 'react-material-icons/icons/action/alarm';
 
 
 class ContactInfoCard extends React.Component {
@@ -25,10 +24,12 @@ class ContactInfoCard extends React.Component {
 
         return (
            <Card className="Card">
-               <div className="Card2">
-               <Row >
-                   <Col md={1}><AlarmIcon/></Col>
-                   <Col md={9}><h3>Registert kontaktinformasjon</h3></Col>
+               <Row>
+                   <div className="HeaderRow">
+                       <div className="Headline">
+                           <Col md={12}><h4><img src="icons/face.svg"/> Registrert kontaktinformasjon</h4></Col>
+                       </div>
+                   </div>
                </Row>
                 <CardText className="CardText">
                     <div className="CardInfoText">Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</div>
@@ -36,7 +37,6 @@ class ContactInfoCard extends React.Component {
                     <div className="email">E-post: {eMail}</div>
                     <button type="button" className="btn btn-primary" onClick={this.props.changePhone}>edit</button>
                 </CardText>
-               </div>
             </Card>
 
         )

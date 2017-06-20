@@ -16,7 +16,7 @@ class EID extends React.Component {
                 <Row>
                     <div className="HeaderRow">
                         <div className="Headline">
-                            <Col md={4}><h3><img src="icons/face.svg"/> eID</h3></Col>
+                            <Col md={12}><h4><img src="icons/face.svg"/> eID</h4></Col>
                         </div>
                     </div>
                 </Row>
