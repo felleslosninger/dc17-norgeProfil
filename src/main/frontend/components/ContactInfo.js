@@ -6,7 +6,6 @@ var Col = require('react-bootstrap/lib/Col');
 import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import Modal from 'react-modal';
-import AlarmIcon from 'react-material-icons/icons/action/alarm';
 import {Glyphicon} from "react-bootstrap";
 
 
@@ -58,17 +57,6 @@ class ContactInfoCard extends React.Component {
 
 
     render () {
-        const cardStyle = {
-            height: '20em',
-            width: '25em'
-        };
-
-        const cardHeaderStyle = {
-            borderBottom: '1px solid lightgrey',
-            marginRight: '1em',
-            marginLeft: '1em'
-        };
-
         const customStyles = {
             content : {
                 top                   : '50%',
@@ -85,10 +73,13 @@ class ContactInfoCard extends React.Component {
         let eMail = this.state.email;
 
         return (
-           <Card style={cardStyle} className="Card">
-               <Row style={cardHeaderStyle}>
-                   <Col md={1}><AlarmIcon/></Col>
-                   <Col md={9}><h3>Registert kontaktinformasjon</h3></Col>
+           <Card className="Card">
+               <Row>
+                   <div className="HeaderRow">
+                       <div className="Headline">
+                           <Col md={12}><h4><img src="icons/face.svg"/> Registrert kontaktinformasjon</h4></Col>
+                       </div>
+                   </div>
                </Row>
                 <CardText className="CardText">
                     <div className="CardInfoText">Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</div>
@@ -121,6 +112,7 @@ class ContactInfoCard extends React.Component {
                    <button className="btn btn-secondary" onClick={this.closeModal}>Lukk</button>
                </Modal>
             </Card>
+
         )
     }
 }
