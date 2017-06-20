@@ -83,7 +83,7 @@ class ContactInfoCard extends React.Component {
                </Row>
                 <CardText className="CardText">
                     <div className="CardInfoText">Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</div>
-                    <div className="phone">Mobilnummer: {phoneNumer}</div>
+                    <div className="phone">Mobilnummer: {phoneNumber}</div>
                     <div className="email">E-post: {eMail}</div>
                     <button type="button" className="btn btn-secondary" onClick={this.openModal}><Glyphicon glyph="glyphicon glyphicon-pencil"/></button>
                 </CardText>
