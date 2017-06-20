@@ -6,9 +6,15 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 import AlarmIcon from 'react-material-icons/icons/action/alarm';
 
 
+
+
 class Mail extends React.Component {
+    constructor(props){
+        super(props);
+    }
 
     render () {
+
         const cardStyle = {
             height: '20em',
             width: '25em'
@@ -20,17 +26,6 @@ class Mail extends React.Component {
             marginLeft: '1em'
         };
 
-        return (
-            <Card style={cardStyle} className="Card">
-                <Row style={cardHeaderStyle}>
-                    <Col md={1}><AlarmIcon/></Col>
-                    <Col md={9}><h3>Din digitale postkasse:</h3></Col>
-                </Row>
-                <CardText className="CardText">
-                    Du mottar idag post fra det offentlige til din digitale postkasse hos Digipost...
-                </CardText>
-            </Card>
-        )
     }
 }
 

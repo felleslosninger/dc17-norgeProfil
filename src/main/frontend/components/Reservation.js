@@ -5,6 +5,7 @@ var Col = require('react-bootstrap/lib/Col');
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import AlarmIcon from 'react-material-icons/icons/action/alarm';
 
+//function
 
 class Reservation extends React.Component {
 
