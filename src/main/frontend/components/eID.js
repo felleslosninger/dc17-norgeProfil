@@ -37,7 +37,7 @@ class EID extends React.Component {
             <Card style={cardStyle} className="Card">
                 <Row style={rowCardHeaderStyle}>
                     <Col style={colIconStyle} md={1}><AlarmIcon/></Col>
-                    <Col md={9}><h3>eID</h3></Col>
+                    <Col style={cardHeaderStyle} md={4}><h3>eID</h3></Col>
                 </Row>
                 <CardText className="CardText">
                     minID
