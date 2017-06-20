@@ -56,7 +56,6 @@ class ContactInfoCard extends React.Component {
 
 
     render () {
-
         const customStyles = {
             content : {
                 top                   : '50%',
