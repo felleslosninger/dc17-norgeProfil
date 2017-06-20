@@ -4,40 +4,21 @@ var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
 import {Card, CardHeader, CardText} from 'material-ui/Card';
-import AlarmIcon from 'react-material-icons/icons/action/alarm';
 
 
 class EID extends React.Component {
 
     render () {
-        const cardStyle = {
-            height: '20em',
-            width: '25em'
-        };
 
-        const rowCardHeaderStyle = {
-            borderBottom: '1px solid lightgrey',
-            paddingTop: '15px',
-            paddingBottom: '15px',
-            marginRight: '1em',
-            marginLeft: '1em'
-        };
-
-        const cardHeaderStyle = {
-            padding: '0px' ,
-            marginRight: '1em',
-            marginLeft: '1em'
-        };
-
-        const colIconStyle = {
-            marginLeft: '-15px'
-        };
 
         return (
-            <Card style={cardStyle} className="Card">
-                <Row style={rowCardHeaderStyle}>
-                    <Col style={colIconStyle} md={1}><AlarmIcon/></Col>
-                    <Col style={cardHeaderStyle} md={4}><h3>eID</h3></Col>
+            <Card className="Card">
+                <Row>
+                    <div className="HeaderRow">
+                        <div className="Headline">
+                            <Col md={4}><h3><img src="icons/face.svg"/> eID</h3></Col>
+                        </div>
+                    </div>
                 </Row>
                 <CardText className="CardText">
                     minID

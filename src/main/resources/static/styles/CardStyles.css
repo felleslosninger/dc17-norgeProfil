@@ -1,49 +1,26 @@
 
-.Card2 {
-    background-color: fuchsia;
-}
-
-.CardInfoText {
-    background-color: aqua;
-    color: red;
-}
-
-.CardHeader {
-    border-bottom: 3px solid lightgrey;
-}
-
-.Card2 {
-    background-color: fuchsia;
-}
-
-.CardInfoText {
-    background-color: aqua;
-    color: red;
-}
-
-.CardHeader {
-    border-bottom: 3px solid lightgrey;
-}
-
-.cardStyle {
+.Card {
     height: 20em;
     width: 25em;
 }
 
-.rowCardHeaderStyle {
-    borderBottom: 1px solid lightgrey;
-    paddingTop: 15px;
-    paddingBottom: 15px;
-    marginRight: 1em;
-    marginLeft: 1em
+.HeaderRow {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 1em;
+    margin-left: 1em;
+
 }
 
-.cardHeaderStyle {
-    padding: 0px ;
-    marginRight: 1em;
-    marginLeft: 1em
+.Headline {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 60px;
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
-.colIconStyle {
-    marginLeft: -15px
+.Icon {
+    margin-top: 40px;
 }
+
+
