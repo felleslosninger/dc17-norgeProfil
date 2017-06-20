@@ -17,7 +17,7 @@ var Mail = require('./components/Mail.js');
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
-            <div>c
+            <div>
                 {/*<ToolBar/>*/}
                 <Row>
                     <Col sm={6} md={3} ><ContactInfo/></Col>
