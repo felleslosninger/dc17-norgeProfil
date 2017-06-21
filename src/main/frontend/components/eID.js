@@ -12,7 +12,7 @@ class EID extends React.Component {
 
 
         return (
-            <Card className="Card">
+            <Card className="EidCard">
                 <Row>
                     <div className="HeaderRow">
                         <div className="Headline">
@@ -23,25 +23,54 @@ class EID extends React.Component {
                 <CardText className="CardText">
                     <div>
                         <List>
-                            <ListItem primaryText="Sent mail" />
-                            <ListItem primaryText="Drafts" />
                             <ListItem
-                                primaryText="Inbox"
-                                initiallyOpen={true}
-                                primaryTogglesNestedList={true}
+                                primaryText="MinID"
+                                initiallyOpen={false}
+                                nestedItems={[
+                                    <ListItem
+                                        key={1}
+                                        secondaryText="MinID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på mellomhøgt sikkerheitsnivå, nivå 3.Direktoratet for forvaltning og IKT (Difi) er ansvarleg for MinID. MinID kan bestillast frå det året du fyller 13. For å registrere deg som MinID-brukar treng du"
+                                    />
+                                ]}
+                            />
+                            <ListItem
+                                primaryText="BankID"
+                                initiallyOpen={false}
+                                nestedItems={[
+                                    <ListItem
+                                        key={1}
+                                        secondaryText="BankID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på høgaste sikkerheitsnivå, nivå 4.BankID blir levert av banken din og kan bli gitt til personar som har fylt 15 år. Men dei enkelte bankane opererer med eigne aldersgrenser. For å bestille BankID må du kontakte banken din."
+                                    />
+                                ]}
+                            />
+                            <ListItem
+                                primaryText="BankID på mobil"
+                                initiallyOpen={false}
+                                nestedItems={[
+                                    <ListItem
+                                        key={1}
+                                        secondaryText="BankID på mobil er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på høgaste sikkerheitsnivå, nivå 4.For å kunne ta i bruk BankID på mobil må du ha ein nettbankavtale med BankID og ein kodebrikke. Du kan berre aktivere BankID på mobil frå banken som gav deg BankID.For å aktivere BankID på mobil må du logge inn i nettbanken din."
+                                    />
+                                ]}
+                            />
+                            <ListItem
+                                primaryText="Buypass ID"
+                                initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem
                                         key={1}
                                         primaryText="Starred"
-                                    />,
+                                    />
+                                ]}
+                            />
+                            <ListItem
+                                primaryText="Commfides"
+                                initiallyOpen={false}
+                                nestedItems={[
                                     <ListItem
-                                        key={2}
-                                        primaryText="Sent Mail"
-                                    />,
-                                    <ListItem
-                                        key={3}
-                                        primaryText="Inbox"
-                                    />,
+                                        key={1}
+                                        primaryText="Starred"
+                                    />
                                 ]}
                             />
                         </List>
