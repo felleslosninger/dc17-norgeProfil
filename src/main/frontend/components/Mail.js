@@ -12,20 +12,25 @@ class Mail extends React.Component {
         super(props);
     }
 
+
+
     render () {
         return (
-            <Card className="Card">
-                <Row>
-                    <div className="HeaderRow">
-                        <div className="Headline">
-                            <Col md={12}><h4><img src="icons/face.svg"/> Din digitale postkasse</h4></Col>
+                <Card className="Card">
+                    <Row>
+                        <div className="HeaderRow">
+                            <div className="Headline">
+                                <Col md={12}><h4><img src="icons/face.svg"/> Din digitale postkasse</h4></Col>
+                            </div>
                         </div>
-                    </div>
-                </Row>
-                <CardText className="CardText">
-                    Du mottar idag post fra det offentlige til din digitale postkasse hos Digipost...
-                </CardText>
-            </Card>
+                    </Row>
+                    <CardText className="CardText">
+                        <div> Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse hos e-Boks eller Digipost for å
+                            få post digitalt fra det offentlige. </div>
+                        <a href="https://www.digipost.no/app/registrering#/"> Opprett digipost </a>
+                        <a href="https://www.e-boks.com/norge/nb/ny-bruker/"> Opprett e-boks </a>
+                    </CardText>
+                </Card>
         )
     }
 }
