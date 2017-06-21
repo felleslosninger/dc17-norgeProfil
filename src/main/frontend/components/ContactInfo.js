@@ -7,6 +7,7 @@ import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import Modal from 'react-modal';
 import {Glyphicon} from "react-bootstrap";
+import ActionInfo from 'material-ui/svg-icons/action/info';
 
 
 class ContactInfoCard extends React.Component {
@@ -75,9 +76,10 @@ class ContactInfoCard extends React.Component {
            <Card className="Card">
                <Row>
                    <div className="HeaderRow">
-                       <div className="Headline">
-                           <Col md={12}><h4><img src="icons/face.svg"/> Registrert kontaktinformasjon</h4></Col>
-                       </div>
+                       <Row className="Headline">
+                           <Col md={1} className="Icon">{<ActionInfo />}</Col>
+                           <Col md={10}><h4>Kontaktinformasjon</h4></Col>
+                       </Row>
                    </div>
                </Row>
                 <CardText className="CardText">
