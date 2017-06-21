@@ -24,5 +24,12 @@ body {
 }
 
 .Icon {
-    margin-top: 5%;
+    margin-top: 2%;
+}
+
+
+.EditBtn {
+    position: absolute;
+    right:    0;
+    bottom:   0;
 }
