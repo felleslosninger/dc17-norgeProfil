@@ -13,6 +13,7 @@ var EID = require('./components/eID.js');
 var Reservation = require('./components/Reservation.js');
 var Mail = require('./components/Mail.js');
 var Username = require('./components/Username.js');
+var Feed = require('./components/Feed.js');
 // var ToolBar = require('./components/ToolBar.js');
 
 
@@ -28,6 +29,7 @@ const App = () => {
                     <Col sm={6} md={3} ><EID/></Col>
                     <Col sm={6} md={3} ><Reservation/></Col>
                 </Row>
+                <Feed/>
             </div>
         </MuiThemeProvider>
     );
