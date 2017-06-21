@@ -12,6 +12,7 @@ var ContactInfo = require('./components/ContactInfo.js');
 var EID = require('./components/eID.js');
 var Reservation = require('./components/Reservation.js');
 var Mail = require('./components/Mail.js');
+var Username = require('./components/Username.js');
 // var ToolBar = require('./components/ToolBar.js');
 
 
@@ -20,6 +21,7 @@ const App = () => {
         <MuiThemeProvider muiTheme={muiTheme}>
             <div>
                 {/*<ToolBar/>*/}
+                <Username/>
                 <Row>
                     <Col sm={6} md={3} ><ContactInfo/></Col>
                     <Col sm={6} md={3} ><Mail/></Col>

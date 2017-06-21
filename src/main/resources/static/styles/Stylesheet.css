@@ -1,0 +1,17 @@
+html,
+body {
+    height: 100%;
+}
+
+#react {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.User {
+    border-bottom: 1px solid lightgrey;
+    width: 20%;
+    margin-bottom: 50px;
+}
