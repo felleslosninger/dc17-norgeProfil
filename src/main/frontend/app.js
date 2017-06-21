@@ -36,5 +36,6 @@ const muiTheme = getMuiTheme({
         primary1Color: '#3F51B5',
     },
 });
+
 injectTapEventPlugin();
 ReactDOM.render(<App/>, document.getElementById('react'));

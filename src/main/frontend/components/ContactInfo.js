@@ -6,17 +6,20 @@ var Col = require('react-bootstrap/lib/Col');
 import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import Modal from 'react-modal';
-import AlarmIcon from 'react-material-icons/icons/action/alarm';
 import {Glyphicon} from "react-bootstrap";
-
 
 
 class ContactInfoCard extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { modalIsOpen: false };
+        this.state = {
+            modalIsOpen: false,
+            email: '',
+            phone: ''
+        };
 
+        this.handleChange = this.handleChange.bind(this);
         this.saveInfo = this.saveInfo.bind(this);
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -33,28 +36,26 @@ class ContactInfoCard extends React.Component {
     }
 
     closeModal() {
+        console.log("close");
         this.setState({modalIsOpen: false});
+    }
+
+    handleChange({target}) {
+        this.setState({
+            [target.name]: target.value
+        });
     }
 
 
     saveInfo () {
+        console.log("saved");
+        console.log("Email: ", this.state.email, "Phone: ", this.state.phone)
         this.setState({modalIsOpen: false});
 
     };
 
 
     render () {
-        const cardStyle = {
-            height: '20em',
-            width: '25em'
-        };
-
-        const cardHeaderStyle = {
-            borderBottom: '1px solid lightgrey',
-            marginRight: '1em',
-            marginLeft: '1em'
-        };
-
         const customStyles = {
             content : {
                 top                   : '50%',
@@ -66,19 +67,22 @@ class ContactInfoCard extends React.Component {
             }
         };
 
-        let phoneNumer = "12345678";
+        let phoneNumber = this.state.phone;
 
-        let eMail = "ola.normann@gmail.com";
+        let eMail = this.state.email;
 
         return (
-           <Card style={cardStyle} className="Card">
-               <Row style={cardHeaderStyle}>
-                   <Col md={1}><AlarmIcon/></Col>
-                   <Col md={9}><h3>Registert kontaktinformasjon</h3></Col>
+           <Card className="Card">
+               <Row>
+                   <div className="HeaderRow">
+                       <div className="Headline">
+                           <Col md={12}><h4><img src="icons/face.svg"/> Registrert kontaktinformasjon</h4></Col>
+                       </div>
+                   </div>
                </Row>
                 <CardText className="CardText">
                     <div className="CardInfoText">Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</div>
-                    <div className="phone">Mobilnummer: {phoneNumer}</div>
+                    <div className="phone">Mobilnummer: {phoneNumber}</div>
                     <div className="email">E-post: {eMail}</div>
                     <button type="button" className="btn btn-secondary" onClick={this.openModal}><Glyphicon glyph="glyphicon glyphicon-pencil"/></button>
                 </CardText>
@@ -90,17 +94,24 @@ class ContactInfoCard extends React.Component {
                    contentLabel="Endre kontaktinformasjon">
                    <h3 ref={subtitle => this.subtitle = subtitle}>Endre kontaktinformasjon</h3>
                    <TextField
-                       hintText={phoneNumer}
+                       hintText={phoneNumber}
                        floatingLabelText="Mobilnummer"
+                       name = "phone"
+                       value = { this.state.phone }
+                       onChange = { this.handleChange }
                    />
                    <TextField
                        hintText={eMail}
                        floatingLabelText="E-post"
+                       name = "email"
+                       value = { this.state.email }
+                       onChange = { this.handleChange }
                    />
                    <button className="btn btn-success" onClick={this.saveInfo}>Lagre</button>
                    <button className="btn btn-secondary" onClick={this.closeModal}>Lukk</button>
                </Modal>
             </Card>
+
         )
     }
 }
