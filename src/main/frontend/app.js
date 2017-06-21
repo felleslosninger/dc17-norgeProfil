@@ -14,14 +14,13 @@ var Reservation = require('./components/Reservation.js');
 var Mail = require('./components/Mail.js');
 var Username = require('./components/Username.js');
 var Feed = require('./components/Feed.js');
-// var ToolBar = require('./components/ToolBar.js');
+var NavigationBar = require('./components/NavigationBar.js');
 
 
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
             <div>
-                {/*<ToolBar/>*/}
                 <Username/>
                 <Row>
                     <Col sm={6} md={3} ><ContactInfo/></Col>
@@ -35,6 +34,14 @@ const App = () => {
     );
 };
 
+const Bar = () => {
+    return (
+        <MuiThemeProvider muiTheme={muiTheme}>
+                <NavigationBar/>
+        </MuiThemeProvider>
+    );
+};
+
 const muiTheme = getMuiTheme({
     palette: {
         primary1Color: '#3F51B5',
@@ -43,3 +50,4 @@ const muiTheme = getMuiTheme({
 
 injectTapEventPlugin();
 ReactDOM.render(<App/>, document.getElementById('react'));
+ReactDOM.render(<Bar/>, document.getElementById('navbar'));
