@@ -4,8 +4,8 @@
     width: 25em;
 }
 
-.EidCard {
-    width: 25em;
+.EidCardText {
+    padding: 0px;
 }
 
 .HeaderRow {
@@ -33,5 +33,6 @@
 .Icon {
     margin-top: 40px;
 }
+
 
 

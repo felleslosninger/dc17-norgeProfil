@@ -7,7 +7,6 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import {Glyphicon} from "react-bootstrap";
 
 class EID extends React.Component {
@@ -31,6 +30,18 @@ class EID extends React.Component {
     };
 
     render () {
+
+        const serviceStyle = {
+            padding: '0px'
+        };
+
+        const listStyle = {
+            paddingTop: '0px'
+        };
+
+        const otherServices = {
+            paddingTop: '5px'
+        };
         const actions = [
             <FlatButton
                 label="Lukk"
@@ -126,9 +137,38 @@ class EID extends React.Component {
                         </Dialog>
                     </div>
                 </Row>
-                <CardText className="CardText">
+                <CardText style={listStyle}>
                     <div>
-                        Hei
+                        <List>
+                            <div>Tjenester i bruk</div>
+                            <ListItem style={serviceStyle}
+                                primaryText="MinID"
+                                initiallyOpen={false}
+                                disabled={true}
+                            />
+                            <ListItem style={serviceStyle}
+                                primaryText="BankID"
+                                initiallyOpen={false}
+                                disabled={true}
+                            />
+                            <div style={otherServices}>Andre tjenester</div>
+                            <ListItem style={serviceStyle}
+                                primaryText="BankID på mobil"
+                                initiallyOpen={false}
+                                disabled={true}
+
+                            />
+                            <ListItem style={serviceStyle}
+                                primaryText="Buypass ID"
+                                initiallyOpen={false}
+                                disabled={true}
+                            />
+                            <ListItem style={serviceStyle}
+                                primaryText="Commfides"
+                                initiallyOpen={false}
+                                disabled={true}
+                            />
+                        </List>
                     </div>
                 </CardText>
 
