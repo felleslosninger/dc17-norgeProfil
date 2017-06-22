@@ -7,17 +7,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 7em;
+    margin-left: 7em;
 }
 
 #navbar {
     width: 100%;
 }
 
-.User {
-    border-bottom: 1px solid lightgrey;
-    width: 30%;
-    margin-bottom: 50px;
-}
+/*.User {*/
+    /*border-bottom: 1px solid lightgrey;*/
+    /*width: 30%;*/
+    /*margin-bottom: 50px;*/
+/*}*/
 
 .Feed {
     margin-top: 5%;
@@ -28,8 +30,3 @@ body {
 }
 
 
-.EditBtn {
-    position: absolute;
-    right:    0;
-    bottom:   0;
-}

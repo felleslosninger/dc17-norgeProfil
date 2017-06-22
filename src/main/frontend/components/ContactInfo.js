@@ -36,8 +36,7 @@ class ContactInfoCard extends React.Component {
     }
 
     afterOpenModal() {
-        // references sync'd and can be accessed.
-
+        document.body.classList.add('ReactModal-open');
     }
 
     closeModal() {
@@ -62,13 +61,14 @@ class ContactInfoCard extends React.Component {
 
     render () {
         const customStyles = {
-            content : {
-                top                   : '50%',
-                left                  : '50%',
-                right                 : 'auto',
-                bottom                : 'auto',
-                marginRight           : '-50%',
-                transform             : 'translate(-50%, -50%)'
+            content: {
+                top: '50%',
+                left: '50%',
+                right: 'auto',
+                bottom: 'auto',
+                marginRight: '-50%',
+                transform: 'translate(-50%, -50%)',
+                overflow: 'hidden'
             }
         };
 
@@ -89,8 +89,8 @@ class ContactInfoCard extends React.Component {
                 <CardText className="CardText">
                     <div className="CardInfoText"><small>Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</small></div>
                     <List>
-                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber} leftIcon={<PhoneIcon/>}/>
                         <ListItem disabled={true} primaryText="Email: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
+                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber} leftIcon={<PhoneIcon/>}/>
                     </List>
                     <div className="EditBtn">
                         <FlatButton
@@ -98,7 +98,6 @@ class ContactInfoCard extends React.Component {
                             icon={<Edit />}
                             onClick={this.openModal}/>
                     </div>
-
                 </CardText>
                <Modal
                    isOpen={this.state.modalIsOpen}
@@ -106,23 +105,35 @@ class ContactInfoCard extends React.Component {
                    onRequestClose={this.closeModal}
                    style={customStyles}
                    contentLabel="Endre kontaktinformasjon">
-                   <h3 ref={subtitle => this.subtitle = subtitle}>Endre kontaktinformasjon</h3>
-                   <TextField
-                       hintText={phoneNumber}
-                       floatingLabelText="Mobilnummer"
-                       name = "phone"
-                       value = { this.state.phone }
-                       onChange = { this.handleChange }
-                   />
-                   <TextField
-                       hintText={eMail}
-                       floatingLabelText="E-post"
-                       name = "email"
-                       value = { this.state.email }
-                       onChange = { this.handleChange }
-                   />
-                   <button className="btn btn-success" onClick={this.saveInfo}>Lagre</button>
-                   <button className="btn btn-secondary" onClick={this.closeModal}>Lukk</button>
+                   <div className="container">
+                       <div className="page-header">
+                           <h3>Endre kontaktinformasjon</h3>
+                       </div>
+                       <Row className="EditInfo">
+                           <Col>
+                               <TextField
+                                   hintText={eMail}
+                                   floatingLabelText="E-post"
+                                   name = "email"
+                                   value = { this.state.email }
+                                   onChange = { this.handleChange }
+                               />
+                           </Col>
+                           <Col>
+                               <TextField
+                                   hintText={phoneNumber}
+                                   floatingLabelText="Mobilnummer"
+                                   name = "phone"
+                                   value = { this.state.phone }
+                                   onChange = { this.handleChange }
+                               />
+                           </Col>
+                       </Row>
+                       <div className="SaveBtn">
+                           <button className="btn btn-success" onClick={this.saveInfo}>Lagre</button>
+                           <button className="btn btn-secondary" onClick={this.closeModal}>Lukk</button>
+                       </div>
+                   </div>
                </Modal>
             </Card>
 
