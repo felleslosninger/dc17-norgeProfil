@@ -8,9 +8,11 @@ class Username extends React.Component {
 
     render () {
 
+        let user = "Fornavn Etternavn";
+
         return (
             <div className="User">
-                <h1><img src="icons/face.svg"/> Fornavn Etternavn</h1>
+                <h1>{user}</h1>
             </div>
         )
     }

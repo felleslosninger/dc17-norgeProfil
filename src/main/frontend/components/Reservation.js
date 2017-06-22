@@ -3,7 +3,7 @@ var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
 import {Card, CardHeader, CardText} from 'material-ui/Card';
-import AlarmIcon from 'react-material-icons/icons/action/alarm';
+import NotificationsOff from 'material-ui/svg-icons/social/notifications-off';
 
 
 class Reservation extends React.Component {
@@ -13,9 +13,10 @@ class Reservation extends React.Component {
             <Card className="Card">
                 <Row >
                     <div className="HeaderRow">
-                        <div className="Headline">
-                            <Col md={12}><h4><img src="icons/face.svg"/> Reservasjon mot kommunikasjon på nett</h4></Col>
-                        </div>
+                        <Row className="Headline">
+                            <Col md={1} className="Icon">{<NotificationsOff />}</Col>
+                            <Col md={10}><h4>Reservasjon</h4></Col>
+                        </Row>
                     </div>
                 </Row>
                 <CardText className="CardText">
