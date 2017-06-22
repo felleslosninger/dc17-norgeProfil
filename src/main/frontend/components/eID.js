@@ -63,11 +63,11 @@ class EID extends React.Component {
                         <Row className="Headline">
                             <Col md={1} className="Icon">{<EidIcon />}</Col>
                             <Col md={10}><h4>eID</h4></Col>
+                            <Col mdOffset={10}><Help onClick={this.handleOpen}/></Col>
                         </Row>
                         <Dialog
                             title="Elektronisk ID"
-                            actions={actions}
-                            modal={false}
+                            actions={actions} modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                         >
