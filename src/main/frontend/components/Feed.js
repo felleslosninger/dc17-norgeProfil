@@ -2,6 +2,17 @@ import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 
+import {List, ListItem} from 'material-ui/List';
+import {Card} from 'material-ui/Card';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
+import {grey400, darkBlack} from 'material-ui/styles/colors';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import Example from 'material-ui/svg-icons/action/account-circle'
+
 const styles = {
     headline: {
         fontSize: 24,
@@ -25,39 +36,88 @@ class Feed extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange (value) {
+    handleChange(value) {
         this.setState({
             slideIndex: value,
         });
     };
 
     render() {
+        const iconButtonElement = (
+            <IconButton
+                touch={true}
+                tooltip="more"
+                tooltipPosition="bottom-left"
+            >
+                <MoreVertIcon color={grey400} />
+            </IconButton>
+        );
+
+        const rightIconMenu = (
+            <IconMenu iconButtonElement={iconButtonElement}>
+                <MenuItem>Rapporter</MenuItem>
+            </IconMenu>
+        );
+
+        const activityList = (
+            <List>
+                <Subheader>Dato</Subheader>
+                <ListItem
+                    leftAvatar={<Example />}
+                    rightIconButton={rightIconMenu}
+                    primaryText="BankID"
+                    disabled={true}
+                    secondaryText={
+                        <p>
+                            <span style={{color: darkBlack}}>Danske Bank</span><br />
+                            14:32
+                        </p>
+                    }
+                    secondaryTextLines={2}
+                />
+                <Divider inset={true} />
+                <ListItem
+                    leftAvatar={<Example />}
+                    rightIconButton={rightIconMenu}
+                    primaryText="MinID"
+                    disabled={true}
+                    secondaryText={
+                        <p>
+                            <span style={{color: darkBlack}}>Skattetaten</span><br />
+                            22:13
+                        </p>
+                    }
+                    secondaryTextLines={2}
+                />
+                <Divider inset={true} />
+            </List>
+        );
+
         return (
-            <div className="Feed">
+            <Card className="Feed">
                 <Tabs
                     onChange={this.handleChange}
                     value={this.state.slideIndex}
                 >
-                    <Tab label="Nylig aktivitet" value={0} />
-                    <Tab label="Din aktivitet" value={1} />
-                    <Tab label="Offentlig sektors aktivitet" value={2} />
+                    <Tab label="Nylig aktivitet" value={0}/>
+                    <Tab label="Din aktivitet" value={1}/>
+                    <Tab label="Offentlig sektors aktivitet" value={2}/>
                 </Tabs>
                 <SwipeableViews
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                 >
                     <div>
-                        <h2 style={styles.headline}>All nylig aktivitet</h2>
-                        - Både egen og offentlig sektors.<br />
+                        {activityList}
                     </div>
                     <div style={styles.slide}>
-                        Din aktivitet med bruk av IDporten
+                        {activityList}
                     </div>
                     <div style={styles.slide}>
-                        Data hentet ut av offentlig sektor
+                        {activityList}
                     </div>
                 </SwipeableViews>
-            </div>
+            </Card>
         );
     }
 }

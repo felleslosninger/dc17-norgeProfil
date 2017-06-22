@@ -11,7 +11,7 @@ class Username extends React.Component {
         let user = "Fornavn Etternavn";
 
         const styles = {
-            width: '30%'
+            width: '25%'
         }
 
         return (
