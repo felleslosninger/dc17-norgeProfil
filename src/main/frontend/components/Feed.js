@@ -46,7 +46,7 @@ class Feed extends React.Component {
         const iconButtonElement = (
             <IconButton
                 touch={true}
-                tooltip="more"
+                tooltip="Mer"
                 tooltipPosition="bottom-left"
             >
                 <MoreVertIcon color={grey400} />

@@ -10,12 +10,8 @@ class Username extends React.Component {
 
         let user = "Fornavn Etternavn";
 
-        const styles = {
-            width: '25%'
-        }
-
         return (
-                <div className="page-header" style={styles}>
+                <div className="page-header">
                     <h1>{user}</h1>
                 </div>
         )

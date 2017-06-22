@@ -15,15 +15,13 @@ body {
     width: 100%;
 }
 
-/*.User {*/
-    /*border-bottom: 1px solid lightgrey;*/
-    /*width: 30%;*/
-    /*margin-bottom: 50px;*/
-/*}*/
+.page-header {
+    width: 22%;
+}
 
 .Feed {
-    margin-top: 5%;
-    border: 1px solid lightgrey;
+    /*margin-top: 5%;*/
+    height: 70%;
 }
 
 .Icon {

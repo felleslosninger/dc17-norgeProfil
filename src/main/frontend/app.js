@@ -28,6 +28,7 @@ const App = () => {
                     <Col sm={6} md={3} ><EID/></Col>
                     <Col sm={6} md={3} ><Reservation/></Col>
                 </Row>
+                <div className="page-header"><h3>Aktivitetslogg</h3></div>
                 <Feed/>
             </div>
         </MuiThemeProvider>
