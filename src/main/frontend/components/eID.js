@@ -11,7 +11,10 @@ import Help from 'material-ui/svg-icons/action/help';
 import CheckIcon from 'material-ui/svg-icons/action/check-circle';
 import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
 import EidIcon from 'material-ui/svg-icons/action/extension';
-
+import Paper from 'material-ui/Paper';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
+import Divider from 'material-ui/Divider';
 
 class EID extends React.Component {
 
@@ -35,17 +38,12 @@ class EID extends React.Component {
 
     render () {
 
-        const serviceStyle = {
-            paddingTop: '0px',
-            paddingBottom: '0px'
-        };
-
         const listStyle = {
             paddingTop: '0px'
         };
 
-        const otherServices = {
-            paddingTop: '5px'
+        const fontColorStyle = {
+            color: 'black'
         };
         const actions = [
             <FlatButton
@@ -54,6 +52,8 @@ class EID extends React.Component {
                 onTouchTap={this.handleClose}
             />,
         ];
+
+
 
         return (
             <Card className="Card">
@@ -143,45 +143,17 @@ class EID extends React.Component {
                     </div>
                 </Row>
                 <CardText style={listStyle}>
-                    <div>
-                        <List>
-                            <div>Tjenester i bruk</div>
-                            <ListItem
-                                leftIcon={<CheckIcon />}
-                                primaryText="MinID"
-                                initiallyOpen={false}
-                                disabled={true}
-                            />
-                            <ListItem
-                                primaryText="BankID"
-                                initiallyOpen={false}
-                                disabled={true}
-                                leftIcon={<CheckIcon/>}
-                            />
-                            <div style={otherServices}>Andre tjenester</div>
-                            <ListItem
-                                primaryText="BankID på mobil"
-                                initiallyOpen={false}
-                                disabled={true}
-                                leftIcon={<CancelIcon/>}
-
-                            />
-                            <ListItem
-                                primaryText="Buypass ID"
-                                initiallyOpen={false}
-                                disabled={true}
-                                leftIcon={<CancelIcon/>}
-                            />
-                            <ListItem
-                                primaryText="Commfides"
-                                initiallyOpen={false}
-                                disabled={true}
-                                leftIcon={<CancelIcon/>}
-                            />
-                        </List>
+                    <div className="DivoverMeny">
+                        <Menu style={listStyle} className="meny" desktop={true}>
+                            <MenuItem style={fontColorStyle} primaryText="MinID" leftIcon={<CheckIcon/>} disabled={true}/>
+                            <MenuItem style={fontColorStyle} primaryText="BankID på mobil" leftIcon={<CheckIcon/>} disabled={true}/>
+                            <Divider />
+                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CancelIcon/>} disabled={true}/>
+                            <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={<CancelIcon />} disabled={true}/>
+                            <MenuItem style={fontColorStyle} primaryText="Commfides" leftIcon={<CancelIcon />} disabled={true}/>
+                        </Menu>
                     </div>
                 </CardText>
-
             </Card>
         );
     }
