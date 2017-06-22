@@ -7,7 +7,9 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import {Glyphicon} from "react-bootstrap";
+import Help from 'material-ui/svg-icons/action/help';
+import CheckIcon from 'material-ui/svg-icons/action/check-circle';
+import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
 
 class EID extends React.Component {
 
@@ -32,7 +34,8 @@ class EID extends React.Component {
     render () {
 
         const serviceStyle = {
-            padding: '0px'
+            paddingTop: '0px',
+            paddingBottom: '0px'
         };
 
         const listStyle = {
@@ -56,8 +59,7 @@ class EID extends React.Component {
                     <div className="HeaderRow">
                         <div className="EidHeadline">
                             <Col md={4}><h4><img src="icons/face.svg"/> eID</h4></Col>
-                            <Col mdOffset={10}><button type="button" className="btn btn-secondary" onClick={this.handleOpen}><Glyphicon glyph="glyphicon glyphicon-question-sign"/></button></Col>
-
+                            <Col mdOffset={10}><Help onClick={this.handleOpen}/></Col>
                         </div>
                         <Dialog
                             title="Elektronisk ID"
@@ -141,32 +143,37 @@ class EID extends React.Component {
                     <div>
                         <List>
                             <div>Tjenester i bruk</div>
-                            <ListItem style={serviceStyle}
+                            <ListItem
+                                leftIcon={<CheckIcon />}
                                 primaryText="MinID"
                                 initiallyOpen={false}
                                 disabled={true}
                             />
-                            <ListItem style={serviceStyle}
+                            <ListItem
                                 primaryText="BankID"
                                 initiallyOpen={false}
                                 disabled={true}
+                                leftIcon={<CheckIcon/>}
                             />
                             <div style={otherServices}>Andre tjenester</div>
-                            <ListItem style={serviceStyle}
+                            <ListItem
                                 primaryText="BankID på mobil"
                                 initiallyOpen={false}
                                 disabled={true}
+                                leftIcon={<CancelIcon/>}
 
                             />
-                            <ListItem style={serviceStyle}
+                            <ListItem
                                 primaryText="Buypass ID"
                                 initiallyOpen={false}
                                 disabled={true}
+                                leftIcon={<CancelIcon/>}
                             />
-                            <ListItem style={serviceStyle}
+                            <ListItem
                                 primaryText="Commfides"
                                 initiallyOpen={false}
                                 disabled={true}
+                                leftIcon={<CancelIcon/>}
                             />
                         </List>
                     </div>
