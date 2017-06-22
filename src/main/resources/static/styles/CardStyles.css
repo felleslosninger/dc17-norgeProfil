@@ -23,6 +23,13 @@
     margin-left: 1em;
 }
 
+.EidHeadline {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 30px;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
 .Icon {
     margin-top: 40px;
 }

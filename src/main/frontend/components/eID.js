@@ -43,9 +43,9 @@ class EID extends React.Component {
             <Card className="Card">
                 <Row>
                     <div className="HeaderRow">
-                        <div className="Headline">
+                        <div className="EidHeadline">
                             <Col md={4}><h4><img src="icons/face.svg"/> eID</h4></Col>
-                            <Col md={4}><button type="button" className="btn btn-secondary" onClick={this.handleOpen}><Glyphicon glyph="glyphicon glyphicon-pencil"/></button></Col>
+                            <Col mdOffset={10}><button type="button" className="btn btn-secondary" onClick={this.handleOpen}><Glyphicon glyph="glyphicon glyphicon-pencil"/></button></Col>
                         </div>
                         <Dialog
                             title="Elektronisk ID"
