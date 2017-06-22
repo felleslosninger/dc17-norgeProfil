@@ -8,6 +8,7 @@ import {List, ListItem} from 'material-ui/List';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Glyphicon} from "react-bootstrap";
 
 class EID extends React.Component {
 
@@ -43,8 +44,8 @@ class EID extends React.Component {
                 <Row>
                     <div className="HeaderRow">
                         <div className="Headline">
-                            <Col md={12}><h4><img src="icons/face.svg"/> eID</h4></Col>
-                            <RaisedButton label="?" onTouchTap={this.handleOpen} />
+                            <Col md={4}><h4><img src="icons/face.svg"/> eID</h4></Col>
+                            <Col md={4}><button type="button" className="btn btn-secondary" onClick={this.handleOpen}><Glyphicon glyph="glyphicon glyphicon-pencil"/></button></Col>
                         </div>
                         <Dialog
                             title="Elektronisk ID"
