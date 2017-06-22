@@ -1,0 +1,35 @@
+html,
+body {
+    height: 100%;
+}
+
+#react {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar {
+    width: 100%;
+}
+
+.User {
+    border-bottom: 1px solid lightgrey;
+    width: 30%;
+    margin-bottom: 50px;
+}
+
+.Feed {
+    margin-top: 5%;
+}
+
+.Icon {
+    margin-top: 2%;
+}
+
+
+.EditBtn {
+    position: absolute;
+    right:    0;
+    bottom:   0;
+}

@@ -10,6 +10,8 @@ import FlatButton from 'material-ui/FlatButton';
 import Help from 'material-ui/svg-icons/action/help';
 import CheckIcon from 'material-ui/svg-icons/action/check-circle';
 import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
+import EidIcon from 'material-ui/svg-icons/action/extension';
+
 
 class EID extends React.Component {
 
@@ -57,10 +59,11 @@ class EID extends React.Component {
             <Card className="Card">
                 <Row>
                     <div className="HeaderRow">
-                        <div className="EidHeadline">
-                            <Col md={4}><h4><img src="icons/face.svg"/> eID</h4></Col>
-                            <Col mdOffset={10}><Help onClick={this.handleOpen}/></Col>
-                        </div>
+
+                        <Row className="Headline">
+                            <Col md={1} className="Icon">{<EidIcon />}</Col>
+                            <Col md={10}><h4>eID</h4></Col>
+                        </Row>
                         <Dialog
                             title="Elektronisk ID"
                             actions={actions}
