@@ -11,7 +11,6 @@ import Help from 'material-ui/svg-icons/action/help';
 import CheckIcon from 'material-ui/svg-icons/action/check-circle';
 import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
 import EidIcon from 'material-ui/svg-icons/action/extension';
-import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
@@ -145,9 +144,11 @@ class EID extends React.Component {
                 <CardText style={listStyle}>
                     <div className="DivoverMeny">
                         <Menu style={listStyle} className="meny" desktop={true}>
+                            <div>Tjenester i bruk</div>
                             <MenuItem style={fontColorStyle} primaryText="MinID" leftIcon={<CheckIcon/>} disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="BankID på mobil" leftIcon={<CheckIcon/>} disabled={true}/>
                             <Divider />
+                            <div>Andre tjenester</div>
                             <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CancelIcon/>} disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={<CancelIcon />} disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="Commfides" leftIcon={<CancelIcon />} disabled={true}/>
