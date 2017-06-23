@@ -78,9 +78,19 @@ class EID extends React.Component {
                                     nestedItems={[
                                         <ListItem key={1} disabled={true}>
                                             MinID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på mellomhøgt sikkerheitsnivå, nivå 3.
+                                            <br/><br/>
                                             Direktoratet for forvaltning og IKT (Difi) er ansvarleg for MinID. MinID kan bestillast frå det året du fyller 13.
-                                            For å registrere deg som MinID-brukar treng du: fødselsnummer eller D-nummer, mobiltelefonnummer eller e-postadresse, PIN-kodebrev.
+                                            <br/><br/>
+                                            For å registrere deg som MinID-brukar treng du: <br/><br/>
+                                            <ul>
+                                                <li>fødselsnummer eller D-nummer</li>
+                                                <li> mobiltelefonnummer eller e-postadresse</li>
+                                                <li>PIN-kodebrev</li>
+                                            </ul>
+                                            <br/>
                                             Skal du opprette ein digital postkasse, må du ha ein ID på høgare sikkerheitsnivå enn MinID.Meir om registrering og innlogging med MinID.
+                                            <br/><br/>
+                                            <a href="http://eid.difi.no/nn/minid">Meir om registrering og innlogging med MinID.</a>
                                         </ListItem>
 
                                     ]}
