@@ -2,10 +2,14 @@ var React = require("react");
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
-import Modal from 'react-modal';
+
 import {Card, CardHeader, CardText} from 'material-ui/Card';
-import TextField from 'material-ui/TextField';
-import {Glyphicon} from "react-bootstrap";
+import Email from 'material-ui/svg-icons/communication/email';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';;
+import Edit from 'material-ui/svg-icons/editor/mode-edit';
+
 
 
 class Mail extends React.Component {
@@ -13,31 +17,15 @@ class Mail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            modalIsOpen: false,
+            open: false,
             postbox: 'E-boks', //some init value
-            hasPostbox: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.saveInfo = this.saveInfo.bind(this);
-        this.openModal = this.openModal.bind(this);
-        this.afterOpenModal = this.afterOpenModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     };
-
-    openModal() {
-        this.setState({modalIsOpen: true});
-    }
-
-    afterOpenModal() {
-        // references sync'd and can be accessed.
-
-    }
-
-    closeModal() {
-        console.log("close");
-        this.setState({modalIsOpen: false});
-    }
 
     handleChange({target}) {
         this.setState({
@@ -45,28 +33,40 @@ class Mail extends React.Component {
         });
     }
 
-
     saveInfo() {
         console.log("saved");
         console.log("Postbox: ", this.state.postbox);
-        this.setState({modalIsOpen: false});
-
+        this.setState({open: false});
     };
 
+    handleOpen(){
+        this.setState({open: true});
+    };
 
-
+    handleClose(){
+        this.setState({open: false});
+    };
 
     render() {
-        const customStyles = {
-            content: {
-                top: '50%',
-                left: '50%',
-                right: 'auto',
-                bottom: 'auto',
-                marginRight: '-50%',
-                transform: 'translate(-50%, -50%)'
-            }
+        const styles = {
+            customWidth: {
+                width: 200
+            },
         };
+
+        const actions = [
+            <FlatButton
+                label="Cancel"
+                primary={true}
+                onTouchTap={this.handleClose}
+            />,
+            <FlatButton
+                label="Submit"
+                primary={true}
+                keyboardFocused={true}
+                onTouchTap={this.handleClose}
+            />,
+        ];
 
         var getcardForNewMailUser = function(){
             return ( <Card className="Card">
@@ -95,7 +95,8 @@ class Mail extends React.Component {
                     <Row>
                         <div className="HeaderRow">
                             <div className="Headline">
-                                <Col md={12}><h4><img src="icons/face.svg"/> Din digitale postkasse</h4></Col>
+                                <Col md={1} className="Icon">{<Email />}</Col>
+                                <Col md={10}><h4>Digital postkasse</h4></Col>
                             </div>
                         </div>
                     </Row>
@@ -103,28 +104,33 @@ class Mail extends React.Component {
                         <div className="CardInfoText"> Du kan nå motta og oppbevare post fra det offentlige
                             hos { postbox }. Posten vil bli lagret på en trygg og sikker måte.
                         </div>
-                        <button type="button" className="btn btn-secondary" onClick={mail.openModal}>
-                            <Glyphicon glyph="glyphicon glyphicon-pencil"/>
-                        </button>
-                    </CardText>
-                    <Modal
-                        isOpen={mail.state.modalIsOpen}
-                        onAfterOpen={mail.afterOpenModal}
-                        onRequestClose={mail.closeModal}
-                        style={customStyles}
-                        contentLabel="Endre digitalpostkasse">
-                        <h3 ref={subtitle => mail.subtitle = subtitle}>Endre digital postkasse</h3>
-                        <select name="postbox" value={ mail.state.postbox } onChange={ mail.handleChange }>
-                            <option value="E-boks">E-boks</option>
-                            <option value="Digipost">Digipost</option>
-                        </select>
-                        <div class="Container">
-                            <button className="btn btn-success" onClick={mail.saveInfo}>Lagre</button>
-                            <button className="btn btn-secondary" onClick={mail.closeModal}>Lukk</button>
+                        <div className="EditBtn">
+                            <FlatButton
+                                primary={true}
+                                icon={<Edit />}
+                                onTouchTap={mail.handleOpen}/>
                         </div>
-                    </Modal>
+                    </CardText>
+                        <Dialog
+                            title="Endre din digitale postkasse"
+                            actions={actions}
+                            modal={false}
+                            open={mail.state.open}
+                            onRequestClose={mail.handleClose}
+                        >
+                            <Row className="EditInfo">
+                                <Col>
+                                    <div>
+                                        <select name="postbox" value={ mail.state.postbox } onChange={ mail.handleChange }>
+                                            <option value="E-boks">E-boks</option>
+                                            <option value="Digipost">Digipost</option>
+                                        </select>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Dialog>
                 </Card>
-            )
+            );
         };
 
 
