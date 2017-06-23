@@ -7,9 +7,9 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 import Email from 'material-ui/svg-icons/communication/email';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';;
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
-
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
 
 
 class Mail extends React.Component {
@@ -48,11 +48,21 @@ class Mail extends React.Component {
     };
 
     render() {
-        const styles = {
-            customWidth: {
-                width: 200
-            },
+        const urlListStyle = {
+            listStyleType: 'none',
+            float: 'left',
+            width:'150px',
+            height:'75px'
         };
+
+        const urlElementListStyle = {
+            display: 'block',
+            backgroundColor:'white',
+            color: 'black',
+            border: '2px solid #e7e7e7'
+        };
+
+
 
         const actions = [
             <FlatButton
@@ -79,12 +89,18 @@ class Mail extends React.Component {
                     </div>
                 </Row>
                 <CardText className="CardText">
+                    <p>
                     Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
                     hos e-Boks eller Digipost for å få post digitalt fra det offentlige
-                    <div>
-                        <a href="https://www.digipost.no/app/registrering#/"> Opprett digipost </a>
-                        <a href="https://www.e-boks.com/norge/nb/ny-bruker/"> Opprett e-boks </a>
-                    </div>
+                    </p>
+                    <FlatButton
+                        label="Opprett E-boks"
+                        href="https://www.e-boks.com/norge/nb/ny-bruker/"
+                        />
+                    <FlatButton
+                        label="Opprett Digipost"
+                        href="https://www.digipost.no/app/registrering#/"
+                    />
                 </CardText>
             </Card> )
         };
@@ -120,12 +136,10 @@ class Mail extends React.Component {
                         >
                             <Row className="EditInfo">
                                 <Col>
-                                    <div>
-                                        <select name="postbox" value={ mail.state.postbox } onChange={ mail.handleChange }>
-                                            <option value="E-boks">E-boks</option>
-                                            <option value="Digipost">Digipost</option>
-                                        </select>
-                                    </div>
+                                    <select name="postbox" value={ mail.state.postbox } onChange={ mail.handleChange }>
+                                        <option value="E-boks">E-boks</option>
+                                        <option value="Digipost">Digipost</option>
+                                    </select>
                                 </Col>
                             </Row>
                         </Dialog>
@@ -138,7 +152,7 @@ class Mail extends React.Component {
         if(postbox == 'Digipost' || postbox == 'E-boks') {
             return ( getcardForExistingMailUser(this, postbox) )
         } else {
-            return ( getcardForNewMailUser() )
+            return ( getcardForNewMailUser() ) //if not user of digipost and E-boks
         }
     }
 }
