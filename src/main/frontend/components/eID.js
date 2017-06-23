@@ -4,6 +4,7 @@ var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
 import {Card, CardHeader, CardText} from 'material-ui/Card';
+import EidIcon from 'material-ui/svg-icons/action/extension';
 
 
 class EID extends React.Component {
@@ -15,9 +16,10 @@ class EID extends React.Component {
             <Card className="Card">
                 <Row>
                     <div className="HeaderRow">
-                        <div className="Headline">
-                            <Col md={12}><h4><img src="icons/face.svg"/> eID</h4></Col>
-                        </div>
+                        <Row className="Headline">
+                            <Col md={1} className="Icon">{<EidIcon />}</Col>
+                            <Col md={10}><h4>eID</h4></Col>
+                        </Row>
                     </div>
                 </Row>
                 <CardText className="CardText">

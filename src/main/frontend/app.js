@@ -12,21 +12,32 @@ var ContactInfo = require('./components/ContactInfo.js');
 var EID = require('./components/eID.js');
 var Reservation = require('./components/Reservation.js');
 var Mail = require('./components/Mail.js');
-// var ToolBar = require('./components/ToolBar.js');
+var Username = require('./components/Username.js');
+var Feed = require('./components/Feed.js');
+var NavigationBar = require('./components/NavigationBar.js');
 
 
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
             <div>
-                {/*<ToolBar/>*/}
+                <Username/>
                 <Row>
                     <Col sm={6} md={3} ><ContactInfo/></Col>
                     <Col sm={6} md={3} ><Mail/></Col>
                     <Col sm={6} md={3} ><EID/></Col>
                     <Col sm={6} md={3} ><Reservation/></Col>
                 </Row>
+                <Feed/>
             </div>
+        </MuiThemeProvider>
+    );
+};
+
+const Bar = () => {
+    return (
+        <MuiThemeProvider muiTheme={muiTheme}>
+                <NavigationBar/>
         </MuiThemeProvider>
     );
 };
@@ -39,3 +50,4 @@ const muiTheme = getMuiTheme({
 
 injectTapEventPlugin();
 ReactDOM.render(<App/>, document.getElementById('react'));
+ReactDOM.render(<Bar/>, document.getElementById('navbar'));

@@ -5,8 +5,13 @@ var Col = require('react-bootstrap/lib/Col');
 
 import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
+import {List, ListItem} from 'material-ui/List';
+import FlatButton from 'material-ui/FlatButton';
 import Modal from 'react-modal';
-import {Glyphicon} from "react-bootstrap";
+import ActionInfo from 'material-ui/svg-icons/action/info';
+import Edit from 'material-ui/svg-icons/editor/mode-edit';
+import PhoneIcon from 'material-ui/svg-icons/communication/contact-phone';
+import EmailIcon from 'material-ui/svg-icons/communication/contact-mail';
 
 
 class ContactInfoCard extends React.Component {
@@ -75,16 +80,25 @@ class ContactInfoCard extends React.Component {
            <Card className="Card">
                <Row>
                    <div className="HeaderRow">
-                       <div className="Headline">
-                           <Col md={12}><h4><img src="icons/face.svg"/> Registrert kontaktinformasjon</h4></Col>
-                       </div>
+                       <Row className="Headline">
+                           <Col md={1} className="Icon">{<ActionInfo />}</Col>
+                           <Col md={10}><h4>Kontaktinformasjon</h4></Col>
+                       </Row>
                    </div>
                </Row>
                 <CardText className="CardText">
-                    <div className="CardInfoText">Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</div>
-                    <div className="phone">Mobilnummer: {phoneNumber}</div>
-                    <div className="email">E-post: {eMail}</div>
-                    <button type="button" className="btn btn-secondary" onClick={this.openModal}><Glyphicon glyph="glyphicon glyphicon-pencil"/></button>
+                    <div className="CardInfoText"><small>Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</small></div>
+                    <List>
+                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber} leftIcon={<PhoneIcon/>}/>
+                        <ListItem disabled={true} primaryText="Email: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
+                    </List>
+                    <div className="EditBtn">
+                        <FlatButton
+                            primary={true}
+                            icon={<Edit />}
+                            onClick={this.openModal}/>
+                    </div>
+
                 </CardText>
                <Modal
                    isOpen={this.state.modalIsOpen}

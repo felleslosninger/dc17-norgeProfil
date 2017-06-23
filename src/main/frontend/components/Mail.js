@@ -7,6 +7,7 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import {Glyphicon} from "react-bootstrap";
 
+
 class Mail extends React.Component {
 
     constructor(props) {
@@ -71,9 +72,10 @@ class Mail extends React.Component {
             return ( <Card className="Card">
                 <Row>
                     <div className="HeaderRow">
-                        <div className="Headline">
-                            <Col md={12}><h4><img src="icons/face.svg"/> Din digitale postkasse</h4></Col>
-                        </div>
+                        <Row className="Headline">
+                            <Col md={1} className="Icon">{<Email />}</Col>
+                            <Col md={10}><h4>Digital postkasse</h4></Col>
+                        </Row>
                     </div>
                 </Row>
                 <CardText className="CardText">
