@@ -19,7 +19,7 @@ class NavigationBar extends React.Component {
         let username = "Fornavn Etternavn";
 
         return (
-            <AppBar title="Digtal Borger">
+            <AppBar title="Digital Borger">
                 <Tabs>
                     <Tab label="Profil" />
                 </Tabs>
