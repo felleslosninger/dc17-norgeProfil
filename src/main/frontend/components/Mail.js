@@ -13,7 +13,8 @@ class Mail extends React.Component {
         super(props);
         this.state = {
             modalIsOpen: false,
-            postbox: 'E-boks' //some init value
+            postbox: 'E-boks', //some init value
+            hasPostbox: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -44,7 +45,7 @@ class Mail extends React.Component {
     }
 
 
-    saveInfo () {
+    saveInfo() {
         console.log("saved");
         console.log("Postbox: ", this.state.postbox);
         this.setState({modalIsOpen: false});
@@ -52,22 +53,22 @@ class Mail extends React.Component {
     };
 
 
-    render () {
+
+
+    render() {
         const customStyles = {
-            content : {
-                top                   : '50%',
-                left                  : '50%',
-                right                 : 'auto',
-                bottom                : 'auto',
-                marginRight           : '-50%',
-                transform             : 'translate(-50%, -50%)'
+            content: {
+                top: '50%',
+                left: '50%',
+                right: 'auto',
+                bottom: 'auto',
+                marginRight: '-50%',
+                transform: 'translate(-50%, -50%)'
             }
         };
 
-        let postbox = this.state.postbox;
-
-        return (
-            <Card className="Card">
+        var getcardForNewMailUser = function(){
+            return ( <Card className="Card">
                 <Row>
                     <div className="HeaderRow">
                         <div className="Headline">
@@ -76,31 +77,61 @@ class Mail extends React.Component {
                     </div>
                 </Row>
                 <CardText className="CardText">
-                    <div className="CardInfoText"> Du kan nå motta og oppbevare post fra det offentlige
-                        hos { postbox }. Posten vil bli lagret på en trygg og sikker måte </div>
-                    <button type="button" className="btn btn-secondary" onClick={this.openModal}>
-                        <Glyphicon glyph="glyphicon glyphicon-pencil"/>
-                    </button>
+                    Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
+                    hos e-Boks eller Digipost for å få post digitalt fra det offentlige
+                    <div>
+                        <a href="https://www.digipost.no/app/registrering#/"> Opprett digipost </a>
+                        <a href="https://www.e-boks.com/norge/nb/ny-bruker/"> Opprett e-boks </a>
+                    </div>
                 </CardText>
-                <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onAfterOpen={this.afterOpenModal}
-                    onRequestClose={this.closeModal}
-                    style={customStyles}
-                    contentLabel="Endre digitalpostkasse">
-                    <h3 ref={subtitle => this.subtitle = subtitle}>Endre digital postkasse</h3>
-                        <select name = "postbox" value = { this.state.postbox } onChange = { this.handleChange }>
-                            <option value="E-box">E-box</option>
+            </Card> )
+        };
+
+        var getcardForExistingMailUser = function (mail, postbox) {
+            return (
+                <Card className="Card">
+                    <Row>
+                        <div className="HeaderRow">
+                            <div className="Headline">
+                                <Col md={12}><h4><img src="icons/face.svg"/> Din digitale postkasse</h4></Col>
+                            </div>
+                        </div>
+                    </Row>
+                    <CardText className="CardText">
+                        <div className="CardInfoText"> Du kan nå motta og oppbevare post fra det offentlige
+                            hos { postbox }. Posten vil bli lagret på en trygg og sikker måte.
+                        </div>
+                        <button type="button" className="btn btn-secondary" onClick={mail.openModal}>
+                            <Glyphicon glyph="glyphicon glyphicon-pencil"/>
+                        </button>
+                    </CardText>
+                    <Modal
+                        isOpen={mail.state.modalIsOpen}
+                        onAfterOpen={mail.afterOpenModal}
+                        onRequestClose={mail.closeModal}
+                        style={customStyles}
+                        contentLabel="Endre digitalpostkasse">
+                        <h3 ref={subtitle => mail.subtitle = subtitle}>Endre digital postkasse</h3>
+                        <select name="postbox" value={ mail.state.postbox } onChange={ mail.handleChange }>
+                            <option value="E-boks">E-boks</option>
                             <option value="Digipost">Digipost</option>
                         </select>
-                    <div class="Container">
-                        <button className="btn btn-success" onClick={this.saveInfo}>Lagre</button>
-                        <button className="btn btn-secondary" onClick={this.closeModal}>Lukk</button>
-                    </div>
-                </Modal>
-            </Card>
+                        <div class="Container">
+                            <button className="btn btn-success" onClick={mail.saveInfo}>Lagre</button>
+                            <button className="btn btn-secondary" onClick={mail.closeModal}>Lukk</button>
+                        </div>
+                    </Modal>
+                </Card>
+            )
+        };
 
-        )
+
+        let postbox = this.state.postbox;
+        if(postbox == 'Digipost' || postbox == 'E-boks') {
+            return ( getcardForExistingMailUser(this, postbox) )
+        } else {
+            return ( getcardForNewMailUser() )
+        }
     }
 }
 
