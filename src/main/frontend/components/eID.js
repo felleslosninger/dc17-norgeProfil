@@ -69,6 +69,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="MinID"
                             initiallyOpen={false}
+                            leftIcon={<img src="img/minid.png" width={100}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     MinID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på
@@ -96,6 +97,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="BankID"
                             initiallyOpen={false}
+                            leftIcon={<img src="img/bankid.png" width={100}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     BankID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på
@@ -113,6 +115,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="BankID på mobil"
                             initiallyOpen={false}
+                            leftIcon={<img src="img/bankid_pa_mobil.png" width={100}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     BankID på mobil er ein personleg, elektronisk ID som gir tilgang til offentlege
@@ -129,6 +132,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="Buypass ID"
                             initiallyOpen={false}
+                            leftIcon={<img src="img/buypass.png" width={100}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     Buypass ID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester
@@ -146,6 +150,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="Commfides"
                             initiallyOpen={false}
+                            leftIcon={<img src="img/commfides.png" width={100}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     Commfides er ein personleg, elektronisk ID som gir tilgang til offentlege tenester

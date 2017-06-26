@@ -9,7 +9,9 @@
 }
 
 .eidInfo {
-    width: 650px;
+    width: 620px;
+    left: 38px;
+    bottom: 15px;
 }
 
 .CardHeader {
