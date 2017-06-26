@@ -10,6 +10,8 @@ import FlatButton from 'material-ui/FlatButton';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
 import {List, ListItem} from 'material-ui/List';
 import Help from 'material-ui/svg-icons/action/help';
+import PostboxIcon from 'material-ui/svg-icons/communication/message';
+import Toggle from 'material-ui/Toggle';
 
 class Mail extends React.Component {
 
@@ -17,14 +19,19 @@ class Mail extends React.Component {
         super(props);
         this.state = {
             open: false,
-            postbox: '', //add init value either Digipost or E-boks
+            postbox: 'E-boks', //add init value either Digipost or E-boks
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.saveInfo = this.saveInfo.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.deleteAccount = this.deleteAccount.bind(this);
     };
+
+    deleteAccount(){
+        this.setState({postbox:''});
+    }
 
     handleChange() {
         if (this.state.postbox == 'E-boks') {
@@ -50,6 +57,9 @@ class Mail extends React.Component {
     };
 
     render() {
+        const toggleStyle = {
+            marginBottom: 16
+        };
 
         const actions = [
             <FlatButton
@@ -163,8 +173,10 @@ class Mail extends React.Component {
                     </Dialog>
                     <hr className="Headline"/>
                     <CardText className="CardText">
+                        <p>
                         Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
                         hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
+                        </p>
                         <br/><br/>
                         <FlatButton
                             label="Opprett Digipost"
@@ -173,6 +185,12 @@ class Mail extends React.Component {
                         <FlatButton
                             label="Opprett E-boks"
                             href="https://www.e-boks.com/norge/nb/ny-bruker/"
+                        />
+                        <Toggle
+                            className="ToggleBtn"
+                            label="Bytt kort"
+                            onToggle={mail.handleChange}
+                            defaultToggled={false}
                         />
                     </CardText>
                 </Card> )
@@ -184,12 +202,15 @@ class Mail extends React.Component {
                     <Row className="CardHeader">
                         <Col md={1} className="Icon">{<Email />}</Col>
                         <Col md={10}><h4>Digital postkasse</h4></Col>
+                        <Col mdOffset={10}></Col>
                     </Row>
                     <hr className="Headline"/>
                     <CardText className="CardText">
                         <div className="CardInfoText">
-                            Du kan nå motta og oppbevare post fra det offentlige hos { postbox }, dersom du ikke har
-                            valgt å reservere deg mot nettkommunikasjon.
+                             Du kan nå motta og oppbevare post fra det offentlige, dersom du ikke har
+                                valgt å reservere deg mot nettkommunikasjon.
+                            <br/> <br/>
+                            <div> <PostboxIcon/>  Valgt postkasse:   { postbox } </div>
                         </div>
                         <div className="EditBtn">
                             <FlatButton
@@ -198,6 +219,12 @@ class Mail extends React.Component {
                                 icon={<Edit />}
                                 onTouchTap={mail.handleOpen}/>
                         </div>
+                        <Toggle
+                            className="ToggleBtn"
+                            label="Bytt kort"
+                            onToggle={mail.deleteAccount}
+                            defaultToggled={true}
+                        />
                     </CardText>
                     <Dialog
                         title="Endre din digital postkasse"

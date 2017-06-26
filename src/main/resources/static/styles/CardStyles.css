@@ -30,6 +30,13 @@
             bottom: 0;
 
         }
+
+.ToggleBtn {
+    position: absolute;
+    left: 2.0%;
+    bottom: 0;
+}
+
 .EidHeadline {
     border-bottom: 1px solid lightgrey;
     padding-bottom: 30px;
