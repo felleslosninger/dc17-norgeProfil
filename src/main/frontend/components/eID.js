@@ -52,7 +52,7 @@ class EID extends React.Component {
                 onTouchTap={this.handleClose}
             />,
         ];
-        
+
         return (
             <Card className="Card">
                 <Row className="CardHeader">

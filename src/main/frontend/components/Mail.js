@@ -178,12 +178,14 @@ class Mail extends React.Component {
                         Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
                         hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
                         </p>
-                        <br/><br/>
+                        <br/>
                         <FlatButton
+                            icon={<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={100} height={50} alt="logo til digipost"/>}
                             label="Opprett Digipost"
                             href="https://www.digipost.no/app/registrering#/"
                         />
                         <FlatButton
+                            icon={<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={100} height={30} alt="logo til E-boks"/>}
                             label="Opprett E-boks"
                             href="https://www.e-boks.com/norge/nb/ny-bruker/"
                         />
@@ -203,7 +205,6 @@ class Mail extends React.Component {
                     <Row className="CardHeader">
                         <Col md={1} className="Icon">{<Email />}</Col>
                         <Col md={10}><h4>Digital postkasse</h4></Col>
-                        <Col mdOffset={10}></Col>
                     </Row>
                     <hr className="Headline"/>
                     <CardText className="CardText">
