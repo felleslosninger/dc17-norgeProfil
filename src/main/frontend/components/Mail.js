@@ -18,7 +18,7 @@ class Mail extends React.Component {
         super(props);
         this.state = {
             open: false,
-            postbox: 'E-boks', //some init value
+            postbox: 'Digipost', //some init value
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -27,10 +27,13 @@ class Mail extends React.Component {
         this.handleClose = this.handleClose.bind(this);
     };
 
-    handleChange({target}) {
-        this.setState({
-            [target.name]: target.value
-        });
+    handleChange() {
+        if(this.state.postbox == 'E-boks'){
+            this.setState({postbox:'Digipost'});
+        } else {
+            this.setState({postbox:'E-boks'});
+        }
+        this.setState({open:false});
     }
 
     saveInfo() {
@@ -74,7 +77,7 @@ class Mail extends React.Component {
                 label="Submit"
                 primary={true}
                 keyboardFocused={true}
-                onTouchTap={this.handleClose}
+                onTouchTap={this.handleChange}
             />,
         ];
 
@@ -91,16 +94,18 @@ class Mail extends React.Component {
                 <CardText className="CardText">
                     <p>
                     Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
-                    hos e-Boks eller Digipost for å få post digitalt fra det offentlige
+                    hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige. For å opprette
+                        en digital postkasse må du ha norsk fødselsnummer eller D-nummer, samt elektronisk ID fra
+                        BankID, BankID på mobil, Buypass eller Commfides.
                     </p>
-                    <FlatButton
-                        label="Opprett E-boks"
-                        href="https://www.e-boks.com/norge/nb/ny-bruker/"
-                        />
                     <FlatButton
                         label="Opprett Digipost"
                         href="https://www.digipost.no/app/registrering#/"
                     />
+                    <FlatButton
+                        label="Opprett E-boks"
+                        href="https://www.e-boks.com/norge/nb/ny-bruker/"
+                        />
                 </CardText>
             </Card> )
         };
@@ -117,31 +122,27 @@ class Mail extends React.Component {
                         </div>
                     </Row>
                     <CardText className="CardText">
-                        <div className="CardInfoText"> Du kan nå motta og oppbevare post fra det offentlige
-                            hos { postbox }. Posten vil bli lagret på en trygg og sikker måte.
+                        <div className="CardInfoText"> Du har valgt å motta og oppbevare post fra det offentlige
+                            hos { postbox }. Du åpner den digitale postkassen ved å logge inn via hjemmesiden deres.
                         </div>
                         <div className="EditBtn">
                             <FlatButton
+                                label="Endre postkasse"
                                 primary={true}
                                 icon={<Edit />}
                                 onTouchTap={mail.handleOpen}/>
                         </div>
                     </CardText>
                         <Dialog
-                            title="Endre din digitale postkasse"
+                            title="Endre din digital postkasse"
                             actions={actions}
                             modal={false}
                             open={mail.state.open}
                             onRequestClose={mail.handleClose}
                         >
-                            <Row className="EditInfo">
-                                <Col>
-                                    <select name="postbox" value={ mail.state.postbox } onChange={ mail.handleChange }>
-                                        <option value="E-boks">E-boks</option>
-                                        <option value="Digipost">Digipost</option>
-                                    </select>
-                                </Col>
-                            </Row>
+                            <div>
+                                Ønsker du virkelig å endre din digitale postkasse?
+                            </div>
                         </Dialog>
                 </Card>
             );
