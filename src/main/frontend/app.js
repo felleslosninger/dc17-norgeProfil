@@ -16,7 +16,6 @@ var Username = require('./components/Username.js');
 var Feed = require('./components/Feed.js');
 var NavigationBar = require('./components/NavigationBar.js');
 var Gamification = require('./components/Gamification.js');
-var test = require('./components/test.js');
 
 
 const App = () => {
@@ -31,7 +30,6 @@ const App = () => {
                     <Col sm={6} md={3} ><Reservation/></Col>
                 </Row>
                 <Gamification/>
-                {/*<test />*/}
                 <div className="page-header"><h3>Aktivitetslogg</h3></div>
                 <Feed/>
             </div>

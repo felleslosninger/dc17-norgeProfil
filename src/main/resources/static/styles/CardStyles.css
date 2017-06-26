@@ -1,7 +1,15 @@
 
 .Card {
-    height: 20em;
+    height: 25em;
     width: auto;
+}
+
+.EidCardText {
+    padding: 0px;
+}
+
+.eidInfo {
+    width: 650px;
 }
 
 .HeaderRow {
@@ -20,9 +28,20 @@
 }
 
 .EditBtn {
-    position: absolute;
-    right:    3.2%;
-    bottom:   0;
+            position: absolute;
+            right: 3.2%;
+            bottom: 0;
+
+        }
+.EidHeadline {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 30px;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.Icon {
+    margin-top: 40px;
 }
 
 /*Styling modal*/
@@ -46,3 +65,4 @@
 .EditInfo {
     margin-left: 1.5em;
 }
+
