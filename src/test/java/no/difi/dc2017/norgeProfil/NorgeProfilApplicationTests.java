@@ -1,4 +1,4 @@
-package no.difi.dc2017.norgeProfil;
+/*package no.difi.dc2017.norgeProfil;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,4 +13,4 @@ public class NorgeProfilApplicationTests {
 	public void contextLoads() {
 	}
 
-}
+}*/
