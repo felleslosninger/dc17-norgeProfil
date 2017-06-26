@@ -7,7 +7,7 @@ import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import {List, ListItem} from 'material-ui/List';
 import FlatButton from 'material-ui/FlatButton';
-import Modal from 'react-modal';
+import Dialog from 'material-ui/Dialog';
 import ActionInfo from 'material-ui/svg-icons/action/info';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
 import PhoneIcon from 'material-ui/svg-icons/communication/contact-phone';
@@ -18,32 +18,26 @@ class ContactInfoCard extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            modalIsOpen: false,
+            open: false,
             email: '',
             phone: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.saveInfo = this.saveInfo.bind(this);
-        this.openModal = this.openModal.bind(this);
-        this.afterOpenModal = this.afterOpenModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     };
 
-    openModal() {
-        this.setState({modalIsOpen: true});
-    }
+    handleOpen () {
+        this.setState({open: true});
+    };
 
-    afterOpenModal() {
-        // references sync'd and can be accessed.
-
-    }
-
-    closeModal() {
-        console.log("close");
-        this.setState({modalIsOpen: false});
-    }
+    handleClose () {
+        this.setState({open: false});
+    };
 
     handleChange({target}) {
         this.setState({
@@ -54,27 +48,32 @@ class ContactInfoCard extends React.Component {
 
     saveInfo () {
         console.log("saved");
-        console.log("Email: ", this.state.email, "Phone: ", this.state.phone)
+        console.log("Email: ", this.state.email, "Phone: ", this.state.phone);
         this.setState({modalIsOpen: false});
+    //    Save email + phone to DB
 
     };
 
 
     render () {
-        const customStyles = {
-            content : {
-                top                   : '50%',
-                left                  : '50%',
-                right                 : 'auto',
-                bottom                : 'auto',
-                marginRight           : '-50%',
-                transform             : 'translate(-50%, -50%)'
-            }
-        };
 
-        let phoneNumber = this.state.phone;
+        const actions = [
+            <FlatButton
+                label="Avbryt"
+                primary={true}
+                onTouchTap={this.handleClose}
+            />,
+            <FlatButton
+                label="Lagre"
+                primary={true}
+                keyboardFocused={true}
+                onTouchTap={this.handleClose}
+            />,
+        ];
 
-        let eMail = this.state.email;
+        let phoneNumber = this.state.phone; // get from DB
+        let eMail = this.state.email; // get from DB
+
 
         return (
            <Card className="Card">
@@ -89,41 +88,43 @@ class ContactInfoCard extends React.Component {
                 <CardText className="CardText">
                     <div className="CardInfoText"><small>Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</small></div>
                     <List>
-                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber} leftIcon={<PhoneIcon/>}/>
                         <ListItem disabled={true} primaryText="Email: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
+                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber} leftIcon={<PhoneIcon/>}/>
                     </List>
                     <div className="EditBtn">
                         <FlatButton
                             primary={true}
                             icon={<Edit />}
-                            onClick={this.openModal}/>
+                            onTouchTap={this.handleOpen}/>
                     </div>
-
                 </CardText>
-               <Modal
-                   isOpen={this.state.modalIsOpen}
-                   onAfterOpen={this.afterOpenModal}
-                   onRequestClose={this.closeModal}
-                   style={customStyles}
-                   contentLabel="Endre kontaktinformasjon">
-                   <h3 ref={subtitle => this.subtitle = subtitle}>Endre kontaktinformasjon</h3>
-                   <TextField
-                       hintText={phoneNumber}
-                       floatingLabelText="Mobilnummer"
-                       name = "phone"
-                       value = { this.state.phone }
-                       onChange = { this.handleChange }
-                   />
-                   <TextField
-                       hintText={eMail}
-                       floatingLabelText="E-post"
-                       name = "email"
-                       value = { this.state.email }
-                       onChange = { this.handleChange }
-                   />
-                   <button className="btn btn-success" onClick={this.saveInfo}>Lagre</button>
-                   <button className="btn btn-secondary" onClick={this.closeModal}>Lukk</button>
-               </Modal>
+               <Dialog
+                   title="Endre kontaktinformasjon"
+                   actions={actions}
+                   modal={false}
+                   open={this.state.open}
+                   onRequestClose={this.handleClose}>
+                       <Row className="EditInfo">
+                           <Col>
+                               <TextField
+                                   hintText={eMail}
+                                   floatingLabelText="E-post"
+                                   name = "email"
+                                   value = { this.state.email }
+                                   onChange = { this.handleChange }
+                               />
+                           </Col>
+                           <Col>
+                               <TextField
+                                   hintText={phoneNumber}
+                                   floatingLabelText="Mobilnummer"
+                                   name = "phone"
+                                   value = { this.state.phone }
+                                   onChange = { this.handleChange }
+                               />
+                           </Col>
+                       </Row>
+               </Dialog>
             </Card>
 
         )
