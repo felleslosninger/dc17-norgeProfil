@@ -8,9 +8,8 @@ import Email from 'material-ui/svg-icons/communication/email';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-
+import {List, ListItem} from 'material-ui/List';
+import Help from 'material-ui/svg-icons/action/help';
 
 class Mail extends React.Component {
 
@@ -18,7 +17,7 @@ class Mail extends React.Component {
         super(props);
         this.state = {
             open: false,
-            postbox: 'Digipost', //some init value
+            postbox: '', //add init value either Digipost or E-boks
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -66,22 +65,107 @@ class Mail extends React.Component {
             />,
         ];
 
-        var getcardForNewMailUser = function () {
+        const actions2 = [
+            <FlatButton
+                label="Lukk"
+                primary={true}
+                onTouchTap={this.handleClose}
+            />,
+        ];
+
+
+        var getcardForNewMailUser = function (mail) {
             return (
                 <Card className="Card">
                     <Row className="CardHeader">
                         <Col md={1} className="Icon">{<Email />}</Col>
                         <Col md={10}><h4>Digital postkasse</h4></Col>
+                        <Col mdOffset={10}><Help onClick={mail.handleOpen}/></Col>
                     </Row>
+                    <Dialog
+                        title="Spørsmål og svar"
+                        actions={actions2} modal={false}
+                        open={mail.state.open}
+                        onRequestClose={mail.handleClose}
+                    >
+                        <List>
+                            <ListItem
+                                primaryText="Kva er ein digital postkasse?"
+                                initiallyOpen={false}
+                                nestedItems={[
+                                    <ListItem key={1} disabled={true} className="info">
+                                        Ein digital postkasse er ei sikker løysing for å få og oppbevare viktig post
+                                        digitalt, slik som brev med vedtak, helseopplysningar eller annan sensitiv
+                                        informasjon. Det offentlege kan ikkje bruke vanlig e-post til å sende slik
+                                        informasjon. Skal du kunne motta viktige brev frå det offentlege digitalt,
+                                        må du ha digital postkasse.
+
+                                        Du får ikkje reklame i den digitale postkassen din. Men bedrifter som du har
+                                        eit kundeforhold til, som til dømes banken eller forsikringsselskapet ditt,
+                                        kan sende deg meldingar om ulike tilbod dersom du har akseptert dette.
+                                    </ListItem>
+                                ]}
+                            />
+                            <ListItem
+                                primaryText="Er digital postkasse det same som E-post?"
+                                initiallyOpen={false}
+                                nestedItems={[
+                                    <ListItem key={1} disabled={true} className="info">
+                                        Nei, ein digital postkasse er sikrare enn e-post fordi både avsendar og
+                                        mottakar må stadfeste identiteten sin.Post som det offentlege sender til
+                                        deg i den digitale postkassen din, blir sendt kryptert, som skjult tekst.
+                                        For å opne og lese posten i den digitale postkassen må du legitimere deg
+                                        gjennom ID-porten.Det er berre du og dei du har gitt løyve til, som kan
+                                        lese posten din frå det offentlege.
+                                    </ListItem>
+                                ]}
+                            />
+                            <ListItem
+                                primaryText="Kven kan opprette ein digital postkasse?"
+                                initiallyOpen={false}
+                                nestedItems={[
+                                    <ListItem key={1} disabled={true} className="info">
+                                        For å opprette ein digital postkasse må du ha
+                                        <ul>
+                                            <li> norsk fødselsnummer eller D-nummer</li>
+                                            <li> elektronisk ID fra BankID, BankID på mobil, Buypass eller
+                                                Commfides
+                                            </li>
+                                        </ul>
+                                    </ListItem>
+                                ]}
+                            />
+                            <ListItem
+                                primaryText="Kan eg ha to digitale postkassar?"
+                                initiallyOpen={false}
+                                nestedItems={[
+                                    <ListItem key={1} disabled={true} className="info">
+                                        Ja, men til post frå det offentlege må du velje ein av postkassane, slik at
+                                        stat og kommune veit kvar dei skal sende posten din.Du kan sjå kva postkasse
+                                        di til kvar tid har ved å logge deg inn på 'Dine kontaktopplysningar'.
+                                        Kontakt ID-porten brukarstøtte på grønt nummer 800 30 300 om du har
+                                        spørsmål om dette (frå utlandet: +47 24 05 56 03).
+                                    </ListItem>
+                                ]}
+                            />
+                            <ListItem
+                                primaryText="Kostar det noko å ha digital postkasse?"
+                                initiallyOpen={false}
+                                nestedItems={[
+                                    <ListItem key={1} disabled={true} className="info">
+                                        Nei, digital postkasse er gratis å opprette og bruke for innbyggjarane.
+                                        Lastar du sjølv opp mange dokument eller bilde, må du betale for å få
+                                        lagringsplass ut over 1GB.
+                                    </ListItem>
+                                ]}
+                            />
+                        </List>
+                    </Dialog>
                     <hr className="Headline"/>
                     <CardText className="CardText">
-                        <p>
-                            Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
-                            hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige. For å
-                            opprette
-                            en digital postkasse må du ha norsk fødselsnummer eller D-nummer, samt elektronisk ID fra
-                            BankID, BankID på mobil, Buypass eller Commfides.
-                        </p>
+                        Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
+                        hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
+                        <br/><br/>
                         <FlatButton
                             label="Opprett Digipost"
                             href="https://www.digipost.no/app/registrering#/"
@@ -103,8 +187,9 @@ class Mail extends React.Component {
                     </Row>
                     <hr className="Headline"/>
                     <CardText className="CardText">
-                        <div className="CardInfoText"> Du har valgt å motta og oppbevare post fra det offentlige
-                            hos { postbox }. Du åpner den digitale postkassen ved å logge inn via hjemmesiden deres.
+                        <div className="CardInfoText">
+                            Du kan nå motta og oppbevare post fra det offentlige hos { postbox }, dersom du ikke har
+                            valgt å reservere deg mot nettkommunikasjon.
                         </div>
                         <div className="EditBtn">
                             <FlatButton
@@ -122,7 +207,7 @@ class Mail extends React.Component {
                         onRequestClose={mail.handleClose}
                     >
                         <div>
-                            Ønsker du å endre din digitale postkasse?
+                            Ønsker du virkelig å endre din digitale postkasse?
                         </div>
                     </Dialog>
                 </Card>
@@ -134,7 +219,7 @@ class Mail extends React.Component {
         if (postbox == 'Digipost' || postbox == 'E-boks') {
             return ( getcardForExistingMailUser(this, postbox) )
         } else {
-            return ( getcardForNewMailUser() ) //if not user of digipost and E-boks
+            return ( getcardForNewMailUser(this) ) //if not user of digipost and E-boks
         }
     }
 }
