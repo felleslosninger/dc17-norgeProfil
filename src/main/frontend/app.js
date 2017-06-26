@@ -15,7 +15,10 @@ var Mail = require('./components/Mail.js');
 var Username = require('./components/Username.js');
 var Feed = require('./components/Feed.js');
 var NavigationBar = require('./components/NavigationBar.js');
+
 var Reserved = require('./components/Reserved.js');
+
+var Gamification = require('./components/Gamification.js');
 
 
 const App = () => {
@@ -29,6 +32,8 @@ const App = () => {
                     <Col sm={6} md={3} ><EID/></Col>
                     <Col sm={6} md={3} ><Reservation/></Col>
                 </Row>
+                <Gamification/>
+                <div className="page-header"><h3>Aktivitetslogg</h3></div>
                 <Feed/>
             </div>
         </MuiThemeProvider>

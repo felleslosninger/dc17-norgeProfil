@@ -7,20 +7,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 7em;
+    margin-left: 7em;
 }
 
 #navbar {
     width: 100%;
 }
 
-.User {
-    border-bottom: 1px solid lightgrey;
-    width: 30%;
-    margin-bottom: 50px;
+.page-header {
+    width: 22%;
 }
 
 .Feed {
-    margin-top: 5%;
+    /*margin-top: 5%;*/
+    height: 70%;
 }
 
 .Icon {
@@ -28,8 +29,8 @@ body {
 }
 
 
-.EditBtn {
-    position: absolute;
-    right:    0;
-    bottom:   0;
+.Gamification {
+    margin-top: 2%;
 }
+
+
