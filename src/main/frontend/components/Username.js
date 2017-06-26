@@ -11,9 +11,9 @@ class Username extends React.Component {
         let user = "Fornavn Etternavn";
 
         return (
-            <div className="User">
-                <h1>{user}</h1>
-            </div>
+                <div className="page-header">
+                    <h1>{user}</h1>
+                </div>
         )
     }
 }
