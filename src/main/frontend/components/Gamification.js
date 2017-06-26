@@ -1,16 +1,17 @@
 var React = require("react");
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
-var Overlay = require('react-bootstrap/lib/Overlay');
 var Popover = require('react-bootstrap/lib/Popover');
-
+var OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
 
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import LinearProgress from 'material-ui/LinearProgress';
 import Done from 'material-ui/svg-icons/action/done'
+import Info from 'material-ui/svg-icons/action/info-outline'
 import Remove from 'material-ui/svg-icons/content/remove'
 import Subheader from 'material-ui/Subheader';
+import IconButton from 'material-ui/IconButton';
 
 class Gamification extends React.Component {
 
@@ -18,67 +19,58 @@ class Gamification extends React.Component {
         super(props);
 
         this.state = {
-            show: true,
-            completed: 64,
-            open: false
+            percent: 84,
         };
+
     };
 
-    handleNestedListToggle(item) {
-        this.setState({
-            open: item.state.open,
-        });
-    };
 
     render() {
 
-        let percent = this.state.completed;
+        let percent = this.state.percent;
 
-        const tooltip =(
-            <Popover id="tool" className="ToolTip">
-                <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
-                <ListItem
-                    key={0}
-                    primaryText="Steg: "
-                    initiallyOpen={false}
-                    primaryTogglesNestedList={true}
-                    nestedItems={[
-                        <ListItem
-                            key={1}
-                            primaryText="Mobilnummer"
-                            leftIcon={<Done />}
-                            disabled={true}
-                        />,
-                        <ListItem
-                            key={2}
-                            primaryText="Email"
-                            leftIcon={<Done />}
-                            disabled={true}
-                        />,
-                        <Divider/>,
-                        <ListItem
-                            key={3}
-                            primaryText="Digital postkasse"
-                            leftIcon={<Remove />}
-                            disabled={true}
-                        />
-                    ]}
-                />
-            </Popover>);
+        const popover = (
+            <Popover id="popover-positioned-bottom">
+                <List>
+                    <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
+                    <ListItem
+                        primaryText="E-mail"
+                        leftIcon={<Done />}
+                        disabled={true}
+                    />
+                    <ListItem
+                        primaryText="Mobilnummer"
+                        leftIcon={<Done />}
+                        disabled={true}
+                    />
+                    <Divider/>
+                    <ListItem
+                        primaryText="Digital postkasse"
+                        leftIcon={<Remove />}
+                        disabled={true}
+                    />
+                </List>
+            </Popover>
+        );
 
-        const sharedProps = {
-            show: this.state.show,
-            container: this,
-        };
+        const styles = {
+            marginTop: '1.5%'
+        }
 
 
         return (
-            <div style={{position: 'relative' }}>
-                <LinearProgress mode="determinate" value={this.state.completed}/>
-                <Overlay {...sharedProps} placement="bottom">
-                    { tooltip }
-                </Overlay>
-            </div>
+            <Row className="Gamification">
+                <Col md={11}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={this.state.percent}/></Col>
+                <Col md={1}>
+                    <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
+                        <IconButton>
+                            <Info/>
+                        </IconButton>
+                    </OverlayTrigger>
+                </Col>
+
+
+            </Row>
         );
     }
 }
