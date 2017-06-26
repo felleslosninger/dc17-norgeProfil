@@ -1,3 +1,6 @@
+/**
+ * Created by camp-mso on 23.06.2017.
+ */
 var React = require("react");
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
@@ -8,7 +11,7 @@ import Help from 'material-ui/svg-icons/action/help';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
-class Reservation extends React.Component {
+class Reserved extends React.Component {
 
     constructor(props) {
         super(props);
@@ -69,6 +72,10 @@ class Reservation extends React.Component {
                     </div>
                 </Row>
                 <CardText className="CardText">
+                    Du har nå reservert deg mot kommunikasjon på nett fra det offentlige. Du vil fra nå motta vedtak og andre brev med innhold som er viktig for deg kun på papir.
+                    <br/><br/>
+                    Ved å fjerne reservasjon kan stat og kommune sende deg vedtak og andre viktige brev digitalt.
+                    <br/><br/>
                     Om du reserverer deg mot kommunikasjon på nett vil du motta viktige brev fra det offentlige kun på papir.
                     Stat og kommune kan likevel sende deg annen informasjon på e-post, sms eller som brev digitalt.<a href="http://eid.difi.no/nb/reserver-deg-mot-kommunikasjon-pa-nett"> Les mer</a>
                 </CardText>
@@ -78,4 +85,4 @@ class Reservation extends React.Component {
 }
 
 
-module.exports = Reservation;
+module.exports = Reserved;

@@ -15,6 +15,9 @@ var Mail = require('./components/Mail.js');
 var Username = require('./components/Username.js');
 var Feed = require('./components/Feed.js');
 var NavigationBar = require('./components/NavigationBar.js');
+
+var Reserved = require('./components/Reserved.js');
+
 var Gamification = require('./components/Gamification.js');
 
 
