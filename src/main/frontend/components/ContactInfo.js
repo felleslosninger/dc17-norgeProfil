@@ -31,11 +31,11 @@ class ContactInfoCard extends React.Component {
         this.handleClose = this.handleClose.bind(this);
     };
 
-    handleOpen () {
+    handleOpen() {
         this.setState({open: true});
     };
 
-    handleClose () {
+    handleClose() {
         this.setState({open: false});
     };
 
@@ -46,16 +46,16 @@ class ContactInfoCard extends React.Component {
     }
 
 
-    saveInfo () {
+    saveInfo() {
         console.log("saved");
         console.log("Email: ", this.state.email, "Phone: ", this.state.phone);
         this.setState({modalIsOpen: false});
-    //    Save email + phone to DB
+        //    Save email + phone to DB
 
     };
 
 
-    render () {
+    render() {
 
         const actions = [
             <FlatButton
@@ -76,55 +76,58 @@ class ContactInfoCard extends React.Component {
 
 
         return (
-           <Card className="Card">
-               <Row>
-                   <div className="HeaderRow">
-                       <Row className="Headline">
-                           <Col md={1} className="Icon">{<ActionInfo />}</Col>
-                           <Col md={10}><h4>Kontaktinformasjon</h4></Col>
-                       </Row>
-                   </div>
-               </Row>
+            <Card className="Card">
+                <Row className="CardHeader">
+                    <Col md={1} className="Icon">{<ActionInfo />}</Col>
+                    <Col md={10}><h4>Kontaktinformasjon</h4></Col>
+                </Row>
+                <hr className="Headline"/>
                 <CardText className="CardText">
-                    <div className="CardInfoText"><small>Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke når de kontakter deg.</small></div>
+                    <div className="CardInfoText">
+                        <small>Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
+                            når de kontakter deg.
+                        </small>
+                    </div>
                     <List>
                         <ListItem disabled={true} primaryText="Email: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
-                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber} leftIcon={<PhoneIcon/>}/>
+                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber}
+                                  leftIcon={<PhoneIcon/>}/>
                     </List>
                     <div className="EditBtn">
                         <FlatButton
+                            label="Endre kontaktinformasjon"
                             primary={true}
                             icon={<Edit />}
                             onTouchTap={this.handleOpen}/>
                     </div>
                 </CardText>
-               <Dialog
-                   title="Endre kontaktinformasjon"
-                   actions={actions}
-                   modal={false}
-                   open={this.state.open}
-                   onRequestClose={this.handleClose}>
-                       <Row className="EditInfo">
-                           <Col>
-                               <TextField
-                                   hintText={eMail}
-                                   floatingLabelText="E-post"
-                                   name = "email"
-                                   value = { this.state.email }
-                                   onChange = { this.handleChange }
-                               />
-                           </Col>
-                           <Col>
-                               <TextField
-                                   hintText={phoneNumber}
-                                   floatingLabelText="Mobilnummer"
-                                   name = "phone"
-                                   value = { this.state.phone }
-                                   onChange = { this.handleChange }
-                               />
-                           </Col>
-                       </Row>
-               </Dialog>
+                <Dialog
+                    title="Endre kontaktinformasjon"
+                    actions={actions}
+                    modal={false}
+                    open={this.state.open}
+                    onRequestClose={this.handleClose}>
+                    <Row className="EditInfo">
+                        <Col>
+                            <TextField
+                                hintText={eMail}
+                                floatingLabelText="E-post"
+                                name="email"
+                                value={ this.state.email }
+                                onChange={ this.handleChange }
+                            />
+                        </Col>
+                        <Col>
+                            <TextField
+                                hintText={phoneNumber}
+                                floatingLabelText="Mobilnummer"
+                                name="phone"
+                                value={ this.state.phone }
+                                onChange={ this.handleChange }
+                            />
+                        </Col>
+                    </Row>
+                </Dialog>
             </Card>
 
         )

@@ -28,12 +28,12 @@ class Mail extends React.Component {
     };
 
     handleChange() {
-        if(this.state.postbox == 'E-boks'){
-            this.setState({postbox:'Digipost'});
+        if (this.state.postbox == 'E-boks') {
+            this.setState({postbox: 'Digipost'});
         } else {
-            this.setState({postbox:'E-boks'});
+            this.setState({postbox: 'E-boks'});
         }
-        this.setState({open:false});
+        this.setState({open: false});
     }
 
     saveInfo() {
@@ -42,30 +42,15 @@ class Mail extends React.Component {
         this.setState({open: false});
     };
 
-    handleOpen(){
+    handleOpen() {
         this.setState({open: true});
     };
 
-    handleClose(){
+    handleClose() {
         this.setState({open: false});
     };
 
     render() {
-        const urlListStyle = {
-            listStyleType: 'none',
-            float: 'left',
-            width:'150px',
-            height:'75px'
-        };
-
-        const urlElementListStyle = {
-            display: 'block',
-            backgroundColor:'white',
-            color: 'black',
-            border: '2px solid #e7e7e7'
-        };
-
-
 
         const actions = [
             <FlatButton
@@ -81,46 +66,42 @@ class Mail extends React.Component {
             />,
         ];
 
-        var getcardForNewMailUser = function(){
-            return ( <Card className="Card">
-                <Row>
-                    <div className="HeaderRow">
-                        <Row className="Headline">
-                            <Col md={1} className="Icon">{<Email />}</Col>
-                            <Col md={10}><h4>Digital postkasse</h4></Col>
-                        </Row>
-                    </div>
-                </Row>
-                <CardText className="CardText">
-                    <p>
-                    Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
-                    hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige. For å opprette
-                        en digital postkasse må du ha norsk fødselsnummer eller D-nummer, samt elektronisk ID fra
-                        BankID, BankID på mobil, Buypass eller Commfides.
-                    </p>
-                    <FlatButton
-                        label="Opprett Digipost"
-                        href="https://www.digipost.no/app/registrering#/"
-                    />
-                    <FlatButton
-                        label="Opprett E-boks"
-                        href="https://www.e-boks.com/norge/nb/ny-bruker/"
+        var getcardForNewMailUser = function () {
+            return (
+                <Card className="Card">
+                    <Row className="CardHeader">
+                        <Col md={1} className="Icon">{<Email />}</Col>
+                        <Col md={10}><h4>Digital postkasse</h4></Col>
+                    </Row>
+                    <hr className="Headline"/>
+                    <CardText className="CardText">
+                        <p>
+                            Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
+                            hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige. For å
+                            opprette
+                            en digital postkasse må du ha norsk fødselsnummer eller D-nummer, samt elektronisk ID fra
+                            BankID, BankID på mobil, Buypass eller Commfides.
+                        </p>
+                        <FlatButton
+                            label="Opprett Digipost"
+                            href="https://www.digipost.no/app/registrering#/"
                         />
-                </CardText>
-            </Card> )
+                        <FlatButton
+                            label="Opprett E-boks"
+                            href="https://www.e-boks.com/norge/nb/ny-bruker/"
+                        />
+                    </CardText>
+                </Card> )
         };
 
         var getcardForExistingMailUser = function (mail, postbox) {
             return (
                 <Card className="Card">
-                    <Row>
-                        <div className="HeaderRow">
-                            <div className="Headline">
-                                <Col md={1} className="Icon">{<Email />}</Col>
-                                <Col md={10}><h4>Digital postkasse</h4></Col>
-                            </div>
-                        </div>
+                    <Row className="CardHeader">
+                        <Col md={1} className="Icon">{<Email />}</Col>
+                        <Col md={10}><h4>Digital postkasse</h4></Col>
                     </Row>
+                    <hr className="Headline"/>
                     <CardText className="CardText">
                         <div className="CardInfoText"> Du har valgt å motta og oppbevare post fra det offentlige
                             hos { postbox }. Du åpner den digitale postkassen ved å logge inn via hjemmesiden deres.
@@ -133,24 +114,24 @@ class Mail extends React.Component {
                                 onTouchTap={mail.handleOpen}/>
                         </div>
                     </CardText>
-                        <Dialog
-                            title="Endre din digital postkasse"
-                            actions={actions}
-                            modal={false}
-                            open={mail.state.open}
-                            onRequestClose={mail.handleClose}
-                        >
-                            <div>
-                                Ønsker du virkelig å endre din digitale postkasse?
-                            </div>
-                        </Dialog>
+                    <Dialog
+                        title="Endre din digital postkasse"
+                        actions={actions}
+                        modal={false}
+                        open={mail.state.open}
+                        onRequestClose={mail.handleClose}
+                    >
+                        <div>
+                            Ønsker du å endre din digitale postkasse?
+                        </div>
+                    </Dialog>
                 </Card>
             );
         };
 
 
         let postbox = this.state.postbox;
-        if(postbox == 'Digipost' || postbox == 'E-boks') {
+        if (postbox == 'Digipost' || postbox == 'E-boks') {
             return ( getcardForExistingMailUser(this, postbox) )
         } else {
             return ( getcardForNewMailUser() ) //if not user of digipost and E-boks
