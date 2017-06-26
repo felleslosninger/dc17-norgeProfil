@@ -25,6 +25,7 @@ class Gamification extends React.Component {
     };
 
 
+
     render() {
 
         let percent = this.state.percent;
@@ -54,16 +55,25 @@ class Gamification extends React.Component {
         );
 
         const styles = {
-            marginTop: '1.5%'
-        }
+            marginTop: '1.5%',
+        };
 
+
+        const AlignIcon = {
+            left: '60px'
+        };
+
+        const centering = {
+            margin: "0 auto",
+            width: '100%'
+        };
 
         return (
-            <Row className="Gamification">
+            <Row className="Gamification" style={centering}>
                 <Col md={11}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={this.state.percent}/></Col>
-                <Col md={1}>
+                <Col mdOffset={11.5}>
                     <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
-                        <IconButton>
+                        <IconButton style={AlignIcon}>
                             <Info/>
                         </IconButton>
                     </OverlayTrigger>
