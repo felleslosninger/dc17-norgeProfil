@@ -59,32 +59,62 @@ class Feed extends React.Component {
             </IconMenu>
         );
 
-        const activityList = (
+        const yourActivityList = (
             <List>
-                <Subheader>Dato</Subheader>
                 <ListItem
-                    leftAvatar={<Example />}
+                    leftAvatar={<img src="img/bankid.png" width={52}/>}
                     rightIconButton={rightIconMenu}
                     primaryText="BankID"
                     disabled={true}
                     secondaryText={
                         <p>
                             <span style={{color: darkBlack}}>Danske Bank</span><br />
-                            14:32
+                            16 Juni 2017 14:32
                         </p>
                     }
                     secondaryTextLines={2}
                 />
                 <Divider inset={true} />
                 <ListItem
-                    leftAvatar={<Example />}
+                    leftAvatar={<img src="img/minid.png" width={52}/>}
                     rightIconButton={rightIconMenu}
                     primaryText="MinID"
                     disabled={true}
                     secondaryText={
                         <p>
                             <span style={{color: darkBlack}}>Skattetaten</span><br />
-                            22:13
+                            18 Juli 2017 22:13
+                        </p>
+                    }
+                    secondaryTextLines={2}
+                />
+                <Divider inset={true} />
+            </List>
+        );
+
+        const publicSectorsActivityList = (
+            <List>
+                <ListItem
+                    leftAvatar={<Example/>}
+                    rightIconButton={rightIconMenu}
+                    primaryText="Colosseum Tannlege"
+                    disabled={true}
+                    secondaryText={
+                        <p>
+                            <span style={{color: darkBlack}}>Mobilnummer</span><br />
+                        </p>
+                    }
+                    secondaryTextLines={2}
+                />
+                <Divider inset={true} />
+                <ListItem
+                    leftAvatar={<Example/>}
+                    rightIconButton={rightIconMenu}
+                    primaryText="Skatteetaten"
+                    disabled={true}
+                    secondaryText={
+                        <p>
+                            <span style={{color: darkBlack}}>E-mail</span><br />
                         </p>
                     }
                     secondaryTextLines={2}
@@ -99,22 +129,18 @@ class Feed extends React.Component {
                     onChange={this.handleChange}
                     value={this.state.slideIndex}
                 >
-                    <Tab label="Nylig aktivitet" value={0}/>
-                    <Tab label="Din aktivitet" value={1}/>
-                    <Tab label="Offentlig sektors aktivitet" value={2}/>
+                    <Tab label="Din aktivitet" value={0}/>
+                    <Tab label="Offentlig sektors aktivitet" value={1}/>
                 </Tabs>
                 <SwipeableViews
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                 >
                     <div>
-                        {activityList}
+                        {yourActivityList}
                     </div>
                     <div style={styles.slide}>
-                        {activityList}
-                    </div>
-                    <div style={styles.slide}>
-                        {activityList}
+                        {publicSectorsActivityList}
                     </div>
                 </SwipeableViews>
             </Card>
