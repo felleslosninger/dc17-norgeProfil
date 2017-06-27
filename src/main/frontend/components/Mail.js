@@ -87,9 +87,9 @@ class Mail extends React.Component {
 
         let img = null;
         if (this.state.postbox == 'E-boks') {
-            img = (<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={100} height={'auto'} alt="logo til E-boks"/>)
+            img = (<img src="img/eboks.png" width={100} height={'auto'} alt="logo til E-boks"/>)
         } else {
-            img = (<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={100} height={'auto'} alt="logo til digipost"/>)
+            img = (<img src="img/digipost.png" width={100} height={'auto'} alt="logo til digipost"/>)
         }
 
         var getcardForNewMailUser = function (mail) {
@@ -187,14 +187,14 @@ class Mail extends React.Component {
                         </p>
                         <br/>
                         <FlatButton
-                            icon={<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={70} height={'auto'} alt="logo til digipost"/>}
+                            icon={<img src="img/digipost.png" width={70} height={'auto'} alt="logo til digipost"/>}
                             primary={true}
                             label="Opprett Digipost"
                             href="https://www.digipost.no/app/registrering#/"
                         />
                         <br/>
                         <FlatButton
-                            icon={<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={70} height={'auto'} alt="logo til E-boks"/>}
+                            icon={<img src="img/eboks.png" width={70} height={'auto'} alt="logo til E-boks"/>}
                             primary={true}
                             label="Opprett E-boks"
                             href="https://www.e-boks.com/norge/nb/ny-bruker/"
