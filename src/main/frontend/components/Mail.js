@@ -9,8 +9,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
 import {List, ListItem} from 'material-ui/List';
-import Help from 'material-ui/svg-icons/action/help';
-import PostboxIcon from 'material-ui/svg-icons/communication/message';
+import Help from 'material-ui/svg-icons/action/help-outline';
 import Toggle from 'material-ui/Toggle';
 
 
