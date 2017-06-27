@@ -3,6 +3,8 @@ var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
 
+
+
 import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import {List, ListItem} from 'material-ui/List';
@@ -12,19 +14,18 @@ import ActionInfo from 'material-ui/svg-icons/action/info';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
 import PhoneIcon from 'material-ui/svg-icons/communication/contact-phone';
 import EmailIcon from 'material-ui/svg-icons/communication/contact-mail';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+
 class ContactInfoCard extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
-            open: false,
-            email: '',
-            phone: ''
+            open: false
         };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.saveInfo = this.saveInfo.bind(this);
+        this.handleSave = this.handleSave.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
     };
@@ -37,18 +38,10 @@ class ContactInfoCard extends React.Component {
         this.setState({open: false});
     };
 
-    handleChange({target}) {
-        this.setState({
-            [target.name]: target.value
-        });
-    }
 
-
-    saveInfo() {
-        console.log("saved");
-        console.log("Email: ", this.state.email, "Phone: ", this.state.phone);
+    handleSave(value) {
         this.setState({modalIsOpen: false});
-        //    Save email + phone to DB
+        this.props.onSave(value);
 
     };
 
@@ -65,12 +58,9 @@ class ContactInfoCard extends React.Component {
                 label="Lagre"
                 primary={true}
                 keyboardFocused={true}
-                onTouchTap={this.handleClose}
+                onTouchTap={this.handleSave}
             />,
         ];
-
-        let phoneNumber = this.state.phone; // get from DB
-        let eMail = this.state.email; // get from DB
 
 
         return (
@@ -86,8 +76,8 @@ class ContactInfoCard extends React.Component {
                             når de kontakter deg.
                     </div>
                     <List>
-                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
-                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber}
+                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={this.props.placeholderEmail} leftIcon={<EmailIcon />}/>
+                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={this.props.placeholderPhone}
                                   leftIcon={<PhoneIcon/>}/>
                     </List>
                     <div className="EditBtn">
@@ -107,20 +97,18 @@ class ContactInfoCard extends React.Component {
                     <Row className="EditInfo">
                         <Col>
                             <TextField
-                                hintText={eMail}
+                                searchText={this.props.savedEmail}
+                                hintText={this.props.placeholderEmail}
                                 floatingLabelText="E-post"
                                 name="email"
-                                value={ this.state.email }
-                                onChange={ this.handleChange }
                             />
                         </Col>
                         <Col>
                             <TextField
-                                hintText={phoneNumber}
+                                searchText={this.props.savedPhone}
+                                hintText={this.props.placeholderPhone}
                                 floatingLabelText="Mobilnummer"
                                 name="phone"
-                                value={ this.state.phone }
-                                onChange={ this.handleChange }
                             />
                         </Col>
                     </Row>
@@ -131,4 +119,13 @@ class ContactInfoCard extends React.Component {
     }
 }
 
-module.exports = ContactInfoCard;
+ContactInfoCard.propTypes = {
+    onSave: React.PropTypes.func.isRequired,
+    placeholderPhone: React.PropTypes.string,
+    placeholderEmail: React.PropTypes.string,
+    savedPhone: React.PropTypes.string.isRequired,
+    savedEmail: React.PropTypes.string.isRequired,
+
+};
+
+export default ContactInfoCard;
