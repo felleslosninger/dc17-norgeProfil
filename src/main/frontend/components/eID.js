@@ -2,7 +2,7 @@ var React = require("react");
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
-import {Card, CardHeader, CardText} from 'material-ui/Card';
+import {Card, CardText} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -10,6 +10,7 @@ import Help from 'material-ui/svg-icons/action/help-outline';
 import CheckIcon from 'material-ui/svg-icons/action/check-circle';
 import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
 import EidIcon from 'material-ui/svg-icons/action/extension';
+import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
@@ -25,6 +26,7 @@ class EID extends React.Component {
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
     };
+
 
     handleOpen() {
         this.setState({open: true});
@@ -50,7 +52,6 @@ class EID extends React.Component {
                 onTouchTap={this.handleClose}
             />,
         ];
-
 
         return (
             <Card className="Card">
@@ -188,6 +189,7 @@ class EID extends React.Component {
                                       disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="Commfides" leftIcon={<CancelIcon />}
                                       disabled={true}/>
+
                         </Menu>
                     </div>
                 </CardText>
