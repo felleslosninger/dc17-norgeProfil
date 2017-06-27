@@ -92,6 +92,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Kva er ein digital postkasse?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
                                         Ein digital postkasse er ei sikker løysing for å få og oppbevare viktig post
@@ -109,6 +110,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Er digital postkasse det same som E-post?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
                                         Nei, ein digital postkasse er sikrare enn e-post fordi både avsendar og
@@ -123,6 +125,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Kven kan opprette ein digital postkasse?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
                                         For å opprette ein digital postkasse må du ha
@@ -138,6 +141,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Kan eg ha to digitale postkassar?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
                                         Ja, men til post frå det offentlege må du velje ein av postkassane, slik at
@@ -151,6 +155,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Kostar det noko å ha digital postkasse?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
                                         Nei, digital postkasse er gratis å opprette og bruke for innbyggjarane.

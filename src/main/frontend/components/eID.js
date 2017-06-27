@@ -69,6 +69,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="MinID"
                             initiallyOpen={false}
+                            primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/minid.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
@@ -97,6 +98,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="BankID"
                             initiallyOpen={false}
+                            primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/bankid.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
@@ -115,6 +117,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="BankID på mobil"
                             initiallyOpen={false}
+                            primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/bankid_pa_mobil.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
@@ -132,6 +135,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="Buypass ID"
                             initiallyOpen={false}
+                            primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/buypass.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
@@ -150,6 +154,7 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="Commfides"
                             initiallyOpen={false}
+                            primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/commfides.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
