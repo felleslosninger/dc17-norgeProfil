@@ -102,6 +102,7 @@ class Feed extends React.Component {
                     secondaryText={
                         <p>
                             <span style={{color: darkBlack}}>Mobilnummer</span><br />
+                            10 Desember 2016 20:10
                         </p>
                     }
                     secondaryTextLines={2}
@@ -115,6 +116,7 @@ class Feed extends React.Component {
                     secondaryText={
                         <p>
                             <span style={{color: darkBlack}}>E-mail</span><br />
+                            09 Juni 2017 08:17
                         </p>
                     }
                     secondaryTextLines={2}
