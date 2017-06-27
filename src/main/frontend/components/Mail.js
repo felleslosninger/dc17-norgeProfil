@@ -27,11 +27,16 @@ class Mail extends React.Component {
         this.saveInfo = this.saveInfo.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.deleteAccount = this.deleteAccount.bind(this);
+        this.setPostbox = this.setPostbox.bind(this);
+        this.removePostbox = this.removePostbox.bind(this);
     };
 
-    deleteAccount(){
-        this.setState({postbox:''});
+    setPostbox(){
+        this.setState({postbox: 'E-boks'});
+    }
+
+    removePostbox() {
+        this.setState({postbox: ''});
     }
 
     handleChange() {
@@ -58,9 +63,6 @@ class Mail extends React.Component {
     };
 
     render() {
-        const toggleStyle = {
-            marginBottom: 16
-        };
 
         const actions = [
             <FlatButton
@@ -84,6 +86,12 @@ class Mail extends React.Component {
             />,
         ];
 
+        let img = null;
+        if (this.state.postbox == 'E-boks') {
+            img = (<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={100} height={'auto'} alt="logo til E-boks"/>)
+        } else {
+            img = (<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={100} height={'auto'} alt="logo til digipost"/>)
+        }
 
         var getcardForNewMailUser = function (mail) {
             return (
@@ -175,26 +183,29 @@ class Mail extends React.Component {
                     <hr className="Headline"/>
                     <CardText className="CardText">
                         <p>
-                            Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
-                            hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
+                        Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
+                        hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
                         </p>
                         <br/>
                         <FlatButton
-                            icon={<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={100} height={50} alt="logo til digipost"/>}
+                            icon={<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={70} height={'auto'} alt="logo til digipost"/>}
+                            primary={true}
                             label="Opprett Digipost"
                             href="https://www.digipost.no/app/registrering#/"
                         />
+                        <br/>
                         <FlatButton
-                            icon={<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={100} height={30} alt="logo til E-boks"/>}
+                            icon={<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={70} height={'auto'} alt="logo til E-boks"/>}
+                            primary={true}
                             label="Opprett E-boks"
                             href="https://www.e-boks.com/norge/nb/ny-bruker/"
                         />
-                        <Toggle
-                            className="ToggleBtn"
-                            label="Bytt kort"
-                            onToggle={mail.handleChange}
-                            defaultToggled={false}
-                        />
+                        <div className="ToggleBtn">
+                            <Toggle
+                                onToggle={mail.setPostbox}
+                                defaultToggled={false}
+                            />
+                        </div>
                     </CardText>
                 </Card> )
         };
@@ -209,10 +220,10 @@ class Mail extends React.Component {
                     <hr className="Headline"/>
                     <CardText className="CardText">
                         <div className="CardInfoText">
-                            Du kan nå motta og oppbevare post fra det offentlige, dersom du ikke har
-                            valgt å reservere deg mot nettkommunikasjon.
-                            <br/> <br/>
-                            <div> <PostboxIcon/>  Valgt postkasse:   { postbox } </div>
+                            <Row>
+                                <Col md={4}>{img}</Col>
+                                <Col md={8}>Du mottar idag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
+                            </Row>
                         </div>
                         <div className="EditBtn">
                             <FlatButton
@@ -221,12 +232,12 @@ class Mail extends React.Component {
                                 icon={<Edit />}
                                 onTouchTap={mail.handleOpen}/>
                         </div>
-                        <Toggle
-                            className="ToggleBtn"
-                            label="Bytt kort"
-                            onToggle={mail.deleteAccount}
-                            defaultToggled={true}
-                        />
+                        <div className="ToggleBtn">
+                            <Toggle
+                                onToggle={mail.removePostbox}
+                                defaultToggled={true}
+                            />
+                        </div>
                     </CardText>
                     <Dialog
                         title="Endre din digital postkasse"
@@ -236,7 +247,7 @@ class Mail extends React.Component {
                         onRequestClose={mail.handleClose}
                     >
                         <div>
-                            Ønsker du virkelig å endre din digitale postkasse?
+                            Ønsker du å endre din digitale postkasse?
                         </div>
                     </Dialog>
                 </Card>
