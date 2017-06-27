@@ -6,7 +6,7 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import Help from 'material-ui/svg-icons/action/help';
+import Help from 'material-ui/svg-icons/action/help-outline';
 import CheckIcon from 'material-ui/svg-icons/action/check-circle';
 import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
 import EidIcon from 'material-ui/svg-icons/action/extension';
@@ -69,7 +69,8 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="MinID"
                             initiallyOpen={false}
-                            leftIcon={<img src="img/minid.png" width={100}/>}
+                            primaryTogglesNestedList={true}
+                            leftAvatar={<img src="img/minid.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     MinID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på
@@ -97,7 +98,8 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="BankID"
                             initiallyOpen={false}
-                            leftIcon={<img src="img/bankid.png" width={100}/>}
+                            primaryTogglesNestedList={true}
+                            leftAvatar={<img src="img/bankid.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     BankID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på
@@ -115,7 +117,8 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="BankID på mobil"
                             initiallyOpen={false}
-                            leftIcon={<img src="img/bankid_pa_mobil.png" width={100}/>}
+                            primaryTogglesNestedList={true}
+                            leftAvatar={<img src="img/bankid_pa_mobil.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     BankID på mobil er ein personleg, elektronisk ID som gir tilgang til offentlege
@@ -132,7 +135,8 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="Buypass ID"
                             initiallyOpen={false}
-                            leftIcon={<img src="img/buypass.png" width={100}/>}
+                            primaryTogglesNestedList={true}
+                            leftAvatar={<img src="img/buypass.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     Buypass ID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester
@@ -150,7 +154,8 @@ class EID extends React.Component {
                         <ListItem
                             primaryText="Commfides"
                             initiallyOpen={false}
-                            leftIcon={<img src="img/commfides.png" width={100}/>}
+                            primaryTogglesNestedList={true}
+                            leftAvatar={<img src="img/commfides.png" width={40}/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="eidInfo">
                                     Commfides er ein personleg, elektronisk ID som gir tilgang til offentlege tenester
