@@ -27,16 +27,11 @@ class Mail extends React.Component {
         this.saveInfo = this.saveInfo.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.setPostbox = this.setPostbox.bind(this);
-        this.removePostbox = this.removePostbox.bind(this);
+        this.deleteAccount = this.deleteAccount.bind(this);
     };
 
-    setPostbox(){
-        this.setState({postbox: 'E-boks'});
-    }
-
-    removePostbox() {
-        this.setState({postbox: ''});
+    deleteAccount(){
+        this.setState({postbox:''});
     }
 
     handleChange() {
@@ -63,6 +58,9 @@ class Mail extends React.Component {
     };
 
     render() {
+        const toggleStyle = {
+            marginBottom: 16
+        };
 
         const actions = [
             <FlatButton
@@ -177,8 +175,8 @@ class Mail extends React.Component {
                     <hr className="Headline"/>
                     <CardText className="CardText">
                         <p>
-                        Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
-                        hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
+                            Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
+                            hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
                         </p>
                         <br/>
                         <FlatButton
@@ -191,12 +189,12 @@ class Mail extends React.Component {
                             label="Opprett E-boks"
                             href="https://www.e-boks.com/norge/nb/ny-bruker/"
                         />
-                        <div className="ToggleBtn">
-                            <Toggle
-                                onToggle={mail.setPostbox}
-                                defaultToggled={false}
-                            />
-                        </div>
+                        <Toggle
+                            className="ToggleBtn"
+                            label="Bytt kort"
+                            onToggle={mail.handleChange}
+                            defaultToggled={false}
+                        />
                     </CardText>
                 </Card> )
         };
@@ -211,8 +209,8 @@ class Mail extends React.Component {
                     <hr className="Headline"/>
                     <CardText className="CardText">
                         <div className="CardInfoText">
-                             Du kan nå motta og oppbevare post fra det offentlige, dersom du ikke har
-                                valgt å reservere deg mot nettkommunikasjon.
+                            Du kan nå motta og oppbevare post fra det offentlige, dersom du ikke har
+                            valgt å reservere deg mot nettkommunikasjon.
                             <br/> <br/>
                             <div> <PostboxIcon/>  Valgt postkasse:   { postbox } </div>
                         </div>
@@ -223,12 +221,12 @@ class Mail extends React.Component {
                                 icon={<Edit />}
                                 onTouchTap={mail.handleOpen}/>
                         </div>
-                        <div className="ToggleBtn">
-                            <Toggle
-                                onToggle={mail.removePostbox}
-                                defaultToggled={true}
-                            />
-                        </div>
+                        <Toggle
+                            className="ToggleBtn"
+                            label="Bytt kort"
+                            onToggle={mail.deleteAccount}
+                            defaultToggled={true}
+                        />
                     </CardText>
                     <Dialog
                         title="Endre din digital postkasse"
@@ -238,7 +236,7 @@ class Mail extends React.Component {
                         onRequestClose={mail.handleClose}
                     >
                         <div>
-                            Ønsker du å endre din digitale postkasse?
+                            Ønsker du virkelig å endre din digitale postkasse?
                         </div>
                     </Dialog>
                 </Card>

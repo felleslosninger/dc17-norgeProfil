@@ -4,7 +4,7 @@ var Col = require('react-bootstrap/lib/Col');
 
 import {Card, CardText} from 'material-ui/Card';
 import NotificationsOff from 'material-ui/svg-icons/social/notifications-off';
-import Help from 'material-ui/svg-icons/action/help';
+import Help from 'material-ui/svg-icons/action/help-outline';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
