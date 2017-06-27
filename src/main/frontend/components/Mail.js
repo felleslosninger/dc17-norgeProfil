@@ -27,11 +27,16 @@ class Mail extends React.Component {
         this.saveInfo = this.saveInfo.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.deleteAccount = this.deleteAccount.bind(this);
+        this.setPostbox = this.setPostbox.bind(this);
+        this.removePostbox = this.removePostbox.bind(this);
     };
 
-    deleteAccount(){
-        this.setState({postbox:''});
+    setPostbox(){
+        this.setState({postbox: 'E-boks'});
+    }
+
+    removePostbox() {
+        this.setState({postbox: ''});
     }
 
     handleChange() {
@@ -58,9 +63,6 @@ class Mail extends React.Component {
     };
 
     render() {
-        const toggleStyle = {
-            marginBottom: 16
-        };
 
         const actions = [
             <FlatButton
@@ -189,12 +191,12 @@ class Mail extends React.Component {
                             label="Opprett E-boks"
                             href="https://www.e-boks.com/norge/nb/ny-bruker/"
                         />
-                        <Toggle
-                            className="ToggleBtn"
-                            label="Bytt kort"
-                            onToggle={mail.handleChange}
-                            defaultToggled={false}
-                        />
+                        <div className="ToggleBtn">
+                            <Toggle
+                                onToggle={mail.setPostbox}
+                                defaultToggled={false}
+                            />
+                        </div>
                     </CardText>
                 </Card> )
         };
@@ -221,12 +223,12 @@ class Mail extends React.Component {
                                 icon={<Edit />}
                                 onTouchTap={mail.handleOpen}/>
                         </div>
-                        <Toggle
-                            className="ToggleBtn"
-                            label="Bytt kort"
-                            onToggle={mail.deleteAccount}
-                            defaultToggled={true}
-                        />
+                        <div className="ToggleBtn">
+                            <Toggle
+                                onToggle={mail.removePostbox}
+                                defaultToggled={true}
+                            />
+                        </div>
                     </CardText>
                     <Dialog
                         title="Endre din digital postkasse"
@@ -236,7 +238,7 @@ class Mail extends React.Component {
                         onRequestClose={mail.handleClose}
                     >
                         <div>
-                            Ønsker du virkelig å endre din digitale postkasse?
+                            Ønsker du å endre din digitale postkasse?
                         </div>
                     </Dialog>
                 </Card>
