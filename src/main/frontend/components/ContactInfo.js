@@ -12,8 +12,6 @@ import ActionInfo from 'material-ui/svg-icons/action/info';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
 import PhoneIcon from 'material-ui/svg-icons/communication/contact-phone';
 import EmailIcon from 'material-ui/svg-icons/communication/contact-mail';
-
-
 class ContactInfoCard extends React.Component {
 
     constructor(props) {
@@ -84,9 +82,8 @@ class ContactInfoCard extends React.Component {
                 <hr className="Headline"/>
                 <CardText className="CardText">
                     <div className="CardInfoText">
-                        <small>Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
+                        Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
                             når de kontakter deg.
-                        </small>
                     </div>
                     <List>
                         <ListItem disabled={true} primaryText="E-mail: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
