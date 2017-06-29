@@ -1,7 +1,17 @@
 var path = require('path');
+var webpack = require('webpack');
+var BundleTracker = require('webpack-bundle-tracker');
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin({
+    name: "common",
+    filename: "common.bundle.js",
+});
+
 
 module.exports = {
-    entry: './src/main/frontend/app.js',
+    entry: {
+        app: './src/main/frontend/app.js',
+        contactInfoContainer: './src/main/frontend/containers/ContactInfoContainer.js'
+    },
     devtool: 'sourcemaps',
     cache: true,
     debug: true,
@@ -12,7 +22,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: path.join(__dirname, '.'),
+                test: /\.jsx?$/,
                 exclude: /(node_modules)/,
                 loader: 'babel',
                 query: {
@@ -25,5 +35,8 @@ module.exports = {
             test: /\.css$/,
             use: [ 'style-loader', 'css-loader' ]
         }]
-    }
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
 };

@@ -4,7 +4,7 @@ import {Provider} from "react-redux";
 import {connect} from "react-redux";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import ContactInfo from '../components/ContactInfo';
+import ContactInfoCard from '../components/ContactInfoCard';
 import { saveContactEmail, saveContactPhone, saveButtonClicked } from '../utilities/actions';
 import configureStore from "../utilities/store";
 
@@ -20,7 +20,7 @@ class ContactInfoContainer extends Component {
     render() {
         return (
             <div>
-                <ContactInfo
+                <ContactInfoCard
                     handleSave={this.props.saveContactButton}
                     savedEmail={this.props.activeContactEmail}
                     savedPhone={this.props.activeContactPhone}

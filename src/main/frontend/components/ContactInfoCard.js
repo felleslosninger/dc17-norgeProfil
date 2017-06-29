@@ -12,6 +12,7 @@ import ActionInfo from 'material-ui/svg-icons/action/info';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
 import PhoneIcon from 'material-ui/svg-icons/communication/contact-phone';
 import EmailIcon from 'material-ui/svg-icons/communication/contact-mail';
+
 class ContactInfoCard extends React.Component {
 
     constructor(props) {
@@ -60,7 +61,6 @@ class ContactInfoCard extends React.Component {
         });
         this.props.savedEmail = this.state.email;
         this.props.savedPhone = this.state.phone;
-        //    Save email + phone to DB
     };
 
 
