@@ -17,10 +17,13 @@ class ContactInfoCard extends React.Component {
     constructor(props) {
         super(props);
 
+        let textfieldEmail = $('email').val();
+        let textfieldPhone = $('phone').val();
+
         this.state = {
             open: false,
-            textfieldEmail: '',
-            textfieldPhone: '',
+            textfieldEmail: textfieldEmail,
+            textfieldPhone: textfieldPhone,
             email: '',
             phone: ''
         };
@@ -37,9 +40,7 @@ class ContactInfoCard extends React.Component {
 
     handleClose() {
         this.setState({
-            open: false,
-            textfieldEmail: '',
-            textfieldPhone: '',
+            open: false
         });
     };
 
@@ -51,17 +52,22 @@ class ContactInfoCard extends React.Component {
     }
 
 
-    handleSave() {
+    handleSave = () => {
         this.setState({
             open: false,
-            email: this.state.textfieldEmail,
-            phone: this.state.textfieldPhone,
+            email:  $('email').val(),
+            phone:  $('phone').val(),
         });
+        this.props.savedEmail = this.state.email;
+        this.props.savedPhone = this.state.phone;
         //    Save email + phone to DB
     };
 
 
     render() {
+
+        $('email').val(this.state.email);
+        $('phone').val(this.state.phone);
 
         const actions = [
             <FlatButton
@@ -77,9 +83,6 @@ class ContactInfoCard extends React.Component {
             />,
         ];
 
-        let phoneNumber = this.state.phone; // get from DB
-        let eMail = this.state.email; // get from DB
-
 
         return (
             <Card className="Card">
@@ -90,12 +93,11 @@ class ContactInfoCard extends React.Component {
                 <hr className="Headline"/>
                 <CardText className="CardText">
                     <div className="CardInfoText">
-                        Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
-                        når de kontakter deg.
+                        ------
                     </div>
                     <List>
-                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
-                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber}
+                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={this.state.email} leftIcon={<EmailIcon />}/>
+                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={this.state.phone}
                                   leftIcon={<PhoneIcon/>}/>
                     </List>
                     <div className="EditBtn">
@@ -126,7 +128,7 @@ class ContactInfoCard extends React.Component {
                         <Col>
                             <TextField
                                 floatingLabelText="Mobilnummer"
-                                hintText={phoneNumber}
+                                hintText={ phoneNumber }
                                 name="textfieldPhone"
                                 ref="phone"
                                 value={ this.state.textfieldPhone }
@@ -141,4 +143,10 @@ class ContactInfoCard extends React.Component {
     }
 }
 
-module.exports = ContactInfoCard;
+ContactInfoCard.propTypes = {
+    handleSave: React.PropTypes.func.isRequired,
+    savedEmail: React.PropTypes.string.isRequired,
+    savedPhone: React.PropTypes.string.isRequired
+};
+
+export default ContactInfoCard;

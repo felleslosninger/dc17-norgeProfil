@@ -7,10 +7,21 @@ const initialState = {
 // REDUCER
 export default function GamificationReducer(state = initialState, action) {
     switch (action.type) {
-        case actionTypes.ADD_CONTACT_INFO:
+        case actionTypes.SAVE_CONTACT_PHONE:
             return {
                 ...state,
-                contactInfo: action.info,
+                activeContactPhone: action.contactPhone,
+            };
+        case actionTypes.SAVE_CONTACT_EMAIL:
+            return {
+                ...state,
+                activeContactEmail: action.contactEmail,
+            };
+        case actionTypes.SAVE_BUTTON_CLICKED:
+            return {
+                ...state,
+                activeContactEmail: '',
+                activeContactPhone: '',
             };
         default:
             return state;

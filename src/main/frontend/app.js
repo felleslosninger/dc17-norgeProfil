@@ -8,7 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-var ContactInfo = require('./components/ContactInfo.js');
+// var ContactInfo = require('./components/ContactInfo.js');
 var EID = require('./components/eID.js');
 var Reservation = require('./components/Reservation.js');
 var Mail = require('./components/Mail.js');
@@ -27,7 +27,7 @@ const App = () => {
             <div>
                 <Username/>
                 <Row>
-                    <Col sm={6} md={3} ><ContactInfo/></Col>
+                    {/*<Col sm={6} md={3} ><ContactInfo/></Col>*/}
                     <Col sm={6} md={3} ><Mail/></Col>
                     <Col sm={6} md={3} ><EID/></Col>
                     <Col sm={6} md={3} ><Reservation/></Col>

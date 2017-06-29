@@ -5,8 +5,8 @@ import {connect} from "react-redux";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ContactInfo from '../components/ContactInfo';
-import addContactInfo from '../utilities/actions';
-import configureStore from "../configureStore";
+import { saveContactEmail, saveContactPhone, saveButtonClicked } from '../utilities/actions';
+import configureStore from "../utilities/store";
 
 
 const store = configureStore();
@@ -21,9 +21,9 @@ class ContactInfoContainer extends Component {
         return (
             <div>
                 <ContactInfo
-                    onSave={this.props.saveContactInfo}
-                    savedEmail={this.props.email}
-                    savedPhone={this.props.phone}
+                    handleSave={this.props.saveContactButton}
+                    savedEmail={this.props.activeContactEmail}
+                    savedPhone={this.props.activeContactPhone}
                 />
             </div>
         );
@@ -31,17 +31,20 @@ class ContactInfoContainer extends Component {
 }
 
 const mapStateToProps = state => {
-
-    const onSave = saveContactInfo;
+    let {activeContactEmail, activeContactPhone} = state; // Make activeContactEmail and activeContactPhone from state become variables
 
     return {
+        activeContactPhone: activeContactPhone,
+        activeContactEmail: activeContactEmail
+    }
 
-    };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        saveContactInfo: (contactInfo) => dispatch(addContactInfo(contactInfo)),
+        activeContactEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
+        activeContactPhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
+        saveContactButton: () => dispatch(saveButtonClicked()),
     }
 };
 
@@ -59,5 +62,5 @@ ReactDOM.render(
             <ContactInfoContainer />
         </Provider>
     </MuiThemeProvider>,
-    document.getElementById('allActivities')
+    document.getElementById('ContactInfo')
 );
