@@ -65,12 +65,12 @@ class Mail extends React.Component {
 
         const actions = [
             <FlatButton
-                label="Cancel"
+                label="Nei"
                 primary={true}
                 onTouchTap={this.handleClose}
             />,
             <FlatButton
-                label="Submit"
+                label="Ja"
                 primary={true}
                 keyboardFocused={true}
                 onTouchTap={this.handleChange}
