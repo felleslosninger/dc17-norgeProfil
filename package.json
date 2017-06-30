@@ -1,6 +1,6 @@
 {
   "name": "difi-norge-profil",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
