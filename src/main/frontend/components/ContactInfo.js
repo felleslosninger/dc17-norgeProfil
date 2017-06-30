@@ -21,12 +21,13 @@ class ContactInfoCard extends React.Component {
             open: false,
             email: 'olanordmann@gmail.com',
             phone: '12345678',
-            textfieldEmail: '',
-            textfieldPhone: '',
+            textfieldEmail: 'olanordmann@gmail.com',
+            textfieldPhone: '12345678',
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSave = this.handleSave.bind(this);
+        this.handleEnter = this.handleEnter.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
     };
@@ -55,6 +56,13 @@ class ContactInfoCard extends React.Component {
 
     };
 
+    handleEnter(event) {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+            this.handleSave()
+        }
+        return false;
+    }
 
     render() {
 
@@ -113,8 +121,10 @@ class ContactInfoCard extends React.Component {
                                 hintText={eMail}
                                 floatingLabelText="E-post"
                                 name="textfieldEmail"
+                                defaultValue = {this.state.email}
                                 value={ this.state.textfieldEmail }
                                 onChange={ this.handleChange }
+                                onKeyPress={this.handleEnter}
                             />
                         </Col>
                         <Col>
@@ -122,8 +132,10 @@ class ContactInfoCard extends React.Component {
                                 hintText={phoneNumber}
                                 floatingLabelText="Mobilnummer"
                                 name="textfieldPhone"
+                                defaultValue = {this.state.phone}
                                 value={ this.state.textfieldPhone }
                                 onChange={ this.handleChange }
+                                onKeyPress={this.handleEnter }
                             />
                         </Col>
                     </Row>
