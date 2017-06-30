@@ -101,7 +101,7 @@ class Mail extends React.Component {
                     <Row className="CardHeader">
                         <Col md={1} className="Icon">{<Email />}</Col>
                         <Col md={10}><h4>Digital postkasse</h4></Col>
-                        <Col mdOffset={10}><Help onClick={mail.handleOpen}/></Col>
+                        <Col mdOffset={10}><Help onClick={mail.handleOpen} text="Informasjon"/> </Col>
                     </Row>
                     <Dialog
                         title="Spørsmål og svar"
