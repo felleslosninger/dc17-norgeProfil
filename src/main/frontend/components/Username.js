@@ -8,7 +8,7 @@ class Username extends React.Component {
 
     render () {
 
-        let user = "Fornavn Etternavn";
+        let user = "Ola Nordmann";
 
         return (
                 <div className="page-header">

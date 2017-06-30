@@ -19,7 +19,7 @@ class Mail extends React.Component {
         super(props);
         this.state = {
             open: false,
-            postbox: 'E-boks', //add init value either Digipost or E-boks
+            postbox: '', //add init value either Digipost or E-boks
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -65,12 +65,12 @@ class Mail extends React.Component {
 
         const actions = [
             <FlatButton
-                label="Cancel"
+                label="Nei"
                 primary={true}
                 onTouchTap={this.handleClose}
             />,
             <FlatButton
-                label="Submit"
+                label="Ja"
                 primary={true}
                 keyboardFocused={true}
                 onTouchTap={this.handleChange}
@@ -86,10 +86,13 @@ class Mail extends React.Component {
         ];
 
         let img = null;
+        let nextPostbox = "";
         if (this.state.postbox == 'E-boks') {
-            img = (<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={100} height={'auto'} alt="logo til E-boks"/>)
+            img = (<img src="img/eboks.png" width={100} height={'auto'} alt="logo til E-boks"/>)
+            nextPostbox = "Digipost";
         } else {
-            img = (<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={100} height={'auto'} alt="logo til digipost"/>)
+            img = (<img src="img/digipost.png" width={100} height={'auto'} alt="logo til digipost"/>)
+            nextPostbox = "E-boks";
         }
 
         var getcardForNewMailUser = function (mail) {
@@ -187,14 +190,14 @@ class Mail extends React.Component {
                         </p>
                         <br/>
                         <FlatButton
-                            icon={<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={70} height={'auto'} alt="logo til digipost"/>}
+                            icon={<img src="img/digipost.png" width={70} height={'auto'} alt="logo til digipost"/>}
                             primary={true}
                             label="Opprett Digipost"
                             href="https://www.digipost.no/app/registrering#/"
                         />
                         <br/>
                         <FlatButton
-                            icon={<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={70} height={'auto'} alt="logo til E-boks"/>}
+                            icon={<img src="img/eboks.png" width={70} height={'auto'} alt="logo til E-boks"/>}
                             primary={true}
                             label="Opprett E-boks"
                             href="https://www.e-boks.com/norge/nb/ny-bruker/"
@@ -221,7 +224,7 @@ class Mail extends React.Component {
                         <div className="CardInfoText">
                             <Row>
                                 <Col md={4}>{img}</Col>
-                                <Col md={8}>Du mottar idag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
+                                <Col md={8}>Du mottar i dag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
@@ -246,7 +249,7 @@ class Mail extends React.Component {
                         onRequestClose={mail.handleClose}
                     >
                         <div>
-                            Ønsker du å endre din digitale postkasse?
+                            Ønsker du å endre din digitale postkasse til {nextPostbox}?
                         </div>
                     </Dialog>
                 </Card>
