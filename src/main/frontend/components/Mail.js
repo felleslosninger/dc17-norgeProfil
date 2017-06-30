@@ -86,10 +86,13 @@ class Mail extends React.Component {
         ];
 
         let img = null;
+        let nextPostbox = "";
         if (this.state.postbox == 'E-boks') {
             img = (<img src="https://www.e-boks.com/media/1275/eboks-no-logo-1000x197.png" width={100} height={'auto'} alt="logo til E-boks"/>)
+            nextPostbox = "Digipost";
         } else {
             img = (<img src="http://sykeavbruddskassen.no/wp-content/uploads/2015/12/digipost-logo.png" width={100} height={'auto'} alt="logo til digipost"/>)
+            nextPostbox = "E-boks";
         }
 
         var getcardForNewMailUser = function (mail) {
@@ -221,7 +224,7 @@ class Mail extends React.Component {
                         <div className="CardInfoText">
                             <Row>
                                 <Col md={4}>{img}</Col>
-                                <Col md={8}>Du mottar idag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
+                                <Col md={8}>Du mottar i dag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
@@ -246,7 +249,7 @@ class Mail extends React.Component {
                         onRequestClose={mail.handleClose}
                     >
                         <div>
-                            Ønsker du å endre din digitale postkasse?
+                            Ønsker du å endre din digitale postkasse til {nextPostbox}?
                         </div>
                     </Dialog>
                 </Card>
