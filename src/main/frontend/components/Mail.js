@@ -89,8 +89,10 @@ class Mail extends React.Component {
         let nextPostbox = "";
         if (this.state.postbox == 'E-boks') {
             img = (<img src="img/eboks.png" width={100} height={'auto'} alt="logo til E-boks"/>)
+            nextPostbox = "Digipost";
         } else {
             img = (<img src="img/digipost.png" width={100} height={'auto'} alt="logo til digipost"/>)
+            nextPostbox = "E-boks";
         }
 
         var getcardForNewMailUser = function (mail) {
