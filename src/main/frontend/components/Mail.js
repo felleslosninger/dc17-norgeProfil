@@ -65,12 +65,12 @@ class Mail extends React.Component {
 
         const actions = [
             <FlatButton
-                label="Avbryt"
+                label="Nei"
                 primary={true}
                 onTouchTap={this.handleClose}
             />,
             <FlatButton
-                label="Endre postkasse"
+                label="Ja"
                 primary={true}
                 keyboardFocused={true}
                 onTouchTap={this.handleChange}
@@ -86,6 +86,7 @@ class Mail extends React.Component {
         ];
 
         let img = null;
+        let nextPostbox = "";
         if (this.state.postbox == 'E-boks') {
             img = (<img src="img/eboks.png" width={100} height={'auto'} alt="logo til E-boks"/>)
         } else {
@@ -221,7 +222,7 @@ class Mail extends React.Component {
                         <div className="CardInfoText">
                             <Row>
                                 <Col md={4}>{img}</Col>
-                                <Col md={8}>Du mottar idag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
+                                <Col md={8}>Du mottar i dag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
@@ -246,7 +247,7 @@ class Mail extends React.Component {
                         onRequestClose={mail.handleClose}
                     >
                         <div>
-                            Ønsker du å endre din digitale postkasse?
+                            Ønsker du å endre din digitale postkasse til {nextPostbox}?
                         </div>
                     </Dialog>
                 </Card>
