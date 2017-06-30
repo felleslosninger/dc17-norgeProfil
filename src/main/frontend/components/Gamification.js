@@ -19,7 +19,7 @@ class Gamification extends React.Component {
         super(props);
 
         this.state = {
-            hasPostbox: true,
+            hasPostbox: false,
             hasMobileNum: true,
             hasEmail: true
         };
@@ -40,7 +40,7 @@ class Gamification extends React.Component {
             if(gamification.state.hasEmail){
                 percent += factor;
             }
-            return ( percent );
+            return ( Math.round(percent) );
         }
 
         let percent = calculatePercent(this);

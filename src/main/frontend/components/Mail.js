@@ -19,7 +19,7 @@ class Mail extends React.Component {
         super(props);
         this.state = {
             open: false,
-            postbox: 'E-boks', //add init value either Digipost or E-boks
+            postbox: '', //add init value either Digipost or E-boks
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -65,12 +65,12 @@ class Mail extends React.Component {
 
         const actions = [
             <FlatButton
-                label="Cancel"
+                label="Avbryt"
                 primary={true}
                 onTouchTap={this.handleClose}
             />,
             <FlatButton
-                label="Submit"
+                label="Endre postkasse"
                 primary={true}
                 keyboardFocused={true}
                 onTouchTap={this.handleChange}
