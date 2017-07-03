@@ -57,7 +57,7 @@ class Feed extends React.Component {
                     disabled={true}
                     secondaryText={
                         <p>
-                            <span className="Li.header">Danske Bank</span><br />
+                            <span className="Li Header">Danske Bank</span><br />
                             16 Juni 2017 14:32
                         </p>
                     }
@@ -71,7 +71,7 @@ class Feed extends React.Component {
                     disabled={true}
                     secondaryText={
                         <p>
-                            <span className="Li.header">Skattetaten</span><br />
+                            <span className="Li Header">Skattetaten</span><br />
                             18 Juli 2017 22:13
                         </p>
                     }
@@ -90,7 +90,7 @@ class Feed extends React.Component {
                     disabled={true}
                     secondaryText={
                         <p>
-                            <span className="Li.header">Mobilnummer</span><br />
+                            <span className="Li Header">Mobilnummer</span><br />
                             10 Desember 2016 20:10
                         </p>
                     }
@@ -104,7 +104,7 @@ class Feed extends React.Component {
                     disabled={true}
                     secondaryText={
                         <p>
-                            <span className="Li.header">E-mail</span><br />
+                            <span className="Li Header">E-mail</span><br />
                             09 Juni 2017 08:17
                         </p>
                     }
@@ -127,10 +127,10 @@ class Feed extends React.Component {
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                 >
-                    <div className="Feed.slide">
+                    <div className="Feed Slide">
                         {yourActivityList}
                     </div>
-                    <div className="Feed.slide">
+                    <div className="Feed Slide">
                         {publicSectorsActivityList}
                     </div>
                 </SwipeableViews>

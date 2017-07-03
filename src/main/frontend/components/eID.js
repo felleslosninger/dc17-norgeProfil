@@ -40,6 +40,7 @@ class EID extends React.Component {
         const fontColorStyle = {
             color: 'black'
         };
+
         const actions = [
             <FlatButton
                 label="Lukk"
@@ -66,9 +67,9 @@ class EID extends React.Component {
                             primaryText="MinID"
                             initiallyOpen={false}
                             primaryTogglesNestedList={true}
-                            leftAvatar={<img src="img/minid.png" width={40}/>}
+                            leftAvatar={<img src="img/minid.png" className="CardPicture Small"/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="Li.Info">
+                                <ListItem key={1} disabled={true} className="Li Info">
                                     MinID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester på
                                     mellomhøyt sikkerhetsnivå, nivå 3.
                                     <br/><br/>
@@ -95,9 +96,9 @@ class EID extends React.Component {
                             primaryText="BankID"
                             initiallyOpen={false}
                             primaryTogglesNestedList={true}
-                            leftAvatar={<img src="img/bankid.png" width={40}/>}
+                            leftAvatar={<img src="img/bankid.png" className="CardPicture Small"/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="Li.Info">
+                                <ListItem key={1} disabled={true} className="Li Info">
                                     BankID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester på
                                     høyeste sikkerhetsnivå, nivå 4. <br/><br/>
                                     BankID blir levert av banken din og kan bli gitt til personar som har fylt 15 år.
@@ -114,9 +115,9 @@ class EID extends React.Component {
                             primaryText="BankID på mobil"
                             initiallyOpen={false}
                             primaryTogglesNestedList={true}
-                            leftAvatar={<img src="img/bankid_pa_mobil.png" width={40}/>}
+                            leftAvatar={<img src="img/bankid_pa_mobil.png" className="CardPicture Small"/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="Li.Info">
+                                <ListItem key={1} disabled={true} className="Li Info">
                                     BankID på mobil er en personlig, elektronisk ID som gir tilgang til offentlige
                                     tjenester på høyeste sikkerhetsnivå, nivå 4.<br/><br/>
                                     For å kunne ta i bruk BankID på mobil må du ha en nettbankavtale med BankID og en
@@ -132,9 +133,9 @@ class EID extends React.Component {
                             primaryText="Buypass ID"
                             initiallyOpen={false}
                             primaryTogglesNestedList={true}
-                            leftAvatar={<img src="img/buypass.png" width={40}/>}
+                            leftAvatar={<img src="img/buypass.png" className="CardPicture Small"/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="Li.Info">
+                                <ListItem key={1} disabled={true} className="Li Info">
                                     Buypass ID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester
                                     på høyeste sikkerhetsnivå, nivå 4.<br/><br/>
                                     Han blir utskrivet av Buypass AS og blir levert som Buypass ID på smartkort og
@@ -151,9 +152,9 @@ class EID extends React.Component {
                             primaryText="Commfides"
                             initiallyOpen={false}
                             primaryTogglesNestedList={true}
-                            leftAvatar={<img src="img/commfides.png" width={40}/>}
+                            leftAvatar={<img src="img/commfides.png" className="CardPicture Small"/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="Li.Info">
+                                <ListItem key={1} disabled={true} className="Li Info">
                                     Commfides er en personlig, elektronisk ID som gir tilgang til offentlige tjenester
                                     på høyeste sikkerheitsnivå, nivå 4.<br/><br/>
                                     Commfides blir levert av Commfides Norge AS som elektronisk ID på en sikker

@@ -19,18 +19,20 @@
 .Li {
 }
 
-Li.Info {
+.Li.Info {
     paddingTop: 0px;
     width: 620px;
     left: 38px;
     bottom: 15px;
 }
 
-Li.header{
+.Li.Header{
     color:   #000000;
 }
 
+
 .MenuItem{
+    color: black;
 }
 
 .DivoverMeny{
@@ -49,6 +51,22 @@ Li.header{
 
 }
 
+.CardPicture{
+
+}
+.CardPicture.Medium{
+    width:  98px;
+    height: auto;
+}
+
+
+.CardPicture.Small{
+    width: 48px;
+    height: auto;
+}
+
+
+
 .Feed {
 
 }
@@ -61,8 +79,8 @@ Feed.header{
      fontWeight: 400;
  }
 */
-Feed.slide {
-    padding: 10;
+Feed.Slide {
+    padding: 10px;
 }
 
 
