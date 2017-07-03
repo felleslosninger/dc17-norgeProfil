@@ -73,7 +73,7 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/minid.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
+                                <ListItem key={1} disabled={true} className="EidInfo">
                                     MinID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på
                                     mellomhøgt sikkerheitsnivå, nivå 3.
                                     <br/><br/>
@@ -102,7 +102,7 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/bankid.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
+                                <ListItem key={1} disabled={true} className="EidInfo">
                                     BankID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på
                                     høgaste sikkerheitsnivå, nivå 4. <br/><br/>
                                     BankID blir levert av banken din og kan bli gitt til personar som har fylt 15 år.
@@ -121,7 +121,7 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/bankid_pa_mobil.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
+                                <ListItem key={1} disabled={true} className="EidInfo">
                                     BankID på mobil er ein personleg, elektronisk ID som gir tilgang til offentlege
                                     tenester på høgaste sikkerheitsnivå, nivå 4.<br/><br/>
                                     For å kunne ta i bruk BankID på mobil må du ha ein nettbankavtale med BankID og ein
@@ -139,7 +139,7 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/buypass.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
+                                <ListItem key={1} disabled={true} className="EidInfo">
                                     Buypass ID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester
                                     på høgaste sikkerheitsnivå, nivå 4.<br/><br/>
                                     Han blir utskriven av Buypass AS og blir levert som Buypass ID på smartkort og
@@ -158,7 +158,7 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/commfides.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
+                                <ListItem key={1} disabled={true} className="EidInfo">
                                     Commfides er ein personleg, elektronisk ID som gir tilgang til offentlege tenester
                                     på høgaste sikkerheitsnivå, nivå 4.<br/><br/>
                                     Commfides blir levert av Commfides Norge AS som elektronisk ID på ein sikker
@@ -181,10 +181,10 @@ class EID extends React.Component {
                                       disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="BankID på mobil" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
+                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CheckIcon/>}
+                                      disabled={true}/>
                             <Divider />
                             <div>Andre tjenester</div>
-                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CancelIcon/>}
-                                      disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={<CancelIcon />}
                                       disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="Commfides" leftIcon={<CancelIcon />}
