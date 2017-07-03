@@ -8,10 +8,7 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin({
 
 
 module.exports = {
-    entry: {
-        app: './src/main/frontend/app.js',
-        contactInfoContainer: './src/main/frontend/containers/ContactInfoContainer.js'
-    },
+    entry: './src/main/frontend/containers/ContactInfoContainer.js',
     devtool: 'sourcemaps',
     cache: true,
     debug: true,

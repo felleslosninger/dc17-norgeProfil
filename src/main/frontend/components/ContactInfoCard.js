@@ -66,9 +66,6 @@ class ContactInfoCard extends React.Component {
 
     render() {
 
-        $('email').val(this.state.email);
-        $('phone').val(this.state.phone);
-
         const actions = [
             <FlatButton
                 label="Avbryt"

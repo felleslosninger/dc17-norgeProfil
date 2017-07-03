@@ -7,6 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ContactInfoCard from '../components/ContactInfoCard';
 import { saveContactEmail, saveContactPhone, saveButtonClicked } from '../utilities/actions';
 import configureStore from "../utilities/store";
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 
 const store = configureStore();
@@ -56,6 +57,7 @@ const muiTheme = getMuiTheme({
 
 ContactInfoContainer = connect(mapStateToProps, mapDispatchToProps)(ContactInfoContainer);
 
+injectTapEventPlugin();
 ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
