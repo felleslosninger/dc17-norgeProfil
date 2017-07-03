@@ -90,9 +90,9 @@ class ContactInfoCard extends React.Component {
                     <Col md={1} className="Icon">{<ActionInfo />}</Col>
                     <Col md={10}><h4>Kontaktinformasjon</h4></Col>
                 </Row>
-                <hr className="Headline"/>
-                <CardText className="CardText">
-                    <div className="CardInfoText">
+                <hr className="HLine"/>
+                <CardText>
+                    <div className="CardText">
                         Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
                             når de kontakter deg.
                     </div>

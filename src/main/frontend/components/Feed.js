@@ -13,17 +13,6 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Example from 'material-ui/svg-icons/action/account-circle'
 
-const styles = {
-    headline: {
-        fontSize: 24,
-        paddingTop: 16,
-        marginBottom: 12,
-        fontWeight: 400,
-    },
-    slide: {
-        padding: 10,
-    },
-};
 
 class Feed extends React.Component {
 
@@ -68,7 +57,7 @@ class Feed extends React.Component {
                     disabled={true}
                     secondaryText={
                         <p>
-                            <span style={{color: darkBlack}}>Danske Bank</span><br />
+                            <span className="Li.header">Danske Bank</span><br />
                             16 Juni 2017 14:32
                         </p>
                     }
@@ -82,7 +71,7 @@ class Feed extends React.Component {
                     disabled={true}
                     secondaryText={
                         <p>
-                            <span style={{color: darkBlack}}>Skattetaten</span><br />
+                            <span className="Li.header">Skattetaten</span><br />
                             18 Juli 2017 22:13
                         </p>
                     }
@@ -101,7 +90,7 @@ class Feed extends React.Component {
                     disabled={true}
                     secondaryText={
                         <p>
-                            <span style={{color: darkBlack}}>Mobilnummer</span><br />
+                            <span className="Li.header">Mobilnummer</span><br />
                             10 Desember 2016 20:10
                         </p>
                     }
@@ -115,7 +104,7 @@ class Feed extends React.Component {
                     disabled={true}
                     secondaryText={
                         <p>
-                            <span style={{color: darkBlack}}>E-mail</span><br />
+                            <span className="Li.header">E-mail</span><br />
                             09 Juni 2017 08:17
                         </p>
                     }
@@ -138,10 +127,10 @@ class Feed extends React.Component {
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                 >
-                    <div>
+                    <div className="Feed.slide">
                         {yourActivityList}
                     </div>
-                    <div style={styles.slide}>
+                    <div className="Feed.slide">
                         {publicSectorsActivityList}
                     </div>
                 </SwipeableViews>

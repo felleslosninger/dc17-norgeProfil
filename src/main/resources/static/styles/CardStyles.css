@@ -1,18 +1,9 @@
-
+/*Used in Eid*/
 .Card {
     height: 25em;
     width: auto;
 }
 
-.EidCardText {
-    padding: 0px;
-}
-
-.eidInfo {
-    width: 620px;
-    left: 38px;
-    bottom: 15px;
-}
 
 .CardHeader {
     padding-top: 15px;
@@ -21,33 +12,82 @@
 
 }
 
-.Headline {
-    margin-right: 1em;
-    margin-left: 1em;
+.Meny{
+    paddingTop: 0px;
 }
 
-.EditBtn {
-            position: absolute;
-            right: 3.2%;
-            bottom: 0;
-
-        }
-
-.ToggleBtn {
-    position: absolute;
-    left: 3.2%;
-    bottom: 0;
+.Li {
 }
 
-.EidHeadline {
-    border-bottom: 1px solid lightgrey;
-    padding-bottom: 30px;
+Li.Info {
+    paddingTop: 0px;
+    width: 620px;
+    left: 38px;
+    bottom: 15px;
+}
+
+Li.header{
+    color:   #000000;
+}
+
+.MenuItem{
+}
+
+.DivoverMeny{
+}
+
+.HLine {
     margin-right: 1em;
     margin-left: 1em;
 }
 
 .Icon {
     margin-top: 40px;
+}
+
+.CardText{
+
+}
+
+.Feed {
+
+}
+
+/*
+Feed.header{
+     fontSize: 24;
+     paddingTop: 16;
+     marginBottom: 12;
+     fontWeight: 400;
+ }
+*/
+Feed.slide {
+    padding: 10;
+}
+
+
+
+/**/
+
+
+.EditBtn {
+    position: absolute;
+    right: 3.2%;
+    bottom: 0;
+
+}
+
+.EditInfo {
+    margin-left: 1.5em;
+}
+
+/**/
+
+
+.ToggleBtn {
+    position: absolute;
+    left: 3.2%;
+    bottom: 0;
 }
 
 /*Styling modal*/
@@ -68,7 +108,4 @@
     margin: 1%;
 }
 
-.EditInfo {
-    margin-left: 1.5em;
-}
 

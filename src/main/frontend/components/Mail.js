@@ -181,7 +181,7 @@ class Mail extends React.Component {
                             />
                         </List>
                     </Dialog>
-                    <hr className="Headline"/>
+                    <hr className="HLine"/>
                     <CardText className="CardText">
                         <p>
                         Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
@@ -218,9 +218,9 @@ class Mail extends React.Component {
                         <Col md={1} className="Icon">{<Email />}</Col>
                         <Col md={10}><h4>Digital postkasse</h4></Col>
                     </Row>
-                    <hr className="Headline"/>
-                    <CardText className="CardText">
-                        <div className="CardInfoText">
+                    <hr className="HLine"/>
+                    <CardText>
+                        <div className="CardText">
                             <Row>
                                 <Col md={4}>{img}</Col>
                                 <Col md={8}>Du mottar i dag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>

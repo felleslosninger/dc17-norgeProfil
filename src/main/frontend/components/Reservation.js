@@ -63,7 +63,7 @@ class Reservation extends React.Component {
                         Reservasjonen din kan du enkelt oppheve ved å trykke Opphev reservasjon.
                     </div>
                 </Dialog>
-                <hr className="Headline"/>
+                <hr className="HLine"/>
                 <CardText className="CardText">
                     Om du reserverer deg mot kommunikasjon på nett vil du motta viktige brev fra det offentlige kun på
                     papir.
