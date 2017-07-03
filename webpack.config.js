@@ -19,12 +19,11 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
-                exclude: /(node_modules)/,
-                loader: 'babel',
+                test: /\.jsx?$/,         // Match both .js and .jsx files
+                exclude: /node_modules/,
+                loader: "babel-loader",
                 query: {
-                    cacheDirectory: true,
-                    presets: ['es2015', 'react']
+                    presets:['react']
                 }
             }
         ],
@@ -34,6 +33,6 @@ module.exports = {
         }]
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '']
     },
 };
