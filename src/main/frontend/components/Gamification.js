@@ -28,19 +28,20 @@ class Gamification extends React.Component {
 
     render() {
         var calculatePercent = function(gamification){
-            var percent = 0;
-            let factor = 33.3;
+            let totalTest = 3;
+            let test = 0;
+
             if(gamification.state.hasPostbox){
-                percent += factor;
+                test++;
             }
             if(gamification.state.hasMobileNum){
-                percent += factor;
+                test++;
             }
 
             if(gamification.state.hasEmail){
-                percent += factor;
+                test++;
             }
-            return ( Math.round(percent) );
+            return ( Math.round((test / totalTest) * 100));
         }
 
         let percent = calculatePercent(this);

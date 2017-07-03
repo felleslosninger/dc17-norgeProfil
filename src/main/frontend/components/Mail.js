@@ -101,7 +101,7 @@ class Mail extends React.Component {
                     <Row className="CardHeader">
                         <Col md={1} className="Icon">{<Email />}</Col>
                         <Col md={10}><h4>Digital postkasse</h4></Col>
-                        <Col mdOffset={10}><Help onClick={mail.handleOpen}/></Col>
+                        <Col mdOffset={10}><Help onClick={mail.handleOpen} text="Informasjon"/> </Col>
                     </Row>
                     <Dialog
                         title="Spørsmål og svar"
@@ -111,42 +111,42 @@ class Mail extends React.Component {
                     >
                         <List>
                             <ListItem
-                                primaryText="Kva er ein digital postkasse?"
+                                primaryText="Hva er en digital postkasse?"
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
-                                        Ein digital postkasse er ei sikker løysing for å få og oppbevare viktig post
-                                        digitalt, slik som brev med vedtak, helseopplysningar eller annan sensitiv
-                                        informasjon. Det offentlege kan ikkje bruke vanlig e-post til å sende slik
-                                        informasjon. Skal du kunne motta viktige brev frå det offentlege digitalt,
+                                        En digital postkasse er ei sikker løsning for å få og oppbevare viktig post
+                                        digitalt, slik som brev med vedtak, helseopplysningar eller annen sensitiv
+                                        informasjon. Det offentlige kan ikke bruke vanlig e-post til å sende slik
+                                        informasjon. Skal du kunne motta viktige brev fra det offentlige digitalt,
                                         må du ha digital postkasse.
 
-                                        Du får ikkje reklame i den digitale postkassen din. Men bedrifter som du har
-                                        eit kundeforhold til, som til dømes banken eller forsikringsselskapet ditt,
-                                        kan sende deg meldingar om ulike tilbod dersom du har akseptert dette.
+                                        Du får ikke reklame i den digitale postkassen din. Men bedrifter som du har
+                                        et kundeforhold til, som for eksempel banken eller forsikringsselskapet ditt,
+                                        kan sende deg meldingar om ulike tilbud dersom du har akseptert dette.
                                     </ListItem>
                                 ]}
                             />
                             <ListItem
-                                primaryText="Er digital postkasse det same som E-post?"
+                                primaryText="Er digital postkasse det samme som E-post?"
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
-                                        Nei, ein digital postkasse er sikrare enn e-post fordi både avsendar og
-                                        mottakar må stadfeste identiteten sin.Post som det offentlege sender til
+                                        Nei, en digital postkasse er sikrere enn e-post fordi både avsender og
+                                        mottaker må bekrefte identiteten sin. Post som det offentlige sender til
                                         deg i den digitale postkassen din, blir sendt kryptert, som skjult tekst.
-                                        For å opne og lese posten i den digitale postkassen må du legitimere deg
-                                        gjennom ID-porten.Det er berre du og dei du har gitt løyve til, som kan
-                                        lese posten din frå det offentlege.
+                                        For å åpne og lese posten i den digitale postkassen må du legitimere deg
+                                        gjennom ID-porten. Det er bare du og de du har bevilget tilgang til, som kan
+                                        lese posten din fra det offentlege.
                                     </ListItem>
                                 ]}
                             />
                             <ListItem
-                                primaryText="Kven kan opprette ein digital postkasse?"
+                                primaryText="Hvem kan opprette en digital postkasse?"
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
-                                        For å opprette ein digital postkasse må du ha
+                                        For å opprette en digital postkasse må du ha
                                         <ul>
                                             <li> norsk fødselsnummer eller D-nummer</li>
                                             <li> elektronisk ID fra BankID, BankID på mobil, Buypass eller
@@ -157,25 +157,24 @@ class Mail extends React.Component {
                                 ]}
                             />
                             <ListItem
-                                primaryText="Kan eg ha to digitale postkassar?"
+                                primaryText="Kan jeg ha to digitale postkasser?"
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
-                                        Ja, men til post frå det offentlege må du velje ein av postkassane, slik at
-                                        stat og kommune veit kvar dei skal sende posten din.Du kan sjå kva postkasse
-                                        di til kvar tid har ved å logge deg inn på 'Dine kontaktopplysningar'.
-                                        Kontakt ID-porten brukarstøtte på grønt nummer 800 30 300 om du har
-                                        spørsmål om dette (frå utlandet: +47 24 05 56 03).
+                                        Ja, men til post fra det offentlige må du velge en av postkassene, slik at
+                                        stat og kommune vet hvor de skal sende posten din. Kontakt ID-porten sin
+                                        brukerstøtte på grønt nummer 800 30 300 om du har spørsmål om dette (fra
+                                        utlandet: +47 24 05 56 03).
                                     </ListItem>
                                 ]}
                             />
                             <ListItem
-                                primaryText="Kostar det noko å ha digital postkasse?"
+                                primaryText="Koster det noe å ha digital postkasse?"
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="info">
-                                        Nei, digital postkasse er gratis å opprette og bruke for innbyggjarane.
-                                        Lastar du sjølv opp mange dokument eller bilde, må du betale for å få
+                                        Nei, digital postkasse er gratis å opprette og bruke for innbyggerene.
+                                        Lastar du selv opp mange dokument eller bilde, må du betale for å få
                                         lagringsplass ut over 1GB.
                                     </ListItem>
                                 ]}
