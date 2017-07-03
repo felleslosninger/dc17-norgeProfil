@@ -19,7 +19,7 @@ class Gamification extends React.Component {
         super(props);
 
         this.state = {
-            hasPostbox: false,
+            hasPostbox: true,
             hasMobileNum: true,
             hasEmail: true
         };
@@ -27,29 +27,46 @@ class Gamification extends React.Component {
     };
 
     render() {
-        var calculatePercent = function(gamification){
-            let totalTest = 3;
+        var postBox = function(gamification){
+            let totalTest = 1;
             let test = 0;
 
             if(gamification.state.hasPostbox){
                 test++;
             }
+
+            return ( Math.round((test / totalTest) * 100));
+        };
+
+        var mobileNum = function(gamification){
+            let totalTest = 1;
+            let test = 0;
+
             if(gamification.state.hasMobileNum){
                 test++;
             }
+            return ( Math.round((test / totalTest) * 100));
+        };
+
+        var email = function(gamification){
+            let totalTest = 1;
+            let test = 0;
 
             if(gamification.state.hasEmail){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
-        }
+        };
 
-        let percent = calculatePercent(this);
+        let Postbox = postBox(this);
+        let Mobilenum = mobileNum(this);
+        let Email = email(this);
+
 
         const popover = (
             <Popover id="popover-positioned-bottom">
                 <List>
-                    <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
+                    <Subheader>Styrke brukerprofil: <strong>{Email} %</strong> </Subheader>
                     <ListItem
                         primaryText="E-mail"
                         leftIcon={this.state.hasEmail ? <Done /> : <Remove /> }
@@ -72,7 +89,7 @@ class Gamification extends React.Component {
 
         const styles = {
             marginTop: '1.5%',
-            width: '106%'
+            width: '100%'
         };
 
 
@@ -83,7 +100,10 @@ class Gamification extends React.Component {
 
         return (
             <Row className="Gamification">
-                <Col md={11}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={percent}/></Col>
+                <Col md={3}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Postbox}/></Col>
+                <Col md={3}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Mobilenum}/></Col>
+                <Col md={3}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/></Col>
+
                 <Col mdOffset={11}>
                     <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
                         <IconButton style={AlignIcon}>
