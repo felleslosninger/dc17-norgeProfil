@@ -1,9 +1,33 @@
 /*Used in Eid*/
 
 
-@media (max-width: 1192px) {
+@media (min-width: 992px ) and (max-width: 1192px) {
     h4 {
         font-size: medium;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    h4 {
+        font-size: 14px;
+    }
+
+    .Icon {
+        color: lightpink;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    h4 {
+        background-color: red;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    h4 {
+        background-color:green;
     }
 }
 

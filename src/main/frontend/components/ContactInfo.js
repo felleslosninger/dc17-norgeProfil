@@ -87,8 +87,8 @@ class ContactInfoCard extends React.Component {
         return (
             <Card className="Card">
                 <Row className="CardHeader">
-                    <Col md={3} lg={2}  className="Icon">{<ActionInfo />}</Col>
-                    <Col md={6} lg={7}><h4>Kontaktinformasjon</h4></Col>
+                    <Col sm={3} md={3} lg={2}  className="Icon">{<ActionInfo />}</Col>
+                    <Col sm={3} md={6} lg={7}><h4>Kontaktinformasjon</h4></Col>
                 </Row>
                 <hr className="HLine"/>
                 <CardText>

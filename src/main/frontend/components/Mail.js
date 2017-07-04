@@ -99,9 +99,9 @@ class Mail extends React.Component {
             return (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={3} lg={2} className="Icon">{<Email />}</Col>
-                        <Col md={6} lg={7} ><h4>Digital postkasse</h4></Col>
-                        <Col md={3} lg={3}><Help onClick={mail.handleOpen} text="Informasjon"/> </Col>
+                        <Col sm={3} md={3} lg={2} className="Icon">{<Email />}</Col>
+                        <Col sm={6} md={6} lg={7} ><h4>Digital postkasse</h4></Col>
+                        <Col sm={3} md={3} lg={3}><Help onClick={mail.handleOpen} text="Informasjon"/> </Col>
                     </Row>
                     <Dialog
                         title="Spørsmål og svar"

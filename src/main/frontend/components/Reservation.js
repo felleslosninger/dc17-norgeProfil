@@ -41,9 +41,9 @@ class Reservation extends React.Component {
         return (
             <Card className="Card">
                 <Row className="CardHeader">
-                    <Col md={3} lg={2}  className="Icon">{<NotificationsOff />}</Col>
-                    <Col md={6} lg={7}><h4>Reservasjon</h4></Col>
-                    <Col md={3} lg={3}><Help onClick={this.handleOpen}/></Col>
+                    <Col sm={3} md={3} lg={2}  className="Icon">{<NotificationsOff />}</Col>
+                    <Col sm={6} md={6} lg={7}><h4>Reservasjon</h4></Col>
+                    <Col sm={3} md={3} lg={3}><Help onClick={this.handleOpen}/></Col>
                 </Row>
                 <Dialog
                     title="Brev fra stat og kommune"
