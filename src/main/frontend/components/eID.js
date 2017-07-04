@@ -73,9 +73,10 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/minid.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
-                                    MinID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester på
-                                    mellomhøyt sikkerhetsnivå, nivå 3.
+
+                                <ListItem key={1} disabled={true} className="EidInfo">
+                                    MinID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på
+                                    mellomhøgt sikkerheitsnivå, nivå 3.
                                     <br/><br/>
                                     Direktoratet for forvaltning og IKT (Difi) er ansvarlig for MinID. MinID kan
                                     bestilles fra det året du fyller 13.
@@ -102,9 +103,11 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/bankid.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
-                                    BankID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester på
-                                    høyeste sikkerhetsnivå, nivå 4. <br/><br/>
+
+                                <ListItem key={1} disabled={true} className="EidInfo">
+                                    BankID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester på
+                                    høgaste sikkerheitsnivå, nivå 4.
+                                    <br/><br/>
                                     BankID blir levert av banken din og kan bli gitt til personar som har fylt 15 år.
                                     Men de enkelte bankene opererer med egne aldersgrenser. <br/><br/>
                                     For å bestille BankID må du kontakte banken din. Mer om aktivering og innlogging med
@@ -121,10 +124,11 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/bankid_pa_mobil.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
-                                    BankID på mobil er en personlig, elektronisk ID som gir tilgang til offentlige
-                                    tjenester på høyeste sikkerhetsnivå, nivå 4.<br/><br/>
-                                    For å kunne ta i bruk BankID på mobil må du ha en nettbankavtale med BankID og en
+
+                                <ListItem key={1} disabled={true} className="EidInfo">
+                                    BankID på mobil er ein personleg, elektronisk ID som gir tilgang til offentlege
+                                    tenester på høgaste sikkerheitsnivå, nivå 4.<br/><br/>
+                                    For å kunne ta i bruk BankID på mobil må du ha ein nettbankavtale med BankID og ein
                                     kodebrikke.<br/><br/>
                                     Du kan bare aktivere BankID på mobil fra banken som gav deg BankID. <br/><br/>
                                     For å aktivere BankID på mobil må du logge inn i nettbanken din.<br/><br/>
@@ -139,10 +143,11 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/buypass.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
-                                    Buypass ID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester
-                                    på høyeste sikkerhetsnivå, nivå 4.<br/><br/>
-                                    Han blir utskrivet av Buypass AS og blir levert som Buypass ID på smartkort og
+
+                                <ListItem key={1} disabled={true} className="EidInfo">
+                                    Buypass ID er ein personleg, elektronisk ID som gir tilgang til offentlege tenester
+                                    på høgaste sikkerheitsnivå, nivå 4.<br/><br/>
+                                    Han blir utskriven av Buypass AS og blir levert som Buypass ID på smartkort og
                                     Buypass ID i mobil.<br/><br/>
                                     Alle som har smartkort fra Buypass, kan ta i bruk Buypass ID i mobil.<br/><br/>
                                     Buypass ID opererer ikke med aldersgrense, men krever legitimering og personlig
@@ -158,12 +163,13 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/commfides.png" width={40}/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="eidInfo">
-                                    Commfides er en personlig, elektronisk ID som gir tilgang til offentlige tjenester
-                                    på høyeste sikkerheitsnivå, nivå 4.<br/><br/>
-                                    Commfides blir levert av Commfides Norge AS som elektronisk ID på en sikker
-                                    USB-pinne. Commfides opererer ikke med aldersgrense,
-                                    men krever legitimering og personlige underskrift ved utskriving. <br/><br/>
+
+                                <ListItem key={1} disabled={true} className="EidInfo">
+                                    Commfides er ein personleg, elektronisk ID som gir tilgang til offentlege tenester
+                                    på høgaste sikkerheitsnivå, nivå 4.<br/><br/>
+                                    Commfides blir levert av Commfides Norge AS som elektronisk ID på ein sikker
+                                    USB-pinne. Commfides opererer ikkje med aldersgrense,
+                                    men krev legitimering og personleg underskrift ved utskriving. <br/><br/>
                                     For å bestille Commfides e-ID må du kontakte Commfides.<br/><br/>
                                     <a href="http://eid.difi.no/nn/commfides">Mer om bestilling og innlogging med
                                         Commfides.</a>
@@ -181,10 +187,10 @@ class EID extends React.Component {
                                       disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="BankID på mobil" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
+                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CheckIcon/>}
+                                      disabled={true}/>
                             <Divider />
                             <div>Andre tjenester</div>
-                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CancelIcon/>}
-                                      disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={<CancelIcon />}
                                       disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="Commfides" leftIcon={<CancelIcon />}
