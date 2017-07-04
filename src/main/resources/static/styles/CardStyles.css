@@ -1,4 +1,12 @@
 /*Used in Eid*/
+
+
+@media (max-width: 1192px) {
+    h4 {
+        font-size: medium;
+    }
+}
+
 .Card {
     height: 25em;
     width: auto;
@@ -9,7 +17,7 @@
     padding-top: 15px;
     margin-right: 1em;
     margin-left: 1em;
-
+    width: auto;
 }
 
 .Meny{

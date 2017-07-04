@@ -52,9 +52,9 @@ class EID extends React.Component {
         return (
             <Card className="Card">
                 <Row className="CardHeader">
-                    <Col md={1} className="Icon">{<EidIcon />}</Col>
-                    <Col md={10}><h4>eID</h4></Col>
-                    <Col mdOffset={10}><Help onClick={this.handleOpen}/></Col>
+                    <Col md={3} lg={2} className="Icon">{<EidIcon />}</Col>
+                    <Col md={6} lg={7}><h4>eID</h4></Col>
+                    <Col md={3} lg={3}><Help onClick={this.handleOpen}/></Col>
                 </Row>
                 <Dialog
                     title="Elektronisk ID"

@@ -99,9 +99,9 @@ class Mail extends React.Component {
             return (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={1} className="Icon">{<Email />}</Col>
-                        <Col md={10}><h4>Digital postkasse</h4></Col>
-                        <Col mdOffset={10}><Help onClick={mail.handleOpen} text="Informasjon"/> </Col>
+                        <Col md={3} lg={2} className="Icon">{<Email />}</Col>
+                        <Col md={6} lg={7} ><h4>Digital postkasse</h4></Col>
+                        <Col md={3} lg={3}><Help onClick={mail.handleOpen} text="Informasjon"/> </Col>
                     </Row>
                     <Dialog
                         title="Spørsmål og svar"
@@ -182,12 +182,13 @@ class Mail extends React.Component {
                         </List>
                     </Dialog>
                     <hr className="HLine"/>
-                    <CardText>
+                    <CardText className="Card" >
                         <div className="CardText">
-                        Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
-                        hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
-                        </div>
+                            Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
+                            hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
+
                         <br/>
+                        </div>
                         <FlatButton
                             icon={<img src="img/digipost.png" className="CardPicture Medium" alt="logo til digipost"/>}
                             primary={true}

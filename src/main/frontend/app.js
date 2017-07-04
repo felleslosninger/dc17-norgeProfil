@@ -27,10 +27,10 @@ const App = () => {
             <div>
                 <Username/>
                 <Row>
-                    <Col sm={6} md={3} ><ContactInfo/></Col>
-                    <Col sm={6} md={3} ><Mail/></Col>
-                    <Col sm={6} md={3} ><EID/></Col>
-                    <Col sm={6} md={3} ><Reservation/></Col>
+                    <Col sm={6} md={6} lg={3} ><ContactInfo/></Col>
+                    <Col sm={6} md={6} lg={3} ><Mail/></Col>
+                    <Col sm={6} md={6} lg={3} ><EID/></Col>
+                    <Col sm={6} md={6} lg={3} ><Reservation/></Col>
                 </Row>
                 <Gamification/>
                 <div className="page-header"><h3>Aktivitetslogg</h3></div>
