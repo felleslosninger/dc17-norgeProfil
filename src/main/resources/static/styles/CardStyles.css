@@ -4,16 +4,6 @@
     width: auto;
 }
 
-.EidCardText {
-    padding: 0px;
-}
-
-.eidInfo {
-    width: 620px;
-    left: 38px;
-    bottom: 15px;
-}
-
 .CardHeader {
     padding-top: 15px;
     margin-right: 1em;
@@ -21,22 +11,20 @@
 
 }
 
-.Headline {
-    margin-right: 1em;
-    margin-left: 1em;
+.EditBtn {
+    position: absolute;
+    right: 3.2%;
+    bottom: 0;
+
 }
 
-.EditBtn {
-            position: absolute;
-            right: 3.2%;
-            bottom: 0;
+.EditInfo {
+    margin-left: 1.5em;
+}
 
-        }
 
-.ToggleBtn {
-    position: absolute;
-    left: 3.2%;
-    bottom: 0;
+.EidCardText {
+    padding: 0px;
 }
 
 .EidHeadline {
@@ -46,6 +34,18 @@
     margin-left: 1em;
 }
 
+.EidInfo {
+    width: 620px;
+    left: 38px;
+    bottom: 15px;
+}
+
+.Headline {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+
 .Icon {
     margin-top: 40px;
 }
@@ -53,6 +53,10 @@
 /*Styling modal*/
 .ReactModal-open {
     overflow: hidden;
+}
+
+.ReservationBtn{
+    text-align:center;
 }
 
 @media (min-width: 1200px) {
@@ -68,7 +72,11 @@
     margin: 1%;
 }
 
-.EditInfo {
-    margin-left: 1.5em;
+.ToggleBtn {
+    position: absolute;
+    left: 3.2%;
+    bottom: 0;
 }
+
+
 
