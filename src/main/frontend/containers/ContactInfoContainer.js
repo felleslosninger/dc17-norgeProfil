@@ -1,3 +1,6 @@
+var Row = require('react-bootstrap/lib/Row');
+var Col = require('react-bootstrap/lib/Col');
+
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
@@ -62,7 +65,9 @@ injectTapEventPlugin();
 ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
-            <ContactInfoContainer />
+            <Row>
+                <Col sm={6} md={3}><ContactInfoContainer /></Col>
+            </Row>
         </Provider>
     </MuiThemeProvider>,
     document.getElementById('ContactInfo')

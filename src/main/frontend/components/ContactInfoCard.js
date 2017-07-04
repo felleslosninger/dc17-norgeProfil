@@ -19,13 +19,10 @@ class ContactInfoCard extends React.Component {
     constructor(props) {
         super(props);
 
-        let textfieldEmail = $('email').val();
-        let textfieldPhone = $('phone').val();
-
         this.state = {
             open: false,
-            textfieldEmail: textfieldEmail,
-            textfieldPhone: textfieldPhone,
+            textfieldEmail: '',
+            textfieldPhone: '',
             email: '',
             phone: ''
         };
@@ -42,7 +39,9 @@ class ContactInfoCard extends React.Component {
 
     handleClose() {
         this.setState({
-            open: false
+            open: false,
+            textfieldEmail: this.state.email,
+            textfieldPhone: this.state.phone,
         });
     };
 
@@ -57,12 +56,14 @@ class ContactInfoCard extends React.Component {
     handleSave() {
         this.setState({
             open: false,
-            email:  $('email').val(),
-            phone:  $('phone').val(),
+            email:  this.state.textfieldEmail,
+            phone:  this.state.textfieldPhone,
         });
-        this.props.savedEmail = this.state.email;
-        this.props.savedPhone = this.state.phone;
+        this.props.savedEmail(this.state.email);
+        this.props.savedPhone(this.state.phone);
     };
+
+
 
 
     render() {
@@ -91,7 +92,8 @@ class ContactInfoCard extends React.Component {
                 <hr className="Headline"/>
                 <CardText className="CardText">
                     <div className="CardInfoText">
-                        ------
+                        Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
+                        når de kontakter deg.
                     </div>
                     <List>
                         <ListItem disabled={true} primaryText="E-mail: " secondaryText={this.state.email} leftIcon={<EmailIcon />}/>
@@ -143,8 +145,8 @@ class ContactInfoCard extends React.Component {
 
 ContactInfoCard.propTypes = {
     handleSave: React.PropTypes.func.isRequired,
-    savedEmail: React.PropTypes.string.isRequired,
-    savedPhone: React.PropTypes.string.isRequired
+    savedEmail: React.PropTypes.func.isRequired,
+    savedPhone: React.PropTypes.func.isRequired
 };
 
 export default ContactInfoCard;
