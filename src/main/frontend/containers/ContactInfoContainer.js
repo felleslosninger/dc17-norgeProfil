@@ -58,6 +58,7 @@ const muiTheme = getMuiTheme({
 ContactInfoContainer = connect(mapStateToProps, mapDispatchToProps)(ContactInfoContainer);
 
 injectTapEventPlugin();
+
 ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>

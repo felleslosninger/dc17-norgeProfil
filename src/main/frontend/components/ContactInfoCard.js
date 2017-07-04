@@ -1,6 +1,7 @@
-var React = require("react");
-var Row = require('react-bootstrap/lib/Row');
-var Col = require('react-bootstrap/lib/Col');
+"use strict";
+let React = require("react");
+let Row = require('react-bootstrap/lib/Row');
+let Col = require('react-bootstrap/lib/Col');
 
 
 import {Card, CardText} from 'material-ui/Card';
@@ -53,7 +54,7 @@ class ContactInfoCard extends React.Component {
     }
 
 
-    handleSave = () => {
+    handleSave() {
         this.setState({
             open: false,
             email:  $('email').val(),
@@ -115,7 +116,7 @@ class ContactInfoCard extends React.Component {
                         <Col>
                             <TextField
                                 floatingLabelText="E-post"
-                                hintText={ eMail }
+                                hintText= "E-post"
                                 name="textfieldEmail"
                                 ref="email"
                                 value={ this.state.textfieldEmail }
@@ -125,7 +126,7 @@ class ContactInfoCard extends React.Component {
                         <Col>
                             <TextField
                                 floatingLabelText="Mobilnummer"
-                                hintText={ phoneNumber }
+                                hintText="Mobilnummer"
                                 name="textfieldPhone"
                                 ref="phone"
                                 value={ this.state.textfieldPhone }

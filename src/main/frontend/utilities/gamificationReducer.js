@@ -2,6 +2,8 @@ import * as actionTypes from './actions';
 
 // INITIAL STATE
 const initialState = {
+    contactEmail : '',
+    contactPhone : ''
 };
 
 // REDUCER

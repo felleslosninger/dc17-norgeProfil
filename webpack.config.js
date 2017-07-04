@@ -1,12 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
-var BundleTracker = require('webpack-bundle-tracker');
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin({
-    name: "common",
-    filename: "common.bundle.js",
-});
-
-
+'use strict';
+let path = require('path');
+let webpack = require('webpack');
 module.exports = {
     entry: './src/main/frontend/containers/ContactInfoContainer.js',
     devtool: 'sourcemaps',
@@ -19,11 +13,11 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,         // Match both .js and .jsx files
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader",
+                loader: 'babel-loader',
                 query: {
-                    presets:['react']
+                    presets:['es2015', 'react', 'stage-2' ]
                 }
             }
         ],
