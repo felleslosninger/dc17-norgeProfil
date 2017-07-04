@@ -19,12 +19,15 @@ class ContactInfoCard extends React.Component {
 
         this.state = {
             open: false,
-            email: '',
-            phone: ''
+            email: 'olanordmann@gmail.com',
+            phone: '12345678',
+            textfieldEmail: 'olanordmann@gmail.com',
+            textfieldPhone: '12345678',
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.saveInfo = this.saveInfo.bind(this);
+        this.handleSave = this.handleSave.bind(this);
+        this.handleEnter = this.handleEnter.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
     };
@@ -44,14 +47,22 @@ class ContactInfoCard extends React.Component {
     }
 
 
-    saveInfo() {
-        console.log("saved");
-        console.log("Email: ", this.state.email, "Phone: ", this.state.phone);
-        this.setState({modalIsOpen: false});
-        //    Save email + phone to DB
+    handleSave() {
+        this.setState({
+            open: false,
+            email: this.state.textfieldEmail,
+            phone: this.state.textfieldPhone
+        });
 
     };
 
+    handleEnter(event) {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+            this.handleSave()
+        }
+        return false;
+    }
 
     render() {
 
@@ -65,7 +76,7 @@ class ContactInfoCard extends React.Component {
                 label="Lagre"
                 primary={true}
                 keyboardFocused={true}
-                onTouchTap={this.handleClose}
+                onTouchTap={this.handleSave}
             />,
         ];
 
@@ -109,18 +120,22 @@ class ContactInfoCard extends React.Component {
                             <TextField
                                 hintText={eMail}
                                 floatingLabelText="E-post"
-                                name="email"
-                                value={ this.state.email }
+                                name="textfieldEmail"
+                                defaultValue = {this.state.email}
+                                value={ this.state.textfieldEmail }
                                 onChange={ this.handleChange }
+                                onKeyPress={this.handleEnter}
                             />
                         </Col>
                         <Col>
                             <TextField
                                 hintText={phoneNumber}
                                 floatingLabelText="Mobilnummer"
-                                name="phone"
-                                value={ this.state.phone }
+                                name="textfieldPhone"
+                                defaultValue = {this.state.phone}
+                                value={ this.state.textfieldPhone }
                                 onChange={ this.handleChange }
+                                onKeyPress={this.handleEnter }
                             />
                         </Col>
                     </Row>
