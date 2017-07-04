@@ -21,6 +21,8 @@ var Reserved = require('./components/Reserved.js');
 var Gamification = require('./components/Gamification.js');
 
 
+
+
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
@@ -33,6 +35,7 @@ const App = () => {
                     <Col sm={6} md={3} ><Reservation/></Col>
                 </Row>
                 <Gamification/>
+
                 <div className="page-header"><h3>Aktivitetslogg</h3></div>
                 <Feed/>
             </div>
