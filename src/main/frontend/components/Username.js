@@ -19,4 +19,4 @@ class Username extends React.Component {
 }
 
 
-module.exports = Username;
+export default Username;

@@ -1,7 +1,8 @@
-var path = require('path');
-
+'use strict';
+let path = require('path');
+let webpack = require('webpack');
 module.exports = {
-    entry: './src/main/frontend/app.js',
+    entry: './src/main/frontend/containers/AppContainer.js',
     devtool: 'sourcemaps',
     cache: true,
     debug: true,
@@ -12,12 +13,11 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: path.join(__dirname, '.'),
-                exclude: /(node_modules)/,
-                loader: 'babel',
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
                 query: {
-                    cacheDirectory: true,
-                    presets: ['es2015', 'react']
+                    presets:['es2015', 'react', 'stage-2' ]
                 }
             }
         ],
@@ -25,5 +25,8 @@ module.exports = {
             test: /\.css$/,
             use: [ 'style-loader', 'css-loader' ]
         }]
-    }
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '']
+    },
 };
