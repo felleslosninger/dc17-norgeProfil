@@ -36,7 +36,9 @@ class AppContainer extends Component {
     render() {
         return (
             <div>
-                <Username/>
+                <Username
+                    username={this.props.username}
+                />
                 <Row>
                     <Col sm={6} md={3} >
                         <ContactInfoCard
@@ -67,9 +69,10 @@ class AppContainer extends Component {
 
 
 const mapStateToProps = state => {
-    let {info: {activeContactEmail, activeContactPhone}} = state;
+    let {info: {username, activeContactEmail, activeContactPhone}} = state;
 
     return {
+        username: username,
         activeContactEmail: activeContactEmail,
         activeContactPhone: activeContactPhone,
     }

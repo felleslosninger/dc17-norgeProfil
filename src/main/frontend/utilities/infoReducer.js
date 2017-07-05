@@ -2,6 +2,7 @@ import * as actionTypes from './actions';
 
 // INITIAL STATE
 const initialState = {
+    username : 'Kari Nordmann',
     activeContactEmail : 'email@email.com',
     activeContactPhone : '12345678'
 };
