@@ -4,17 +4,11 @@ import rootReducer from "../utilities/indexReducer";
 
 export default function configureStore() {
 
-    const middleware = [
+    let middleware = [
         thunk,
     ];
 
-    const store = createStore(
-        rootReducer,
-        {},
-        compose(
-            applyMiddleware(...middleware)
-        )
-    );
+    let store = createStore(rootReducer);
 
     return store;
 };

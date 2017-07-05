@@ -1,9 +1,9 @@
 import {combineReducers} from "redux";
 
-import gamificationReducer from "./gamificationReducer";
+import infoReducer from "./infoReducer";
 
 const allReducers = combineReducers({
-    gamification: gamificationReducer
+    info: infoReducer
 });
 
 export default allReducers;

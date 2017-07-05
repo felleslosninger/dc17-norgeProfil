@@ -2,8 +2,8 @@ import * as actionTypes from './actions';
 
 // INITIAL STATE
 const initialState = {
-    contactEmail : '',
-    contactPhone : ''
+    activeContactEmail : 'email@email.com',
+    activeContactPhone : '12345678'
 };
 
 // REDUCER
@@ -18,12 +18,6 @@ export default function GamificationReducer(state = initialState, action) {
             return {
                 ...state,
                 activeContactEmail: action.contactEmail,
-            };
-        case actionTypes.SAVE_BUTTON_CLICKED:
-            return {
-                ...state,
-                activeContactEmail: '',
-                activeContactPhone: '',
             };
         default:
             return state;

@@ -8,7 +8,7 @@ import {connect} from "react-redux";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ContactInfoCard from '../components/ContactInfoCard';
-import { saveContactEmail, saveContactPhone, saveButtonClicked } from '../utilities/actions';
+import { saveContactEmail, saveContactPhone } from '../utilities/actions';
 import configureStore from "../utilities/store";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -19,13 +19,15 @@ class ContactInfoContainer extends Component {
 
     componentDidMount() {
     //  Fetch data from API
+
     }
 
     render() {
         return (
             <div>
                 <ContactInfoCard
-                    handleSave={this.props.saveContactButton}
+                    onSaveEmail={this.props.changeEmail}
+                    onSavePhone={this.props.changePhone}
                     savedEmail={this.props.activeContactEmail}
                     savedPhone={this.props.activeContactPhone}
                 />
@@ -34,21 +36,23 @@ class ContactInfoContainer extends Component {
     }
 }
 
+
+
 const mapStateToProps = state => {
-    let {activeContactEmail, activeContactPhone} = state; // Make activeContactEmail and activeContactPhone from state become variables
+    let {info: {activeContactEmail, activeContactPhone}} = state;
 
     return {
+        activeContactEmail: activeContactEmail,
         activeContactPhone: activeContactPhone,
-        activeContactEmail: activeContactEmail
     }
+
 
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        activeContactEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
-        activeContactPhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
-        saveContactButton: () => dispatch(saveButtonClicked()),
+        changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
+        changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
     }
 };
 
