@@ -22,7 +22,8 @@ class Gamification extends React.Component {
         this.state = {
             hasPostbox: true,
             hasMobileNum: false,
-            hasEmail: true
+            hasEmail: true,
+            hasReservation: true
         };
 
     };
@@ -59,15 +60,48 @@ class Gamification extends React.Component {
             return ( Math.round((test / totalTest) * 100));
         };
 
+        var reservation = function(gamification){
+            let totalTest = 1;
+            let test = 0;
+
+            if(gamification.state.hasReservation){
+                test++;
+            }
+            return ( Math.round((test / totalTest) * 100));
+        };
+
+        var calculatePercent = function(gamification){
+            let totalTest = 4;
+            let test = 0;
+
+            if(gamification.state.hasPostbox){
+                test++;
+            }
+
+            if(gamification.state.hasMobileNum){
+                test++;
+            }
+
+            if(gamification.state.hasEmail){
+                test++;
+            }
+
+            if(gamification.state.hasPostbox){
+                test++;
+            }
+            return ( Math.round((test / totalTest) * 100));
+        };
+
         let Postbox = postBox(this);
         let Mobilenum = mobileNum(this);
         let Email = email(this);
-
+        let Reservation = reservation(this);
+        let percent = calculatePercent(this);
 
         const popover = (
             <Popover id="popover-positioned-bottom">
                 <List>
-                    <Subheader>Styrke brukerprofil: <strong>{Email} %</strong> </Subheader>
+                    <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
                     <ListItem
                         primaryText="E-mail"
                         leftIcon={this.state.hasEmail ? <Done /> : <Remove /> }
@@ -84,6 +118,11 @@ class Gamification extends React.Component {
                         leftIcon={this.state.hasPostbox ? <Done /> : <Remove /> }
                         disabled={true}
                     />
+                    <ListItem
+                        primaryText="Reservasjon"
+                        leftIcon={this.state.hasReservation ? <Done /> : <Remove /> }
+                        disabled={true}
+                    />
                 </List>
             </Popover>
         );
@@ -95,10 +134,6 @@ class Gamification extends React.Component {
         };
 
 
-        const AlignIcon = {
-            left: '95px'
-        };
-
         const overlay = (
             <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
                 <IconButton>
@@ -106,19 +141,28 @@ class Gamification extends React.Component {
                 </IconButton>
             </OverlayTrigger>);
 
-        const viewBar = [
-            <Col key={1} md={3}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Postbox}/></Col>,
-            <Col key={2} md={3}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Mobilenum}/></Col>,
-            <Col key={3} md={3}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/></Col>,
-            <Col key={4} md={3}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/></Col>
+        const bar = [
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Postbox}/>,
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Mobilenum}/>,
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/>,
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Reservation}/>
         ];
 
+        const viewBar = [];
 
         var checkBar = function () {
-            for(var i = 0; i < viewBar.length; i++) {
-                console.log(viewBar[i].props);
+            for(var i = 0; i < bar.length; i++) {
+                if(bar[i].props.value == 100) {
+                    viewBar.push(<Col key={i+1} md={3}>{bar[i]}</Col>);
+                }
             }
-        }
+
+            for(var i = 0; i < bar.length; i++) {
+                if(bar[i].props.value == 0) {
+                    viewBar.push(<Col key={i+1} md={3}>{bar[i]}</Col>);
+                }
+            }
+        };
 
 
 
