@@ -26,7 +26,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const store = configureStore();
 
-class ContactInfoContainer extends Component {
+class AppContainer extends Component {
 
     componentDidMount() {
     //  Fetch data from API
@@ -98,17 +98,17 @@ const Bar = () => {
     );
 };
 
-ContactInfoContainer = connect(mapStateToProps, mapDispatchToProps)(ContactInfoContainer);
+AppContainer = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
 
 injectTapEventPlugin();
 
 ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
-            <ContactInfoContainer />
+            <AppContainer />
         </Provider>
     </MuiThemeProvider>,
-    document.getElementById('ContactInfo')
+    document.getElementById('app')
 );
 
 

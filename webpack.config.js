@@ -2,7 +2,7 @@
 let path = require('path');
 let webpack = require('webpack');
 module.exports = {
-    entry: './src/main/frontend/containers/ContactInfoContainer.js',
+    entry: './src/main/frontend/containers/AppContainer.js',
     devtool: 'sourcemaps',
     cache: true,
     debug: true,
