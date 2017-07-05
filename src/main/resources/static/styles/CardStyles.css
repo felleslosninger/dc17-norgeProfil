@@ -1,5 +1,6 @@
 /*Used in Eid*/
 
+/*pc*/
 @media (min-width: 1192px) {
     p {
         font-size: 1em;
@@ -15,18 +16,31 @@
 }
 
 @media (min-width: 992px ) and (max-width: 1192px) {
+    h1 {
+        font-size: 1.5em;
+        font-stretch: expanded;
+    }
     h4 {
         font-size: medium;
+        font-stretch: expanded;
+    }
+
+    p{
+        font-size: 1em;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    h1 {
+        font-size: 1.9em;
+        font-stretch: expanded;
+    }
     h4 {
-        font-size: 14px;
+        font-size: 1em;
     }
 
-    .Icon {
-        color: lightpink;
+    p{
+        font-size: small;
     }
 }
 

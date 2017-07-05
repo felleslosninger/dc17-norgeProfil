@@ -83,8 +83,8 @@ class Gamification extends React.Component {
 
         return (
             <Row className="Gamification">
-                <Col md={11}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={percent}/></Col>
-                <Col mdOffset={11}>
+                <Col sm={10}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={percent}/></Col>
+                <Col sm={2}>
                     <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
                         <IconButton style={AlignIcon}>
                             <Info/>

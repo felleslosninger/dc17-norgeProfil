@@ -100,8 +100,8 @@ class Mail extends React.Component {
                 <Card className="Card">
                     <Row className="CardHeader">
                         <Col sm={3} md={3} lg={2} className="Icon">{<Email />}</Col>
-                        <Col sm={6} md={6} lg={7} ><h4>Digital postkasse</h4></Col>
-                        <Col sm={3} md={3} lg={3}><Help onClick={mail.handleOpen} text="Informasjon"/> </Col>
+                        <Col sm={7} md={6} lg={8} ><h4>Digital postkasse</h4></Col>
+                        <Col sm={2} md={3} lg={2}><Help onClick={mail.handleOpen} text="Informasjon"/> </Col>
                     </Row>
                     <Dialog
                         title="Spørsmål og svar"
@@ -227,15 +227,15 @@ class Mail extends React.Component {
             return (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={1} className="Icon">{<Email />}</Col>
-                        <Col md={10}><h4>Digital postkasse</h4></Col>
+                        <Col sm={3} md={3} lg={2}  className="Icon">{<Email />}</Col>
+                        <Col sm={9} md={9} lg={10}><h4>Digital postkasse</h4></Col>
                     </Row>
                     <hr className="HLine"/>
                     <CardText>
                         <div className="CardInfoText">
                             <Row>
-                                <Col md={4}> {img} </Col>
-                                <Col md={8}> Du mottar i dag post fra det offentlige til din digitale postkasse hos
+                                <Col sm={4}> {img} </Col>
+                                <Col sm={8}> Du mottar i dag post fra det offentlige til din digitale postkasse hos
                                     <strong>  { postbox } </strong> </Col>
                             </Row>
                         </div>
