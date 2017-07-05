@@ -1,0 +1,24 @@
+idporten:
+  client:
+    clientId: oidc_dificamp_test
+    clientSecret: dd56d193-cfe2-4733-99cf-ffd4316356ac
+    accessTokenUri: https://oidc-ver2.difi.no/idporten-oidc-provider/token
+    userAuthorizationUri: https://oidc-ver2.difi.no/idporten-oidc-provider/authorize
+    tokenName: code
+    authenticationScheme: query
+    clientAuthenticationScheme: query
+    scope:
+     - openid
+     - profile
+     - global/navn.read
+     - user/kontaktinformasjon.read
+     - global/digitalpost.read
+     - global/postadresse.read
+     - user/digitalpost.read
+
+  resource:
+    userInfoUri: https://oidc-ver2.difi.no/idporten-oidc-provider/userinfo
+
+logging:
+  level:
+    org.springframework.security: DEBUG
