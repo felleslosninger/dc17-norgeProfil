@@ -184,8 +184,8 @@ class Mail extends React.Component {
                     <hr className="Headline"/>
                     <CardText className="CardText">
                         <p>
-                        Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
-                        hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
+                            Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
+                            hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
                         </p>
                         <br/>
                         <FlatButton
@@ -266,4 +266,4 @@ class Mail extends React.Component {
 }
 
 
-module.exports = Mail;
+export default Mail;
