@@ -19,16 +19,32 @@ class Gamification extends React.Component {
         super(props);
 
         this.state = {
-            percent: 84,
+            hasPostbox: false,
+            hasMobileNum: true,
+            hasEmail: true
         };
 
     };
 
-
-
     render() {
+        var calculatePercent = function(gamification){
+            let totalTest = 3;
+            let test = 0;
 
-        let percent = this.state.percent;
+            if(gamification.state.hasPostbox){
+                test++;
+            }
+            if(gamification.state.hasMobileNum){
+                test++;
+            }
+
+            if(gamification.state.hasEmail){
+                test++;
+            }
+            return ( Math.round((test / totalTest) * 100));
+        }
+
+        let percent = calculatePercent(this);
 
         const popover = (
             <Popover id="popover-positioned-bottom">
@@ -36,18 +52,18 @@ class Gamification extends React.Component {
                     <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
                     <ListItem
                         primaryText="E-mail"
-                        leftIcon={<Done />}
+                        leftIcon={this.state.hasEmail ? <Done /> : <Remove /> }
                         disabled={true}
-                    />
+                    ></ListItem>
                     <ListItem
                         primaryText="Mobilnummer"
-                        leftIcon={<Done />}
+                        leftIcon={this.state.hasMobileNum ? <Done /> : <Remove /> }
                         disabled={true}
                     />
                     <Divider/>
                     <ListItem
                         primaryText="Digital postkasse"
-                        leftIcon={<Remove />}
+                        leftIcon={this.state.hasPostbox ? <Done /> : <Remove /> }
                         disabled={true}
                     />
                 </List>
@@ -67,7 +83,7 @@ class Gamification extends React.Component {
 
         return (
             <Row className="Gamification">
-                <Col md={11}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={this.state.percent}/></Col>
+                <Col md={11}><LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={percent}/></Col>
                 <Col mdOffset={11}>
                     <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
                         <IconButton style={AlignIcon}>
