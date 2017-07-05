@@ -115,7 +115,7 @@ class Mail extends React.Component {
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
-                                        <p>
+                                        <p className="CustomP">
                                         En digital postkasse er ei sikker løsning for å få og oppbevare viktig post
                                         digitalt, slik som brev med vedtak, helseopplysningar eller annen sensitiv
                                         informasjon. Det offentlige kan ikke bruke vanlig e-post til å sende slik
@@ -134,7 +134,7 @@ class Mail extends React.Component {
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
-                                        <p>
+                                        <p className="CustomP">
                                         Nei, en digital postkasse er sikrere enn e-post fordi både avsender og
                                         mottaker må bekrefte identiteten sin. Post som det offentlige sender til
                                         deg i den digitale postkassen din, blir sendt kryptert, som skjult tekst.
@@ -150,7 +150,7 @@ class Mail extends React.Component {
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
-                                        <p>
+                                        <p className="CustomP">
                                             For å opprette en digital postkasse må du ha
                                             <ul>
                                                 <li> norsk fødselsnummer eller D-nummer</li>
@@ -167,7 +167,7 @@ class Mail extends React.Component {
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
-                                       <p>
+                                       <p className="CustomP">
                                         Ja, men til post fra det offentlige må du velge en av postkassene, slik at
                                         stat og kommune vet hvor de skal sende posten din. Kontakt ID-porten sin
                                         brukerstøtte på grønt nummer 800 30 300 om du har spørsmål om dette (fra

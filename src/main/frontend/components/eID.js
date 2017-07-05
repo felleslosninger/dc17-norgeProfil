@@ -70,7 +70,7 @@ class EID extends React.Component {
                             leftAvatar={<img src="img/minid.png" className="CardPicture Small"/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="Li Info">
-                                    <p>
+                                    <p className="CustomP">
                                     MinID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester på
                                     mellomhøyt sikkerhetsnivå, nivå 3.
                                     <br/><br/>
@@ -101,7 +101,7 @@ class EID extends React.Component {
                             leftAvatar={<img src="img/bankid.png" className="CardPicture Small"/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="Li Info">
-                                    <p>
+                                    <p className="CustomP">
                                     BankID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester på
                                     høyeste sikkerhetsnivå, nivå 4. <br/><br/>
                                     BankID blir levert av banken din og kan bli gitt til personar som har fylt 15 år.
@@ -121,7 +121,7 @@ class EID extends React.Component {
                             leftAvatar={<img src="img/bankid_pa_mobil.png" className="CardPicture Small"/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="Li Info">
-                                    <p>
+                                    <p className="CustomP">
                                     BankID på mobil er en personlig, elektronisk ID som gir tilgang til offentlige
                                     tjenester på høyeste sikkerhetsnivå, nivå 4.<br/><br/>
                                     For å kunne ta i bruk BankID på mobil må du ha en nettbankavtale med BankID og en
@@ -141,7 +141,7 @@ class EID extends React.Component {
                             leftAvatar={<img src="img/buypass.png" className="CardPicture Small"/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="Li Info">
-                                    <p>
+                                    <p className="CustomP">
                                     Buypass ID er en personlig, elektronisk ID som gir tilgang til offentlige tjenester
                                     på høyeste sikkerhetsnivå, nivå 4.<br/><br/>
                                     Han blir utskrivet av Buypass AS og blir levert som Buypass ID på smartkort og
@@ -162,7 +162,7 @@ class EID extends React.Component {
                             leftAvatar={<img src="img/commfides.png" className="CardPicture Small"/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="Li Info">
-                                    <p>
+                                    <p className="CustomP">
                                     Commfides er en personlig, elektronisk ID som gir tilgang til offentlige tjenester
                                     på høyeste sikkerheitsnivå, nivå 4.<br/><br/>
                                     Commfides blir levert av Commfides Norge AS som elektronisk ID på en sikker

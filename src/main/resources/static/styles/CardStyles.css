@@ -1,6 +1,4 @@
-/*Used in Eid*/
-
-/*pc*/
+/*Large desktops and laptops*/
 @media (min-width: 1192px) {
     p {
         font-size: 1em;
@@ -15,6 +13,7 @@
     }
 }
 
+/*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
 @media (min-width: 992px ) and (max-width: 1192px) {
     h1 {
         font-size: 1.5em;
@@ -30,6 +29,7 @@
     }
 }
 
+/*Portrait tablets and small desktops eg. Ipad*/
 @media (min-width: 768px) and (max-width: 991px) {
     h1 {
         font-size: 1.9em;
@@ -39,23 +39,21 @@
         font-size: 1em;
     }
 
-    p{
+    p {
         font-size: small;
+    }
+
+    .CustomP{ /*Class to adapt place for letters in Ipad modus*/
+        width: 30em;
     }
 }
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
-    h4 {
-        background-color: red;
-    }
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
-    h4 {
-        background-color:green;
-    }
 }
 
 .Card {
