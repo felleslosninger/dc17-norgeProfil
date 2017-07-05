@@ -1,5 +1,18 @@
 /*Used in Eid*/
 
+@media (min-width: 1192px) {
+    p {
+        font-size: 1em;
+    }
+
+    ListItem {
+        font-size: 1em;
+    }
+
+    TextField {
+        font-size: 1em;
+    }
+}
 
 @media (min-width: 992px ) and (max-width: 1192px) {
     h4 {
@@ -86,8 +99,9 @@
 .CardPicture{
 
 }
+
 .CardPicture.Medium{
-    width:  98px;
+    width:  60px;
     height: auto;
 }
 

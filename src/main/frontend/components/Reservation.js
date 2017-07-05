@@ -50,7 +50,7 @@ class Reservation extends React.Component {
                     actions={actions} modal={false}
                     open={this.state.open}
                     onRequestClose={this.handleClose}>
-                    <div>
+                    <p>
                         Reservasjon mot kommunikasjon på nett innebærer at du vil motta vedtak og
                         andre viktige brev fra det offentlige på papir.
                         <br/><br/>
@@ -61,14 +61,16 @@ class Reservation extends React.Component {
                         Du kan logge inn på offentlige tjenester via ID-porten selv om du er reservert.
                         <br/><br/>
                         Reservasjonen din kan du enkelt oppheve ved å trykke Opphev reservasjon.
-                    </div>
+                    </p>
                 </Dialog>
                 <hr className="HLine"/>
                 <CardText className="CardText">
+                    <p>
                     Om du reserverer deg mot kommunikasjon på nett vil du motta viktige brev fra det offentlige kun på
                     papir.
                     Stat og kommune kan likevel sende deg annen informasjon på e-post, sms eller som brev digitalt.<a
                     href="http://eid.difi.no/nb/reserver-deg-mot-kommunikasjon-pa-nett"> Les mer</a>
+                    </p>
                 </CardText>
             </Card>)
     }

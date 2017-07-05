@@ -92,10 +92,10 @@ class ContactInfoCard extends React.Component {
                 </Row>
                 <hr className="HLine"/>
                 <CardText>
-                    <div className="CardText">
+                    <p className="CardText">
                         Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
                             når de kontakter deg.
-                    </div>
+                    </p>
                     <List>
                         <ListItem disabled={true} primaryText="E-mail: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
                         <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber}
