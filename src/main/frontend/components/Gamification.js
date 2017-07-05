@@ -29,7 +29,7 @@ class Gamification extends React.Component {
     };
 
     render() {
-        var postBox = function(gamification){
+        var postBox = (gamification) => {
             let totalTest = 1;
             let test = 0;
 
@@ -40,7 +40,7 @@ class Gamification extends React.Component {
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var mobileNum = function(gamification){
+        var mobileNum = (gamification) => {
             let totalTest = 1;
             let test = 0;
 
@@ -50,7 +50,7 @@ class Gamification extends React.Component {
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var email = function(gamification){
+        var email = (gamification) => {
             let totalTest = 1;
             let test = 0;
 
@@ -60,7 +60,7 @@ class Gamification extends React.Component {
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var eid = function(gamification){
+        var eid = (gamification) => {
             let totalTest = 1;
             let test = 0;
 
@@ -70,7 +70,7 @@ class Gamification extends React.Component {
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var calculatePercent = function(gamification){
+        var calculatePercent = (gamification) => {
             let totalTest = 4;
             let test = 0;
 
@@ -150,7 +150,7 @@ class Gamification extends React.Component {
 
         const viewBar = [];
 
-        var checkBar = function () {
+        var checkBar = () => {
             for(var i = 0; i < bar.length; i++) {
                 if(bar[i].props.value == 100) {
                     viewBar.push(<Col key={i+1} md={3}>{bar[i]}</Col>);
