@@ -163,4 +163,4 @@ class Reservation extends React.Component {
 }
 
 
-module.exports = Reservation;
+export default Reservation;

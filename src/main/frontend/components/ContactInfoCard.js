@@ -1,6 +1,7 @@
-var React = require("react");
-var Row = require('react-bootstrap/lib/Row');
-var Col = require('react-bootstrap/lib/Col');
+"use strict";
+let React = require("react");
+let Row = require('react-bootstrap/lib/Row');
+let Col = require('react-bootstrap/lib/Col');
 
 
 import {Card, CardText} from 'material-ui/Card';
@@ -12,6 +13,7 @@ import ActionInfo from 'material-ui/svg-icons/action/info';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
 import PhoneIcon from 'material-ui/svg-icons/communication/contact-phone';
 import EmailIcon from 'material-ui/svg-icons/communication/contact-mail';
+
 class ContactInfoCard extends React.Component {
 
     constructor(props) {
@@ -19,15 +21,12 @@ class ContactInfoCard extends React.Component {
 
         this.state = {
             open: false,
-            email: 'olanordmann@gmail.com',
-            phone: '12345678',
-            textfieldEmail: 'olanordmann@gmail.com',
-            textfieldPhone: '12345678',
+            textfieldEmail: this.props.savedEmail,
+            textfieldPhone: this.props.savedPhone,
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSave = this.handleSave.bind(this);
-        this.handleEnter = this.handleEnter.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
     };
@@ -37,32 +36,32 @@ class ContactInfoCard extends React.Component {
     };
 
     handleClose() {
-        this.setState({open: false});
+        this.setState({
+            open: false,
+            textfieldEmail: this.props.savedEmail,
+            textfieldPhone: this.props.savedPhone,
+        });
     };
 
     handleChange({target}) {
         this.setState({
             [target.name]: target.value
         });
+
     }
 
 
     handleSave() {
         this.setState({
             open: false,
-            email: this.state.textfieldEmail,
-            phone: this.state.textfieldPhone
         });
 
+        this.props.onSaveEmail(this.state.textfieldEmail);
+        this.props.onSavePhone(this.state.textfieldPhone);
     };
 
-    handleEnter(event) {
-        if (event.key == 'Enter') {
-            event.preventDefault();
-            this.handleSave()
-        }
-        return false;
-    }
+
+
 
     render() {
 
@@ -80,9 +79,6 @@ class ContactInfoCard extends React.Component {
             />,
         ];
 
-        let phoneNumber = this.state.phone; // get from DB
-        let eMail = this.state.email; // get from DB
-
 
         return (
             <Card className="Card">
@@ -94,11 +90,11 @@ class ContactInfoCard extends React.Component {
                 <CardText className="CardText">
                     <div className="CardInfoText">
                         Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
-                            når de kontakter deg.
+                        når de kontakter deg.
                     </div>
                     <List>
-                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={eMail} leftIcon={<EmailIcon />}/>
-                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={phoneNumber}
+                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={ this.props.savedEmail } leftIcon={<EmailIcon />}/>
+                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={ this.props.savedPhone }
                                   leftIcon={<PhoneIcon/>}/>
                     </List>
                     <div className="EditBtn">
@@ -118,24 +114,22 @@ class ContactInfoCard extends React.Component {
                     <Row className="EditInfo">
                         <Col>
                             <TextField
-                                hintText={eMail}
                                 floatingLabelText="E-post"
+                                hintText= { this.props.savedEmail }
                                 name="textfieldEmail"
-                                defaultValue = {this.state.email}
+                                ref="email"
                                 value={ this.state.textfieldEmail }
                                 onChange={ this.handleChange }
-                                onKeyPress={this.handleEnter}
                             />
                         </Col>
                         <Col>
                             <TextField
-                                hintText={phoneNumber}
                                 floatingLabelText="Mobilnummer"
+                                hintText={ this.props.savedPhone }
                                 name="textfieldPhone"
-                                defaultValue = {this.state.phone}
+                                ref="phone"
                                 value={ this.state.textfieldPhone }
                                 onChange={ this.handleChange }
-                                onKeyPress={this.handleEnter }
                             />
                         </Col>
                     </Row>
@@ -146,4 +140,11 @@ class ContactInfoCard extends React.Component {
     }
 }
 
-module.exports = ContactInfoCard;
+ContactInfoCard.propTypes = {
+    onSaveEmail: React.PropTypes.func.isRequired,
+    onSavePhone: React.PropTypes.func.isRequired,
+    savedEmail: React.PropTypes.string,
+    savedPhone: React.PropTypes.string
+};
+
+export default ContactInfoCard;
