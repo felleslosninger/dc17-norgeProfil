@@ -266,4 +266,4 @@ class Mail extends React.Component {
 }
 
 
-module.exports = Mail;
+export default Mail;

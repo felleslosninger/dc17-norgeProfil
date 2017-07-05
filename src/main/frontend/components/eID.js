@@ -205,4 +205,4 @@ class EID extends React.Component {
 }
 
 
-module.exports = EID;
+export default EID;

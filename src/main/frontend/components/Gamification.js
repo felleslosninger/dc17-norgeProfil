@@ -99,4 +99,4 @@ class Gamification extends React.Component {
 }
 
 
-module.exports = Gamification;
+export default Gamification;

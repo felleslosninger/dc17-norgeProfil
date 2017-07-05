@@ -7,7 +7,18 @@ import {Provider} from "react-redux";
 import {connect} from "react-redux";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+
 import ContactInfoCard from '../components/ContactInfoCard';
+import EID from '../components/eID';
+import Reservation from '../components/Reservation.js';
+import Mail from '../components/Mail.js';
+import Username from '../components/Username.js';
+import Feed from '../components/Feed.js';
+import NavigationBar from '../components/NavigationBar.js';
+import Gamification from '../components/Gamification.js';
+
+
 import { saveContactEmail, saveContactPhone } from '../utilities/actions';
 import configureStore from "../utilities/store";
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -25,12 +36,29 @@ class ContactInfoContainer extends Component {
     render() {
         return (
             <div>
-                <ContactInfoCard
-                    onSaveEmail={this.props.changeEmail}
-                    onSavePhone={this.props.changePhone}
-                    savedEmail={this.props.activeContactEmail}
-                    savedPhone={this.props.activeContactPhone}
-                />
+                <Username/>
+                <Row>
+                    <Col sm={6} md={3} >
+                        <ContactInfoCard
+                            onSaveEmail={this.props.changeEmail}
+                            onSavePhone={this.props.changePhone}
+                            savedEmail={this.props.activeContactEmail}
+                            savedPhone={this.props.activeContactPhone}
+                        />
+                    </Col>
+                    <Col sm={6} md={3} >
+                        <Mail/>
+                    </Col>
+                    <Col sm={6} md={3} >
+                        <EID/>
+                    </Col>
+                    <Col sm={6} md={3} >
+                        <Reservation/>
+                    </Col>
+                </Row>
+                <Gamification/>
+                <div className="page-header"><h3>Aktivitetslogg</h3></div>
+                <Feed/>
             </div>
         );
     }
@@ -62,6 +90,14 @@ const muiTheme = getMuiTheme({
     },
 });
 
+const Bar = () => {
+    return (
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <NavigationBar/>
+        </MuiThemeProvider>
+    );
+};
+
 ContactInfoContainer = connect(mapStateToProps, mapDispatchToProps)(ContactInfoContainer);
 
 injectTapEventPlugin();
@@ -69,10 +105,11 @@ injectTapEventPlugin();
 ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
-            <Row>
-                <Col sm={6} md={3}><ContactInfoContainer /></Col>
-            </Row>
+            <ContactInfoContainer />
         </Provider>
     </MuiThemeProvider>,
     document.getElementById('ContactInfo')
 );
+
+
+ReactDOM.render(<Bar/>, document.getElementById('navbar'));

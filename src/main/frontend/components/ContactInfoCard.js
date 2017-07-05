@@ -21,10 +21,8 @@ class ContactInfoCard extends React.Component {
 
         this.state = {
             open: false,
-            textfieldEmail: '',
-            textfieldPhone: '',
-            email: '',
-            phone: ''
+            textfieldEmail: this.props.savedEmail,
+            textfieldPhone: this.props.savedPhone,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -40,8 +38,8 @@ class ContactInfoCard extends React.Component {
     handleClose() {
         this.setState({
             open: false,
-            textfieldEmail: this.state.email,
-            textfieldPhone: this.state.phone,
+            textfieldEmail: this.props.savedEmail,
+            textfieldPhone: this.props.savedPhone,
         });
     };
 
@@ -56,11 +54,10 @@ class ContactInfoCard extends React.Component {
     handleSave() {
         this.setState({
             open: false,
-            email:  this.state.textfieldEmail,
-            phone:  this.state.textfieldPhone,
         });
-        this.props.savedEmail(this.state.email);
-        this.props.savedPhone(this.state.phone);
+
+        this.props.onSaveEmail(this.state.textfieldEmail);
+        this.props.onSavePhone(this.state.textfieldPhone);
     };
 
 
@@ -96,8 +93,8 @@ class ContactInfoCard extends React.Component {
                         når de kontakter deg.
                     </div>
                     <List>
-                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={this.state.email} leftIcon={<EmailIcon />}/>
-                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={this.state.phone}
+                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={ this.props.savedEmail } leftIcon={<EmailIcon />}/>
+                        <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={ this.props.savedPhone }
                                   leftIcon={<PhoneIcon/>}/>
                     </List>
                     <div className="EditBtn">
@@ -118,7 +115,7 @@ class ContactInfoCard extends React.Component {
                         <Col>
                             <TextField
                                 floatingLabelText="E-post"
-                                hintText= "E-post"
+                                hintText= { this.props.savedEmail }
                                 name="textfieldEmail"
                                 ref="email"
                                 value={ this.state.textfieldEmail }
@@ -128,7 +125,7 @@ class ContactInfoCard extends React.Component {
                         <Col>
                             <TextField
                                 floatingLabelText="Mobilnummer"
-                                hintText="Mobilnummer"
+                                hintText={ this.props.savedPhone }
                                 name="textfieldPhone"
                                 ref="phone"
                                 value={ this.state.textfieldPhone }
@@ -144,9 +141,10 @@ class ContactInfoCard extends React.Component {
 }
 
 ContactInfoCard.propTypes = {
-    handleSave: React.PropTypes.func.isRequired,
-    savedEmail: React.PropTypes.func.isRequired,
-    savedPhone: React.PropTypes.func.isRequired
+    onSaveEmail: React.PropTypes.func.isRequired,
+    onSavePhone: React.PropTypes.func.isRequired,
+    savedEmail: React.PropTypes.string,
+    savedPhone: React.PropTypes.string
 };
 
 export default ContactInfoCard;
