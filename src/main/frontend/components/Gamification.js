@@ -20,10 +20,10 @@ class Gamification extends React.Component {
         super(props);
 
         this.state = {
-            hasPostbox: true,
+            hasPostbox: false,
             hasMobileNum: false,
-            hasEmail: true,
-            hasReservation: true
+            hasEmail: false,
+            hasEid: true
         };
 
     };
@@ -60,11 +60,11 @@ class Gamification extends React.Component {
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var reservation = function(gamification){
+        var eid = function(gamification){
             let totalTest = 1;
             let test = 0;
 
-            if(gamification.state.hasReservation){
+            if(gamification.state.hasEid){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -86,7 +86,7 @@ class Gamification extends React.Component {
                 test++;
             }
 
-            if(gamification.state.hasPostbox){
+            if(gamification.state.hasEid){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -95,7 +95,7 @@ class Gamification extends React.Component {
         let Postbox = postBox(this);
         let Mobilenum = mobileNum(this);
         let Email = email(this);
-        let Reservation = reservation(this);
+        let Eid = eid(this);
         let percent = calculatePercent(this);
 
         const popover = (
@@ -119,8 +119,8 @@ class Gamification extends React.Component {
                         disabled={true}
                     />
                     <ListItem
-                        primaryText="Reservasjon"
-                        leftIcon={this.state.hasReservation ? <Done /> : <Remove /> }
+                        primaryText="eID"
+                        leftIcon={this.state.hasEid ? <Done /> : <Remove /> }
                         disabled={true}
                     />
                 </List>
@@ -145,7 +145,7 @@ class Gamification extends React.Component {
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Postbox}/>,
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Mobilenum}/>,
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/>,
-            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Reservation}/>
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Eid}/>
         ];
 
         const viewBar = [];
