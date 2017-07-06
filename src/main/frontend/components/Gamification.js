@@ -5,7 +5,6 @@ var Popover = require('react-bootstrap/lib/Popover');
 var OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
 
 import {List, ListItem} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
 import LinearProgress from 'material-ui/LinearProgress';
 import Done from 'material-ui/svg-icons/action/done'
 import Info from 'material-ui/svg-icons/action/info-outline'
@@ -35,7 +34,6 @@ class Gamification extends React.Component {
         var phone = () => {
             let totalTest = 1;
             let test = 0;
-
             if(this.props.hasPhone){
                 test++;
             }
@@ -90,47 +88,11 @@ class Gamification extends React.Component {
         let Eid = eid(this);
         let percent = calculatePercent(this);
 
-        const popover = (
-            <Popover id="popover-positioned-bottom">
-                <List>
-                    <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
-                    <ListItem
-                        primaryText="E-mail"
-                        leftIcon={this.props.hasEmail ? <Done /> : <Remove /> }
-                        disabled={true}
-                    />
-                    <ListItem
-                        primaryText="Mobilnummer"
-                        leftIcon={this.props.hasPhone ? <Done /> : <Remove /> }
-                        disabled={true}
-                    />
-                    <ListItem
-                        primaryText="Digital postkasse"
-                        leftIcon={this.props.hasPostbox ? <Done /> : <Remove /> }
-                        disabled={true}
-                    />
-                    <ListItem
-                        primaryText="eID"
-                        leftIcon={this.props.hasEid ? <Done /> : <Remove /> }
-                        disabled={true}
-                    />
-                </List>
-            </Popover>
-        );
-
         const styles = {
             marginTop: '1.5%',
             width: '100%',
             height: '10px'
         };
-
-
-        const overlay = (
-            <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
-                <IconButton>
-                    <Info/>
-                </IconButton>
-            </OverlayTrigger>);
 
         const bar = [
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Postbox}/>,
@@ -143,17 +105,75 @@ class Gamification extends React.Component {
 
         var checkBar = () => {
             for(var i = 0; i < bar.length; i++) {
-                if(bar[i].props.value == 100) {
+                if(bar[i].props.value === 100) {
                     viewBar.push(<Col key={i+1} md={3}>{bar[i]}</Col>);
                 }
             }
 
             for(var i = 0; i < bar.length; i++) {
-                if(bar[i].props.value == 0) {
+                if(bar[i].props.value === 0) {
                     viewBar.push(<Col key={i+1} md={3}>{bar[i]}</Col>);
                 }
             }
         };
+
+        const viewList = [];
+        const list = [
+            <ListItem
+                primaryText="E-mail"
+                leftIcon={this.props.hasEmail ? <Done /> : <Remove /> }
+                disabled={true}
+                value={this.props.hasEmail}
+            />,
+            <ListItem
+                primaryText="Mobilnummer"
+                leftIcon={this.props.hasPhone ? <Done /> : <Remove /> }
+                disabled={true}
+                value={this.props.hasPhone}
+            />,
+            <ListItem
+                primaryText="Digital postkasse"
+                leftIcon={this.props.hasPostbox ? <Done /> : <Remove /> }
+                disabled={true}
+                value={this.props.hasPostbox}
+            />,
+            <ListItem
+                primaryText="eID"
+                leftIcon={this.props.hasEid ? <Done /> : <Remove /> }
+                disabled={true}
+                value={this.props.hasEid}
+            />
+        ];
+        var checkList = () => {
+            for(var i = 0; i < list.length; i++) {
+                if(list[i].props.value === true) {
+                    viewList.push(<Row key={i+1}>{list[i]}</Row>);
+                }
+            }
+
+            for(var i = 0; i < list.length; i++) {
+                if(list[i].props.value === false) {
+                    viewList.push(<Row key={i+1}>{list[i]}</Row>);
+                }
+            }
+        };
+
+        const popover = (
+            <Popover id="popover-positioned-bottom">
+                <List>
+                    <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
+                    {viewList}
+                    {checkList()}
+                </List>
+            </Popover>
+        );
+
+        const overlay = (
+            <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
+                <IconButton>
+                    <Info/>
+                </IconButton>
+            </OverlayTrigger>);
 
 
 
