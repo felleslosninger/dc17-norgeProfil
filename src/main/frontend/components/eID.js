@@ -37,8 +37,9 @@ class EID extends React.Component {
     };
 
     render() {
-        const menu = {
-            paddingTop: '0px'
+        const listStyle = {
+            paddingTop: '0px',
+            marginTop: '0px'
         }
         const fontColorStyle = {
             color: 'black'
@@ -180,10 +181,9 @@ class EID extends React.Component {
                         />
                     </List>
                 </Dialog>
-                <hr className="HLine"/>
-                <CardText className="menu">
-                    <div className="DivoverMeny">
-                        <Menu className="menu" desktop={true}>
+               <hr className="HLine"/>
+                <CardText style={listStyle}>
+                        <Menu style={listStyle} desktop={true}>
                             <h5>Tjenester i bruk</h5>
                             <MenuItem style={fontColorStyle} primaryText="MinID" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
@@ -199,7 +199,6 @@ class EID extends React.Component {
                                       disabled={true}/>
 
                         </Menu>
-                    </div>
                 </CardText>
             </Card>
         );
