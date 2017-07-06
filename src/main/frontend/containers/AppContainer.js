@@ -93,7 +93,7 @@ const mapStateToProps = state => {
 
     userHasPostbox = activePostbox !== '';
 
-    userHasEid = activeContactEmail !== '';
+    userHasEid = activeEid.length > 0;
 
     return {
         username: username,

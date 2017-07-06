@@ -3,12 +3,12 @@ import * as actionTypes from './actions';
 // INITIAL STATE
 const initialState = {
     username : 'Kari Nordmann',
-    activeContactEmail : 'email@email.com',
+    activeContactEmail : 'karinordmann@email.com',
     activeContactPhone : '12345678',
     activeReservation: true,
     activePostbox: "",
-    activeEid: ['MinID', 'BankID på Mobil', 'BankID'],
-    nonActiveEid: ['Buypass ID', 'Commides']
+    activeEid: ['MinID', 'BankID'],
+    nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commides']
 };
 
 // REDUCER

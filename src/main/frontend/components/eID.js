@@ -58,6 +58,7 @@ class EID extends React.Component {
             for (let i = 0; i < this.props.userActiveEid.length; i++) {
                 activeList.push(
                     <MenuItem style={fontColorStyle}
+                              key={i+1}
                               primaryText={this.props.userActiveEid[i]}
                               leftIcon={<CheckIcon/>}
                               disabled={true}/>
@@ -70,6 +71,7 @@ class EID extends React.Component {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
                 nonActiveList.push(
                     <MenuItem style={fontColorStyle}
+                              key={i+5}
                               primaryText={this.props.userNonActiveEid[i]}
                               leftIcon={<CancelIcon/>}
                               disabled={true}/>
