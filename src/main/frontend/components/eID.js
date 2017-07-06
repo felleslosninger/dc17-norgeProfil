@@ -125,7 +125,7 @@ class EID extends React.Component {
                             leftAvatar={<img src="img/bankid_pa_mobil.png" className="CardPicture Small"/>}
                             nestedItems={[
                                 <ListItem key={1} disabled={true} className="Li Info">
-                                    <p>
+                                    <p className="CustomP">
                                     BankID på mobil er en personlig, elektronisk ID som gir tilgang til offentlige
                                     tjenester på høyeste sikkerhetsnivå, nivå 4.<br/><br/>
                                     For å kunne ta i bruk BankID på mobil må du ha en nettbankavtale med BankID og en
@@ -187,16 +187,16 @@ class EID extends React.Component {
                             <h5>Tjenester i bruk</h5>
                             <MenuItem style={fontColorStyle} primaryText="MinID" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="BankID på mobil" leftIcon={<CheckIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CheckIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="BankId på mobil" leftIcon={< CheckIcon/>}
                                       disabled={true}/>
-                            <Divider />
+                            <Divider/>
                             <h5>Andre tjenester</h5>
-                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CancelIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={< CancelIcon/>}
                                       disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={<CancelIcon />}
-                                      disabled={true}/>
+                            <MenuItem style={fontColorStyle} primaryText="Commfides" leftIcon={<CancelIcon />}
+                            disabled={true}/>
 
                         </Menu>
                 </CardText>

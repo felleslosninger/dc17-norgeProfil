@@ -40,7 +40,7 @@ class AppContainer extends Component {
                     username={this.props.username}
                 />
                 <Row>
-                    <Col sm={6} md={3} >
+                    <Col sm={6} lg={3} >
                         <ContactInfoCard
                             onSaveEmail={this.props.changeEmail}
                             onSavePhone={this.props.changePhone}
@@ -48,13 +48,13 @@ class AppContainer extends Component {
                             savedPhone={this.props.activeContactPhone}
                         />
                     </Col>
-                    <Col sm={6} md={3} >
+                    <Col sm={6} lg={3} >
                         <Mail/>
                     </Col>
-                    <Col sm={6} md={3} >
+                    <Col sm={6} lg={3} >
                         <EID/>
                     </Col>
-                    <Col sm={6} md={3} >
+                    <Col sm={6} lg={3} >
                         <Reservation
                             onSetReservation={this.props.setActiveReservation}
                             onRemoveReservation={this.props.removeActiveReservation}

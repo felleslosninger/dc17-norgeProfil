@@ -1,3 +1,4 @@
+
 /*Large desktops and laptops*/
 @media (min-width: 1192px) {
     p {
@@ -31,6 +32,10 @@
 
 /*Portrait tablets and small desktops eg. Ipad*/
 @media (min-width: 768px) and (max-width: 991px) {
+    Divider {
+        margin: auto;
+    }
+
     h1 {
         font-size: 1.9em;
         font-stretch: expanded;
@@ -60,7 +65,6 @@
     height: 25em;
     width: auto;
 }
-
 
 .CardHeader {
     padding-top: 15px;

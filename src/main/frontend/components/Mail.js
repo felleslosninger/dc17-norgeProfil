@@ -182,7 +182,7 @@ class Mail extends React.Component {
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
-                                        <p>
+                                        <p className="CustomP">
                                         Nei, digital postkasse er gratis å opprette og bruke for innbyggerene.
                                         Lastar du selv opp mange dokument eller bilde, må du betale for å få
                                         lagringsplass ut over 1GB.
@@ -233,8 +233,8 @@ class Mail extends React.Component {
                         <div className="CardInfoText">
                             <Row>
                                 <Col sm={4}> {img} </Col>
-                                <Col sm={8}> Du mottar i dag post fra det offentlige til din digitale postkasse hos
-                                    <strong>  { postbox } </strong> </Col>
+                                <Col sm={8}> <p> Du mottar i dag post fra det offentlige til din digitale postkasse hos
+                                    <strong>  { postbox }  </strong> </p> </Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
