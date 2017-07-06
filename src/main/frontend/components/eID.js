@@ -187,16 +187,16 @@ class EID extends React.Component {
                             <h5>Tjenester i bruk</h5>
                             <MenuItem style={fontColorStyle} primaryText="MinID" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="BankID på mobil" leftIcon={<CheckIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CheckIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="BankId på mobil" leftIcon={< CheckIcon/>}
                                       disabled={true}/>
                             <Divider />
                             <h5>Andre tjenester</h5>
-                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CancelIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={< CancelIcon/>}
                                       disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={<CancelIcon />}
-                                      disabled={true}/>
+                            <MenuItem style={fontColorStyle} primaryText="Commfides" leftIcon={<CancelIcon />}
+                            disabled={true}/>
 
                         </Menu>
                 </CardText>
