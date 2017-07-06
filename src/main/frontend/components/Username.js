@@ -9,7 +9,7 @@ class Username extends React.Component {
     render () {
 
         return (
-                <div>
+                <div className="pageheader">
                     <h1>{this.props.username}</h1>
                 </div>
         )

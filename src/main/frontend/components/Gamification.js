@@ -98,7 +98,7 @@ class Gamification extends React.Component {
                         primaryText="E-mail"
                         leftIcon={this.props.hasEmail ? <Done /> : <Remove /> }
                         disabled={true}
-                    ></ListItem>
+                    />
                     <ListItem
                         primaryText="Mobilnummer"
                         leftIcon={this.props.hasPhone ? <Done /> : <Remove /> }
@@ -159,7 +159,7 @@ class Gamification extends React.Component {
 
         return (
             <Row className="Gamification">
-                <Col md={11}><div><h3>Styrke brukerprofil {overlay}</h3></div></Col>
+                <Col md={11}><div><h3 className="pageheader">Styrke brukerprofil {overlay}</h3></div></Col>
                 {viewBar}
                 {checkBar()}
             </Row>
