@@ -1,14 +1,90 @@
+/*Large desktops and laptops*/
+@media (min-width: 1192px) {
+    p {
+        font-size: 1em;
+    }
+
+    ListItem {
+        font-size: 1em;
+    }
+
+    TextField {
+        font-size: 1em;
+    }
+}
+
+/*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
+@media (min-width: 992px ) and (max-width: 1192px) {
+    h1 {
+        font-size: 1.5em;
+        font-stretch: expanded;
+    }
+    h4 {
+        font-size: medium;
+        font-stretch: expanded;
+    }
+
+    p{
+        font-size: 1em;
+    }
+}
+
+/*Portrait tablets and small desktops eg. Ipad*/
+@media (min-width: 768px) and (max-width: 991px) {
+    h1 {
+        font-size: 1.9em;
+        font-stretch: expanded;
+    }
+    h4 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: small;
+    }
+
+    .CustomP{ /*Class to adapt place for letters in Ipad modus*/
+        width: 30em;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+}
 
 .Card {
     height: 25em;
     width: auto;
 }
 
+
 .CardHeader {
     padding-top: 15px;
     margin-right: 1em;
     margin-left: 1em;
+    width: auto;
+}
 
+.Li {
+}
+
+.Li.Info {
+    paddingTop: 0px;
+    width: 620px;
+    left: 38px;
+    bottom: 15px;
+}
+
+.Li.Header{
+    color:   #000000;
+}
+
+.MenuItem{
+    color: black;
 }
 
 .EditBtn {
@@ -22,32 +98,80 @@
     margin-left: 1.5em;
 }
 
-
-.EidCardText {
-    padding: 0px;
+.DivoverMeny{
 }
 
-.EidHeadline {
-    border-bottom: 1px solid lightgrey;
-    padding-bottom: 30px;
+.HLine {
     margin-right: 1em;
     margin-left: 1em;
 }
-
-.EidInfo {
-    width: 620px;
-    left: 38px;
-    bottom: 15px;
-}
-
-.Headline {
-    margin-right: 1em;
-    margin-left: 1em;
-}
-
 
 .Icon {
     margin-top: 40px;
+}
+
+.CardText{
+    padding: 0px;
+}
+
+.CardPicture{
+
+}
+
+.CardPicture.Medium{
+    width:  60px;
+    height: auto;
+}
+
+
+.CardPicture.Small{
+    width: 48px;
+    height: auto;
+}
+
+
+
+.Feed {
+
+}
+
+/*
+Feed.header{
+     fontSize: 24;
+     paddingTop: 16;
+     marginBottom: 12;
+     fontWeight: 400;
+ }
+*/
+Feed.Slide {
+    padding: 10px;
+}
+
+
+
+/**/
+
+
+.EditBtn {
+    position: absolute;
+    right: 3.2%;
+    bottom: 0;
+}
+
+.EditInfo {
+    margin-left: 1.5em;
+}
+
+.Icon {
+    margin-top: 40px;
+}
+/**/
+
+
+.ToggleBtn {
+    position: absolute;
+    left: 3.2%;
+    bottom: 0;
 }
 
 /*Styling modal*/
@@ -70,12 +194,6 @@
     right: 1%;
     bottom: 1%;
     margin: 1%;
-}
-
-.ToggleBtn {
-    position: absolute;
-    left: 3.2%;
-    bottom: 0;
 }
 
 
