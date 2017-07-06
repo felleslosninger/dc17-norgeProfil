@@ -6,6 +6,7 @@ const initialState = {
     activeContactEmail : 'email@email.com',
     activeContactPhone : '12345678',
     activeReservation: true,
+    activePostbox: ""
 };
 
 // REDUCER
@@ -30,6 +31,11 @@ export default function GamificationReducer(state = initialState, action) {
             return {
                 ...state,
                 activeReservation: false,
+            };
+        case actionTypes.SET_POSTBOX:
+            return {
+                ...state,
+                activePostbox: action.postbox,
             };
         default:
             return state;

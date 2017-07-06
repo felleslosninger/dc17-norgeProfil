@@ -19,7 +19,7 @@ import NavigationBar from '../components/NavigationBar.js';
 import Gamification from '../components/Gamification.js';
 
 
-import { saveContactEmail, saveContactPhone, setReservation, removeReservation } from '../utilities/actions';
+import { saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 import configureStore from "../utilities/store";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -49,7 +49,10 @@ class AppContainer extends Component {
                         />
                     </Col>
                     <Col sm={6} md={3} >
-                        <Mail/>
+                        <Mail
+                            onSetPostbox={this.props.setActivePostbox}
+                            postbox={this.props.activePostbox}
+                        />
                     </Col>
                     <Col sm={6} md={3} >
                         <EID/>
@@ -73,13 +76,14 @@ class AppContainer extends Component {
 
 
 const mapStateToProps = state => {
-    let {info: {username, activeContactEmail, activeContactPhone, activeReservation}} = state;
+    let {info: {username, activeContactEmail, activeContactPhone, activeReservation, activePostbox}} = state;
 
     return {
         username: username,
         activeContactEmail: activeContactEmail,
         activeContactPhone: activeContactPhone,
         activeReservation: activeReservation,
+        activePostbox: activePostbox
     }
 
 
@@ -91,6 +95,7 @@ const mapDispatchToProps = dispatch => {
         changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
         setActiveReservation: () => dispatch(setReservation()),
         removeActiveReservation: () => dispatch(removeReservation()),
+        setActivePostbox: (postbox) => dispatch(setPostbox(postbox)),
     }
 };
 
