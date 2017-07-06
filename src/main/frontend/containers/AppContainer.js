@@ -1,3 +1,4 @@
+"use strict";
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
@@ -17,6 +18,7 @@ import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
 import NavigationBar from '../components/NavigationBar.js';
 import Gamification from '../components/Gamification.js';
+import axios from "axios";
 
 
 import { saveContactEmail, saveContactPhone } from '../utilities/actions';
@@ -27,6 +29,13 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 const store = configureStore();
 
 class AppContainer extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            isAuthenticated: false,
+        }
+    }
 
     componentDidMount() {
     //  Fetch data from API
@@ -98,16 +107,78 @@ const Bar = () => {
     );
 };
 
+class Login extends React.Component {
+
+    constructor(){
+        super();
+        this.state = {
+            isAuth: false
+        };
+        this.authenticate = this.authenticate.bind(this);
+        this.test = this.test.bind(this);
+    }
+
+
+    test(){
+        this.setState({
+            isAuth:true
+        });
+    }
+
+    componentWillMount(){
+        this.authenticate();
+    }
+
+    authenticate(){
+        axios.get('/user')
+            .then((response) => {
+                if (response.data == ""){
+                    this.setState({
+                        isAuth: false
+                    });
+                }else{
+                    if(response.data.authenticated == true){
+                        this.setState({
+                            isAuth: true
+                        });
+                    }
+                    else{
+                        this.setState({
+                            isAuth: false
+                        });
+                    }
+                }
+            });
+    }
+
+    render(){
+        if(!this.state.isAuth){
+            return (
+                <div>
+                    DU ER IKKE LOGGET INN DIN TISSEFANT
+                    <a href="/login/idporten"> Klikk meg for å logge inn</a>
+                </div>
+            )
+
+        }else{
+            return (
+                <MuiThemeProvider muiTheme={muiTheme}>
+                    <Provider store={store}>
+                        <AppContainer />
+                    </Provider>
+                </MuiThemeProvider>
+            );
+        }
+    }
+
+}
+
 AppContainer = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
 
 injectTapEventPlugin();
 
 ReactDOM.render(
-    <MuiThemeProvider muiTheme={muiTheme}>
-        <Provider store={store}>
-            <AppContainer />
-        </Provider>
-    </MuiThemeProvider>,
+    <Login/>,
     document.getElementById('app')
 );
 
