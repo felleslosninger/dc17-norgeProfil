@@ -2,8 +2,10 @@ import * as actionTypes from './actions';
 
 // INITIAL STATE
 const initialState = {
+    username : 'Kari Nordmann',
     activeContactEmail : 'email@email.com',
-    activeContactPhone : '12345678'
+    activeContactPhone : '12345678',
+    activeReservation: true,
 };
 
 // REDUCER
@@ -18,6 +20,16 @@ export default function GamificationReducer(state = initialState, action) {
             return {
                 ...state,
                 activeContactEmail: action.contactEmail,
+            };
+        case actionTypes.SET_RESERVATION:
+            return {
+                ...state,
+                activeReservation: true,
+            };
+        case actionTypes.REMOVE_RESERVATION:
+            return {
+                ...state,
+                activeReservation: false,
             };
         default:
             return state;
