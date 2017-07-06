@@ -54,7 +54,10 @@ class AppContainer extends Component {
                         />
                     </Col>
                     <Col sm={6} md={3} >
-                        <EID/>
+                        <EID
+                            userActiveEid={this.props.activeEid}
+                            userNonActiveEid={this.props.nonActiveEid}
+                        />
                     </Col>
                     <Col sm={6} md={3} >
                         <Reservation
@@ -80,7 +83,7 @@ class AppContainer extends Component {
 
 
 const mapStateToProps = state => {
-    let {info: {username, activeContactEmail, activeContactPhone, activeReservation, activePostbox}} = state;
+    let {info: {username, activeContactEmail, activeContactPhone, activeReservation, activePostbox, activeEid, nonActiveEid}} = state;
 
     let {userHasEmail, userHasPhone, userHasPostbox, userHasEid} = true;
 
@@ -98,6 +101,8 @@ const mapStateToProps = state => {
         activeContactPhone: activeContactPhone,
         activeReservation: activeReservation,
         activePostbox: activePostbox,
+        activeEid: activeEid,
+        nonActiveEid: nonActiveEid,
         userHasEmail: userHasEmail,
         userHasPhone: userHasPhone,
         userHasPostbox: userHasPostbox,

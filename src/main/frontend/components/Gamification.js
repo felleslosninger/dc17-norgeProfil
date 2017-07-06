@@ -100,9 +100,7 @@ class Gamification extends React.Component {
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/>,
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Eid}/>
         ];
-
         const viewBar = [];
-
         var checkBar = () => {
             for(var i = 0; i < bar.length; i++) {
                 if(bar[i].props.value === 100) {

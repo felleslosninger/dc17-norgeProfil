@@ -6,7 +6,9 @@ const initialState = {
     activeContactEmail : 'email@email.com',
     activeContactPhone : '12345678',
     activeReservation: true,
-    activePostbox: ""
+    activePostbox: "",
+    activeEid: ['MinID', 'BankID på Mobil', 'BankID'],
+    nonActiveEid: ['Buypass ID', 'Commides']
 };
 
 // REDUCER

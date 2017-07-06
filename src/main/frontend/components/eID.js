@@ -53,6 +53,30 @@ class EID extends React.Component {
             />,
         ];
 
+        const activeList = [];
+        let checkActive = () => {
+            for (let i = 0; i < this.props.userActiveEid.length; i++) {
+                activeList.push(
+                    <MenuItem style={fontColorStyle}
+                              primaryText={this.props.userActiveEid[i]}
+                              leftIcon={<CheckIcon/>}
+                              disabled={true}/>
+                );
+            }
+        };
+
+        const nonActiveList = [];
+        let checkNonActive = () => {
+            for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
+                nonActiveList.push(
+                    <MenuItem style={fontColorStyle}
+                              primaryText={this.props.userNonActiveEid[i]}
+                              leftIcon={<CancelIcon/>}
+                              disabled={true}/>
+                );
+            }
+        };
+
         return (
             <Card className="Card">
                 <Row className="CardHeader">
@@ -183,19 +207,12 @@ class EID extends React.Component {
                     <div className="DivoverMeny">
                         <Menu style={listStyle} className="meny" desktop={true}>
                             <div>Tjenester i bruk</div>
-                            <MenuItem style={fontColorStyle} primaryText="MinID" leftIcon={<CheckIcon/>}
-                                      disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="BankID på mobil" leftIcon={<CheckIcon/>}
-                                      disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CheckIcon/>}
-                                      disabled={true}/>
+                            {activeList}
+                            {checkActive()}
                             <Divider />
                             <div>Andre tjenester</div>
-                            <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={<CancelIcon />}
-                                      disabled={true}/>
-                            <MenuItem style={fontColorStyle} primaryText="Commfides" leftIcon={<CancelIcon />}
-                                      disabled={true}/>
-
+                            {nonActiveList}
+                            {checkNonActive()}
                         </Menu>
                     </div>
                 </CardText>
@@ -203,6 +220,12 @@ class EID extends React.Component {
         );
     }
 }
+
+
+EID.propTypes = {
+    userActiveEid: React.PropTypes.array.isRequired,
+    userNonActiveEid: React.PropTypes.array.isRequired,
+};
 
 
 export default EID;
