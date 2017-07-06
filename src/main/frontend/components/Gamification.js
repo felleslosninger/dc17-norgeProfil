@@ -18,82 +18,74 @@ class Gamification extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            hasPostbox: false,
-            hasMobileNum: false,
-            hasEmail: false,
-            hasEid: true
-        };
-
     };
 
     render() {
-        var postBox = (gamification) => {
+        var postBox = () => {
             let totalTest = 1;
             let test = 0;
 
-            if(gamification.state.hasPostbox){
+            if(this.props.hasPostbox){
                 test++;
             }
 
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var mobileNum = (gamification) => {
+        var phone = () => {
             let totalTest = 1;
             let test = 0;
 
-            if(gamification.state.hasMobileNum){
+            if(this.props.hasPhone){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var email = (gamification) => {
+        var email = () => {
             let totalTest = 1;
             let test = 0;
 
-            if(gamification.state.hasEmail){
+            if(this.props.hasEmail){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var eid = (gamification) => {
+        var eid = () => {
             let totalTest = 1;
             let test = 0;
 
-            if(gamification.state.hasEid){
+            if(this.props.hasEid){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var calculatePercent = (gamification) => {
+        var calculatePercent = () => {
             let totalTest = 4;
             let test = 0;
 
-            if(gamification.state.hasPostbox){
+            if(this.props.hasPostbox){
                 test++;
             }
 
-            if(gamification.state.hasMobileNum){
+            if(this.props.hasPhone){
                 test++;
             }
 
-            if(gamification.state.hasEmail){
+            if(this.props.hasEmail){
                 test++;
             }
 
-            if(gamification.state.hasEid){
+            if(this.props.hasEid){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
         };
 
         let Postbox = postBox(this);
-        let Mobilenum = mobileNum(this);
+        let Phone = phone(this);
         let Email = email(this);
         let Eid = eid(this);
         let percent = calculatePercent(this);
@@ -104,23 +96,23 @@ class Gamification extends React.Component {
                     <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
                     <ListItem
                         primaryText="E-mail"
-                        leftIcon={this.state.hasEmail ? <Done /> : <Remove /> }
+                        leftIcon={this.props.hasEmail ? <Done /> : <Remove /> }
                         disabled={true}
                     ></ListItem>
                     <ListItem
                         primaryText="Mobilnummer"
-                        leftIcon={this.state.hasMobileNum ? <Done /> : <Remove /> }
+                        leftIcon={this.props.hasPhone ? <Done /> : <Remove /> }
                         disabled={true}
                     />
                     <Divider/>
                     <ListItem
                         primaryText="Digital postkasse"
-                        leftIcon={this.state.hasPostbox ? <Done /> : <Remove /> }
+                        leftIcon={this.props.hasPostbox ? <Done /> : <Remove /> }
                         disabled={true}
                     />
                     <ListItem
                         primaryText="eID"
-                        leftIcon={this.state.hasEid ? <Done /> : <Remove /> }
+                        leftIcon={this.props.hasEid ? <Done /> : <Remove /> }
                         disabled={true}
                     />
                 </List>
@@ -143,7 +135,7 @@ class Gamification extends React.Component {
 
         const bar = [
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Postbox}/>,
-            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Mobilenum}/>,
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Phone}/>,
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/>,
             <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Eid}/>
         ];
@@ -179,6 +171,14 @@ class Gamification extends React.Component {
 
     }
 }
+
+
+Gamification.propTypes = {
+    hasEmail: React.PropTypes.bool.isRequired,
+    hasPhone: React.PropTypes.bool.isRequired,
+    hasEid: React.PropTypes.bool.isRequired,
+    hasPostbox: React.PropTypes.bool.isRequired,
+};
 
 
 export default Gamification;

@@ -64,7 +64,12 @@ class AppContainer extends Component {
                         />
                     </Col>
                 </Row>
-                <Gamification/>
+                <Gamification
+                    hasEmail={this.props.userHasEmail}
+                    hasPhone={this.props.userHasPhone}
+                    hasPostbox={this.props.userHasPostbox}
+                    hasEid={this.props.userHasEid}
+                />
                 <div className="page-header"><h3>Aktivitetslogg</h3></div>
                 <Feed/>
             </div>
@@ -77,12 +82,27 @@ class AppContainer extends Component {
 const mapStateToProps = state => {
     let {info: {username, activeContactEmail, activeContactPhone, activeReservation, activePostbox}} = state;
 
+    let {userHasEmail, userHasPhone, userHasPostbox, userHasEid} = true;
+
+    userHasEmail = activeContactEmail !== '';
+
+    userHasPhone = activeContactPhone !== '';
+
+    userHasPostbox = activePostbox !== '';
+
+    userHasEid = activeContactEmail !== '';
+
     return {
         username: username,
         activeContactEmail: activeContactEmail,
         activeContactPhone: activeContactPhone,
         activeReservation: activeReservation,
-        activePostbox: activePostbox
+        activePostbox: activePostbox,
+        userHasEmail: userHasEmail,
+        userHasPhone: userHasPhone,
+        userHasPostbox: userHasPostbox,
+        userHasEid: userHasEid,
+
     }
 
 
