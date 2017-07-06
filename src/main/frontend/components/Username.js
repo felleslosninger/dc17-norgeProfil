@@ -8,15 +8,16 @@ class Username extends React.Component {
 
     render () {
 
-        let user = "Ola Nordmann";
-
         return (
                 <div className="page-header">
-                    <h1>{user}</h1>
+                    <h1>{this.props.username}</h1>
                 </div>
         )
     }
 }
 
+Username.PropTypes = {
+    username : React.PropTypes.string.isRequired,
+};
 
-module.exports = Username;
+export default Username;
