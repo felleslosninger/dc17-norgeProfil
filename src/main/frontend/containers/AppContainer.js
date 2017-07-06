@@ -29,7 +29,7 @@ const store = configureStore();
 class AppContainer extends Component {
 
     componentDidMount() {
-    //  Fetch data from API
+        //  Fetch data from API
 
     }
 

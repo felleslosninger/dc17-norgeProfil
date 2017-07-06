@@ -83,15 +83,15 @@ class ContactInfoCard extends React.Component {
         return (
             <Card className="Card">
                 <Row className="CardHeader">
-                    <Col md={1} className="Icon">{<ActionInfo />}</Col>
-                    <Col md={10}><h4>Kontaktinformasjon</h4></Col>
+                    <Col sm={3} md={3} lg={2}  className="Icon">{<ActionInfo />}</Col>
+                    <Col sm={3} md={6} lg={7}><h4>Kontaktinformasjon</h4></Col>
                 </Row>
-                <hr className="Headline"/>
-                <CardText className="CardText">
-                    <div className="CardInfoText">
+                <hr className="HLine"/>
+                <CardText>
+                    <p className="CardText">
                         Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
-                        når de kontakter deg.
-                    </div>
+                            når de kontakter deg.
+                    </p>
                     <List>
                         <ListItem disabled={true} primaryText="E-mail: " secondaryText={ this.props.savedEmail } leftIcon={<EmailIcon />}/>
                         <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={ this.props.savedPhone }
