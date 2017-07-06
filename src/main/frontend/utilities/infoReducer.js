@@ -10,7 +10,7 @@ const initialState = {
 };
 
 // REDUCER
-export default function GamificationReducer(state = initialState, action) {
+export default function infoReducer(state = initialState, action) {
     switch (action.type) {
         case actionTypes.SAVE_CONTACT_PHONE:
             return {

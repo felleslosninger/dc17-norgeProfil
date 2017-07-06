@@ -30,7 +30,6 @@ class AppContainer extends Component {
 
     componentDidMount() {
     //  Fetch data from API
-
     }
 
     render() {
