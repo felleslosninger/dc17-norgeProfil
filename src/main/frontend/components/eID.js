@@ -37,6 +37,9 @@ class EID extends React.Component {
     };
 
     render() {
+        const menu = {
+            paddingTop: '0px'
+        }
         const fontColorStyle = {
             color: 'black'
         };
@@ -120,7 +123,7 @@ class EID extends React.Component {
                             primaryTogglesNestedList={true}
                             leftAvatar={<img src="img/bankid_pa_mobil.png" className="CardPicture Small"/>}
                             nestedItems={[
-                                <ListItem key={1} disabled={true} className="EidInfo">
+                                <ListItem key={1} disabled={true} className="Li Info">
                                     <p>
                                     BankID på mobil er en personlig, elektronisk ID som gir tilgang til offentlige
                                     tjenester på høyeste sikkerhetsnivå, nivå 4.<br/><br/>
@@ -178,21 +181,21 @@ class EID extends React.Component {
                     </List>
                 </Dialog>
                 <hr className="HLine"/>
-                <CardText>
+                <CardText className="menu">
                     <div className="DivoverMeny">
-                        <Menu className="Meny" desktop={true}>
+                        <Menu className="menu" desktop={true}>
                             <h5>Tjenester i bruk</h5>
-                            <MenuItem style={fontColorStyle} className="MenuItem" primaryText="MinID" leftIcon={<CheckIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="MinID" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
-                            <MenuItem style={fontColorStyle} className="MenuItem" primaryText="BankID på mobil" leftIcon={<CheckIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="BankID på mobil" leftIcon={<CheckIcon/>}
                                       disabled={true}/>
                             <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CheckIcon/>}
                                       disabled={true}/>
                             <Divider />
                             <h5>Andre tjenester</h5>
-                            <MenuItem style={fontColorStyle} className="MenuItem" primaryText="BankID" leftIcon={< CancelIcon/>}
+                            <MenuItem style={fontColorStyle} primaryText="BankID" leftIcon={< CancelIcon/>}
                                       disabled={true}/>
-                            <MenuItem style={fontColorStyle} className="MenuItem"  primaryText="Buypass ID" leftIcon={<CancelIcon />}
+                            <MenuItem style={fontColorStyle} primaryText="Buypass ID" leftIcon={<CancelIcon />}
                                       disabled={true}/>
 
                         </Menu>

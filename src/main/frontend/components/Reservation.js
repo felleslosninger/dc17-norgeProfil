@@ -130,11 +130,11 @@ class Reservation extends React.Component {
                     </CardText>
                 </Card>
             )
+
         }
 
-
         return (
-            <div>{reservationCard}</div>
+           <div>{reservationCard}</div>
         )
 
     }
