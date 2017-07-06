@@ -110,9 +110,9 @@ class Reservation extends React.Component {
             return (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={1} className="Icon">{<NotificationsOff />}</Col>
-                        <Col md={10}><h4>Reservasjon</h4></Col>
-                        <Col mdOffset={10}><Help onClick={reservation.handleOpen}/></Col>
+                        <Col lg={1} className="Icon">{<NotificationsOff />}</Col>
+                        <Col lg={10}><h4>Reservasjon</h4></Col>
+                        <Col lgOffset={10}><Help onClick={reservation.handleOpen}/></Col>
                     </Row>
                     <Dialog
                         title="Brev fra stat og kommune"

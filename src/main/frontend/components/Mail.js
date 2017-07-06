@@ -215,15 +215,15 @@ class Mail extends React.Component {
             return (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={1} className="Icon">{<Email />}</Col>
-                        <Col md={10}><h4>Digital postkasse</h4></Col>
+                        <Col lg={1} className="Icon">{<Email />}</Col>
+                        <Col lg={10}><h4>Digital postkasse</h4></Col>
                     </Row>
                     <hr className="Headline"/>
                     <CardText className="CardText">
                         <div className="CardInfoText">
                             <Row>
-                                <Col md={4}>{img}</Col>
-                                <Col md={8}>Du mottar i dag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
+                                <Col lg={4}>{img}</Col>
+                                <Col lg={8}>Du mottar i dag post fra det offentlige til din digitale postkasse hos <strong>  { postbox } </strong></Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
