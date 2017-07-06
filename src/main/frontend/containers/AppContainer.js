@@ -70,7 +70,7 @@ class AppContainer extends Component {
                     hasPostbox={this.props.userHasPostbox}
                     hasEid={this.props.userHasEid}
                 />
-                <div className="page-header"><h3>Aktivitetslogg</h3></div>
+                <div><h3>Aktivitetslogg</h3></div>
                 <Feed/>
             </div>
         );
