@@ -233,8 +233,8 @@ class Mail extends React.Component {
                         <div className="CardInfoText">
                             <Row>
                                 <Col sm={4}> {img} </Col>
-                                <Col sm={8}> Du mottar i dag post fra det offentlige til din digitale postkasse hos
-                                    <strong>  { postbox } </strong> </Col>
+                                <Col sm={8}> <p> Du mottar i dag post fra det offentlige til din digitale postkasse hos
+                                    <strong>  { postbox }  </strong> </p> </Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
