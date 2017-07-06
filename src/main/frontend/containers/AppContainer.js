@@ -19,7 +19,7 @@ import NavigationBar from '../components/NavigationBar.js';
 import Gamification from '../components/Gamification.js';
 
 
-import { saveContactEmail, saveContactPhone } from '../utilities/actions';
+import { saveContactEmail, saveContactPhone, setReservation, removeReservation } from '../utilities/actions';
 import configureStore from "../utilities/store";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -29,14 +29,16 @@ const store = configureStore();
 class AppContainer extends Component {
 
     componentDidMount() {
-    //  Fetch data from API
+        //  Fetch data from API
 
     }
 
     render() {
         return (
             <div>
-                <Username/>
+                <Username
+                    username={this.props.username}
+                />
                 <Row>
                     <Col sm={6} md={3} >
                         <ContactInfoCard
@@ -53,7 +55,11 @@ class AppContainer extends Component {
                         <EID/>
                     </Col>
                     <Col sm={6} md={3} >
-                        <Reservation/>
+                        <Reservation
+                            onSetReservation={this.props.setActiveReservation}
+                            onRemoveReservation={this.props.removeActiveReservation}
+                            reservation={this.props.activeReservation}
+                        />
                     </Col>
                 </Row>
                 <Gamification/>
@@ -67,11 +73,13 @@ class AppContainer extends Component {
 
 
 const mapStateToProps = state => {
-    let {info: {activeContactEmail, activeContactPhone}} = state;
+    let {info: {username, activeContactEmail, activeContactPhone, activeReservation}} = state;
 
     return {
+        username: username,
         activeContactEmail: activeContactEmail,
         activeContactPhone: activeContactPhone,
+        activeReservation: activeReservation,
     }
 
 
@@ -81,6 +89,8 @@ const mapDispatchToProps = dispatch => {
     return {
         changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
         changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
+        setActiveReservation: () => dispatch(setReservation()),
+        removeActiveReservation: () => dispatch(removeReservation()),
     }
 };
 
