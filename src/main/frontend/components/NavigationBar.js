@@ -19,7 +19,6 @@ class NavigationBar extends React.Component {
 
     isLoggedIn = () => {
         let stat = false;
-        console.log("Tulling");
         axios.get('/user')
             .then((response) => {
                 if (response.data == "") {
@@ -44,7 +43,6 @@ class NavigationBar extends React.Component {
     render() {
 
         if (this.state.status) {
-            console.log("Logget inn");
             return (
                 <AppBar title="Digital Borger">
                     <Tabs>
@@ -54,7 +52,6 @@ class NavigationBar extends React.Component {
                 </AppBar>
             );
         } else {
-            console.log("Logget ut");
             return (
                 <AppBar title="Digital Borger">
                     <Tabs>
