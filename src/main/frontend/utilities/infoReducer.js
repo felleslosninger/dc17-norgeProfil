@@ -16,6 +16,15 @@ const initialState = {
 // REDUCER
 export default function infoReducer(state = initialState, action) {
     switch (action.type) {
+        case actionTypes.FETCHED_CONTACT_INFO:
+            console.log(action.contactInfo);
+            return {
+                ...state,
+                activeContactEmail: action.contactInfo.data.kontaktinformasjon.epostadresse,
+                activeContactPhone: action.contactInfo.data.kontaktinformasjon.mobiltelefonnummer,
+                activeReservation: action.contactInfo.data.reservasjon,
+
+            };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {
                 ...state,

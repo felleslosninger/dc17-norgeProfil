@@ -11,21 +11,21 @@ import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
 import Gamification from '../components/Gamification.js';
-import {connect} from "react-redux";
-import { saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+import { connect } from "react-redux";
+import { fetchContactInfo, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 
 class AppContainer extends Component {
 
     constructor(props){
         super(props);
-        this.state = {
-            isAuthenticated: false,
-        }
     }
 
-    componentWillMount() {
-    //  Fetch data from API
+    componentDidMount() {
+        //  Fetch data from API
+        this.props.fetchContactInfo();
     }
+
+
 
 
     render() {
@@ -93,6 +93,14 @@ const mapStateToProps = state => {
 
     userHasEid = activeEid.length > 0;
 
+    if(activeReservation === "NEI"){
+        activeReservation = false;
+    }else if(activeReservation ==="JA"){
+        activeReservation = true;
+
+    }
+
+
     return {
         username: username,
         activeContactEmail: activeContactEmail,
@@ -112,6 +120,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        fetchContactInfo: () => dispatch(fetchContactInfo()),
         changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
         changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
         setActiveReservation: () => dispatch(setReservation()),
