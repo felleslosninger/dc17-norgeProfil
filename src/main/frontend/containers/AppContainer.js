@@ -70,7 +70,10 @@ class AppContainer extends Component {
                     hasEid={this.props.userHasEid}
                 />
                 <div className="pageheader"><h3>Aktivitetslogg</h3></div>
-                <Feed/>
+                <Feed
+                    ownActivity={this.props.recentUserActivity}
+                    publicSectorActivity={this.props.recentPublicActivity}
+                />
             </div>
         );
     }
@@ -78,7 +81,7 @@ class AppContainer extends Component {
 
 
 const mapStateToProps = state => {
-    let {info: {username, activeContactEmail, activeContactPhone, activeReservation, activePostbox, activeEid, nonActiveEid}} = state;
+    let {info: {username, activeContactEmail, activeContactPhone, activeReservation, activePostbox, activeEid, nonActiveEid, recentUserActivity, recentPublicActivity}} = state;
 
     let {userHasEmail, userHasPhone, userHasPostbox, userHasEid} = true;
 
@@ -102,9 +105,9 @@ const mapStateToProps = state => {
         userHasPhone: userHasPhone,
         userHasPostbox: userHasPostbox,
         userHasEid: userHasEid,
-
+        recentUserActivity: recentUserActivity,
+        recentPublicActivity: recentPublicActivity,
     }
-
 };
 
 const mapDispatchToProps = dispatch => {
