@@ -3,12 +3,14 @@ import * as actionTypes from './actions';
 // INITIAL STATE
 const initialState = {
     username : 'Kari Nordmann',
-    activeContactEmail : 'karinordmann@email.com',
+    activeContactEmail : 'kari.nordmann@email.com',
     activeContactPhone : '12345678',
     activeReservation: true,
     activePostbox: "",
     activeEid: ['MinID', 'BankID'],
-    nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commides']
+    nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commfides'],
+    recentUserActivity: [{eId: 'MinID', service: 'Danske Bank', time: '18 Juli 2017 22:13'}, {eId: 'BankID', service: 'Altinn', time: '30 Juli 2017 12:09'}],
+    recentPublicActivity: [{publicSector: 'Skatteetaten', info: 'Mobilnummer', time: '10 Desember 2016 20:10'}, {publicSector: 'Collouseum Tannlege', info: 'Mobilnummer', time: '09 Januar 2017 09:10'}],
 };
 
 // REDUCER
