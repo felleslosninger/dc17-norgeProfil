@@ -1,13 +1,8 @@
+"use strict";
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from "react-redux";
-import {connect} from "react-redux";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
@@ -15,22 +10,23 @@ import Reservation from '../components/Reservation.js';
 import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
-import NavigationBar from '../components/NavigationBar.js';
 import Gamification from '../components/Gamification.js';
-
-
+import {connect} from "react-redux";
 import { saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
-import configureStore from "../utilities/store";
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-
-const store = configureStore();
 
 class AppContainer extends Component {
 
-    componentDidMount() {
-        //  Fetch data from API
+    constructor(props){
+        super(props);
+        this.state = {
+            isAuthenticated: false,
+        }
     }
+
+    componentWillMount() {
+    //  Fetch data from API
+    }
+
 
     render() {
         return (
@@ -81,7 +77,6 @@ class AppContainer extends Component {
 }
 
 
-
 const mapStateToProps = state => {
     let {info: {username, activeContactEmail, activeContactPhone, activeReservation, activePostbox, activeEid, nonActiveEid}} = state;
 
@@ -110,7 +105,6 @@ const mapStateToProps = state => {
 
     }
 
-
 };
 
 const mapDispatchToProps = dispatch => {
@@ -123,32 +117,6 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-const muiTheme = getMuiTheme({
-    palette: {
-        primary1Color: '#3F51B5',
-    },
-});
-
-const Bar = () => {
-    return (
-        <MuiThemeProvider muiTheme={muiTheme}>
-            <NavigationBar/>
-        </MuiThemeProvider>
-    );
-};
-
 AppContainer = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
 
-injectTapEventPlugin();
-
-ReactDOM.render(
-    <MuiThemeProvider muiTheme={muiTheme}>
-        <Provider store={store}>
-            <AppContainer />
-        </Provider>
-    </MuiThemeProvider>,
-    document.getElementById('app')
-);
-
-
-ReactDOM.render(<Bar/>, document.getElementById('navbar'));
+export default AppContainer;
