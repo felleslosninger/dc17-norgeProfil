@@ -5,7 +5,6 @@ import SwipeableViews from 'react-swipeable-views';
 import {List, ListItem} from 'material-ui/List';
 import {Card} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
-import Subheader from 'material-ui/Subheader';
 import {grey400, darkBlack} from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
@@ -48,71 +47,62 @@ class Feed extends React.Component {
             </IconMenu>
         );
 
-        const yourActivityList = (
-            <List>
-                <ListItem
-                    leftAvatar={<img src="img/bankid.png" width={52}/>}
-                    rightIconButton={rightIconMenu}
-                    primaryText="BankID"
-                    disabled={true}
-                    secondaryText={
-                        <p>
-                            <span className="Li Header">Danske Bank</span><br />
-                            16 Juni 2017 14:32
-                        </p>
-                    }
-                    secondaryTextLines={2}
-                />
-                <Divider inset={true} />
-                <ListItem
-                    leftAvatar={<img src="img/minid.png" width={52}/>}
-                    rightIconButton={rightIconMenu}
-                    primaryText="MinID"
-                    disabled={true}
-                    secondaryText={
-                        <p>
-                            <span className="Li Header">Skattetaten</span><br />
-                            18 Juli 2017 22:13
-                        </p>
-                    }
-                    secondaryTextLines={2}
-                />
-                <Divider inset={true} />
-            </List>
-        );
+        let yourActivityList = [];
+        let img = '';
+        for (let i = 0; i < this.props.ownActivity.length; i++) {
+            if (this.props.ownActivity[i].eId === 'MinID') {
+                img = <img src="img/minid.png" width={52}/>;
+            } else if (this.props.ownActivity[i].eId === 'BankID') {
+                img = <img src="img/bankid.png" width={52}/>;
+            } else if (this.props.ownActivity[i].eId === 'BankID på mobil') {
+                img = <img src="img/bankid_pa_mobil.png" width={52}/>;
+            } else if (this.props.ownActivity[i].eId === 'Buypass ID') {
+                img = <img src="img/buypass.png" width={52}/>;
+            } else if (this.props.ownActivity[i].eId === 'Commfides') {
+                img = <img src="img/commfides.png" width={52}/>;
+            }
+            yourActivityList.push (
+                <div>
+                    <ListItem
+                        leftAvatar={img}
+                        rightIconButton={rightIconMenu}
+                        primaryText={this.props.ownActivity[i].eId}
+                        disabled={true}
+                        secondaryText={
+                            <p>
+                                <span className="Li Header">{this.props.ownActivity[i].service}</span><br />
+                                {this.props.ownActivity[i].time}
+                            </p>
+                        }
+                        secondaryTextLines={2}
+                    />
+                    <Divider/>
+                </div>
+            )
+        }
 
-        const publicSectorsActivityList = (
-            <List>
-                <ListItem
-                    leftAvatar={<Example/>}
-                    rightIconButton={rightIconMenu}
-                    primaryText="Colosseum Tannlege"
-                    disabled={true}
-                    secondaryText={
-                        <p>
-                            <span className="Li Header">Mobilnummer</span><br />
-                            10 Desember 2016 20:10
-                        </p>
-                    }
-                    secondaryTextLines={2}
-                />
-                <Divider inset={true} />
-                <ListItem
-                    leftAvatar={<Example/>}
-                    rightIconButton={rightIconMenu}
-                    primaryText="Skatteetaten"
-                    disabled={true}
-                    secondaryText={
-                        <p>
-                            <span className="Li Header">E-mail</span><br />
-                            09 Juni 2017 08:17
-                        </p>
-                    }
-                    secondaryTextLines={2}
-                />
-                <Divider inset={true} />
-            </List>
-        );
+
+        let publicSectorsActivityList = [];
+        for (let i = 0; i < this.props.publicSectorActivity.length; i++) {
+            publicSectorsActivityList.push (
+                <div>
+                    <ListItem
+                        leftAvatar={<Example/>}
+                        rightIconButton={rightIconMenu}
+                        primaryText={this.props.publicSectorActivity[i].publicSector}
+                        disabled={true}
+                        secondaryText={
+                            <p>
+                                <span className="Li Header">{this.props.publicSectorActivity[i].info}</span><br />
+                                {this.props.publicSectorActivity[i].time}
+                            </p>
+                        }
+                        secondaryTextLines={2}
+                    />
+                    <Divider/>
+                </div>
+            )
+        }
 
         return (
             <Card className="Feed">
@@ -128,15 +118,24 @@ class Feed extends React.Component {
                     onChangeIndex={this.handleChange}
                 >
                     <div className="Feed Slide">
-                        {yourActivityList}
+                        <List>
+                            {yourActivityList}
+                        </List>
                     </div>
                     <div className="Feed Slide">
-                        {publicSectorsActivityList}
+                        <List>
+                            {publicSectorsActivityList}
+                        </List>
                     </div>
                 </SwipeableViews>
             </Card>
         );
     }
 }
+
+Feed.propTypes = {
+    ownActivity: React.PropTypes.array.isRequired,
+    publicSectorActivity: React.PropTypes.array.isRequired,
+};
 
 export default Feed;

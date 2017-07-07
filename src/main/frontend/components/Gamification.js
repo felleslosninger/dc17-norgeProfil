@@ -5,7 +5,6 @@ var Popover = require('react-bootstrap/lib/Popover');
 var OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
 
 import {List, ListItem} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
 import LinearProgress from 'material-ui/LinearProgress';
 import Done from 'material-ui/svg-icons/action/done'
 import Info from 'material-ui/svg-icons/action/info-outline'
@@ -18,114 +17,76 @@ class Gamification extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            hasPostbox: false,
-            hasMobileNum: false,
-            hasEmail: false,
-            hasEid: true
-        };
-
     };
 
     render() {
-        var postBox = (gamification) => {
+        var postBox = () => {
             let totalTest = 1;
             let test = 0;
 
-            if(gamification.state.hasPostbox){
+            if(this.props.hasPostbox){
                 test++;
             }
 
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var mobileNum = (gamification) => {
+        var phone = () => {
             let totalTest = 1;
             let test = 0;
-
-            if(gamification.state.hasMobileNum){
+            if(this.props.hasPhone){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var email = (gamification) => {
+        var email = () => {
             let totalTest = 1;
             let test = 0;
 
-            if(gamification.state.hasEmail){
+            if(this.props.hasEmail){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var eid = (gamification) => {
+        var eid = () => {
             let totalTest = 1;
             let test = 0;
 
-            if(gamification.state.hasEid){
+            if(this.props.hasEid){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
         };
 
-        var calculatePercent = (gamification) => {
+        var calculatePercent = () => {
             let totalTest = 4;
             let test = 0;
 
-            if(gamification.state.hasPostbox){
+            if(this.props.hasPostbox){
                 test++;
             }
 
-            if(gamification.state.hasMobileNum){
+            if(this.props.hasPhone){
                 test++;
             }
 
-            if(gamification.state.hasEmail){
+            if(this.props.hasEmail){
                 test++;
             }
 
-            if(gamification.state.hasEid){
+            if(this.props.hasEid){
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
         };
 
         let Postbox = postBox(this);
-        let Mobilenum = mobileNum(this);
+        let Phone = phone(this);
         let Email = email(this);
         let Eid = eid(this);
         let percent = calculatePercent(this);
-
-        const popover = (
-            <Popover id="popover-positioned-bottom">
-                <List>
-                    <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
-                    <ListItem
-                        primaryText="E-mail"
-                        leftIcon={this.state.hasEmail ? <Done /> : <Remove /> }
-                        disabled={true}
-                    ></ListItem>
-                    <ListItem
-                        primaryText="Mobilnummer"
-                        leftIcon={this.state.hasMobileNum ? <Done /> : <Remove /> }
-                        disabled={true}
-                    />
-                    <Divider/>
-                    <ListItem
-                        primaryText="Digital postkasse"
-                        leftIcon={this.state.hasPostbox ? <Done /> : <Remove /> }
-                        disabled={true}
-                    />
-                    <ListItem
-                        primaryText="eID"
-                        leftIcon={this.state.hasEid ? <Done /> : <Remove /> }
-                        disabled={true}
-                    />
-                </List>
-            </Popover>
-        );
 
         const styles = {
             marginTop: '1.5%',
@@ -133,6 +94,77 @@ class Gamification extends React.Component {
             height: '10px'
         };
 
+        const bar = [
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Postbox}/>,
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Phone}/>,
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/>,
+            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Eid}/>
+        ];
+        const viewBar = [];
+        var checkBar = () => {
+            for(var i = 0; i < bar.length; i++) {
+                if(bar[i].props.value === 100) {
+                    viewBar.push(<Col key={i+1} md={3}>{bar[i]}</Col>);
+                }
+            }
+
+            for(var i = 0; i < bar.length; i++) {
+                if(bar[i].props.value === 0) {
+                    viewBar.push(<Col key={i+1} md={3}>{bar[i]}</Col>);
+                }
+            }
+        };
+
+        const viewList = [];
+        const list = [
+            <ListItem
+                primaryText="E-mail"
+                leftIcon={this.props.hasEmail ? <Done /> : <Remove /> }
+                disabled={true}
+                value={this.props.hasEmail}
+            />,
+            <ListItem
+                primaryText="Mobilnummer"
+                leftIcon={this.props.hasPhone ? <Done /> : <Remove /> }
+                disabled={true}
+                value={this.props.hasPhone}
+            />,
+            <ListItem
+                primaryText="Digital postkasse"
+                leftIcon={this.props.hasPostbox ? <Done /> : <Remove /> }
+                disabled={true}
+                value={this.props.hasPostbox}
+            />,
+            <ListItem
+                primaryText="eID"
+                leftIcon={this.props.hasEid ? <Done /> : <Remove /> }
+                disabled={true}
+                value={this.props.hasEid}
+            />
+        ];
+        var checkList = () => {
+            for(var i = 0; i < list.length; i++) {
+                if(list[i].props.value === true) {
+                    viewList.push(<Row key={i+1}>{list[i]}</Row>);
+                }
+            }
+
+            for(var i = 0; i < list.length; i++) {
+                if(list[i].props.value === false) {
+                    viewList.push(<Row key={i+1}>{list[i]}</Row>);
+                }
+            }
+        };
+
+        const popover = (
+            <Popover id="popover-positioned-bottom">
+                <List>
+                    <Subheader>Styrke brukerprofil: <strong>{percent} %</strong> </Subheader>
+                    {viewList}
+                    {checkList()}
+                </List>
+            </Popover>
+        );
 
         const overlay = (
             <OverlayTrigger trigger={['hover', 'click']} placement="bottom" overlay={popover}>
@@ -141,35 +173,11 @@ class Gamification extends React.Component {
                 </IconButton>
             </OverlayTrigger>);
 
-        const bar = [
-            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Postbox}/>,
-            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Mobilenum}/>,
-            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Email}/>,
-            <LinearProgress className="ProfileProgress" style={styles} mode="determinate" value={Eid}/>
-        ];
-
-        const viewBar = [];
-
-        var checkBar = () => {
-            for(var i = 0; i < bar.length; i++) {
-                if(bar[i].props.value == 100) {
-                    viewBar.push(<Col key={i+1} sm={3}>{bar[i]}</Col>);
-                }
-            }
-
-            for(var i = 0; i < bar.length; i++) {
-                if(bar[i].props.value == 0) {
-                    viewBar.push(<Col key={i+1} sm={3}>{bar[i]}</Col>);
-                }
-            }
-        };
-
 
 
         return (
             <Row className="Gamification">
-                <Col sm={10}><h3>Din profilstyrke</h3></Col>
-                <Col sm={2}>  {overlay} </Col>
+                <Col sm={10}><div><h3 className="pageheader">Styrke brukerprofil {overlay}</h3></div></Col>
                 {viewBar}
                 {checkBar()}
             </Row>
@@ -180,6 +188,14 @@ class Gamification extends React.Component {
 
     }
 }
+
+
+Gamification.propTypes = {
+    hasEmail: React.PropTypes.bool.isRequired,
+    hasPhone: React.PropTypes.bool.isRequired,
+    hasEid: React.PropTypes.bool.isRequired,
+    hasPostbox: React.PropTypes.bool.isRequired,
+};
 
 
 export default Gamification;

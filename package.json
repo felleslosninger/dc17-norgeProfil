@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-preset-stage-2": "^6.24.1",
     "bootstrap": "^3.3.7",
     "es6-promise": "^4.0.5",

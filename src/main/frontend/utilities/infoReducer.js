@@ -3,13 +3,18 @@ import * as actionTypes from './actions';
 // INITIAL STATE
 const initialState = {
     username : 'Kari Nordmann',
-    activeContactEmail : 'email@email.com',
+    activeContactEmail : 'kari.nordmann@email.com',
     activeContactPhone : '12345678',
     activeReservation: true,
+    activePostbox: "",
+    activeEid: ['MinID', 'BankID'],
+    nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commfides'],
+    recentUserActivity: [{eId: 'MinID', service: 'Danske Bank', time: '18 Juli 2017 22:13'}, {eId: 'BankID', service: 'Altinn', time: '30 Juli 2017 12:09'}],
+    recentPublicActivity: [{publicSector: 'Skatteetaten', info: 'Mobilnummer', time: '10 Desember 2016 20:10'}, {publicSector: 'Collouseum Tannlege', info: 'Mobilnummer', time: '09 Januar 2017 09:10'}],
 };
 
 // REDUCER
-export default function GamificationReducer(state = initialState, action) {
+export default function infoReducer(state = initialState, action) {
     switch (action.type) {
         case actionTypes.SAVE_CONTACT_PHONE:
             return {
@@ -30,6 +35,11 @@ export default function GamificationReducer(state = initialState, action) {
             return {
                 ...state,
                 activeReservation: false,
+            };
+        case actionTypes.SET_POSTBOX:
+            return {
+                ...state,
+                activePostbox: action.postbox,
             };
         default:
             return state;

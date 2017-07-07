@@ -19,40 +19,27 @@ class Mail extends React.Component {
         super(props);
         this.state = {
             open: false,
-            postbox: '', //add init value either Digipost or E-boks
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.saveInfo = this.saveInfo.bind(this);
+        this.handleDigipost = this.handleDigipost.bind(this);
+        this.handleEboks = this.handleEboks.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.setPostbox = this.setPostbox.bind(this);
-        this.removePostbox = this.removePostbox.bind(this);
     };
-
-    setPostbox(){
-        this.setState({postbox: 'E-boks'});
-    }
-
-
-    removePostbox() {
-        this.setState({postbox: ''});
-    }
 
     handleChange() {
-        if (this.state.postbox == 'E-boks') {
-            this.setState({postbox: 'Digipost'});
-        } else {
-            this.setState({postbox: 'E-boks'});
-        }
+        this.props.onSetPostbox('');
         this.setState({open: false});
     }
 
-    saveInfo() {
-        console.log("saved");
-        console.log("Postbox: ", this.state.postbox);
-        this.setState({open: false});
-    };
+    handleDigipost () {
+        this.props.onSetPostbox('Digipost')
+    }
+
+    handleEboks () {
+        this.props.onSetPostbox('e-Boks')
+    }
 
     handleOpen() {
         this.setState({open: true});
@@ -61,6 +48,7 @@ class Mail extends React.Component {
     handleClose() {
         this.setState({open: false});
     };
+
 
     render() {
 
@@ -87,28 +75,29 @@ class Mail extends React.Component {
         ];
 
         let img = null;
-        let nextPostbox = "";
-        if (this.state.postbox === 'E-boks') {
-            img = (<img src="img/eboks.png" className="CardPicture Medium" alt="logo til E-boks"/>);
-            nextPostbox = "Digipost";
+        let postbox = this.props.postbox;
+
+        if (postbox === 'e-Boks') {
+            img = (<img src="img/eboks.png" width={100} height={'auto'} alt="logo til e-Boks"/>)
         } else {
-            img = (<img src="img/digipost.png" className="CardPicture Medium" alt="logo til digipost"/>);
-            nextPostbox = "E-boks";
+            img = (<img src="img/digipost.png" width={100} height={'auto'} alt="logo til digipost"/>)
         }
 
-        var getcardForNewMailUser = function (mail) {
-            return (
+        let mailCard = '';
+
+        if (postbox === '') {
+            mailCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
                         <Col sm={3} md={3} lg={2} className="Icon">{<Email />}</Col>
                         <Col sm={7} md={6} lg={8} ><h4>Digital postkasse</h4></Col>
-                        <Col sm={2} md={3} lg={2}><Help onClick={mail.handleOpen}/> </Col>
+                        <Col sm={2} md={3} lg={2}><Help onClick={this.handleOpen}/> </Col>
                     </Row>
                     <Dialog
                         title="Spørsmål og svar"
                         actions={actions2} modal={false}
-                        open={mail.state.open}
-                        onRequestClose={mail.handleClose}
+                        open={this.state.open}
+                        onRequestClose={this.handleClose}
                     >
                         <List>
                             <ListItem
@@ -182,7 +171,7 @@ class Mail extends React.Component {
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
-                                        <p>
+                                        <p className="CustomP">
                                         Nei, digital postkasse er gratis å opprette og bruke for innbyggerene.
                                         Lastar du selv opp mange dokument eller bilde, må du betale for å få
                                         lagringsplass ut over 1GB.
@@ -202,27 +191,20 @@ class Mail extends React.Component {
                             icon={<img src="img/digipost.png" className="CardPicture Medium" alt="logo til digipost"/>}
                             primary={true}
                             label="Opprett Digipost"
-                            href="https://www.digipost.no/app/registrering#/"
+                            onTouchTap={this.handleDigipost}
                         />
                         <br/>
                         <FlatButton
                             icon={<img src="img/eboks.png" className="CardPicture Medium" alt="logo til E-boks"/>}
                             primary={true}
-                            label="Opprett E-boks"
-                            href="https://www.e-boks.com/norge/nb/ny-bruker/"
+                            label="Opprett e-Boks"
+                            onTouchTap={this.handleEboks}
                         />
-                        <div className="ToggleBtn">
-                            <Toggle
-                                onToggle={mail.setPostbox}
-                                defaultToggled={false}
-                            />
-                        </div>
                     </CardText>
-                </Card> )
-        };
-
-        var getcardForExistingMailUser = function (mail, postbox) {
-            return (
+                </Card>
+            )
+        } else {
+            mailCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
                         <Col sm={3} md={3} lg={2}  className="Icon">{<Email />}</Col>
@@ -233,8 +215,8 @@ class Mail extends React.Component {
                         <div className="CardInfoText">
                             <Row>
                                 <Col sm={4}> {img} </Col>
-                                <Col sm={8}> Du mottar i dag post fra det offentlige til din digitale postkasse hos
-                                    <strong>  { postbox } </strong> </Col>
+                                <Col sm={8}> <p> Du mottar i dag post fra det offentlige til din digitale postkasse hos
+                                    <strong>  { postbox }  </strong> </p> </Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
@@ -242,39 +224,37 @@ class Mail extends React.Component {
                                 label="Endre postkasse"
                                 primary={true}
                                 icon={<Edit />}
-                                onTouchTap={mail.handleOpen}/>
-                        </div>
-                        <div className="ToggleBtn">
-                            <Toggle
-                                onToggle={mail.removePostbox}
-                                defaultToggled={true}
-                            />
+                                onTouchTap={this.handleOpen}/>
                         </div>
                     </CardText>
                     <Dialog
                         title="Endre din digital postkasse"
                         actions={actions}
                         modal={false}
-                        open={mail.state.open}
-                        onRequestClose={mail.handleClose}
+                        open={this.state.open}
+                        onRequestClose={this.handleClose}
                     >
-                        <p>
-                            Ønsker du å endre din digitale postkasse til {nextPostbox}?
-                        </p>
+                        <div>
+                            Ønsker du å endre din digitale postkasse?
+                        </div>
                     </Dialog>
                 </Card>
-            );
-        };
-
-
-        let postbox = this.state.postbox;
-        if (postbox === 'Digipost' || postbox === 'E-boks') {
-            return ( getcardForExistingMailUser(this, postbox) )
-        } else {
-            return ( getcardForNewMailUser(this) ) //if not user of digipost and E-boks
+            )
         }
+
+
+        return (
+            <div>{mailCard}</div>
+        )
+
     }
 }
+
+Mail.propTypes = {
+    onSetPostbox: React.PropTypes.func.isRequired,
+    postbox: React.PropTypes.string,
+
+};
 
 
 export default Mail;
