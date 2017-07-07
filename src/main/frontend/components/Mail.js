@@ -89,9 +89,9 @@ class Mail extends React.Component {
             mailCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={1} className="Icon">{<Email />}</Col>
-                        <Col md={10}><h4>Digital postkasse</h4></Col>
-                        <Col mdOffset={10}><Help onClick={this.handleOpen}/> </Col>
+                        <Col sm={3} md={3} lg={2} className="Icon">{<Email />}</Col>
+                        <Col sm={7} md={6} lg={8} ><h4>Digital postkasse</h4></Col>
+                        <Col sm={2} md={3} lg={2}><Help onClick={this.handleOpen}/> </Col>
                     </Row>
                     <Dialog
                         title="Spørsmål og svar"
@@ -104,7 +104,8 @@ class Mail extends React.Component {
                                 primaryText="Hva er en digital postkasse?"
                                 initiallyOpen={false}
                                 nestedItems={[
-                                    <ListItem key={1} disabled={true} className="info">
+                                    <ListItem key={1} disabled={true} className="Li Info">
+                                        <p className="CustomP">
                                         En digital postkasse er ei sikker løsning for å få og oppbevare viktig post
                                         digitalt, slik som brev med vedtak, helseopplysningar eller annen sensitiv
                                         informasjon. Det offentlige kan ikke bruke vanlig e-post til å sende slik
@@ -114,6 +115,7 @@ class Mail extends React.Component {
                                         Du får ikke reklame i den digitale postkassen din. Men bedrifter som du har
                                         et kundeforhold til, som for eksempel banken eller forsikringsselskapet ditt,
                                         kan sende deg meldingar om ulike tilbud dersom du har akseptert dette.
+                                        </p>
                                     </ListItem>
                                 ]}
                             />
@@ -121,13 +123,15 @@ class Mail extends React.Component {
                                 primaryText="Er digital postkasse det samme som E-post?"
                                 initiallyOpen={false}
                                 nestedItems={[
-                                    <ListItem key={1} disabled={true} className="info">
+                                    <ListItem key={1} disabled={true} className="Li Info">
+                                        <p className="CustomP">
                                         Nei, en digital postkasse er sikrere enn e-post fordi både avsender og
                                         mottaker må bekrefte identiteten sin. Post som det offentlige sender til
                                         deg i den digitale postkassen din, blir sendt kryptert, som skjult tekst.
                                         For å åpne og lese posten i den digitale postkassen må du legitimere deg
                                         gjennom ID-porten. Det er bare du og de du har bevilget tilgang til, som kan
                                         lese posten din fra det offentlege.
+                                        </p>
                                     </ListItem>
                                 ]}
                             />
@@ -135,14 +139,16 @@ class Mail extends React.Component {
                                 primaryText="Hvem kan opprette en digital postkasse?"
                                 initiallyOpen={false}
                                 nestedItems={[
-                                    <ListItem key={1} disabled={true} className="info">
-                                        For å opprette en digital postkasse må du ha
-                                        <ul>
-                                            <li> norsk fødselsnummer eller D-nummer</li>
-                                            <li> elektronisk ID fra BankID, BankID på mobil, Buypass eller
-                                                Commfides
-                                            </li>
-                                        </ul>
+                                    <ListItem key={1} disabled={true} className="Li Info">
+                                        <p className="CustomP">
+                                            For å opprette en digital postkasse må du ha
+                                            <ul>
+                                                <li> norsk fødselsnummer eller D-nummer</li>
+                                                <li> elektronisk ID fra BankID, BankID på mobil, Buypass eller
+                                                    Commfides
+                                                </li>
+                                            </ul>
+                                        </p>
                                     </ListItem>
                                 ]}
                             />
@@ -150,11 +156,13 @@ class Mail extends React.Component {
                                 primaryText="Kan jeg ha to digitale postkasser?"
                                 initiallyOpen={false}
                                 nestedItems={[
-                                    <ListItem key={1} disabled={true} className="info">
+                                    <ListItem key={1} disabled={true} className="Li Info">
+                                       <p className="CustomP">
                                         Ja, men til post fra det offentlige må du velge en av postkassene, slik at
                                         stat og kommune vet hvor de skal sende posten din. Kontakt ID-porten sin
                                         brukerstøtte på grønt nummer 800 30 300 om du har spørsmål om dette (fra
                                         utlandet: +47 24 05 56 03).
+                                       </p>
                                     </ListItem>
                                 ]}
                             />
@@ -162,31 +170,32 @@ class Mail extends React.Component {
                                 primaryText="Koster det noe å ha digital postkasse?"
                                 initiallyOpen={false}
                                 nestedItems={[
-                                    <ListItem key={1} disabled={true} className="info">
+                                    <ListItem key={1} disabled={true} className="Li Info">
+                                        <p className="CustomP">
                                         Nei, digital postkasse er gratis å opprette og bruke for innbyggerene.
                                         Lastar du selv opp mange dokument eller bilde, må du betale for å få
                                         lagringsplass ut over 1GB.
+                                        </p>
                                     </ListItem>
                                 ]}
                             />
                         </List>
                     </Dialog>
-                    <hr className="Headline"/>
+                    <hr className="HLine"/>
                     <CardText className="CardText">
                         <p>
                             Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
                             hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
                         </p>
-                        <br/>
                         <FlatButton
-                            icon={<img src="img/digipost.png" width={70} height={'auto'} alt="logo til digipost"/>}
+                            icon={<img src="img/digipost.png" className="CardPicture Medium" alt="logo til digipost"/>}
                             primary={true}
                             label="Opprett Digipost"
                             onTouchTap={this.handleDigipost}
                         />
                         <br/>
                         <FlatButton
-                            icon={<img src="img/eboks.png" width={70} height={'auto'} alt="logo til e-Boks"/>}
+                            icon={<img src="img/eboks.png" className="CardPicture Medium" alt="logo til E-boks"/>}
                             primary={true}
                             label="Opprett e-Boks"
                             onTouchTap={this.handleEboks}
@@ -198,16 +207,16 @@ class Mail extends React.Component {
             mailCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={1} className="Icon">{<Email />}</Col>
-                        <Col md={10}><h4>Digital postkasse</h4></Col>
+                        <Col sm={3} md={3} lg={2}  className="Icon">{<Email />}</Col>
+                        <Col sm={9} md={9} lg={10}><h4>Digital postkasse</h4></Col>
                     </Row>
-                    <hr className="Headline"/>
-                    <CardText className="CardText">
+                    <hr className="HLine"/>
+                    <CardText>
                         <div className="CardInfoText">
                             <Row>
-                                <Col md={4}>{img}</Col>
-                                <Col md={8}>Du mottar i dag post fra det offentlige til din digitale postkasse hos
-                                    <strong>  { postbox } </strong></Col>
+                                <Col sm={4}> {img} </Col>
+                                <Col sm={8}> <p> Du mottar i dag post fra det offentlige til din digitale postkasse hos
+                                    <strong>  { postbox }  </strong> </p> </Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
