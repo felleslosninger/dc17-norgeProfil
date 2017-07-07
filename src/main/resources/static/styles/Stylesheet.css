@@ -15,8 +15,9 @@ body {
     width: 100%;
 }
 
-.page-header {
+.pageheader {
     width: 22%;
+    margin: 3em 0 1.5em 0;
 }
 
 .Feed {
@@ -28,9 +29,5 @@ body {
     margin-top: 2%;
 }
 
-
-.Gamification {
-    margin-top: 2%;
-}
 
 

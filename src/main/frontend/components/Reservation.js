@@ -13,24 +13,14 @@ class Reservation extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             open: false,
-            reservation: 'Reserver'
         };
 
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.setReservation = this.setReservation.bind(this);
-        this.removeReservation = this.removeReservation.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     };
-    setReservation(){
-        this.setState({reservation: 'Reservation'});
-    }
-
-    removeReservation() {
-        this.setState({reservation: 'Reserved'});
-    }
 
     handleOpen() {
         this.setState({open: true});
@@ -40,14 +30,6 @@ class Reservation extends React.Component {
         this.setState({open: false});
     };
 
-    handleChange() {
-        if (this.state.reservation == 'Reservation') {
-            this.setState({reservation: 'Reserved'});
-        } else {
-            this.setState({reservation: 'Reserved'});
-        }
-        this.setState({open: false});
-    }
 
     render() {
 
@@ -59,20 +41,22 @@ class Reservation extends React.Component {
             />,
         ];
 
-        const reservationCard = function (reservation){
-            return (
+        let reservationCard = '';
+
+        if (this.props.reservation === false) {
+            reservationCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={1} className="Icon">{<NotificationsOff />}</Col>
-                        <Col md={10}><h4>Reservasjon</h4></Col>
-                        <Col mdOffset={10}><Help onClick={reservation.handleOpen}/></Col>
+                        <Col sm={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
+                        <Col sm={6} lg={7}><h4>Reservasjon</h4></Col>
+                        <Col sm={3} lg={3}><Help onClick={this.handleOpen}/></Col>
                     </Row>
                     <Dialog
                         title="Brev fra stat og kommune"
                         actions={actions} modal={false}
-                        open={reservation.state.open}
-                        onRequestClose={reservation.handleClose}>
-                        <div>
+                        open={this.state.open}
+                        onRequestClose={this.handleClose}>
+                        <p>
                             Reservasjon mot kommunikasjon på nett innebærer at du vil motta vedtak og
                             andre viktige brev fra det offentlige på papir.
                             <br/><br/>
@@ -83,43 +67,41 @@ class Reservation extends React.Component {
                             Du kan logge inn på offentlige tjenester via ID-porten selv om du er reservert.
                             <br/><br/>
                             Reservasjonen din kan du enkelt oppheve ved å trykke Opphev reservasjon.
-                        </div>
+                        </p>
                     </Dialog>
                     <hr className="Headline"/>
                     <CardText className="CardText">
+                        <p>
                         Om du reserverer deg mot kommunikasjon på nett vil du motta viktige brev fra det offentlige kun på
                         papir.
                         Stat og kommune kan likevel sende deg annen informasjon på e-post, sms eller som brev digitalt.
                         <a href="http://eid.difi.no/nb/reserver-deg-mot-kommunikasjon-pa-nett"> Les mer</a>
                         <br/><br/>
                         <br/><br/>
+                        </p>
                         <div className="ReservationBtn">
                             <RaisedButton
                                 label="Reserver"
-                                onClick={reservation.setReservation}
-                                //defaultToggled={false}
+                                onClick={this.props.onSetReservation}
                             />
                         </div>
                     </CardText>
-                </Card>)
-
-        };
-
-        const reservedCard = function(reservation){
-
-            return (
+                </Card>
+            )
+        } else {
+            reservationCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col md={1} className="Icon">{<NotificationsOff />}</Col>
-                        <Col md={10}><h4>Reservasjon</h4></Col>
-                        <Col mdOffset={10}><Help onClick={reservation.handleOpen}/></Col>
+                        <Col sm={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
+                        <Col sm={6} lg={7}><h4>Reservasjon</h4></Col>
+                        <Col sm={3} lg={3}><Help onClick={this.handleOpen}/></Col>
                     </Row>
                     <Dialog
                         title="Brev fra stat og kommune"
                         actions={actions} modal={false}
-                        open={reservation.state.open}
-                        onRequestClose={reservation.handleClose}>
-                        <div>
+                        open={this.state.open}
+                        onRequestClose={this.handleClose}>
+                        <p>
                             Reservasjon mot kommunikasjon på nett innebærer at du vil motta vedtak og
                             andre viktige brev fra det offentlige på papir.
                             <br/><br/>
@@ -130,37 +112,41 @@ class Reservation extends React.Component {
                             Du kan logge inn på offentlige tjenester via ID-porten selv om du er reservert.
                             <br/><br/>
                             Reservasjonen din kan du enkelt oppheve ved å trykke Opphev reservasjon.
-                        </div>
+                        </p>
                     </Dialog>
-                    <hr className="Headline"/>
+                    <hr className="HLine"/>
                     <CardText className="CardText">
+                        <p>
                         Du har nå reservert deg mot kommunikasjon på nett fra det offentlige.
                         Du vil fra nå motta vedtak og andre brev med innhold som er viktig for deg kun på papir.
                         <br/><br/>
                         Ved å fjerne reservasjon kan stat og kommune sende deg vedtak og andre viktige brev digitalt.
                         <a href="http://eid.difi.no/nb/reserver-deg-mot-kommunikasjon-pa-nett"> Les mer</a>
                         <br/><br/>
+                        </p>
                         <div className="ReservationBtn">
                             <RaisedButton
                                 label="Opphev reservasjon"
-                                onClick={reservation.removeReservation}
-
+                                onClick={this.props.onRemoveReservation}
                             />
                         </div>
                     </CardText>
                 </Card>
             )
-        };
 
-        let reservation = this.state.reservation;
-        if (reservation == 'Reservation') {
-            return ( reservedCard(this, reservation) )
-        } else {
-            return ( reservationCard(this) )
         }
+
+        return (
+           <div>{reservationCard}</div>
+        )
 
     }
 }
 
+Reservation.propTypes = {
+    onSetReservation: React.PropTypes.func.isRequired,
+    onRemoveReservation: React.PropTypes.func.isRequired,
+    reservation: React.PropTypes.bool,
+};
 
 export default Reservation;

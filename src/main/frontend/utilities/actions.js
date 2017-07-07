@@ -1,6 +1,10 @@
 // ACTION TYPES
 export const SAVE_CONTACT_EMAIL = 'SAVE_CONTACT_EMAIL';
 export const SAVE_CONTACT_PHONE = 'SAVE_CONTACT_PHONE';
+export const SET_RESERVATION = 'SET_RESERVATION';
+export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
+export const SET_POSTBOX = 'SET_POSTBOX';
+
 
 
 // ACTION CREATORS
@@ -17,4 +21,25 @@ export function saveContactPhone(contactPhone) {
         contactPhone
     }
 }
+
+export function setReservation() {
+    return {
+        type: SET_RESERVATION
+    }
+}
+
+export function removeReservation() {
+    return {
+        type: REMOVE_RESERVATION,
+    }
+}
+
+export function setPostbox(postbox) {
+    return {
+        type: SET_POSTBOX,
+        postbox
+    }
+}
+
+
 
