@@ -11,8 +11,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppContainer from "./AppContainer.js";
 import NavigationBar from '../components/NavigationBar.js';
 import axios from "axios";
-
-
+import RaisedButton from 'material-ui/RaisedButton';
 import configureStore from "../utilities/store";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -34,7 +33,7 @@ const Bar = () => {
 
 class Login extends React.Component {
 
-    constructor(){
+    constructor() {
         super();
         this.state = {
             isAuth: false
@@ -44,30 +43,30 @@ class Login extends React.Component {
     }
 
 
-    test(){
+    test() {
         this.setState({
-            isAuth:true
+            isAuth: true
         });
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.authenticate();
     }
 
-    authenticate(){
+    authenticate() {
         axios.get('/user')
             .then((response) => {
-                if (response.data == ""){
+                if (response.data == "") {
                     this.setState({
                         isAuth: false
                     });
-                }else{
-                    if(response.data.authenticated == true){
+                } else {
+                    if (response.data.authenticated == true) {
                         this.setState({
                             isAuth: true
                         });
                     }
-                    else{
+                    else {
                         this.setState({
                             isAuth: false
                         });
@@ -76,16 +75,19 @@ class Login extends React.Component {
             });
     }
 
-    render(){
-        if(!this.state.isAuth){
+    render() {
+        if (!this.state.isAuth) {
             return (
-                <div>
-                    DU ER IKKE LOGGET INN DIN TISSEFANT
-                    <a href="/login/idporten"> Klikk meg for å logge inn</a>
-                </div>
+                <MuiThemeProvider>
+                    <Provider store={store}>
+                        {/*<a href="/login/idporten"> Klikk meg for å logge inn</a>*/}
+                        <RaisedButton href="/login/idporten" label="Logg inn med Idporten" primary={true}/>
+                    </Provider>
+
+                </MuiThemeProvider>
             )
 
-        }else{
+        } else {
             return (
                 <MuiThemeProvider muiTheme={muiTheme}>
                     <Provider store={store}>
