@@ -4,11 +4,6 @@ var Col = require('react-bootstrap/lib/Col');
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from "react-redux";
-import {connect} from "react-redux";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
@@ -16,17 +11,28 @@ import Reservation from '../components/Reservation.js';
 import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
-import NavigationBar from '../components/NavigationBar.js';
 import Gamification from '../components/Gamification.js';
-import axios from "axios";
-
-
+import {connect} from "react-redux";
 import { saveContactEmail, saveContactPhone } from '../utilities/actions';
-import configureStore from "../utilities/store";
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
 
-const store = configureStore();
+const mapStateToProps = state => {
+    let {info: {activeContactEmail, activeContactPhone}} = state;
+
+    return {
+        activeContactEmail: activeContactEmail,
+        activeContactPhone: activeContactPhone,
+    }
+
+
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
+        changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
+    }
+};
 
 class AppContainer extends Component {
 
@@ -37,10 +43,10 @@ class AppContainer extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
     //  Fetch data from API
-
     }
+
 
     render() {
         return (
@@ -73,114 +79,6 @@ class AppContainer extends Component {
     }
 }
 
-
-
-const mapStateToProps = state => {
-    let {info: {activeContactEmail, activeContactPhone}} = state;
-
-    return {
-        activeContactEmail: activeContactEmail,
-        activeContactPhone: activeContactPhone,
-    }
-
-
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
-        changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
-    }
-};
-
-const muiTheme = getMuiTheme({
-    palette: {
-        primary1Color: '#3F51B5',
-    },
-});
-
-const Bar = () => {
-    return (
-        <MuiThemeProvider muiTheme={muiTheme}>
-            <NavigationBar/>
-        </MuiThemeProvider>
-    );
-};
-
-class Login extends React.Component {
-
-    constructor(){
-        super();
-        this.state = {
-            isAuth: false
-        };
-        this.authenticate = this.authenticate.bind(this);
-        this.test = this.test.bind(this);
-    }
-
-
-    test(){
-        this.setState({
-            isAuth:true
-        });
-    }
-
-    componentWillMount(){
-        this.authenticate();
-    }
-
-    authenticate(){
-        axios.get('/user')
-            .then((response) => {
-                if (response.data == ""){
-                    this.setState({
-                        isAuth: false
-                    });
-                }else{
-                    if(response.data.authenticated == true){
-                        this.setState({
-                            isAuth: true
-                        });
-                    }
-                    else{
-                        this.setState({
-                            isAuth: false
-                        });
-                    }
-                }
-            });
-    }
-
-    render(){
-        if(!this.state.isAuth){
-            return (
-                <div>
-                    DU ER IKKE LOGGET INN DIN TISSEFANT
-                    <a href="/login/idporten"> Klikk meg for å logge inn</a>
-                </div>
-            )
-
-        }else{
-            return (
-                <MuiThemeProvider muiTheme={muiTheme}>
-                    <Provider store={store}>
-                        <AppContainer />
-                    </Provider>
-                </MuiThemeProvider>
-            );
-        }
-    }
-
-}
-
 AppContainer = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
 
-injectTapEventPlugin();
-
-ReactDOM.render(
-    <Login/>,
-    document.getElementById('app')
-);
-
-
-ReactDOM.render(<Bar/>, document.getElementById('navbar'));
+export default AppContainer;
