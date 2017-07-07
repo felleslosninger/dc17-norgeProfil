@@ -28,3 +28,6 @@ node_modules/
 
 ## bundle ##
 src/main/resources/static/built/
+
+application.yml
+src\main\resources\application.yml
