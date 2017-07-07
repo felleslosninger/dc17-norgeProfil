@@ -4,11 +4,6 @@ var Col = require('react-bootstrap/lib/Col');
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from "react-redux";
-import {connect} from "react-redux";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
@@ -16,17 +11,28 @@ import Reservation from '../components/Reservation.js';
 import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
-import NavigationBar from '../components/NavigationBar.js';
 import Gamification from '../components/Gamification.js';
-import axios from "axios";
-
-
+import {connect} from "react-redux";
 import { saveContactEmail, saveContactPhone } from '../utilities/actions';
-import configureStore from "../utilities/store";
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
 
-const store = configureStore();
+const mapStateToProps = state => {
+    let {info: {activeContactEmail, activeContactPhone}} = state;
+
+    return {
+        activeContactEmail: activeContactEmail,
+        activeContactPhone: activeContactPhone,
+    }
+
+
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
+        changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
+    }
+};
 
 class AppContainer extends Component {
 
@@ -37,10 +43,10 @@ class AppContainer extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
     //  Fetch data from API
-
     }
+
 
     render() {
         return (
@@ -72,5 +78,7 @@ class AppContainer extends Component {
         );
     }
 }
+
+AppContainer = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
 
 export default AppContainer;

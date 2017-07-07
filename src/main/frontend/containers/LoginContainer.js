@@ -5,35 +5,18 @@ var Col = require('react-bootstrap/lib/Col');
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
-import {connect} from "react-redux";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+import AppContainer from "./AppContainer.js";
 import NavigationBar from '../components/NavigationBar.js';
-import AppContainer from 'AppContainer.js';
 import axios from "axios";
+
+
 import configureStore from "../utilities/store";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const store = configureStore();
-
-const mapStateToProps = state => {
-    let {info: {activeContactEmail, activeContactPhone}} = state;
-
-    return {
-        activeContactEmail: activeContactEmail,
-        activeContactPhone: activeContactPhone,
-    }
-
-
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
-        changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
-    }
-};
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -113,9 +96,7 @@ class Login extends React.Component {
         }
     }
 
-} 
-
-AppContainer = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
+}
 
 injectTapEventPlugin();
 
