@@ -90,29 +90,36 @@ class Feed extends React.Component {
             }
         }
 
-
-
         let publicSectorsActivityList = [];
-        for (let i = 0; i < this.props.publicSectorActivity.length; i++) {
+        if (this.props.publicSectorActivity.length === 0) {
             publicSectorsActivityList.push (
-                <div key={i}>
-                    <ListItem
-                        leftAvatar={<Example/>}
-                        rightIconButton={rightIconMenu}
-                        primaryText={this.props.publicSectorActivity[i].publicSector}
-                        disabled={true}
-                        secondaryText={
-                            <p>
-                                <span className="Li Header">{this.props.publicSectorActivity[i].info}</span><br />
-                                {this.props.publicSectorActivity[i].time}
-                            </p>
-                        }
-                        secondaryTextLines={2}
-                    />
-                    <Divider/>
+                <div key={1}>
+                    <h4>Ingen nylig aktivitet</h4>
                 </div>
             )
+        } else {
+            for (let i = 0; i < this.props.publicSectorActivity.length; i++) {
+                publicSectorsActivityList.push (
+                    <div key={i}>
+                        <ListItem
+                            leftAvatar={<Example/>}
+                            rightIconButton={rightIconMenu}
+                            primaryText={this.props.publicSectorActivity[i].issuer}
+                            disabled={true}
+                            secondaryText={
+                                <p>
+                                    <span className="Li Header">{this.props.publicSectorActivity[i].type}</span><br />
+                                    {this.props.publicSectorActivity[i].dateTime}
+                                </p>
+                            }
+                            secondaryTextLines={2}
+                        />
+                        <Divider/>
+                    </div>
+                )
+            }
         }
+
 
         return (
             <Card className="Feed">

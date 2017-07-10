@@ -10,7 +10,7 @@ const initialState = {
     activeEid: ['MinID', 'BankID'],
     nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commfides'],
     recentUserActivity: [],
-    recentPublicActivity: [{publicSector: 'Skatteetaten', info: 'Mobilnummer', time: '10 Desember 2016 20:10'}, {publicSector: 'Collouseum Tannlege', info: 'Mobilnummer', time: '09 Januar 2017 09:10'}],
+    recentPublicActivity: [],
 };
 
 // REDUCER
@@ -28,6 +28,12 @@ export default function infoReducer(state = initialState, action) {
             return {
                 ...state,
                 recentUserActivity: action.recentActivity.data
+            };
+        case actionTypes.FETCHED_RECENT_PUBLIC_ACTIVITY:
+            console.log(action.recentPActivity.data);
+            return {
+                ...state,
+                recentPublicActivity: action.recentPActivity.data
             };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {

@@ -5,8 +5,11 @@ export function getUser() {
 }
 
 export function getRecentFromUser() {
-    console.log(fetchFromServer("/getRecentUserActivity"));
     return fetchFromServer("/getRecentUserActivity");
+}
+
+export function getRecentPublicActivity() {
+    return fetchFromServer("/getRecentPublicActivity");
 }
 
 export function getUsedServices() {
