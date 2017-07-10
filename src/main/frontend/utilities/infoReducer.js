@@ -17,7 +17,6 @@ const initialState = {
 export default function infoReducer(state = initialState, action) {
     switch (action.type) {
         case actionTypes.FETCHED_CONTACT_INFO:
-            console.log(action.contactInfo);
             return {
                 ...state,
                 activeContactEmail: action.contactInfo.data.kontaktinformasjon.epostadresse,

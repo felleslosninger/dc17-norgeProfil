@@ -105,14 +105,6 @@ const mapStateToProps = state => {
 
     userHasEid = activeEid.length > 0;
 
-    // if(activeReservation === "NEI"){
-    //     activeReservation = false;
-    // }else if(activeReservation ==="JA"){
-    //     activeReservation = true;
-    //
-    // }
-
-
     return {
         username: username,
         activeContactEmail: activeContactEmail,

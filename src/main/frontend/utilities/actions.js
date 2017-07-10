@@ -19,10 +19,7 @@ export function fetchedContactInfo(contactInfo) {
 }
 
 export function fetchContactInfo() {
-    console.log("Action");
-
     return (dispatch) => {
-
         return getUser()
             .then(result => dispatch(fetchedContactInfo(result)))
             .catch(error => console.error(error));
