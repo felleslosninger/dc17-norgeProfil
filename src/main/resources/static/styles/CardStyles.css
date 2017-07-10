@@ -64,6 +64,8 @@
 .Card {
     height: 25em;
     width: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .CardHeader {
@@ -115,10 +117,6 @@
     padding: 0px;
 }
 
-.CardPicture{
-
-}
-
 .CardPicture.Medium{
     width:  60px;
     height: auto;
@@ -130,25 +128,9 @@
     height: auto;
 }
 
-
-
 .Feed {
-
+    margin-bottom: 3em;
 }
-
-/*
-Feed.header{
-     fontSize: 24;
-     paddingTop: 16;
-     marginBottom: 12;
-     fontWeight: 400;
- }
-*/
-Feed.Slide {
-    padding: 10px;
-}
-
-
 
 /**/
 
@@ -156,7 +138,13 @@ Feed.Slide {
 .EditBtn {
     position: absolute;
     right: 3.2%;
-    bottom: 0;
+    bottom: 0%;
+}
+
+.InfoBtn {
+    position: absolute;
+    right: 7%;
+    top: 2%;
 }
 
 .EditInfo {

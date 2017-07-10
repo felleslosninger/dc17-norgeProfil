@@ -18,7 +18,6 @@ class NavigationBar extends React.Component {
     }
 
     isLoggedIn = () => {
-        let stat = false;
         axios.get('/user')
             .then((response) => {
                 if (response.data == "") {

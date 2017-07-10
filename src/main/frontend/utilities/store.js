@@ -8,7 +8,14 @@ export default function configureStore() {
         thunk,
     ];
 
-    let store = createStore(rootReducer);
+    const store = createStore(
+        rootReducer,
+        {},
+        compose(
+            applyMiddleware(...middleware),
+
+        )
+    );
 
     return store;
 };
