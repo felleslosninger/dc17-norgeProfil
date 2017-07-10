@@ -43,7 +43,7 @@ class Reservation extends React.Component {
 
         let reservationCard = '';
 
-        if (this.props.reservation === false) {
+        if (this.props.reservation === 'NEI') {
             reservationCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
@@ -146,7 +146,7 @@ class Reservation extends React.Component {
 Reservation.propTypes = {
     onSetReservation: React.PropTypes.func.isRequired,
     onRemoveReservation: React.PropTypes.func.isRequired,
-    reservation: React.PropTypes.bool,
+    reservation: React.PropTypes.string.isRequired,
 };
 
 export default Reservation;

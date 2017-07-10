@@ -100,17 +100,17 @@ const mapStateToProps = state => {
     } else {
         userHasPhone = false;
     }
-    
+
     userHasPostbox = activePostbox !== '';
 
     userHasEid = activeEid.length > 0;
 
-    if(activeReservation === "NEI"){
-        activeReservation = false;
-    }else if(activeReservation ==="JA"){
-        activeReservation = true;
-
-    }
+    // if(activeReservation === "NEI"){
+    //     activeReservation = false;
+    // }else if(activeReservation ==="JA"){
+    //     activeReservation = true;
+    //
+    // }
 
 
     return {
