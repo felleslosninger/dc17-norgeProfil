@@ -11,6 +11,12 @@ export function getRecentFromUser() {
 export function getRecentPublicActivity() {
     return fetchFromServer("/getRecentPublicActivity");
 }
+export function getUnusedAuthTypes() {
+    return fetchFromServer("/getUnusedAuthTypes");
+}
+export function getMostUsedAuthTypes() {
+    return fetchFromServer("/getMostUsedAuthTypes");
+}
 
 export function getUsedServices() {
     console.log(fetchFromServer("/getUsedServices"));

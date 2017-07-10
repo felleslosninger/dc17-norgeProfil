@@ -2,13 +2,13 @@ import * as actionTypes from './actions';
 
 // INITIAL STATE
 const initialState = {
-    username : 'Kari Nordmann',
-    activeContactEmail : '',
-    activeContactPhone : '',
+    username: 'Kari Nordmann',
+    activeContactEmail: '',
+    activeContactPhone: '',
     activeReservation: '',
     activePostbox: "",
     activeEid: ['MinID', 'BankID'],
-    nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commfides'],
+    nonActiveEid: [],
     recentUserActivity: [],
     recentPublicActivity: [],
 };
@@ -30,10 +30,15 @@ export default function infoReducer(state = initialState, action) {
                 recentUserActivity: action.recentActivity.data
             };
         case actionTypes.FETCHED_RECENT_PUBLIC_ACTIVITY:
-            console.log(action.recentPActivity.data);
             return {
                 ...state,
                 recentPublicActivity: action.recentPActivity.data
+            };
+        case actionTypes.FETCHED_UNUSED_AUTH_TYPES:
+            console.log(action.unusedAuthTypes.data);
+            return {
+                ...state,
+                nonActiveEid: action.unusedAuthTypes.data
             };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {

@@ -72,7 +72,7 @@ class EID extends React.Component {
                 nonActiveList.push(
                     <MenuItem style={fontColorStyle}
                               key={i + 5}
-                              primaryText={this.props.userNonActiveEid[i]}
+                              primaryText={this.props.userNonActiveEid[i].value}
                               leftIcon={<CancelIcon/>}
                               disabled={true}/>
                 );
