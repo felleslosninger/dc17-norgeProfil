@@ -18,6 +18,7 @@ class Reservation extends React.Component {
             open: false,
         };
 
+        this.handleChange = this.handleChange.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
     };
@@ -30,6 +31,13 @@ class Reservation extends React.Component {
         this.setState({open: false});
     };
 
+    handleChange() {
+        if(this.props.reservation === 'NEI') {
+            this.props.onSetReservation();
+        } else {
+            this.props.onRemoveReservation();
+        }
+    }
 
     render() {
 
@@ -49,7 +57,7 @@ class Reservation extends React.Component {
                     <Row className="CardHeader">
                         <Col sm={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
                         <Col sm={6} lg={7}><h4>Reservasjon</h4></Col>
-                        <Col sm={3} lg={3}><Help onClick={this.handleOpen}/></Col>
+                        <Help onClick={this.handleOpen} className="InfoBtn" />
                     </Row>
                     <Dialog
                         title="Brev fra stat og kommune"
@@ -82,7 +90,7 @@ class Reservation extends React.Component {
                         <div className="ReservationBtn">
                             <RaisedButton
                                 label="Reserver"
-                                onClick={this.props.onSetReservation}
+                                onClick={this.handleChange}
                             />
                         </div>
                     </CardText>
@@ -127,7 +135,7 @@ class Reservation extends React.Component {
                         <div className="ReservationBtn">
                             <RaisedButton
                                 label="Opphev reservasjon"
-                                onClick={this.props.onRemoveReservation}
+                                onClick={this.handleChange}
                             />
                         </div>
                     </CardText>

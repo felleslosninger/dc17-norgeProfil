@@ -4,8 +4,24 @@ export function getUser() {
     return fetchFromServer("/getKrrInfo");
 }
 
+export function getRecentFromUser() {
+    return fetchFromServer("/getRecentUserActivity");
+}
 
+export function getRecentPublicActivity() {
+    return fetchFromServer("/getRecentPublicActivity");
+}
+export function getUnusedAuthTypes() {
+    return fetchFromServer("/getUnusedAuthTypes");
+}
+export function getMostUsedAuthTypes() {
+    return fetchFromServer("/getMostUsedAuthTypes");
+}
 
+export function getUsedServices() {
+    console.log(fetchFromServer("/getUsedServices"));
+    return fetchFromServer("/getUsedServices");
+}
 
 function fetchFromServer(query) {
     return axios.get(query, {

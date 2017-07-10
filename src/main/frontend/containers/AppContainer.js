@@ -12,7 +12,8 @@ import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
 import Gamification from '../components/Gamification.js';
 import { connect } from "react-redux";
-import { fetchContactInfo, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+import { fetchUnusedAuthTypes,fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+
 
 class AppContainer extends Component {
 
@@ -23,9 +24,12 @@ class AppContainer extends Component {
     componentDidMount() {
         //  Fetch data from API
         this.props.fetchContactInfo();
+        this.props.fetchRecentActivity();
+        this.props.fetchRecentPublicActivity();
+        this.props.fetchUsedServices();
+        this.props.fetchUnusedAuthTypes();
+        this.props.fetchMostUsedAuthTypes();
     }
-
-
 
 
     render() {
@@ -117,14 +121,19 @@ const mapStateToProps = state => {
         userHasPhone: userHasPhone,
         userHasPostbox: userHasPostbox,
         userHasEid: userHasEid,
-        recentUserActivity: recentUserActivity,
-        recentPublicActivity: recentPublicActivity,
+        recentUserActivity: recentUserActivity.slice(0, 10),
+        recentPublicActivity: recentPublicActivity.slice(0, 10),
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         fetchContactInfo: () => dispatch(fetchContactInfo()),
+        fetchRecentActivity: () => dispatch(fetchRecentActivity()),
+        fetchRecentPublicActivity: () => dispatch(fetchRecentPublicActivity()),
+        fetchUsedServices: () => dispatch(fetchUsedServices()),
+        fetchMostUsedAuthTypes: () => dispatch(fetchMostUsedAuthTypes()),
+        fetchUnusedAuthTypes: () => dispatch(fetchUnusedAuthTypes()),
         changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
         changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
         setActiveReservation: () => dispatch(setReservation()),
