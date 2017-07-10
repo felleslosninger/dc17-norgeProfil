@@ -72,7 +72,7 @@ class NavigationBar extends React.Component {
                         </Tabs>
                     </AppBar>
                     <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
-                        <MenuItem>Menu Item</MenuItem>
+                        <MenuItem>Helsetjenester</MenuItem>
                         <MenuItem>Menu Item 2</MenuItem>
                     </Drawer>
                 </div>
