@@ -27,7 +27,7 @@ export default function infoReducer(state = initialState, action) {
         case actionTypes.FETCHED_RECENT_ACTIVITY:
             return {
                 ...state,
-                recentUserActivity: [{eID: action.recentActivity.data.type, service: action.recentActivity.data.issuer, time: action.recentActivity.data.dateTime}]
+                recentUserActivity: action.recentActivity.data
             };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {

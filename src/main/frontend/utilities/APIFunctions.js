@@ -9,6 +9,11 @@ export function getRecentFromUser() {
     return fetchFromServer("/getRecentUserActivity");
 }
 
+export function getUsedServices() {
+    console.log(fetchFromServer("/getUsedServices"));
+    return fetchFromServer("/getUsedServices");
+}
+
 function fetchFromServer(query) {
     return axios.get(query, {
         credentials: "same-origin"

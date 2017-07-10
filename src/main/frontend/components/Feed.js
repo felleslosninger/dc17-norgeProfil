@@ -31,6 +31,7 @@ class Feed extends React.Component {
     };
 
     render() {
+        console.log(this.props.publicSectorActivity);
         const iconButtonElement = (
             <IconButton
                 touch={true}
@@ -51,21 +52,21 @@ class Feed extends React.Component {
         let img = '';
         if (this.props.ownActivity.length === 0) {
             yourActivityList.push (
-                <div>
-                    <h3>Ingen nylig aktivitet</h3>
+                <div key={1}>
+                    <h4>Ingen nylig aktivitet</h4>
                 </div>
             )
         } else {
             for (let i = 0; i < this.props.ownActivity.length; i++) {
-                if (this.props.ownActivity[i].eId === 'MinID PIN') {
+                if (this.props.ownActivity[i].type === 'MinID PIN') {
                     img = <img src="img/minid.png" width={52}/>;
-                } else if (this.props.ownActivity[i].eId === 'BankID') {
+                } else if (this.props.ownActivity[i].type === 'BankID') {
                     img = <img src="img/bankid.png" width={52}/>;
-                } else if (this.props.ownActivity[i].eId === 'BankID på mobil') {
+                } else if (this.props.ownActivity[i].type === 'BankID på mobil') {
                     img = <img src="img/bankid_pa_mobil.png" width={52}/>;
-                } else if (this.props.ownActivity[i].eId === 'Buypass ID') {
+                } else if (this.props.ownActivity[i].type === 'Buypass ID') {
                     img = <img src="img/buypass.png" width={52}/>;
-                } else if (this.props.ownActivity[i].eId === 'Commfides') {
+                } else if (this.props.ownActivity[i].type === 'Commfides') {
                     img = <img src="img/commfides.png" width={52}/>;
                 }
                 yourActivityList.push (
@@ -73,12 +74,12 @@ class Feed extends React.Component {
                         <ListItem
                             leftAvatar={img}
                             rightIconButton={rightIconMenu}
-                            primaryText={this.props.ownActivity[i].eId}
+                            primaryText={this.props.ownActivity[i].type}
                             disabled={true}
                             secondaryText={
                                 <p>
-                                    <span className="Li Header">{this.props.ownActivity[i].service}</span><br />
-                                    {this.props.ownActivity[i].time}
+                                    <span className="Li Header">{this.props.ownActivity[i].issuer}</span><br />
+                                    {this.props.ownActivity[i].dateTime}
                                 </p>
                             }
                             secondaryTextLines={2}

@@ -12,7 +12,7 @@ import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
 import Gamification from '../components/Gamification.js';
 import { connect } from "react-redux";
-import { fetchContactInfo, fetchRecentActivity, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+import { fetchContactInfo, fetchRecentActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 
 
 class AppContainer extends Component {
@@ -25,6 +25,7 @@ class AppContainer extends Component {
         //  Fetch data from API
         this.props.fetchContactInfo();
         this.props.fetchRecentActivity();
+        this.props.fetchUsedServices();
 
     }
 
@@ -127,6 +128,7 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchContactInfo: () => dispatch(fetchContactInfo()),
         fetchRecentActivity: () => dispatch(fetchRecentActivity()),
+        fetchUsedServices: () => dispatch(fetchUsedServices()),
         changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
         changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
         setActiveReservation: () => dispatch(setReservation()),

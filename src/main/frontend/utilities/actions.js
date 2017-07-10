@@ -1,8 +1,9 @@
-import {getUser, getRecentFromUser} from './APIFunctions';
+import {getUser, getRecentFromUser, getUsedServices } from './APIFunctions';
 
 // ACTION TYPES
-export const FETCHED_CONTACT_INFO = 'GET_CONTACT_INFO';
+export const FETCHED_CONTACT_INFO = 'FETCHED_CONTACT_INFO';
 export const FETCHED_RECENT_ACTIVITY = 'FETCHED_RECENT_ACTIVITY';
+export const FETCHED_USED_SERVICES = 'FETCHED_USED_SERVICES';
 export const SAVE_CONTACT_EMAIL = 'SAVE_CONTACT_EMAIL';
 export const SAVE_CONTACT_PHONE = 'SAVE_CONTACT_PHONE';
 export const SET_RESERVATION = 'SET_RESERVATION';
@@ -38,6 +39,21 @@ export function fetchRecentActivity() {
     return (dispatch) => {
         return getRecentFromUser()
             .then(result => dispatch(fetchedRecentActivity(result)))
+            .catch(error => console.error(error));
+    };
+}
+
+export function fetchedUsedServices(usedServices) {
+    return {
+        type: FETCHED_USED_SERVICES,
+        usedServices
+    }
+}
+
+export function fetchUsedServices() {
+    return (dispatch) => {
+        return getUsedServices()
+            .then(result => dispatch(fetchedUsedServices(result)))
             .catch(error => console.error(error));
     };
 }
