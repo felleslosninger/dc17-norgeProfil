@@ -3,9 +3,9 @@ import * as actionTypes from './actions';
 // INITIAL STATE
 const initialState = {
     username : 'Kari Nordmann',
-    activeContactEmail : 'kari.nordmann@email.com',
-    activeContactPhone : '12345678',
-    activeReservation: true,
+    activeContactEmail : '',
+    activeContactPhone : '',
+    activeReservation: '',
     activePostbox: "",
     activeEid: ['MinID', 'BankID'],
     nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commfides'],
@@ -16,6 +16,14 @@ const initialState = {
 // REDUCER
 export default function infoReducer(state = initialState, action) {
     switch (action.type) {
+        case actionTypes.FETCHED_CONTACT_INFO:
+            return {
+                ...state,
+                activeContactEmail: action.contactInfo.data.kontaktinformasjon.epostadresse,
+                activeContactPhone: action.contactInfo.data.kontaktinformasjon.mobiltelefonnummer,
+                activeReservation: action.contactInfo.data.reservasjon,
+
+            };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {
                 ...state,

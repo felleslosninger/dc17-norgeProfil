@@ -62,7 +62,7 @@ class Feed extends React.Component {
                 img = <img src="img/commfides.png" width={52}/>;
             }
             yourActivityList.push (
-                <div>
+                <div key={i}>
                     <ListItem
                         leftAvatar={img}
                         rightIconButton={rightIconMenu}
@@ -85,7 +85,7 @@ class Feed extends React.Component {
         let publicSectorsActivityList = [];
         for (let i = 0; i < this.props.publicSectorActivity.length; i++) {
             publicSectorsActivityList.push (
-                <div>
+                <div key={i}>
                     <ListItem
                         leftAvatar={<Example/>}
                         rightIconButton={rightIconMenu}

@@ -11,21 +11,21 @@ import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
 import Gamification from '../components/Gamification.js';
-import {connect} from "react-redux";
-import { saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+import { connect } from "react-redux";
+import { fetchContactInfo, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 
 class AppContainer extends Component {
 
     constructor(props){
         super(props);
-        this.state = {
-            isAuthenticated: false,
-        }
     }
 
-    componentWillMount() {
-    //  Fetch data from API
+    componentDidMount() {
+        //  Fetch data from API
+        this.props.fetchContactInfo();
     }
+
+
 
 
     render() {
@@ -85,9 +85,21 @@ const mapStateToProps = state => {
 
     let {userHasEmail, userHasPhone, userHasPostbox, userHasEid} = true;
 
-    userHasEmail = activeContactEmail !== '';
+    if (activeContactEmail === '') {
+        userHasEmail = false;
+    }else if (typeof activeContactEmail != 'undefined') {
+        userHasEmail = true;
+    } else {
+        userHasEmail = false;
+    }
 
-    userHasPhone = activeContactPhone !== '';
+    if (activeContactPhone === '') {
+        userHasPhone = false;
+    } else if (typeof activeContactPhone != 'undefined') {
+        userHasPhone = true;
+    } else {
+        userHasPhone = false;
+    }
 
     userHasPostbox = activePostbox !== '';
 
@@ -112,6 +124,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        fetchContactInfo: () => dispatch(fetchContactInfo()),
         changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
         changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
         setActiveReservation: () => dispatch(setReservation()),
