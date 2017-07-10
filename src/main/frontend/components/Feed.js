@@ -31,7 +31,17 @@ class Feed extends React.Component {
     };
 
     render() {
-        console.log(this.props.publicSectorActivity);
+        const styles = {
+            Feed: {
+            maxHeight: '30em',
+            overflowY: 'auto',
+            },
+            FeedDivider: {
+                marginRight: '2em',
+                marginLeft: '2em',
+            }
+        };
+
         const iconButtonElement = (
             <IconButton
                 touch={true}
@@ -84,7 +94,7 @@ class Feed extends React.Component {
                             }
                             secondaryTextLines={2}
                         />
-                        <Divider/>
+                        <Divider style={styles.FeedDivider}/>
                     </div>
                 )
             }
@@ -114,7 +124,7 @@ class Feed extends React.Component {
                             }
                             secondaryTextLines={2}
                         />
-                        <Divider/>
+                        <Divider style={styles.FeedDivider}/>
                     </div>
                 )
             }
@@ -131,10 +141,11 @@ class Feed extends React.Component {
                     <Tab label="Offentlig sektors aktivitet" value={1}/>
                 </Tabs>
                 <SwipeableViews
+                    style={styles.Feed}
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                 >
-                    <div className="Feed Slide">
+                    <div className="Feed Slide" >
                         <List>
                             {yourActivityList}
                         </List>

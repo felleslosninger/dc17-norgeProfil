@@ -120,8 +120,8 @@ const mapStateToProps = state => {
         userHasPhone: userHasPhone,
         userHasPostbox: userHasPostbox,
         userHasEid: userHasEid,
-        recentUserActivity: recentUserActivity,
-        recentPublicActivity: recentPublicActivity,
+        recentUserActivity: recentUserActivity.slice(0, 10),
+        recentPublicActivity: recentPublicActivity.slice(0, 10),
     }
 };
 
