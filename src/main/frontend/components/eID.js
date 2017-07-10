@@ -69,13 +69,15 @@ class EID extends React.Component {
         const nonActiveList = [];
         let checkNonActive = () => {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
-                nonActiveList.push(
-                    <MenuItem style={fontColorStyle}
-                              key={i + 5}
-                              primaryText={this.props.userNonActiveEid[i].value}
-                              leftIcon={<CancelIcon/>}
-                              disabled={true}/>
-                );
+                if (this.props.userNonActiveEid[i].value != 'Unknown') {
+                    nonActiveList.push(
+                        <MenuItem style={fontColorStyle}
+                                  key={i + 5}
+                                  primaryText={this.props.userNonActiveEid[i].value}
+                                  leftIcon={<CancelIcon/>}
+                                  disabled={true}/>
+                    );
+                }
             }
         };
 
