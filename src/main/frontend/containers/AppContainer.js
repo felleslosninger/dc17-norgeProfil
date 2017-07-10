@@ -12,7 +12,7 @@ import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
 import Gamification from '../components/Gamification.js';
 import { connect } from "react-redux";
-import { fetchUnusedAuthTypes,fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+import { fetchUnusedAuthTypes, fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 
 
 class AppContainer extends Component {
@@ -91,19 +91,11 @@ const mapStateToProps = state => {
 
     if (activeContactEmail === '') {
         userHasEmail = false;
-    }else if (typeof activeContactEmail != 'undefined') {
-        userHasEmail = true;
-    } else {
-        userHasEmail = false;
-    }
+    }else userHasEmail = typeof activeContactEmail != 'undefined';
 
     if (activeContactPhone === '') {
         userHasPhone = false;
-    } else if (typeof activeContactPhone != 'undefined') {
-        userHasPhone = true;
-    } else {
-        userHasPhone = false;
-    }
+    } else userHasPhone = typeof activeContactPhone != 'undefined';
 
     userHasPostbox = activePostbox !== '';
 
