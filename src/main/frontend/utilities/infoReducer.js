@@ -6,8 +6,8 @@ const initialState = {
     activeContactEmail: '',
     activeContactPhone: '',
     activeReservation: '',
-    activePostbox: "",
-    activeEid: ['MinID', 'BankID'],
+    activePostbox: '',
+    activeEid: [],
     nonActiveEid: [],
     recentUserActivity: [],
     recentPublicActivity: [],
@@ -35,10 +35,14 @@ export default function infoReducer(state = initialState, action) {
                 recentPublicActivity: action.recentPActivity.data
             };
         case actionTypes.FETCHED_UNUSED_AUTH_TYPES:
-            console.log(action.unusedAuthTypes.data);
             return {
                 ...state,
                 nonActiveEid: action.unusedAuthTypes.data
+            };
+        case actionTypes.FETCHED_USED_AUTH_TYPES:
+            return {
+                ...state,
+                activeEid: action.usedAuthTypes.data
             };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {

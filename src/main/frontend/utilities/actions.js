@@ -91,6 +91,22 @@ export function fetchUnusedAuthTypes() {
     };
 }
 
+export function fetchedMostUsedAuthTypes(usedAuthTypes) {
+    return {
+        type: FETCHED_USED_AUTH_TYPES,
+        usedAuthTypes
+    }
+}
+
+export function fetchMostUsedAuthTypes() {
+    return (dispatch) => {
+        return getMostUsedAuthTypes()
+            .then(result => dispatch(fetchedMostUsedAuthTypes(result)))
+            .catch(error => console.error(error));
+    };
+}
+
+
 export function saveContactEmail(contactEmail) {
     return {
         type: SAVE_CONTACT_EMAIL,

@@ -59,7 +59,7 @@ class EID extends React.Component {
                 activeList.push(
                     <MenuItem style={fontColorStyle}
                               key={i + 1}
-                              primaryText={this.props.userActiveEid[i]}
+                              primaryText={this.props.userActiveEid[i][1]}
                               leftIcon={<CheckIcon/>}
                               disabled={true}/>
                 );
