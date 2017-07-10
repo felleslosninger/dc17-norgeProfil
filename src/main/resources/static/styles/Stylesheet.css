@@ -29,5 +29,12 @@ body {
     margin-top: 2%;
 }
 
+.LogInBtn {
+    position:fixed;
+    top: 50%;
+    left: 45%;
+
+}
+
 
 
