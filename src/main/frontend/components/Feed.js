@@ -49,37 +49,46 @@ class Feed extends React.Component {
 
         let yourActivityList = [];
         let img = '';
-        for (let i = 0; i < this.props.ownActivity.length; i++) {
-            if (this.props.ownActivity[i].eId === 'MinID') {
-                img = <img src="img/minid.png" width={52}/>;
-            } else if (this.props.ownActivity[i].eId === 'BankID') {
-                img = <img src="img/bankid.png" width={52}/>;
-            } else if (this.props.ownActivity[i].eId === 'BankID på mobil') {
-                img = <img src="img/bankid_pa_mobil.png" width={52}/>;
-            } else if (this.props.ownActivity[i].eId === 'Buypass ID') {
-                img = <img src="img/buypass.png" width={52}/>;
-            } else if (this.props.ownActivity[i].eId === 'Commfides') {
-                img = <img src="img/commfides.png" width={52}/>;
-            }
+        if (this.props.ownActivity.length === 0) {
             yourActivityList.push (
-                <div key={i}>
-                    <ListItem
-                        leftAvatar={img}
-                        rightIconButton={rightIconMenu}
-                        primaryText={this.props.ownActivity[i].eId}
-                        disabled={true}
-                        secondaryText={
-                            <p>
-                                <span className="Li Header">{this.props.ownActivity[i].service}</span><br />
-                                {this.props.ownActivity[i].time}
-                            </p>
-                        }
-                        secondaryTextLines={2}
-                    />
-                    <Divider/>
+                <div>
+                    <h3>Ingen nylig aktivitet</h3>
                 </div>
             )
+        } else {
+            for (let i = 0; i < this.props.ownActivity.length; i++) {
+                if (this.props.ownActivity[i].eId === 'MinID PIN') {
+                    img = <img src="img/minid.png" width={52}/>;
+                } else if (this.props.ownActivity[i].eId === 'BankID') {
+                    img = <img src="img/bankid.png" width={52}/>;
+                } else if (this.props.ownActivity[i].eId === 'BankID på mobil') {
+                    img = <img src="img/bankid_pa_mobil.png" width={52}/>;
+                } else if (this.props.ownActivity[i].eId === 'Buypass ID') {
+                    img = <img src="img/buypass.png" width={52}/>;
+                } else if (this.props.ownActivity[i].eId === 'Commfides') {
+                    img = <img src="img/commfides.png" width={52}/>;
+                }
+                yourActivityList.push (
+                    <div key={i}>
+                        <ListItem
+                            leftAvatar={img}
+                            rightIconButton={rightIconMenu}
+                            primaryText={this.props.ownActivity[i].eId}
+                            disabled={true}
+                            secondaryText={
+                                <p>
+                                    <span className="Li Header">{this.props.ownActivity[i].service}</span><br />
+                                    {this.props.ownActivity[i].time}
+                                </p>
+                            }
+                            secondaryTextLines={2}
+                        />
+                        <Divider/>
+                    </div>
+                )
+            }
         }
+
 
 
         let publicSectorsActivityList = [];

@@ -4,6 +4,11 @@ export function getUser() {
     return fetchFromServer("/getKrrInfo");
 }
 
+export function getRecentFromUser() {
+    console.log(fetchFromServer("/getRecentUserActivity"));
+    return fetchFromServer("/getRecentUserActivity");
+}
+
 function fetchFromServer(query) {
     return axios.get(query, {
         credentials: "same-origin"

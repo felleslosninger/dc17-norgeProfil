@@ -9,7 +9,7 @@ const initialState = {
     activePostbox: "",
     activeEid: ['MinID', 'BankID'],
     nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commfides'],
-    recentUserActivity: [{eId: 'MinID', service: 'Danske Bank', time: '18 Juli 2017 22:13'}, {eId: 'BankID', service: 'Altinn', time: '30 Juli 2017 12:09'}],
+    recentUserActivity: [],
     recentPublicActivity: [{publicSector: 'Skatteetaten', info: 'Mobilnummer', time: '10 Desember 2016 20:10'}, {publicSector: 'Collouseum Tannlege', info: 'Mobilnummer', time: '09 Januar 2017 09:10'}],
 };
 
@@ -23,6 +23,11 @@ export default function infoReducer(state = initialState, action) {
                 activeContactPhone: action.contactInfo.data.kontaktinformasjon.mobiltelefonnummer,
                 activeReservation: action.contactInfo.data.reservasjon,
 
+            };
+        case actionTypes.FETCHED_RECENT_ACTIVITY:
+            return {
+                ...state,
+                recentUserActivity: [{eID: action.recentActivity.data.type, service: action.recentActivity.data.issuer, time: action.recentActivity.data.dateTime}]
             };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {
