@@ -37,12 +37,12 @@ export default function infoReducer(state = initialState, action) {
         case actionTypes.SET_RESERVATION:
             return {
                 ...state,
-                activeReservation: true,
+                activeReservation: 'JA',
             };
         case actionTypes.REMOVE_RESERVATION:
             return {
                 ...state,
-                activeReservation: false,
+                activeReservation: 'NEI',
             };
         case actionTypes.SET_POSTBOX:
             return {

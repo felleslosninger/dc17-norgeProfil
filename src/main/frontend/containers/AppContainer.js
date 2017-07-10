@@ -14,6 +14,7 @@ import Gamification from '../components/Gamification.js';
 import { connect } from "react-redux";
 import { fetchContactInfo, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 
+
 class AppContainer extends Component {
 
     constructor(props){
@@ -23,9 +24,8 @@ class AppContainer extends Component {
     componentDidMount() {
         //  Fetch data from API
         this.props.fetchContactInfo();
+
     }
-
-
 
 
     render() {

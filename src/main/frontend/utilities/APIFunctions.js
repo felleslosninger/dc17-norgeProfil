@@ -4,9 +4,6 @@ export function getUser() {
     return fetchFromServer("/getKrrInfo");
 }
 
-
-
-
 function fetchFromServer(query) {
     return axios.get(query, {
         credentials: "same-origin"
