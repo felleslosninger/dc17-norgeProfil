@@ -1,22 +1,13 @@
 package no.difi.dc2017.norgeProfil;
 
-import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
-import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
-import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
-import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.security.Principal;
 
 @Controller
 public class HomeController {
@@ -28,10 +19,19 @@ public class HomeController {
 
     @Autowired
     OAuth2ClientContext oauth2ClientContext;
-    private final static String URI = "https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/person";
+    private final static String KRR_URI = "https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/person";
+
+    private String GLOBAL_URI = "http://localhost:4500";
+
+    private final static String EVENT_BY_SNN = "/eventBySsn"; // brukes til feed -- PRØV DENNE FØRST
+    private final static String USED_SERVICES = "/getUsedServices";
+    private final static String RECENT_USER_ACTIVITY = "/getRecentUserActivity";
+    private final static String RECENT_PUBLIC_ACTIVITY = "/getRecentPublicActivity";
+    private final static String MOST_USED_AUTH_TYPES = "/getMostUsedAuthTypes";
+    private final static String LATEST_EVENTS = "/getLatestEvents"; // brukes til feed
 
     @RequestMapping("/getKrrInfo")
-    public HttpEntity getKrrInfo(Principal principal) {
+    public HttpEntity getKrrInfo() {
         // read access token from principal
         String at = oauth2ClientContext.getAccessToken().toString();
 //        String idt = oauth2ClientContext.getAccessToken().getAdditionalInformation().toString();
@@ -45,13 +45,60 @@ public class HomeController {
 
         RestTemplate rt = new RestTemplate();
         HttpEntity<String> response = rt.exchange(
-                URI,
+                KRR_URI,
                 HttpMethod.GET,
                 entity,
                 String.class);
         // return content from krr
         return response;
     }
+
+
+    @RequestMapping(USED_SERVICES)
+    public HttpEntity usedServices() {
+        return getEntity(USED_SERVICES);
+    }
+
+    @RequestMapping(RECENT_USER_ACTIVITY)
+    public HttpEntity recentUserActivity() {
+        return getEntity(RECENT_USER_ACTIVITY);
+    }
+    @RequestMapping(RECENT_PUBLIC_ACTIVITY)
+    public HttpEntity recentPublicActivity() {
+        return getEntity(RECENT_PUBLIC_ACTIVITY);
+    }
+
+    @RequestMapping(MOST_USED_AUTH_TYPES)
+    public HttpEntity mostUsedAuthTypes() {
+        return getEntity(MOST_USED_AUTH_TYPES);
+    }
+    @RequestMapping(LATEST_EVENTS)
+    public HttpEntity latestEvents() {
+        return getEntity(LATEST_EVENTS);
+    }
+
+    @RequestMapping(EVENT_BY_SNN)
+    public HttpEntity eventBySnn() {
+        return getEntity(EVENT_BY_SNN);
+    }
+
+
+    public HttpEntity getEntity(String url){
+        String at = oauth2ClientContext.getAccessToken().toString();
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer "+ at);
+        HttpEntity<?> entity = new HttpEntity<>(headers);
+        RestTemplate rt = new RestTemplate();
+        HttpEntity<String> response = rt.exchange(
+                GLOBAL_URI + url,
+                HttpMethod.GET,
+                entity,
+                String.class);
+        return response;
+
+    }
+
+
 
 
 
