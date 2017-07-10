@@ -3,9 +3,9 @@ import * as actionTypes from './actions';
 // INITIAL STATE
 const initialState = {
     username : 'Kari Nordmann',
-    activeContactEmail : 'kari.nordmann@email.com',
-    activeContactPhone : '12345678',
-    activeReservation: true,
+    activeContactEmail : '',
+    activeContactPhone : '',
+    activeReservation: '',
     activePostbox: "",
     activeEid: ['MinID', 'BankID'],
     nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commfides'],

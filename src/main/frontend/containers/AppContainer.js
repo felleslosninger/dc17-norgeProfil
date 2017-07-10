@@ -85,10 +85,22 @@ const mapStateToProps = state => {
 
     let {userHasEmail, userHasPhone, userHasPostbox, userHasEid} = true;
 
-    userHasEmail = activeContactEmail !== '';
+    if (activeContactEmail === '') {
+        userHasEmail = false;
+    }else if (typeof activeContactEmail != 'undefined') {
+        userHasEmail = true;
+    } else {
+        userHasEmail = false;
+    }
 
-    userHasPhone = activeContactPhone !== '';
-
+    if (activeContactPhone === '') {
+        userHasPhone = false;
+    } else if (typeof activeContactPhone != 'undefined') {
+        userHasPhone = true;
+    } else {
+        userHasPhone = false;
+    }
+    
     userHasPostbox = activePostbox !== '';
 
     userHasEid = activeEid.length > 0;
