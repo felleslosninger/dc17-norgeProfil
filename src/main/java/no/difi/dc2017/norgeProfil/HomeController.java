@@ -28,6 +28,7 @@ public class HomeController {
     private final static String RECENT_USER_ACTIVITY = "/getRecentUserActivity";
     private final static String RECENT_PUBLIC_ACTIVITY = "/getRecentPublicActivity";
     private final static String MOST_USED_AUTH_TYPES = "/getMostUsedAuthTypes";
+    private final static String UNUSED_AUTH_TYPES = "/getUnusedAuthTypes";
     private final static String LATEST_EVENTS = "/getLatestEvents"; // brukes til feed
     private final static String GET_ALL_AUTH_TYPES = "/getAllAuthTypes";
     private final static String GET_AUTH_TYPE_BY_ID = "/getAuthTypeById";
@@ -75,6 +76,12 @@ public class HomeController {
     public HttpEntity mostUsedAuthTypes() {
         return getEntity(MOST_USED_AUTH_TYPES);
     }
+    @RequestMapping(UNUSED_AUTH_TYPES)
+    public HttpEntity usedAuthTypes() {
+        return getEntity(UNUSED_AUTH_TYPES);
+    }
+
+
     @RequestMapping(LATEST_EVENTS)
     public HttpEntity latestEvents() {
         return getEntity(LATEST_EVENTS);
