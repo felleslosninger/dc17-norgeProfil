@@ -30,6 +30,7 @@ public class HomeController {
     private final static String MOST_USED_AUTH_TYPES = "/getMostUsedAuthTypes";
     private final static String UNUSED_AUTH_TYPES = "/getUnusedAuthTypes";
     private final static String LATEST_EVENTS = "/getLatestEvents"; // brukes til feed
+    private final static String GET_POSTBOKS = "/getPostBoks";
     private final static String GET_ALL_AUTH_TYPES = "/getAllAuthTypes";
 //    private final static String GET_AUTH_TYPE_BY_ID = "/getAuthTypeById";
 
@@ -61,6 +62,11 @@ public class HomeController {
     @RequestMapping(USED_SERVICES)
     public HttpEntity usedServices() {
         return getEntity(USED_SERVICES);
+    }
+
+    @RequestMapping(GET_POSTBOKS)
+    public HttpEntity getPostboks() {
+        return getEntity(GET_POSTBOKS);
     }
 
     @RequestMapping(RECENT_USER_ACTIVITY)
