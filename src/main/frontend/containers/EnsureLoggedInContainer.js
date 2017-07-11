@@ -2,15 +2,20 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {login,logout} from '../utilities/actions';
 import AuthCheck from '../components/AutchCheck';
+import Login from '../containers/LoginContainer';
 
 class EnsureLoggedInContainer extends Component {
 
     render(){
         if(!this.props.isLoggedIn){
             return(
-                <AuthCheck isLoggedIn= {this.props.isLoggedIn}
-                                       login = {this.props.login}
-                                       logout = {this.props.logout}/>
+                <div>
+                    <Login/>
+                    <AuthCheck isLoggedIn= {this.props.isLoggedIn}
+                               login = {this.props.login}
+                               logout = {this.props.logout}
+                    />
+                </div>
             );
         }
         return(this.props.children);
