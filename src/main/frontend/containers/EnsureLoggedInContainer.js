@@ -10,11 +10,11 @@ class EnsureLoggedInContainer extends Component {
         if(!this.props.isLoggedIn){
             return(
                 <div>
-                    <Login/>
                     <AuthCheck isLoggedIn= {this.props.isLoggedIn}
                                login = {this.props.login}
                                logout = {this.props.logout}
                     />
+                    <Login/>
                 </div>
             );
         }

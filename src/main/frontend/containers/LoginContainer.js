@@ -8,7 +8,7 @@ const Login = () => {
 
     return(
         <div>
-            <NavigationBar/>
+            <NavigationBar className = "navbar"/>
             <RaisedButton href="/login/idporten" label="Logg inn med Idporten" secondary={true} className="LogInBtn"/>
         </div>
     );
