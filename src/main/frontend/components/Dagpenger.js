@@ -2,22 +2,22 @@
  * Created by camp-cms on 10.07.2017.
  */
 
-
 let React = require("react");
 
-class Pensjon extends React.component{
+class Dagpenger extends React.component{
 
     render(){
         return (
-            <div>
+
+        <div>
             <Row>
-            <Col xs={12}> <h3> Statens pensjonskasse </h3> </Col>
+                <Col xs={12}> <h3> Dagpenger </h3> </Col>
             </Row>
             <Row>
-            <Col xs={12}> <p> Ordinært sett kan du ta ut pensjon fra statens lånekasse når du har fylt 70 år. Alle som har
-            bodd i Norge i mer enn 3 år etter de har fylt 16 år har rett til en slik folkepensjon. Din
-            pensjon avhenger av hvor mye penger din (tidligere) arbeidsgiver har satt av, men du vil også
-            kunne spare penger til din egen pensjon.. </p> </Col>
+                <Col xs={12}> <p> Du har rett på dagpenger om inntekten din er halvert, er en reell arbeidssøker som sender inn
+                    meldekort til Nav hver 14. dag og har hatt en minsteinntekt fra lønnet arbeid på minst 1,5 ganger
+                    folketrygdens grunnbeløp(G) i året som gikk, eller minst 3 G i løpet av de 3 siste avsluttede
+                    kalenderåren </p> </Col>
             </Row>
             <Row>
                 <Col xs={5}> <FlatButton label="Din pensjon"
@@ -26,9 +26,9 @@ class Pensjon extends React.component{
                 <Col xs={5}> <FlatButton label="Dine pensjonsavtaler"
                                          href="https://www.norskpensjon.no/"/> </Col>
             </Row>
-            </div>
+        </div>
         )
     }
 }
 
-export default Pensjon;
+export default Dagpenger;
