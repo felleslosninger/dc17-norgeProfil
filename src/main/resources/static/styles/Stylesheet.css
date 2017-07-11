@@ -3,7 +3,7 @@ body {
     height: 100%;
 }
 
-#app {
+.BodyDiv {
     display: flex;
     justify-content: center;
     align-items: center;
