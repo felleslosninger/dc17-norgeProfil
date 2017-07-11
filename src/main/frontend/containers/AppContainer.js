@@ -3,6 +3,7 @@ var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
 import React, {Component} from 'react';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
@@ -119,6 +120,8 @@ const mapDispatchToProps = dispatch => {
         setActivePostbox: (postbox) => dispatch(setPostbox(postbox)),
     }
 };
+
+injectTapEventPlugin();
 
 AppContainer = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
 

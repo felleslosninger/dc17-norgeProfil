@@ -1,37 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import axios from "axios";
 import {login,logout} from '../utilities/actions';
-
+import AuthCheck from '../components/AutchCheck';
 
 class EnsureLoggedInContainer extends Component {
 
-    componentWillMount(){
-        this.authenticate();
-    }
-
-    authenticate() {
-        axios.get('/user')
-            .then((response) => {
-                if (response.data == "") {
-                    logout();
-                    console.log("bye1");
-                } else {
-                    if (response.data.authenticated) {
-                        login();
-                        console.log("hello");
-                        console.log(this.props.isLoggedIn);
-                    }
-                    else {
-                        logout();
-                        console.log("bye2");
-                    }
-                }
-            });
-    }
-
     render(){
-        console.log(this.props);
+        if(!this.props.isLoggedIn){
+            return(
+                <AuthCheck isLoggedIn= {this.props.isLoggedIn}
+                                       login = {this.props.login}
+                                       logout = {this.props.logout}/>
+            );
+        }
         return(this.props.children);
     }
 }
