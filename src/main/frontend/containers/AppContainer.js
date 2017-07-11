@@ -12,7 +12,7 @@ import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
 import Gamification from '../components/Gamification.js';
 import { connect } from "react-redux";
-import { fetchUnusedAuthTypes, fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+import { fetchUnusedAuthTypes, fetchPostbox, fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 
 
 class AppContainer extends Component {
@@ -29,6 +29,7 @@ class AppContainer extends Component {
         this.props.fetchUsedServices();
         this.props.fetchUnusedAuthTypes();
         this.props.fetchMostUsedAuthTypes();
+        this.props.fetchPostbox();
     }
 
 
@@ -126,6 +127,7 @@ const mapDispatchToProps = dispatch => {
         fetchUsedServices: () => dispatch(fetchUsedServices()),
         fetchMostUsedAuthTypes: () => dispatch(fetchMostUsedAuthTypes()),
         fetchUnusedAuthTypes: () => dispatch(fetchUnusedAuthTypes()),
+        fetchPostbox: () => dispatch(fetchPostbox()),
         changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
         changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
         setActiveReservation: () => dispatch(setReservation()),
