@@ -4,8 +4,22 @@ export const SAVE_CONTACT_PHONE = 'SAVE_CONTACT_PHONE';
 export const SET_RESERVATION = 'SET_RESERVATION';
 export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
 export const SET_POSTBOX = 'SET_POSTBOX';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
 
 
+export function login() {
+    return{
+        type:LOGIN
+    }
+}
+
+//ACTIONS LOGIN
+export function logout() {
+    return{
+        type: LOGOUT
+    }
+}
 
 // ACTION CREATORS
 export function saveContactEmail(contactEmail) {
