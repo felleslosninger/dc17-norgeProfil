@@ -31,6 +31,13 @@ class ContactInfoCard extends React.Component {
         this.handleClose = this.handleClose.bind(this);
     };
 
+    componentWillReceiveProps(props) {
+        this.setState({
+            textfieldEmail: props.savedEmail,
+            textfieldPhone: props.savedPhone,
+        });
+    }
+
     handleOpen() {
         this.setState({open: true});
     };
@@ -55,7 +62,6 @@ class ContactInfoCard extends React.Component {
         this.setState({
             open: false,
         });
-
         this.props.onSaveEmail(this.state.textfieldEmail);
         this.props.onSavePhone(this.state.textfieldPhone);
     };
@@ -64,7 +70,6 @@ class ContactInfoCard extends React.Component {
 
 
     render() {
-
         const actions = [
             <FlatButton
                 label="Avbryt"
@@ -83,8 +88,8 @@ class ContactInfoCard extends React.Component {
         return (
             <Card className="Card">
                 <Row className="CardHeader">
-                    <Col sm={3} lg={2}  className="Icon">{<ActionInfo />}</Col>
-                    <Col sm={3} lg={7}><h4>Kontaktinformasjon</h4></Col>
+                    <Col sm={3} md={2} lg={2}  className="Icon">{<ActionInfo />}</Col>
+                    <Col sm={8} md={10} lg={10}><h4>Kontaktinformasjon</h4></Col>
                 </Row>
                 <hr className="HLine"/>
                 <CardText>
@@ -115,20 +120,20 @@ class ContactInfoCard extends React.Component {
                         <Col>
                             <TextField
                                 floatingLabelText="E-post"
-                                hintText= { this.props.savedEmail }
+                                defaultValue= { this.state.textfieldEmail }
                                 name="textfieldEmail"
                                 ref="email"
-                                value={ this.state.textfieldEmail }
+                                // value={ this.state.textfieldEmail }
                                 onChange={ this.handleChange }
                             />
                         </Col>
                         <Col>
                             <TextField
                                 floatingLabelText="Mobilnummer"
-                                hintText={ this.props.savedPhone }
+                                defaultValue={ this.state.textfieldPhone }
                                 name="textfieldPhone"
                                 ref="phone"
-                                value={ this.state.textfieldPhone }
+                                // value={ this.state.textfieldPhone }
                                 onChange={ this.handleChange }
                             />
                         </Col>

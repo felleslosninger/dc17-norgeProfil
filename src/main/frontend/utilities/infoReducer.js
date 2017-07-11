@@ -2,20 +2,53 @@ import * as actionTypes from './actions';
 
 // INITIAL STATE
 const initialState = {
-    username : 'Kari Nordmann',
-    activeContactEmail : 'kari.nordmann@email.com',
-    activeContactPhone : '12345678',
-    activeReservation: true,
-    activePostbox: "",
-    activeEid: ['MinID', 'BankID'],
-    nonActiveEid: ['BankID på Mobil', 'Buypass ID', 'Commfides'],
-    recentUserActivity: [{eId: 'MinID', service: 'Danske Bank', time: '18 Juli 2017 22:13'}, {eId: 'BankID', service: 'Altinn', time: '30 Juli 2017 12:09'}],
-    recentPublicActivity: [{publicSector: 'Skatteetaten', info: 'Mobilnummer', time: '10 Desember 2016 20:10'}, {publicSector: 'Collouseum Tannlege', info: 'Mobilnummer', time: '09 Januar 2017 09:10'}],
+    username: 'Kari Nordmann',
+    activeContactEmail: '',
+    activeContactPhone: '',
+    activeReservation: '',
+    activePostbox: '',
+    activeEid: [],
+    nonActiveEid: [],
+    recentUserActivity: [],
+    recentPublicActivity: [],
 };
 
 // REDUCER
 export default function infoReducer(state = initialState, action) {
     switch (action.type) {
+        case actionTypes.FETCHED_CONTACT_INFO:
+            return {
+                ...state,
+                activeContactEmail: action.contactInfo.data.kontaktinformasjon.epostadresse,
+                activeContactPhone: action.contactInfo.data.kontaktinformasjon.mobiltelefonnummer,
+                activeReservation: action.contactInfo.data.reservasjon,
+
+            };
+        case actionTypes.FETCHED_RECENT_ACTIVITY:
+            return {
+                ...state,
+                recentUserActivity: action.recentActivity.data
+            };
+        case actionTypes.FETCHED_RECENT_PUBLIC_ACTIVITY:
+            return {
+                ...state,
+                recentPublicActivity: action.recentPActivity.data
+            };
+        case actionTypes.FETCHED_UNUSED_AUTH_TYPES:
+            return {
+                ...state,
+                nonActiveEid: action.unusedAuthTypes.data
+            };
+        case actionTypes.FETCHED_USED_AUTH_TYPES:
+            return {
+                ...state,
+                activeEid: action.usedAuthTypes.data
+            };
+        case actionTypes.FETCHED_POSTBOX:
+            return {
+                ...state,
+                activePostbox: action.postbox.data
+            };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {
                 ...state,
@@ -29,12 +62,12 @@ export default function infoReducer(state = initialState, action) {
         case actionTypes.SET_RESERVATION:
             return {
                 ...state,
-                activeReservation: true,
+                activeReservation: 'JA',
             };
         case actionTypes.REMOVE_RESERVATION:
             return {
                 ...state,
-                activeReservation: false,
+                activeReservation: 'NEI',
             };
         case actionTypes.SET_POSTBOX:
             return {

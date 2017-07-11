@@ -80,8 +80,7 @@ class Login extends React.Component {
             return (
                 <MuiThemeProvider>
                     <Provider store={store}>
-                        {/*<a href="/login/idporten"> Klikk meg for å logge inn</a>*/}
-                        <RaisedButton href="/login/idporten" label="Logg inn med Idporten" primary={true}/>
+                        <RaisedButton href="/login/idporten" label="Logg inn med Idporten" secondary={true} className="LogInBtn"/>
                     </Provider>
 
                 </MuiThemeProvider>

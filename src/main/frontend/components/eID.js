@@ -59,7 +59,7 @@ class EID extends React.Component {
                 activeList.push(
                     <MenuItem style={fontColorStyle}
                               key={i + 1}
-                              primaryText={this.props.userActiveEid[i]}
+                              primaryText={this.props.userActiveEid[i][1]}
                               leftIcon={<CheckIcon/>}
                               disabled={true}/>
                 );
@@ -69,13 +69,15 @@ class EID extends React.Component {
         const nonActiveList = [];
         let checkNonActive = () => {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
-                nonActiveList.push(
-                    <MenuItem style={fontColorStyle}
-                              key={i + 5}
-                              primaryText={this.props.userNonActiveEid[i]}
-                              leftIcon={<CancelIcon/>}
-                              disabled={true}/>
-                );
+                if (this.props.userNonActiveEid[i].value != 'Unknown') {
+                    nonActiveList.push(
+                        <MenuItem style={fontColorStyle}
+                                  key={i + 5}
+                                  primaryText={this.props.userNonActiveEid[i].value}
+                                  leftIcon={<CancelIcon/>}
+                                  disabled={true}/>
+                    );
+                }
             }
         };
 
@@ -84,7 +86,7 @@ class EID extends React.Component {
                 <Row className="CardHeader">
                     <Col sm={3} lg={2} className="Icon">{<EidIcon />}</Col>
                     <Col sm={6} lg={7}><h4>eID</h4></Col>
-                    <Col sm={3} lg={3}><Help onClick={this.handleOpen}/></Col>
+                    <Help onClick={this.handleOpen} className="InfoBtn"/>
                 </Row>
                 <Dialog
                     title="Elektronisk ID"

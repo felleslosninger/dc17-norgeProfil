@@ -12,20 +12,25 @@ import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
 import Gamification from '../components/Gamification.js';
-import {connect} from "react-redux";
-import { saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+import { connect } from "react-redux";
+import { fetchUnusedAuthTypes, fetchPostbox, fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+
 
 class AppContainer extends Component {
 
     constructor(props){
         super(props);
-        this.state = {
-            isAuthenticated: false,
-        }
     }
 
-    componentWillMount() {
-    //  Fetch data from API
+    componentDidMount() {
+        //  Fetch data from API
+        this.props.fetchContactInfo();
+        this.props.fetchRecentActivity();
+        this.props.fetchRecentPublicActivity();
+        this.props.fetchUsedServices();
+        this.props.fetchUnusedAuthTypes();
+        this.props.fetchMostUsedAuthTypes();
+        this.props.fetchPostbox();
     }
 
 
@@ -36,7 +41,7 @@ class AppContainer extends Component {
                     username={this.props.username}
                 />
                 <Row>
-                    <Col sm={6} md={3} >
+                    <Col sm={6} lg={3} >
                         <ContactInfoCard
                             onSaveEmail={this.props.changeEmail}
                             onSavePhone={this.props.changePhone}
@@ -44,19 +49,19 @@ class AppContainer extends Component {
                             savedPhone={this.props.activeContactPhone}
                         />
                     </Col>
-                    <Col sm={6} md={3} >
+                    <Col sm={6} lg={3}>
                         <Mail
                             onSetPostbox={this.props.setActivePostbox}
                             postbox={this.props.activePostbox}
                         />
                     </Col>
-                    <Col sm={6} md={3} >
+                    <Col sm={6} lg={3}>
                         <EID
                             userActiveEid={this.props.activeEid}
                             userNonActiveEid={this.props.nonActiveEid}
                         />
                     </Col>
-                    <Col sm={6} md={3} >
+                    <Col sm={6} lg={3} >
                         <Reservation
                             onSetReservation={this.props.setActiveReservation}
                             onRemoveReservation={this.props.removeActiveReservation}
@@ -86,9 +91,13 @@ const mapStateToProps = state => {
 
     let {userHasEmail, userHasPhone, userHasPostbox, userHasEid} = true;
 
-    userHasEmail = activeContactEmail !== '';
+    if (activeContactEmail === '') {
+        userHasEmail = false;
+    }else userHasEmail = typeof activeContactEmail != 'undefined';
 
-    userHasPhone = activeContactPhone !== '';
+    if (activeContactPhone === '') {
+        userHasPhone = false;
+    } else userHasPhone = typeof activeContactPhone != 'undefined';
 
     userHasPostbox = activePostbox !== '';
 
@@ -106,13 +115,20 @@ const mapStateToProps = state => {
         userHasPhone: userHasPhone,
         userHasPostbox: userHasPostbox,
         userHasEid: userHasEid,
-        recentUserActivity: recentUserActivity,
-        recentPublicActivity: recentPublicActivity,
+        recentUserActivity: recentUserActivity.slice(0, 10),
+        recentPublicActivity: recentPublicActivity.slice(0, 10),
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        fetchContactInfo: () => dispatch(fetchContactInfo()),
+        fetchRecentActivity: () => dispatch(fetchRecentActivity()),
+        fetchRecentPublicActivity: () => dispatch(fetchRecentPublicActivity()),
+        fetchUsedServices: () => dispatch(fetchUsedServices()),
+        fetchMostUsedAuthTypes: () => dispatch(fetchMostUsedAuthTypes()),
+        fetchUnusedAuthTypes: () => dispatch(fetchUnusedAuthTypes()),
+        fetchPostbox: () => dispatch(fetchPostbox()),
         changeEmail: (contactEmail) => dispatch(saveContactEmail(contactEmail)),
         changePhone: (contactPhone) => dispatch(saveContactPhone(contactPhone)),
         setActiveReservation: () => dispatch(setReservation()),
