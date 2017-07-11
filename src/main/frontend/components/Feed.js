@@ -31,6 +31,17 @@ class Feed extends React.Component {
     };
 
     render() {
+        const styles = {
+            Feed: {
+            maxHeight: '30em',
+            overflowY: 'auto',
+            },
+            FeedDivider: {
+                marginRight: '2em',
+                marginLeft: '2em',
+            }
+        };
+
         const iconButtonElement = (
             <IconButton
                 touch={true}
@@ -49,60 +60,76 @@ class Feed extends React.Component {
 
         let yourActivityList = [];
         let img = '';
-        for (let i = 0; i < this.props.ownActivity.length; i++) {
-            if (this.props.ownActivity[i].eId === 'MinID') {
-                img = <img src="img/minid.png" width={52}/>;
-            } else if (this.props.ownActivity[i].eId === 'BankID') {
-                img = <img src="img/bankid.png" width={52}/>;
-            } else if (this.props.ownActivity[i].eId === 'BankID på mobil') {
-                img = <img src="img/bankid_pa_mobil.png" width={52}/>;
-            } else if (this.props.ownActivity[i].eId === 'Buypass ID') {
-                img = <img src="img/buypass.png" width={52}/>;
-            } else if (this.props.ownActivity[i].eId === 'Commfides') {
-                img = <img src="img/commfides.png" width={52}/>;
-            }
+        if (this.props.ownActivity.length === 0) {
             yourActivityList.push (
-                <div key={i}>
-                    <ListItem
-                        leftAvatar={img}
-                        rightIconButton={rightIconMenu}
-                        primaryText={this.props.ownActivity[i].eId}
-                        disabled={true}
-                        secondaryText={
-                            <p>
-                                <span className="Li Header">{this.props.ownActivity[i].service}</span><br />
-                                {this.props.ownActivity[i].time}
-                            </p>
-                        }
-                        secondaryTextLines={2}
-                    />
-                    <Divider/>
+                <div key={1}>
+                    <h4>Ingen nylig aktivitet</h4>
                 </div>
             )
+        } else {
+            for (let i = 0; i < this.props.ownActivity.length; i++) {
+                if (this.props.ownActivity[i].type === 'MinID PIN') {
+                    img = <img src="img/minid.png" width={52}/>;
+                } else if (this.props.ownActivity[i].type === 'BankID') {
+                    img = <img src="img/bankid.png" width={52}/>;
+                } else if (this.props.ownActivity[i].type === 'BankID på mobil') {
+                    img = <img src="img/bankid_pa_mobil.png" width={52}/>;
+                } else if (this.props.ownActivity[i].type === 'Buypass ID') {
+                    img = <img src="img/buypass.png" width={52}/>;
+                } else if (this.props.ownActivity[i].type === 'Commfides') {
+                    img = <img src="img/commfides.png" width={52}/>;
+                }
+                yourActivityList.push (
+                    <div key={i}>
+                        <ListItem
+                            leftAvatar={img}
+                            rightIconButton={rightIconMenu}
+                            primaryText={this.props.ownActivity[i].type}
+                            disabled={true}
+                            secondaryText={
+                                <p>
+                                    <span className="Li Header">{this.props.ownActivity[i].issuer}</span><br />
+                                    {this.props.ownActivity[i].dateTime}
+                                </p>
+                            }
+                            secondaryTextLines={2}
+                        />
+                        <Divider style={styles.FeedDivider}/>
+                    </div>
+                )
+            }
         }
-
 
         let publicSectorsActivityList = [];
-        for (let i = 0; i < this.props.publicSectorActivity.length; i++) {
+        if (this.props.publicSectorActivity.length === 0) {
             publicSectorsActivityList.push (
-                <div key={i}>
-                    <ListItem
-                        leftAvatar={<Example/>}
-                        rightIconButton={rightIconMenu}
-                        primaryText={this.props.publicSectorActivity[i].publicSector}
-                        disabled={true}
-                        secondaryText={
-                            <p>
-                                <span className="Li Header">{this.props.publicSectorActivity[i].info}</span><br />
-                                {this.props.publicSectorActivity[i].time}
-                            </p>
-                        }
-                        secondaryTextLines={2}
-                    />
-                    <Divider/>
+                <div key={1}>
+                    <h4>Ingen nylig aktivitet</h4>
                 </div>
             )
+        } else {
+            for (let i = 0; i < this.props.publicSectorActivity.length; i++) {
+                publicSectorsActivityList.push (
+                    <div key={i}>
+                        <ListItem
+                            leftAvatar={<Example/>}
+                            rightIconButton={rightIconMenu}
+                            primaryText={this.props.publicSectorActivity[i].issuer}
+                            disabled={true}
+                            secondaryText={
+                                <p>
+                                    <span className="Li Header">{this.props.publicSectorActivity[i].type}</span><br />
+                                    {this.props.publicSectorActivity[i].dateTime}
+                                </p>
+                            }
+                            secondaryTextLines={2}
+                        />
+                        <Divider style={styles.FeedDivider}/>
+                    </div>
+                )
+            }
         }
+
 
         return (
             <Card className="Feed">
@@ -114,10 +141,11 @@ class Feed extends React.Component {
                     <Tab label="Offentlig sektors aktivitet" value={1}/>
                 </Tabs>
                 <SwipeableViews
+                    style={styles.Feed}
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                 >
-                    <div className="Feed Slide">
+                    <div className="Feed Slide" >
                         <List>
                             {yourActivityList}
                         </List>

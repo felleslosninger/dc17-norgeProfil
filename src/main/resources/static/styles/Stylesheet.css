@@ -20,13 +20,16 @@ body {
     margin: 3em 0 1.5em 0;
 }
 
-.Feed {
-    /*margin-top: 5%;*/
-    height: 70%;
-}
 
 .Icon {
     margin-top: 2%;
+}
+
+.LogInBtn {
+    position:fixed;
+    top: 50%;
+    left: 45%;
+
 }
 
 

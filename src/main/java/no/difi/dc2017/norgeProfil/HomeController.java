@@ -31,6 +31,9 @@ public class HomeController {
     private final static String UNUSED_AUTH_TYPES = "/getUnusedAuthTypes";
     private final static String LATEST_EVENTS = "/getLatestEvents"; // brukes til feed
     private final static String GET_POSTBOKS = "/getPostBoks";
+    private final static String GET_ALL_AUTH_TYPES = "/getAllAuthTypes";
+//    private final static String GET_AUTH_TYPE_BY_ID = "/getAuthTypeById";
+
 
     @RequestMapping("/getKrrInfo")
     public HttpEntity getKrrInfo() {
@@ -94,6 +97,16 @@ public class HomeController {
     public HttpEntity eventBySnn() {
         return getEntity(EVENT_BY_SNN);
     }
+
+    @RequestMapping(GET_ALL_AUTH_TYPES)
+    public HttpEntity getAllAuthTypes() {
+        return getEntity(GET_ALL_AUTH_TYPES);
+    }
+
+//    @RequestMapping(EVENT_BY_SNN)
+//    public HttpEntity eventBySnn() {
+//        return getEntity(EVENT_BY_SNN);
+//    }
 
 
     public HttpEntity getEntity(String url){
