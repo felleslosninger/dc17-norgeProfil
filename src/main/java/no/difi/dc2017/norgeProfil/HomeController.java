@@ -23,13 +23,14 @@ public class HomeController {
 
     private String GLOBAL_URI = "http://localhost:4500";
 
-    private final static String EVENT_BY_SNN = "/eventBySsn"; // brukes til feed -- PRØV DENNE FØRST
+    private final static String EVENT_BY_SNN = "/eventBySsn";
     private final static String USED_SERVICES = "/getUsedServices";
     private final static String RECENT_USER_ACTIVITY = "/getRecentUserActivity";
     private final static String RECENT_PUBLIC_ACTIVITY = "/getRecentPublicActivity";
     private final static String MOST_USED_AUTH_TYPES = "/getMostUsedAuthTypes";
     private final static String UNUSED_AUTH_TYPES = "/getUnusedAuthTypes";
-    private final static String LATEST_EVENTS = "/getLatestEvents"; // brukes til feed
+    private final static String LATEST_EVENTS = "/getLatestEvents";
+    private final static String GET_POSTBOKS = "/getPostBoks";
     private final static String GET_ALL_AUTH_TYPES = "/getAllAuthTypes";
 //    private final static String GET_AUTH_TYPE_BY_ID = "/getAuthTypeById";
 
@@ -61,6 +62,11 @@ public class HomeController {
     @RequestMapping(USED_SERVICES)
     public HttpEntity usedServices() {
         return getEntity(USED_SERVICES);
+    }
+
+    @RequestMapping(GET_POSTBOKS)
+    public HttpEntity getPostboks() {
+        return getEntity(GET_POSTBOKS);
     }
 
     @RequestMapping(RECENT_USER_ACTIVITY)

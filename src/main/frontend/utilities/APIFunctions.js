@@ -19,8 +19,11 @@ export function getMostUsedAuthTypes() {
 }
 
 export function getUsedServices() {
-    console.log(fetchFromServer("/getUsedServices"));
     return fetchFromServer("/getUsedServices");
+}
+
+export function getPostbox() {
+    return fetchFromServer("/getPostBoks");
 }
 
 function fetchFromServer(query) {
