@@ -138,7 +138,7 @@ class ContactInfoCard extends React.Component {
                             når de kontakter deg.
                     </p>
                     <List>
-                        <ListItem disabled={true} primaryText="E-mail: " secondaryText={ this.props.savedEmail } leftIcon={<EmailIcon />}/>
+                        <ListItem disabled={true} primaryText="E-post: " secondaryText={ this.props.savedEmail } leftIcon={<EmailIcon />}/>
                         <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={ this.props.savedPhone }
                                   leftIcon={<PhoneIcon/>}/>
                     </List>
