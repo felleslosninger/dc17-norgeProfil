@@ -13,63 +13,93 @@ import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Ca
 // import ActionInfo from 'material-ui/svg-icons/action/info';
 
 
-
 class HealthComponents extends React.Component {
 
     constructor(props) {
         super(props);
     };
 
-    render(){
+    render() {
         let YourDoctor = (
             <Card className="CardHeader">
                 <Row className="CardHeader">
-                    <Col sm={3} lg={2} className="Icon">
-
-                    </Col>
-                    <Col sm={6} lg={7}><h4>Din fastlege: </h4></Col>
+                    {/*<Col sm={3} lg={2} className="Icon">*/}
+                    {/**/}
+                    {/*</Col>*/}
+                    <Col sm={6} lg={7}><h4>Din fastlege: </h4> Ola Nordmann</Col>
                 </Row>
             </Card>
 
         );
-        // const NextAppointment = () => (
-        //     <Card>
-        //
-        //     </Card>
-        //
-        //
-        // );
-        // const AppointmentHistory = () => (
-        //     <Card>
-        //
-        //     </Card>
-        //
-        //
-        // );
-        // const YourReferrals = () => (
-        //     <Card>
-        //
-        //     </Card>
-        //
-        //
-        // );
-        // const ChangeDoctor = () => (
-        //     <Card>
-        //
-        //     </Card>
-        //
-        //
-        // );
-        // const Prescriptions = () => (
-        //     <Card>
-        //
-        //     </Card>
-        //
-        //
-        // );
 
-        return(
-            <div>{YourDoctor}</div>
+
+        let NextAppointment = (
+            <Card>
+                <Row className="CardHeader">
+                    <Col sm={6} lg={7}><h4>Neste legetime: </h4> </Col>
+                </Row>
+            </Card>
+
+
+        );
+
+        let AppointmentHistory = (
+            <Card>
+                <Row className="CardHeader">
+                    <Col sm={6} lg={7}><h4>Legetime historikk: </h4></Col>
+                </Row>
+
+            </Card>
+
+
+        );
+
+        let YourReferrals = (
+            <Card>
+                <Row className="CardHeader">
+                    <Col sm={6} lg={7}><h4>Dine henvisninger: </h4></Col>
+                </Row>
+
+            </Card>
+
+
+        );
+
+        let ChangeDoctor = (
+            <Card>
+                <Row className="CardHeader">
+                    <Col sm={6} lg={7}><h4>Bytt fastlege: </h4></Col>
+                </Row>
+            </Card>
+
+
+        );
+
+        let Prescriptions = (
+            <Card>
+                <Row className="CardHeader">
+                    <Col sm={6} lg={7}><h4>Dine resepter: </h4></Col>
+                </Row>
+            </Card>
+
+
+        );
+
+        return (
+            <div>
+                <Row><Col md={10}>{YourDoctor}</Col></Row>
+                <Row>
+                    <Col md={4}>
+                        {NextAppointment}
+                        {YourReferrals}
+                        {ChangeDoctor}
+                    </Col>
+                   <Col md={6}>
+                       {AppointmentHistory}
+                       {Prescriptions}
+                   </Col>
+                </Row>
+            </div>
         )
 
     }
