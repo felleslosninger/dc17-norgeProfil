@@ -58,7 +58,7 @@ class NavigationBar extends React.Component {
                     </AppBar>
                     <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
                         <MenuItem href = "/#/health">Helsetjenester</MenuItem>
-                        <MenuItem>Menu Item 2</MenuItem>
+                        {/*<MenuItem>Menu Item 2</MenuItem>*/}
                     </Drawer>
                 </div>
             );
@@ -72,7 +72,7 @@ class NavigationBar extends React.Component {
                     </AppBar>
                     <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
                         <MenuItem>Helsetjenester</MenuItem>
-                        <MenuItem>Menu Item 2</MenuItem>
+                        {/*<MenuItem>Menu Item 2</MenuItem>*/}
                     </Drawer>
                 </div>
             );
