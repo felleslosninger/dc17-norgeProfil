@@ -22,17 +22,9 @@ class Teori extends  React.Component {
                         regionvegkontoret til å ta en tilrettelagt prøve. Om nødvendig kan prøven gjennomføres med tolk.
                     </CardText>
                     <CardActions>
-                        <Row> /*Need to adjust width of flatbutton by style*/
-                            <Col sm={4}>
-                                <FlatButton label="Søk om førerkort" href="https://www.vegvesen.no/dinside/?goto=https%3A%2F%2Fwww.vegvesen.no%2fdinside%2fdittforerkort%2fsok-om-forerkort"/>
-                            </Col>
-                            <Col sm={4}>
-                                <FlatButton label="Søk om tilrettelagt teoriprøve" href="https://www.vegvesen.no/_attachment/123909/binary/1181732?fast_title=S%C3%B8knad+om+tilrettelagt+teoripr%C3%B8ve+%28bokm%C3%A5l%29.pdf" />
-                            </Col>
-                            <Col sm={4}>
-                                <FlatButton label="Finn din trafikkstasjon" href="https://www.vegvesen.no/om+statens+vegvesen/kontakt+oss/kontaktskjema/trafikkstasjoner" />
-                            </Col>
-                        </Row>
+                        <FlatButton label="Søk om førerkort" href="https://www.vegvesen.no/dinside/?goto=https%3A%2F%2Fwww.vegvesen.no%2fdinside%2fdittforerkort%2fsok-om-forerkort"/>
+                        <FlatButton label="Søk om tilrettelagt teoriprøve" href="https://www.vegvesen.no/_attachment/123909/binary/1181732?fast_title=S%C3%B8knad+om+tilrettelagt+teoripr%C3%B8ve+%28bokm%C3%A5l%29.pdf" />
+                        <FlatButton label="Finn din trafikkstasjon" href="https://www.vegvesen.no/om+statens+vegvesen/kontakt+oss/kontaktskjema/trafikkstasjoner" />
                     </CardActions>
                 </Card>
             </div>

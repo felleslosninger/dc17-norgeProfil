@@ -11,7 +11,7 @@ class Drivinglessons extends  React.Component {
         return (
             <div>
                 <Card>
-                    <CardTitle title="Kjøreopplæring" subtitle="Card subtitle" />
+                    <CardTitle title="Opplæring" subtitle="Card subtitle" />
                     <CardText>
                         Trafikanter skal ha de kunnskaper og ferdigheter, den selvinnsikt og risikoforståelse, som er
                         nødvendig for å kjøre på en måte som er trafikksikker, gir god samhandling, fører til god
