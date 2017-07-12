@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import AppContainer from '../containers/AppContainer';
+import HealthContainer from '../containers/HealthContainer';
 import {Provider} from "react-redux";
 import EnsureLoggedInContainer from'../containers/EnsureLoggedInContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -19,7 +20,13 @@ const Routes = ({store}) => (
             <HashRouter>
                 <Switch>
                     <EnsureLoggedInContainer>
-                        <Route path='/' component={AppContainer}/>
+                        <Switch>
+
+                            <Route path='/health' component={HealthContainer}/>
+                            <Route path='/' component={AppContainer}/>
+
+                        </Switch>
+
                     </EnsureLoggedInContainer>
                 </Switch>
             </HashRouter>
