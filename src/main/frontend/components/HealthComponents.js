@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
@@ -14,9 +14,14 @@ import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Ca
 
 
 
-class HealthComponents extends React {
+class HealthComponents extends React.Component {
+
+    constructor(props) {
+        super(props);
+    };
+
     render(){
-        const YourDoctor = () => (
+        let YourDoctor = (
             <Card className="CardHeader">
                 <Row className="CardHeader">
                     <Col sm={3} lg={2} className="Icon">
@@ -24,10 +29,6 @@ class HealthComponents extends React {
                     </Col>
                     <Col sm={6} lg={7}><h4>Din fastlege: </h4></Col>
                 </Row>
-
-
-
-
             </Card>
 
         );

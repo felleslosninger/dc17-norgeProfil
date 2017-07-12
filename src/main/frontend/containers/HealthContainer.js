@@ -14,11 +14,8 @@ import HealthComponents from '../components/HealthComponents';
 
 class HealthContainer extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-            open: false,
-        }
     }
 
     componentWillMount() {
@@ -30,12 +27,12 @@ class HealthContainer extends Component {
         return (
             <div>
                 <NavBar/>
-                <div>
+                <div className="BodyDiv">
                     <Username
-                        username={this.props.username} />
-                        <Row>
-                            <Col sm={6} md={3} ><HealthComponents/></Col>
-                        </Row>
+                        username={this.props.username}/>
+
+                    <HealthComponents/>
+
 
                 </div>
             </div>
@@ -55,11 +52,11 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-
-    }
+    return {}
 };
 
-HealthContainer = connect(mapStateToProps, mapDispatchToProps)(HealthContainer);
+
+HealthContainer = connect(mapStateToProps)(HealthContainer);
 
 export default HealthContainer;
+
