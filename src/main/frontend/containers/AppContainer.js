@@ -37,7 +37,6 @@ class AppContainer extends Component {
     render() {
         return (
             <div>
-                <NavigationBar/>
                 <div>
                     <Username
                         username={this.props.username}
