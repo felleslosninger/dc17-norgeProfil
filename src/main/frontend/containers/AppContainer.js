@@ -4,7 +4,6 @@ var Col = require('react-bootstrap/lib/Col');
 
 import React, {Component} from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import NavigationBar from '../components/NavigationBar.js';
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
 import Reservation from '../components/Reservation.js';
@@ -37,7 +36,6 @@ class AppContainer extends Component {
     render() {
         return (
             <div>
-                <NavigationBar/>
                 <div className="BodyDiv">
                     <Username
                         username={this.props.username}
