@@ -44,6 +44,11 @@ export default function infoReducer(state = initialState, action) {
                 ...state,
                 activeEid: action.usedAuthTypes.data
             };
+        case actionTypes.FETCHED_POSTBOX:
+            return {
+                ...state,
+                activePostbox: action.postbox.data
+            };
         case actionTypes.SAVE_CONTACT_PHONE:
             return {
                 ...state,

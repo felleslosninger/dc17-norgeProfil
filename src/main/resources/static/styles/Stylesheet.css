@@ -3,10 +3,7 @@ body {
     height: 100%;
 }
 
-#app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.BodyDiv {
     margin-right: 7em;
     margin-left: 7em;
 }
