@@ -1,4 +1,4 @@
-import {getUser, getRecentFromUser, getRecentPublicActivity, getUsedServices, getMostUsedAuthTypes, getUnusedAuthTypes, getPostbox } from './APIFunctions';
+import { getUser, getRecentFromUser, getRecentPublicActivity, getUsedServices, getMostUsedAuthTypes, getUnusedAuthTypes, getPostbox } from './APIFunctions';
 
 // ACTION TYPES
 export const FETCHED_CONTACT_INFO = 'FETCHED_CONTACT_INFO';
@@ -17,20 +17,19 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 
 
+// ACTION CREATORS
 export function login() {
     return{
         type:LOGIN
     }
 }
 
-//ACTIONS LOGIN
 export function logout() {
     return{
         type: LOGOUT
     }
 }
 
-// ACTION CREATORS
 export function fetchedContactInfo(contactInfo) {
     return {
         type: FETCHED_CONTACT_INFO,
