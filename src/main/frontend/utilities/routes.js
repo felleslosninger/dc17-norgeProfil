@@ -1,10 +1,9 @@
 "use strict";
-import React, { Component } from 'react';
+import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-//import LoginContainer from '../containers/LoginContainer'
 import AppContainer from '../containers/AppContainer';
-import TestContainer from '../containers/TestContainer';
 import NavBarContainer from '../containers/NavBarContainer';
+
 import {Provider} from "react-redux";
 import EnsureLoggedInContainer from'../containers/EnsureLoggedInContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -27,7 +26,6 @@ const Routes = ({store}) => (
                     <Switch>
                         <EnsureLoggedInContainer>
                             <Switch>
-                                <Route path='/dashboard' component={TestContainer}/>
                                 <Route path='/' component={AppContainer}/>
                             </Switch>
                         </EnsureLoggedInContainer>

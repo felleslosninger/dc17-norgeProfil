@@ -4,9 +4,6 @@ body {
 }
 
 .BodyDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-right: 7em;
     margin-left: 7em;
 }

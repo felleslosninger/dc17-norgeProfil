@@ -7,7 +7,6 @@ import Login from '../containers/LoginContainer';
 class EnsureLoggedInContainer extends Component {
 
     render(){
-        console.log(this.props);
         if(!this.props.isLoggedIn){
             return(
                 <div>
