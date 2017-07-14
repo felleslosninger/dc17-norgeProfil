@@ -55,7 +55,7 @@ class AppContainer extends Component {
                                 postbox={this.props.activePostbox}
                             />
                         </Col>
-                        <Col xs={12} lg={3}>
+                        <Col xs={12} sm={6} lg={3}>
                             <EID
                                 userActiveEid={this.props.activeEid}
                                 userNonActiveEid={this.props.nonActiveEid}

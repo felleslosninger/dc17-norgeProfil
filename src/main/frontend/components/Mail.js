@@ -234,9 +234,9 @@ class Mail extends React.Component {
                         open={this.state.open}
                         onRequestClose={this.handleClose}
                     >
-                        <div>
+                        <Row>
                             <p> Ønsker du å endre din digitale postkasse? </p>
-                        </div>
+                        </Row>
                     </Dialog>
                 </Card>
             )

@@ -13,9 +13,11 @@ class Vehicle extends  React.Component {
                 <Card>
                     <CardTitle title="Dine kjøretøy" />
                     <CardText>
+                        <p>
                         På Din side kan du se informasjon om kjøretøy, sende og motta salgsmelding, se status for omregistrering og betale
                         omregistreringsavgiften, melde tap av vognkort/last ned midlertidig vognkort og søke om
                         personlig bilskilt.
+                        </p>
                     </CardText>
                     <CardActions>
                         <FlatButton label="Se kjøretøysopplysninger" href="https://www.vegvesen.no/dinside/"/>

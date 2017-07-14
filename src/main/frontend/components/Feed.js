@@ -52,7 +52,7 @@ class Feed extends React.Component {
             </IconButton>
         );
 
-        const rightIconMenu = ( /*Rapportere noe, men hva*/
+        const rightIconMenu = (
             <IconMenu iconButtonElement={iconButtonElement}>
                 <MenuItem> <a href="https://www.difi.no/om-difi/kontakt-oss"> Rapporter </a></MenuItem>
             </IconMenu>
