@@ -3,6 +3,7 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import AppContainer from '../containers/AppContainer';
 import NavBarContainer from '../containers/NavBarContainer';
+import TestContainer from '../containers/TestContainer';
 
 import {Provider} from "react-redux";
 import EnsureLoggedInContainer from'../containers/EnsureLoggedInContainer';
@@ -24,6 +25,7 @@ const Routes = ({store}) => (
                 <div>
                     <NavBarContainer/>
                     <Switch>
+                        <Route path = "/game" component={TestContainer}/>
                         <EnsureLoggedInContainer>
                             <Switch>
                                 <Route path='/' component={AppContainer}/>
