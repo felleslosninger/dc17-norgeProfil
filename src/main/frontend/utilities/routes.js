@@ -3,7 +3,7 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import AppContainer from '../containers/AppContainer';
 import NavBarContainer from '../containers/NavBarContainer';
-
+import Traffic from '../containers/Traffic';
 import {Provider} from "react-redux";
 import EnsureLoggedInContainer from'../containers/EnsureLoggedInContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -26,6 +26,7 @@ const Routes = ({store}) => (
                     <Switch>
                         <EnsureLoggedInContainer>
                             <Switch>
+                                <Route path="/traffic" component={Traffic}/>
                                 <Route path='/' component={AppContainer}/>
                             </Switch>
                         </EnsureLoggedInContainer>

@@ -89,9 +89,9 @@ class Mail extends React.Component {
             mailCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col sm={3} md={3} lg={2} className="Icon">{<Email />}</Col>
-                        <Col sm={7} md={6} lg={8} ><h4>Digital postkasse</h4></Col>
-                        <Help onClick={this.handleOpen} className="InfoBtn"/>
+                        <Col xs={3} md={3} lg={2} className="Icon">{<Email />}</Col>
+                        <Col xs={7} md={6} lg={8} ><h4>Digital postkasse</h4></Col>
+                        <Col xs={2} md={3} lg={2}> <Help onClick={this.handleOpen} className="InfoBtn"/> </Col>
                     </Row>
                     <Dialog
                         title="Spørsmål og svar"
@@ -207,15 +207,15 @@ class Mail extends React.Component {
             mailCard = (
                 <Card className="Card">
                     <Row className="CardHeader">
-                        <Col sm={3} md={3} lg={2}  className="Icon">{<Email />}</Col>
-                        <Col sm={9} md={9} lg={10}><h4>Digital postkasse</h4></Col>
+                        <Col xs={3} md={3} lg={2}  className="Icon">{<Email />}</Col>
+                        <Col xs={9} md={9} lg={10}><h4>Digital postkasse</h4></Col>
                     </Row>
                     <hr className="HLine"/>
                     <CardText>
                         <div className="CardInfoText">
                             <Row>
-                                <Col sm={4}> {img} </Col>
-                                <Col sm={8}> <p> Du mottar i dag post fra det offentlige til din digitale postkasse hos
+                                <Col xs={4}> {img} </Col>
+                                <Col xs={8}> <p> Du mottar i dag post fra det offentlige til din digitale postkasse hos
                                     <strong>  { postbox }  </strong> </p> </Col>
                             </Row>
                         </div>
@@ -228,15 +228,15 @@ class Mail extends React.Component {
                         </div>
                     </CardText>
                     <Dialog
-                        title="Endre din digital postkasse"
+                        title="Endre digital postkasse"
                         actions={actions}
                         modal={false}
                         open={this.state.open}
                         onRequestClose={this.handleClose}
                     >
-                        <div>
-                            Ønsker du å endre din digitale postkasse?
-                        </div>
+                        <Row>
+                            <p> Ønsker du å endre din digitale postkasse? </p>
+                        </Row>
                     </Dialog>
                 </Card>
             )

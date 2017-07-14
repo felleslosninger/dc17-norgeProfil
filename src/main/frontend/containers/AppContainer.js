@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
-import Reservation from '../components/Reservation.js';
+import Reservation from '../components/Reservation';
 import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
@@ -41,7 +41,7 @@ class AppContainer extends Component {
                         username={this.props.username}
                     />
                     <Row>
-                        <Col sm={6} lg={3} >
+                        <Col xs={12} sm={6} lg={3} >
                             <ContactInfoCard
                                 onSaveEmail={this.props.changeEmail}
                                 onSavePhone={this.props.changePhone}
@@ -49,19 +49,19 @@ class AppContainer extends Component {
                                 savedPhone={this.props.activeContactPhone}
                             />
                         </Col>
-                        <Col sm={6} lg={3}>
+                        <Col xs={12} sm={6} lg={3}>
                             <Mail
                                 onSetPostbox={this.props.setActivePostbox}
                                 postbox={this.props.activePostbox}
                             />
                         </Col>
-                        <Col sm={6} lg={3}>
+                        <Col xs={12} sm={6} lg={3}>
                             <EID
                                 userActiveEid={this.props.activeEid}
                                 userNonActiveEid={this.props.nonActiveEid}
                             />
                         </Col>
-                        <Col sm={6} lg={3} >
+                        <Col xs={12} sm={6} lg={3} >
                             <Reservation
                                 onSetReservation={this.props.setActiveReservation}
                                 onRemoveReservation={this.props.removeActiveReservation}
