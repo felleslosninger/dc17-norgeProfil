@@ -10,11 +10,12 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const muiTheme = getMuiTheme({
     palette: {
-        primary1Color: '#2f6888',
-        alternateTextColor: '#f6aa6f',
+        primary1Color: 'rgb(10, 79, 117)',
+        alternateTextColor: 'rgb(246, 170, 111)',
     },
     appBar: {
-        textColor: '#f6aa6f',
+        textColor: 'rgb(246, 170, 111)',
+        padding: '7em'
     },
     raisedButton: {
         color: '#c3dfdf',
