@@ -54,15 +54,13 @@
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
+
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
-    body {
-        margin: auto;
-        padding: auto;
-    }
 }
+
 
 .Card {
     height: 25em;
@@ -71,6 +69,9 @@
     overflow-x: hidden;
 }
 
+.bodyDiv {
+    min-width: 30em;
+}
 .CardHeader {
     padding-top: 15px;
     margin-right: 1em;

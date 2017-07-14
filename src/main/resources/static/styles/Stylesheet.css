@@ -17,17 +17,54 @@ body {
     margin: 3em 0 1.5em 0;
 }
 
+/*Large desktops*/
+@media(min-width: 1193px){
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 45%;
+    }
+}
+
+/*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
+@media (min-width: 992px ) and (max-width: 1192px) {
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 38%;
+    }
+}
+
+/*Portrait tablets and small desktops eg. Ipad*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 35%;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (min-width: 481px) and (max-width: 767px) {
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 21%;
+    }
+}
 
 .Icon {
     margin-top: 2%;
 }
 
-.LogInBtn {
-    position:fixed;
-    top: 50%;
-    left: 45%;
-
-}
 
 
 
