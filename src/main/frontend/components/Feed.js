@@ -132,7 +132,7 @@ class Feed extends React.Component {
 
 
         return (
-            <Card className="Feed">
+            <Card className="Feed hideFromMobile">
                 <Tabs
                     onChange={this.handleChange}
                     value={this.state.slideIndex}
