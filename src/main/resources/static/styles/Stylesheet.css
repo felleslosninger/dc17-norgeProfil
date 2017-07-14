@@ -3,11 +3,6 @@ body {
     height: 100%;
 }
 
-.BodyDiv {
-    margin-right: 7em;
-    margin-left: 7em;
-}
-
 #navbar {
     width: 100%;
 }
@@ -24,6 +19,10 @@ body {
         top: 50%;
         left: 45%;
     }
+    .BodyDiv {
+        margin-right: 6em;
+        margin-left: 6em;
+    }
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
@@ -32,6 +31,10 @@ body {
         position:fixed;
         top: 50%;
         left: 38%;
+    }
+    .BodyDiv {
+        margin-right: 5em;
+        margin-left: 5em;
     }
 }
 
@@ -42,6 +45,11 @@ body {
         top: 50%;
         left: 35%;
     }
+
+    .BodyDiv {
+        margin-right: 4em;
+        margin-left: 4em;
+    }
 }
 
 /* Portrait phones and smaller */
@@ -51,6 +59,11 @@ body {
         top: 50%;
         left: 30%;
     }
+
+    .BodyDiv {
+        margin-right: 3em;
+        margin-left: 3em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -58,6 +71,11 @@ body {
         position:fixed;
         top: 50%;
         left: 21%;
+    }
+
+    .BodyDiv {
+        margin-right: 2em;
+        margin-left: 2em;
     }
 }
 
