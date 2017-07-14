@@ -52,7 +52,7 @@ class NavigationBar extends React.Component {
             return (
                 <div>
                     <AppBar className={'Nav'} title={title} onLeftIconButtonTouchTap={this.handleToggle} iconElementRight={<FlatButton label="Logg ut" href="/logout"/>}/>
-                    <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
+                    <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 150}} open={this.state.open}>
                         <MenuItem href="/#/health">Helsetjenester</MenuItem>
                         {/*<MenuItem>Menu Item 2</MenuItem>*/}
                     </Drawer>
@@ -62,7 +62,7 @@ class NavigationBar extends React.Component {
             return (
                 <div>
                     <AppBar className={'Nav'} title={title} onLeftIconButtonTouchTap={this.handleToggle} iconElementRight={<FlatButton label="Logg inn" href="/login/idporten"/>}/>
-                    <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
+                    <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 150}} open={this.state.open}>
                         <MenuItem className={'NavTab'}>Helsetjenester</MenuItem>
                         {/*<MenuItem>Menu Item 2</MenuItem>*/}
                     </Drawer>

@@ -25,6 +25,17 @@ const muiTheme = getMuiTheme({
         secondaryColor: '#c3dfdf',
         secondaryTextColor: '#424242',
     },
+    flatButton: {
+        textColor: '#424242',
+        primaryTextColor: '#424242',
+        secondaryTextColor: '#424242',
+    },
+    tabs: {
+        backgroundColor: 'rgb(10, 79, 117)'
+    },
+    inkBar: {
+        backgroundColor: 'rgb(246, 170, 111)'
+    }
 });
 
 const Routes = ({store}) => (
