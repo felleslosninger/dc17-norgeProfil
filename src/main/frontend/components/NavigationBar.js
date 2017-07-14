@@ -1,5 +1,5 @@
 import React from 'react'
-import {AppBar, Tabs, Tab} from 'material-ui'
+import {AppBar, Tabs, Tab, FlatButton} from 'material-ui'
 import {MenuItem} from 'material-ui'
 import Drawer from 'material-ui/Drawer';
 import axios from "axios";
@@ -11,7 +11,7 @@ class NavigationBar extends React.Component {
         super(props);
 
         this.state = {
-          status: false, 
+            status: false,
             open: false
         };
         this.isLoggedIn = this.isLoggedIn.bind(this);
@@ -50,14 +50,9 @@ class NavigationBar extends React.Component {
         if (this.state.status) {
             return (
                 <div>
-                    <AppBar title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle}>
-                        <Tabs>
-                            <Tab label="Profil "/>
-                            <Tab label="Logg ut" href="/logout"/>
-                        </Tabs>
-                    </AppBar>
+                    <AppBar className={'Nav'} title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle} iconElementRight={<FlatButton label="Logg ut" href="/logout"/>}/>
                     <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
-                        <MenuItem href = "/#/health">Helsetjenester</MenuItem>
+                        <MenuItem href="/#/health">Helsetjenester</MenuItem>
                         {/*<MenuItem>Menu Item 2</MenuItem>*/}
                     </Drawer>
                 </div>
@@ -65,13 +60,9 @@ class NavigationBar extends React.Component {
         } else {
             return (
                 <div>
-                    <AppBar title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle}>
-                        <Tabs>
-                            <Tab label="Logg inn" href="/login/idporten"/>
-                        </Tabs>
-                    </AppBar>
+                    <AppBar className={'Nav'} title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle} iconElementRight={<FlatButton label="Logg inn" href="/login/idporten"/>}/>
                     <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
-                        <MenuItem>Helsetjenester</MenuItem>
+                        <MenuItem className={'NavTab'}>Helsetjenester</MenuItem>
                         {/*<MenuItem>Menu Item 2</MenuItem>*/}
                     </Drawer>
                 </div>

@@ -10,7 +10,19 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const muiTheme = getMuiTheme({
     palette: {
-        primary1Color: '#3F51B5',
+        primary1Color: '#2f6888',
+        alternateTextColor: '#f6aa6f',
+    },
+    appBar: {
+        textColor: '#f6aa6f',
+    },
+    raisedButton: {
+        color: '#c3dfdf',
+        textColor: '#424242',
+        primaryColor: '#c3dfdf',
+        primaryTextColor: '#424242',
+        secondaryColor: '#c3dfdf',
+        secondaryTextColor: '#424242',
     },
 });
 

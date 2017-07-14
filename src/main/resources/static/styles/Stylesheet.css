@@ -29,5 +29,10 @@ body {
 
 }
 
+/*.NavTab {*/
+    /*color: #f6aa6f;*/
+/*}*/
 
-
+.Nav {
+    padding: 3em 7em 2em 7em;
+}
