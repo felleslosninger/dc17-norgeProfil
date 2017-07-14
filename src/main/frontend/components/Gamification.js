@@ -176,15 +176,15 @@ class Gamification extends React.Component {
 
 
         return (
+            <div>
             <Row className="Gamification">
-                <div>
-                    <Col xs={10}><div><h3 className="pageheader">Styrke brukerprofil {overlay}</h3></div></Col>
-                </div>
+                <h3 className="pageheader">Styrke brukerprofil { overlay } </h3>
+            </Row>
+            <Row>
                 {viewBar}
                 {checkBar()}
             </Row>
-
-
+            </div>
         );
 
 
