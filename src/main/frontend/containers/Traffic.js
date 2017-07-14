@@ -19,10 +19,8 @@ class Traffic extends Component {
             <div>
                 <Card>
                     <CardMedia
-                        overlay={<CardTitle title="Førerkort og kjøretøy "/>}
+                        overlay={<CardTitle title="Dine førerkort og kjøretøy"/>}
                     >
-                        <img src="https://www.xn--billigeforbruksln-orb.no/wp-content/uploads/2016/08/bil-lan.jpg" alt=""/>
-                    </CardMedia>
                     <Row>
                         <Col sm={4}>
                             <DrivingLicence/>
