@@ -6,24 +6,23 @@ import React, {Component} from 'react';
 import DrivingLicence from "../components/DrivingLicence";
 import EUControl from "../components/EUKontroll";
 import Vehicle from "../components/Vehicle";
+import DrivingLessons from "../components/Drivinglessons";
+import Oppkjøring from "../components/Oppkjøring";
+import Teori from "../components/Teori";
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
-class TakeLicence extends Component {
+class Traffic extends Component {
     render(){
         return (
             <div>
                 <Card>
                     <CardMedia
-                        overlay={<CardTitle title="Ta førerkortet"/>}
+                        overlay={<CardTitle title="Førerkort og kjøretøy "/>}
                     >
                         <img src="https://www.xn--billigeforbruksln-orb.no/wp-content/uploads/2016/08/bil-lan.jpg" alt=""/>
                     </CardMedia>
-                    <Row>
-                    </Row>
-                    Har du enda ikke tatt lappen? For å få lappen stilles det krav til at du skal ha godkjent opplæring.
-                    Opplæringen varierer med førerkortklassene.
                     <Row>
                         <Col sm={4}>
                             <DrivingLicence/>
@@ -34,6 +33,17 @@ class TakeLicence extends Component {
                         <Col sm={4}>
                             <Vehicle/>
                         </Col>
+                    </Row>\
+                    <Row>
+                        <Col sm={4}>
+                            <Teori/>
+                        </Col>
+                        <Col sm={4}>
+                            <DrivingLessons/>
+                        </Col>
+                        <Col sm={4}>
+                            <Oppkjøring/>
+                        </Col>
                     </Row>
                 </Card>
             </div>
@@ -42,4 +52,4 @@ class TakeLicence extends Component {
 }
 
 
-export default TakeLicence;
+export default Traffic;
