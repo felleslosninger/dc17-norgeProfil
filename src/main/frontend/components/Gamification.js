@@ -24,7 +24,7 @@ class Gamification extends React.Component {
             let totalTest = 1;
             let test = 0;
 
-            if(this.props.hasPostbox){
+            if (this.props.hasPostbox) {
                 test++;
             }
 
@@ -34,7 +34,7 @@ class Gamification extends React.Component {
         var phone = () => {
             let totalTest = 1;
             let test = 0;
-            if(this.props.hasPhone){
+            if (this.props.hasPhone) {
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -44,7 +44,7 @@ class Gamification extends React.Component {
             let totalTest = 1;
             let test = 0;
 
-            if(this.props.hasEmail){
+            if (this.props.hasEmail) {
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -54,7 +54,7 @@ class Gamification extends React.Component {
             let totalTest = 1;
             let test = 0;
 
-            if(this.props.hasEid){
+            if (this.props.hasEid) {
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -64,19 +64,19 @@ class Gamification extends React.Component {
             let totalTest = 4;
             let test = 0;
 
-            if(this.props.hasPostbox){
+            if (this.props.hasPostbox) {
                 test++;
             }
 
-            if(this.props.hasPhone){
+            if (this.props.hasPhone) {
                 test++;
             }
 
-            if(this.props.hasEmail){
+            if (this.props.hasEmail) {
                 test++;
             }
 
-            if(this.props.hasEid){
+            if (this.props.hasEid) {
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -102,15 +102,15 @@ class Gamification extends React.Component {
         ];
         const viewBar = [];
         var checkBar = () => {
-            for(var i = 0; i < bar.length; i++) {
-                if(bar[i].props.value === 100) {
-                    viewBar.push(<Col key={i+1} sm={3}>{bar[i]}</Col>);
+            for (var i = 0; i < bar.length; i++) {
+                if (bar[i].props.value === 100) {
+                    viewBar.push(<Col key={i + 1} sm={3}>{bar[i]}</Col>);
                 }
             }
 
-            for(var i = 0; i < bar.length; i++) {
-                if(bar[i].props.value === 0) {
-                    viewBar.push(<Col key={i+1} sm={3}>{bar[i]}</Col>);
+            for (var i = 0; i < bar.length; i++) {
+                if (bar[i].props.value === 0) {
+                    viewBar.push(<Col key={i + 1} sm={3}>{bar[i]}</Col>);
                 }
             }
         };
@@ -143,15 +143,15 @@ class Gamification extends React.Component {
             />
         ];
         var checkList = () => {
-            for(var i = 0; i < list.length; i++) {
-                if(list[i].props.value === true) {
-                    viewList.push(<Row key={i+1}>{list[i]}</Row>);
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].props.value === true) {
+                    viewList.push(<Row key={i + 1}>{list[i]}</Row>);
                 }
             }
 
-            for(var i = 0; i < list.length; i++) {
-                if(list[i].props.value === false) {
-                    viewList.push(<Row key={i+1}>{list[i]}</Row>);
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].props.value === false) {
+                    viewList.push(<Row key={i + 1}>{list[i]}</Row>);
                 }
             }
         };
@@ -174,15 +174,13 @@ class Gamification extends React.Component {
             </OverlayTrigger>);
 
 
-
         return (
-            <Row className="Gamification">
-                <div>
-                    <Col sm={10}><div><h3 className="pageheader">Styrke brukerprofil {overlay}</h3></div></Col>
-                </div>
+            <div className="Gamification">
+                <hr/>
+                <h3 className="pageheader">Styrke brukerprofil {overlay}</h3>
                 {viewBar}
                 {checkBar()}
-            </Row>
+            </div>
 
 
         );

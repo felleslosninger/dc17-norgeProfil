@@ -77,7 +77,8 @@ class AppContainer extends Component {
                         hasPostbox={this.props.userHasPostbox}
                         hasEid={this.props.userHasEid}
                     />
-                    <div className="pageheader"><h3>Aktivitetslogg</h3></div>
+                    <Row className="hr"><hr/></Row>
+                    <h3 className="pageheader">Aktivitetslogg</h3>
                     <Feed
                         ownActivity={this.props.recentUserActivity}
                         publicSectorActivity={this.props.recentPublicActivity}

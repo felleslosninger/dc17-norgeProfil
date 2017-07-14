@@ -13,8 +13,9 @@ body {
 }
 
 .pageheader {
-    width: 22%;
-    margin: 3em 0 1.5em 0;
+    margin: 0 0 0.5em 0;
+    background-color: #EBEBEB;
+    padding: 0.3em;
 }
 
 
@@ -29,10 +30,11 @@ body {
 
 }
 
-/*.NavTab {*/
-    /*color: #f6aa6f;*/
-/*}*/
-
 .Nav {
     padding: 3em 7em 3em 7em;
+    margin-bottom: 2em;
+}
+
+.hr {
+    margin: 2.2em 0.3em 0 0.3em;
 }
