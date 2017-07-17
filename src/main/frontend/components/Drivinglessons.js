@@ -10,8 +10,8 @@ class Drivinglessons extends  React.Component {
     render(){
         return (
             <div>
-                <Card>
-                    <CardTitle title="Opplæring" subtitle="Card subtitle" />
+                <Card className="Card">
+                    <CardTitle title="Opplæring"/>
                     <CardText>
                         <p>
                             Trafikanter skal ha de kunnskaper og ferdigheter, den selvinnsikt og risikoforståelse, som er

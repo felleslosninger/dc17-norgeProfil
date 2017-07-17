@@ -28,28 +28,22 @@ class NavigationBar extends React.Component {
                 <div className="navigation">
                     <AppBar title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle}>
                         <Tabs>
-                            <Tab label="Profil "/>
                             <Tab label="Logg ut" href="/logout"/>
                         </Tabs>
                     </AppBar>
                     <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
-                        <MenuItem href = "/#/dashboard">test</MenuItem>
-                        <MenuItem>Menu Item 2</MenuItem>
+                        <MenuItem href = "/">Din profil</MenuItem>
+                        <MenuItem href = "/#/traffic" onTouchTap={this.handleToggle}> Kjøretøy, lisenser og opplæring </MenuItem>
                     </Drawer>
                 </div>
             );
         } else {
             return (
-                <div className="navigation">
-                    <AppBar title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle}>
-                        <Tabs>
-                            <Tab label="Logg inn" href="/login/idporten"/>
-                        </Tabs>
+                <div>
+                    <AppBar title="Digital Borger"
+                            onLeftIconButtonTouchTap={this.handleToggle}
+                            showMenuIconButton={false}>
                     </AppBar>
-                    <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
-                        <MenuItem>Helsetjenester</MenuItem>
-                        <MenuItem>Menu Item 2</MenuItem>
-                    </Drawer>
                 </div>
             );
         }

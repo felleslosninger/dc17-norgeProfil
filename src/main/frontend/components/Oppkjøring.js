@@ -10,7 +10,7 @@ class Oppkjøring extends  React.Component {
     render(){
         return (
             <div>
-                <Card>
+                <Card className="Card">
                     <CardTitle title="Oppkjøring" />
                     <CardText>
                         <p>
