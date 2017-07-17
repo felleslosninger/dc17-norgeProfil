@@ -176,7 +176,7 @@ class Gamification extends React.Component {
 
 
         return (
-            <Row className="Gamification">
+            <Row className="gamification">
                 <div>
                     <Col sm={10}><div><h3 className="pageheader">Styrke brukerprofil {overlay}</h3></div></Col>
                 </div>
