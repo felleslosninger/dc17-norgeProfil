@@ -10,7 +10,6 @@ import Reservation from '../components/Reservation.js';
 import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
-import Gamification from '../components/Gamification.js';
 import { connect } from "react-redux";
 import { fetchUnusedAuthTypes, fetchPostbox, fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 import GamificationCard from '../components/GamificationCard';

@@ -17,8 +17,9 @@ class GamificationCard extends Component {
         let h = Math.floor(120*value/100);
         return "hsl(" + h + ",100%, 50%)";
     }
+
     calcCircleColor(value){
-        let s = 50 + Math.floor(value/200);
+        let s = 25 + Math.floor(0.75*value);
         return "hsl( 192 ,"+ s +"%, 50%)";
     }
 
