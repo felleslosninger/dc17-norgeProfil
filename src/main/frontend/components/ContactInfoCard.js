@@ -128,7 +128,7 @@ class ContactInfoCard extends React.Component {
             <Card className="Card" containerStyle={{backgroundColor: '#f4f8ec'}}>
                 <Row className="CardHeader" style={{backgroundColor: '#d1e6c4 '}}>
                     <Col sm={3} md={2} lg={2} className="Icon">{<ActionInfo />}</Col>
-                    <Col sm={8} md={10} lg={10}><h4>Kontaktinformasjon</h4></Col>
+                    <Col sm={2} md={6} lg={6}><h4>Kontaktinformasjon</h4></Col>
                 </Row>
                 <CardText className="CardText" style={{height: '19.5em'}}>
                     <p>
