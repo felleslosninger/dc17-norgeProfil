@@ -32,6 +32,7 @@ class NavigationBar extends React.Component {
                             onLeftIconButtonTouchTap={this.handleToggle}
                             iconElementRight={<FlatButton label="Logg ut" href="/logout"/>}/>
                     <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 150}} open={this.state.open}>
+                        <MenuItem href="/#/" onTouchTap={this.handleToggle}>Din profil</MenuItem>
                         <MenuItem href="/#/health">Helsetjenester</MenuItem>
                         <MenuItem href="/#/traffic">Kjøretøy og lisenser</MenuItem>
                     </Drawer>
