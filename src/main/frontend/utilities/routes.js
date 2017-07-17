@@ -1,12 +1,17 @@
 "use strict";
-import React, { Component } from 'react';
+import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import AppContainer from '../containers/AppContainer';
+
 import HealthContainer from '../containers/HealthContainer';
+import NavBarContainer from '../containers/NavBarContainer';
+import Traffic from '../containers/Traffic';
 import {Provider} from "react-redux";
 import EnsureLoggedInContainer from'../containers/EnsureLoggedInContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -42,17 +47,19 @@ const Routes = ({store}) => (
     <Provider store = {store}>
         <MuiThemeProvider muiTheme={muiTheme}>
             <HashRouter>
-                <Switch>
-                    <EnsureLoggedInContainer>
-                        <Switch>
+                <div>
+                    <NavBarContainer/>
+                    <Switch>
+                        <EnsureLoggedInContainer>
+                            <Switch>
+                                <Route path='/health' component={HealthContainer}/>
+                                <Route path="/traffic" component={Traffic}/>
+                                <Route path='/' component={AppContainer}/>
+                            </Switch>
 
-                            <Route path='/health' component={HealthContainer}/>
-                            <Route path='/' component={AppContainer}/>
-
-                        </Switch>
-
-                    </EnsureLoggedInContainer>
-                </Switch>
+                        </EnsureLoggedInContainer>
+                    </Switch>
+                </div>
             </HashRouter>
         </MuiThemeProvider>
     </Provider>

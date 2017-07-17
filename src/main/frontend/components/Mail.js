@@ -209,6 +209,7 @@ class Mail extends React.Component {
                     <Row className="CardHeader">
                         <Col sm={3} md={3} lg={2} className="Icon">{<Email />}</Col>
                         <Col  sm={7} md={6} lg={8}><h4>Digital postkasse</h4></Col>
+
                     </Row>
                     <CardText className="CardText"  style={{height: '19.5em'}}>
                         <div className="CardInfoText">

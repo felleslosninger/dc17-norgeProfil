@@ -54,7 +54,7 @@ class Feed extends React.Component {
 
         const rightIconMenu = (
             <IconMenu iconButtonElement={iconButtonElement}>
-                <MenuItem>Rapporter</MenuItem>
+                <MenuItem> <a href="https://www.difi.no/om-difi/kontakt-oss"> Rapporter </a></MenuItem>
             </IconMenu>
         );
 
@@ -132,7 +132,7 @@ class Feed extends React.Component {
 
 
         return (
-            <Card className="Feed">
+            <Card className="Feed hideFromMobile">
                 <Tabs
                     onChange={this.handleChange}
                     value={this.state.slideIndex}

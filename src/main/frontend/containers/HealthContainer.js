@@ -26,7 +26,6 @@ class HealthContainer extends Component {
     render() {
         return (
             <div>
-                <NavBar/>
                 <div className="BodyDiv">
                     <Username
                         username={this.props.username}/>
