@@ -140,7 +140,7 @@ body {
         background-color: #EBEBEB;
         padding: 0.3em;
         min-height: 2.5em;
-        width: 45em;
+        width: 47em;
     }
 
 
@@ -151,14 +151,10 @@ body {
 /* landscape phones */
 
 @media (min-width: 481px) and (max-width: 767px) {
-    h1{
-        background-color: #EBEBEB;
-    }
-
     .Nav {
         padding: 3em 7em 3em 7em;
         margin-bottom: 2em;
-
+        width: 4em;
     }
 
     .LogInBtn{

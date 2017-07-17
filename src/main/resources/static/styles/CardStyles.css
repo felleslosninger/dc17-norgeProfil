@@ -8,19 +8,19 @@
         /*margin-top: 40px;*/
         margin-top: 2%;
     }
-
+/*
     p {
         font-size: 1em;
     }
-
+*/
     ListItem {
         font-size: 1em;
     }
 
-    TextField {
+/*    TextField {
         font-size: 1em;
     }
-
+*/
     .container {
         width: 600px;
     }
@@ -36,7 +36,6 @@
         right: 11%;
         top: 2%;
     }
-
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
@@ -49,26 +48,6 @@
         /*margin-top: 40px;*/
         margin-top: 2%;
     }
-
-    h1 {
-        font-size: 1.5em;
-        font-stretch: expanded;
-    }
-
-    h3{
-        font-size: 1.4em;
-    }
-
-    h4 {
-        font-size: medium;
-        font-stretch: expanded;
-    }
-
-    p{
-        font-size: 1em;
-    }
-
-
 
     .InfoBtn {
         position: absolute;
@@ -99,27 +78,6 @@
         margin: auto;
     }
 
-    h1 {
-        font-size: 1.9em;
-        font-stretch: expanded;
-    }
-
-    h3 {
-        font-size: 1.8em;
-    }
-
-    h4 {
-        font-size: 1em;
-    }
-
-    p {
-        font-size: small;
-    }
-
-    .CustomP{ /*Class to adapt paragraph for letters in Ipad mode*/
-        width: 30em;
-    }
-
     .EditBtn {
         position: absolute;
         right: 13.2%;
@@ -144,10 +102,6 @@
     .Icon {
         /*margin-top: 40px;*/
         margin-top: 2%;
-    }
-
-    h3{
-        font-size: 1.7em;
     }
     .hideFromMobile{
         visibility: hidden;
