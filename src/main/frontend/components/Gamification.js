@@ -175,9 +175,9 @@ class Gamification extends React.Component {
 
 
         return (
-            <div className="Gamification">
+            <div>
                 <hr/>
-                <h3 className="pageheader">Styrke brukerprofil {overlay}</h3>
+                <h3 className="GamificationBar">Styrke brukerprofil {overlay}</h3>
                 {viewBar}
                 {checkBar()}
 

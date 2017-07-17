@@ -22,7 +22,7 @@ class NavigationBar extends React.Component {
 
 
     render() {
-        let title = <div><img src="img/norgeno.png" height='80' width='auto'/> Digital Borger</div>;
+        let title = <div><img src="img/norgeno.png" className="HeaderImg"/> Digital Borger </div>;
 
         if (this.props.isLoggedIn) {
             return (
