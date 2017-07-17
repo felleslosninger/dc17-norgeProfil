@@ -33,11 +33,11 @@ class Mail extends React.Component {
         this.setState({open: false});
     }
 
-    handleDigipost () {
+    handleDigipost() {
         this.props.onSetPostbox('Digipost')
     }
 
-    handleEboks () {
+    handleEboks() {
         this.props.onSetPostbox('e-Boks')
     }
 
@@ -87,10 +87,10 @@ class Mail extends React.Component {
 
         if (postbox === '') {
             mailCard = (
-                <Card className="Card">
+                <Card className="Card" containerStyle={{backgroundColor: '#f4f8ec'}}>
                     <Row className="CardHeader">
                         <Col sm={3} md={3} lg={2} className="Icon">{<Email />}</Col>
-                        <Col sm={7} md={6} lg={8} ><h4>Digital postkasse</h4></Col>
+                        <Col sm={7} md={6} lg={8}><h4>Digital postkasse</h4></Col>
                         <Help onClick={this.handleOpen} className="InfoBtn"/>
                     </Row>
                     <Dialog
@@ -106,15 +106,16 @@ class Mail extends React.Component {
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
                                         <p className="CustomP">
-                                        En digital postkasse er ei sikker løsning for å få og oppbevare viktig post
-                                        digitalt, slik som brev med vedtak, helseopplysningar eller annen sensitiv
-                                        informasjon. Det offentlige kan ikke bruke vanlig e-post til å sende slik
-                                        informasjon. Skal du kunne motta viktige brev fra det offentlige digitalt,
-                                        må du ha digital postkasse.
+                                            En digital postkasse er ei sikker løsning for å få og oppbevare viktig post
+                                            digitalt, slik som brev med vedtak, helseopplysningar eller annen sensitiv
+                                            informasjon. Det offentlige kan ikke bruke vanlig e-post til å sende slik
+                                            informasjon. Skal du kunne motta viktige brev fra det offentlige digitalt,
+                                            må du ha digital postkasse.
 
-                                        Du får ikke reklame i den digitale postkassen din. Men bedrifter som du har
-                                        et kundeforhold til, som for eksempel banken eller forsikringsselskapet ditt,
-                                        kan sende deg meldingar om ulike tilbud dersom du har akseptert dette.
+                                            Du får ikke reklame i den digitale postkassen din. Men bedrifter som du har
+                                            et kundeforhold til, som for eksempel banken eller forsikringsselskapet
+                                            ditt,
+                                            kan sende deg meldingar om ulike tilbud dersom du har akseptert dette.
                                         </p>
                                     </ListItem>
                                 ]}
@@ -125,12 +126,12 @@ class Mail extends React.Component {
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
                                         <p className="CustomP">
-                                        Nei, en digital postkasse er sikrere enn e-post fordi både avsender og
-                                        mottaker må bekrefte identiteten sin. Post som det offentlige sender til
-                                        deg i den digitale postkassen din, blir sendt kryptert, som skjult tekst.
-                                        For å åpne og lese posten i den digitale postkassen må du legitimere deg
-                                        gjennom ID-porten. Det er bare du og de du har bevilget tilgang til, som kan
-                                        lese posten din fra det offentlege.
+                                            Nei, en digital postkasse er sikrere enn e-post fordi både avsender og
+                                            mottaker må bekrefte identiteten sin. Post som det offentlige sender til
+                                            deg i den digitale postkassen din, blir sendt kryptert, som skjult tekst.
+                                            For å åpne og lese posten i den digitale postkassen må du legitimere deg
+                                            gjennom ID-porten. Det er bare du og de du har bevilget tilgang til, som kan
+                                            lese posten din fra det offentlege.
                                         </p>
                                     </ListItem>
                                 ]}
@@ -157,12 +158,12 @@ class Mail extends React.Component {
                                 initiallyOpen={false}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
-                                       <p className="CustomP">
-                                        Ja, men til post fra det offentlige må du velge en av postkassene, slik at
-                                        stat og kommune vet hvor de skal sende posten din. Kontakt ID-porten sin
-                                        brukerstøtte på grønt nummer 800 30 300 om du har spørsmål om dette (fra
-                                        utlandet: +47 24 05 56 03).
-                                       </p>
+                                        <p className="CustomP">
+                                            Ja, men til post fra det offentlige må du velge en av postkassene, slik at
+                                            stat og kommune vet hvor de skal sende posten din. Kontakt ID-porten sin
+                                            brukerstøtte på grønt nummer 800 30 300 om du har spørsmål om dette (fra
+                                            utlandet: +47 24 05 56 03).
+                                        </p>
                                     </ListItem>
                                 ]}
                             />
@@ -172,17 +173,16 @@ class Mail extends React.Component {
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
                                         <p className="CustomP">
-                                        Nei, digital postkasse er gratis å opprette og bruke for innbyggerene.
-                                        Lastar du selv opp mange dokument eller bilde, må du betale for å få
-                                        lagringsplass ut over 1GB.
+                                            Nei, digital postkasse er gratis å opprette og bruke for innbyggerene.
+                                            Lastar du selv opp mange dokument eller bilde, må du betale for å få
+                                            lagringsplass ut over 1GB.
                                         </p>
                                     </ListItem>
                                 ]}
                             />
                         </List>
                     </Dialog>
-                    <hr className="HLine"/>
-                    <CardText className="CardText">
+                    <CardText className="CardText"  style={{height: '19.5em'}}>
                         <p>
                             Du har enda ikke valgt noen postkasse. Du må selv opprette din egen digitale postkasse
                             hos e-Boks eller Digipost for å motta og oppbevare post digitalt fra det offentlige.
@@ -205,18 +205,18 @@ class Mail extends React.Component {
             )
         } else {
             mailCard = (
-                <Card className="Card">
+                <Card className="Card" containerStyle={{backgroundColor: '#f4f8ec'}}>
                     <Row className="CardHeader">
-                        <Col sm={3} md={3} lg={2}  className="Icon">{<Email />}</Col>
-                        <Col sm={9} md={9} lg={10}><h4>Digital postkasse</h4></Col>
+                        <Col sm={3} md={3} lg={2} className="Icon">{<Email />}</Col>
+                        <Col  sm={7} md={6} lg={8}><h4>Digital postkasse</h4></Col>
+
                     </Row>
-                    <hr className="HLine"/>
-                    <CardText>
+                    <CardText className="CardText"  style={{height: '19.5em'}}>
                         <div className="CardInfoText">
                             <Row>
                                 <Col sm={4}> {img} </Col>
-                                <Col sm={8}> <p> Du mottar i dag post fra det offentlige til din digitale postkasse hos
-                                    <strong>  { postbox }  </strong> </p> </Col>
+                                <Col sm={8}><p> Du mottar i dag post fra det offentlige til din digitale postkasse hos
+                                    <strong>  { postbox }  </strong></p></Col>
                             </Row>
                         </div>
                         <div className="EditBtn">
@@ -226,18 +226,18 @@ class Mail extends React.Component {
                                 icon={<Edit />}
                                 onTouchTap={this.handleOpen}/>
                         </div>
+                        <Dialog
+                            title="Endre din digital postkasse"
+                            actions={actions}
+                            modal={false}
+                            open={this.state.open}
+                            onRequestClose={this.handleClose}
+                        >
+                            <div>
+                                Ønsker du å endre din digitale postkasse?
+                            </div>
+                        </Dialog>
                     </CardText>
-                    <Dialog
-                        title="Endre din digital postkasse"
-                        actions={actions}
-                        modal={false}
-                        open={this.state.open}
-                        onRequestClose={this.handleClose}
-                    >
-                        <div>
-                            Ønsker du å endre din digitale postkasse?
-                        </div>
-                    </Dialog>
                 </Card>
             )
         }

@@ -54,7 +54,7 @@ class Feed extends React.Component {
 
         const rightIconMenu = (
             <IconMenu iconButtonElement={iconButtonElement}>
-                <MenuItem>Rapporter</MenuItem>
+                <MenuItem> <a href="https://www.difi.no/om-difi/kontakt-oss"> Rapporter </a></MenuItem>
             </IconMenu>
         );
 
@@ -84,11 +84,11 @@ class Feed extends React.Component {
                         <ListItem
                             leftAvatar={img}
                             rightIconButton={rightIconMenu}
-                            primaryText={this.props.ownActivity[i].type}
+                            primaryText={this.props.ownActivity[i].issuer}
                             disabled={true}
                             secondaryText={
                                 <p>
-                                    <span className="Li Header">{this.props.ownActivity[i].issuer}</span><br />
+                                    <span className="Li Header">{this.props.ownActivity[i].type}</span><br />
                                     {this.props.ownActivity[i].dateTime}
                                 </p>
                             }
@@ -132,13 +132,13 @@ class Feed extends React.Component {
 
 
         return (
-            <Card className="Feed">
+            <Card className="Feed hideFromMobile">
                 <Tabs
                     onChange={this.handleChange}
                     value={this.state.slideIndex}
                 >
                     <Tab label="Din aktivitet" value={0}/>
-                    <Tab label="Offentlig sektors aktivitet" value={1}/>
+                    <Tab label="Offentlig sektors aktivitet" value={1} />
                 </Tabs>
                 <SwipeableViews
                     style={styles.Feed}
