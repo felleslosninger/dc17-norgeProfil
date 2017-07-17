@@ -236,6 +236,26 @@
     text-align:center;
 }
 
+.ProgressCircle{
+    text-align:center;
+    padding-bottom: 20px;
+}
+.ProgressBar{
+    text-align: center!important;
+    justify-content: center;
+    margin:auto;
+    width: 75%;
+}
+.react-sweet-progress {
+    /*width: 75%!important;*/
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 600px;
+    }
+}
+
 .SaveBtn {
     position: absolute;
     right: 1%;
