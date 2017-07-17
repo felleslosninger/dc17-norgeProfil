@@ -19,8 +19,9 @@ class Traffic extends Component {
             <div>
                 <Card>
                     <CardMedia
-                        overlay={<CardTitle title="Dine førerkort og kjøretøy"/>}
+                        overlay={<CardTitle title="Førerkort og kjøretøy"/>}
                     >
+                    </CardMedia>
                     <Row>
                         <Col sm={4}>
                             <DrivingLicence/>
@@ -31,13 +32,13 @@ class Traffic extends Component {
                         <Col sm={4}>
                             <Vehicle/>
                         </Col>
-                    </Row>\
+                    </Row>
                     <Row>
                         <Col sm={4}>
                             <Teori/>
                         </Col>
                         <Col sm={4}>
-                            <DrivingLessons/>
+                            <Drivinglessons/>
                         </Col>
                         <Col sm={4}>
                             <Oppkjøring/>
