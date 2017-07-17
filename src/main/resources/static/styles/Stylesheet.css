@@ -8,14 +8,31 @@ body {
 }
 
 .pageheader {
-    width: 22%;
-    margin: 3em 0 1.5em 0;
+    margin: 0 0 0.5em 0;
+    background-color: #EBEBEB;
+    padding: 0.3em;
+    min-height: 2.5em;
+}
+
+.Icon {
+    margin-top: 2%;
+    margin-left: 1em;
+}
+
+
+.Nav {
+    padding: 3em 7em 3em 7em;
+    margin-bottom: 2em;
+}
+
+.hr {
+    margin: 2.2em 0.3em 0 0.3em;
 }
 
 /*Large desktops*/
-@media(min-width: 1193px){
-    .LogInBtn{
-        position:fixed;
+@media (min-width: 1193px) {
+    .LogInBtn {
+        position: fixed;
         top: 50%;
         left: 45%;
     }
@@ -37,11 +54,12 @@ body {
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
 @media (min-width: 992px ) and (max-width: 1192px) {
-    .LogInBtn{
-        position:fixed;
+    .LogInBtn {
+        position: fixed;
         top: 50%;
         left: 38%;
     }
+
     .BodyDiv {
         margin-right: 5em;
         margin-left: 5em;
@@ -59,8 +77,8 @@ body {
 
 /*Portrait tablets and small desktops eg. Ipad*/
 @media (min-width: 768px) and (max-width: 991px) {
-    .LogInBtn{
-        position:fixed;
+    .LogInBtn {
+        position: fixed;
         top: 50%;
         left: 35%;
     }
@@ -80,7 +98,10 @@ body {
 
 }
 
+/* Portrait phones and smaller */
+
 /* landscape phones */
+
 @media (min-width: 481px) and (max-width: 767px) {
     .LogInBtn{
         position:fixed;
@@ -116,6 +137,4 @@ body {
         overflow-x: hidden;
     }
 }
-
-
 

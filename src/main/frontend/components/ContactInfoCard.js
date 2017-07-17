@@ -63,7 +63,7 @@ class ContactInfoCard extends React.Component {
 
 
     handleSave() {
-        if(this.validateEmail() && this.validatePhone()){
+        if (this.validateEmail() && this.validatePhone()) {
             this.setState({
                 open: false,
             });
@@ -73,40 +73,39 @@ class ContactInfoCard extends React.Component {
 
     };
 
-    validateEmail(){
-        if(typeof this.state.textfieldEmail === "undefined"){
+    validateEmail() {
+        if (typeof this.state.textfieldEmail === "undefined") {
             return true;
         }
-        if(this.state.textfieldEmail!=="" && !this.state.textfieldEmail.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+        if (this.state.textfieldEmail !== "" && !this.state.textfieldEmail.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
             this.setState({
-                textfieldEmailError:"Epostadressen du har tastet inn er ikke gyldig"
+                textfieldEmailError: "Epostadressen du har tastet inn er ikke gyldig"
             });
             return false;
-        }else{
+        } else {
             this.setState({
-                textfieldEmailError:""
+                textfieldEmailError: ""
             });
             return true;
         }
     }
 
-    validatePhone(){
-        if(typeof this.state.textfieldPhone === "undefined"){
+    validatePhone() {
+        if (typeof this.state.textfieldPhone === "undefined") {
             return true;
         }
-        if(!this.state.textfieldPhone.match(/(^(\+?\-? *[0-9]+)([,0-9 ]*)([0-9 ])*$)|(^ *$)/)){
+        if (!this.state.textfieldPhone.match(/(^(\+?\-? *[0-9]+)([,0-9 ]*)([0-9 ])*$)|(^ *$)/)) {
             this.setState({
-                textfieldPhoneError:"Mobilnummeret du har tastet inn er ikke gyldig"
+                textfieldPhoneError: "Mobilnummeret du har tastet inn er ikke gyldig"
             });
             return false;
-        }else{
+        } else {
             this.setState({
-                textfieldPhoneError:""
+                textfieldPhoneError: ""
             });
             return true;
         }
     }
-
 
 
     render() {
@@ -126,59 +125,59 @@ class ContactInfoCard extends React.Component {
 
 
         return (
-            <Card className="Card">
-                <Row className="CardHeader">
-                    <Col xs={3} md={2} lg={2}  className="Icon">{<ActionInfo />}</Col>
-                    <Col xs={8} md={10} lg={10}><h4>Kontaktinformasjon</h4></Col>
+            <Card className="Card" containerStyle={{backgroundColor: '#f4f8ec'}}>
+                <Row className="CardHeader" style={{backgroundColor: '#d1e6c4 '}}>
+                    <Col sm={3} md={2} lg={2} className="Icon">{<ActionInfo />}</Col>
+                    <Col sm={2} md={6} lg={6}><h4>Kontaktinformasjon</h4></Col>
                 </Row>
-                <hr className="HLine"/>
-                <CardText>
-                    <p className="CardText">
+                <CardText className="CardText" style={{height: '19.5em'}}>
+                    <p>
                         Informasjonen nedenfor lagres i et felles kontaktregister som stat og kommune skal bruke
-                            når de kontakter deg.
+                        når de kontakter deg.
                     </p>
                     <List>
-                        <ListItem disabled={true} primaryText="E-post: " secondaryText={ this.props.savedEmail } leftIcon={<EmailIcon />}/>
+                        <ListItem disabled={true} primaryText="E-post: " secondaryText={ this.props.savedEmail }
+                                  leftIcon={<EmailIcon />}/>
                         <ListItem disabled={true} primaryText="Mobilnummer: " secondaryText={ this.props.savedPhone }
                                   leftIcon={<PhoneIcon/>}/>
                     </List>
-                    <div className="EditBtn">
+                    <div className="EditBtn" style={{backgroundColor: '#f4f8ec'}}>
                         <FlatButton
                             label="Endre kontaktinformasjon"
                             primary={true}
                             icon={<Edit />}
                             onTouchTap={this.handleOpen}/>
                     </div>
+                    <Dialog
+                        title="Endre kontaktinformasjon"
+                        actions={actions}
+                        modal={false}
+                        open={this.state.open}
+                        onRequestClose={this.handleClose}>
+                        <Row className="EditInfo">
+                            <Col>
+                                <TextField
+                                    floatingLabelText="E-post"
+                                    defaultValue={ this.state.textfieldEmail }
+                                    name="textfieldEmail"
+                                    ref="email"
+                                    errorText={this.state.textfieldEmailError}
+                                    onChange={ this.handleChange }
+                                />
+                            </Col>
+                            <Col>
+                                <TextField
+                                    floatingLabelText="Mobilnummer"
+                                    defaultValue={ this.state.textfieldPhone }
+                                    name="textfieldPhone"
+                                    ref="phone"
+                                    errorText={this.state.textfieldPhoneError}
+                                    onChange={ this.handleChange }
+                                />
+                            </Col>
+                        </Row>
+                    </Dialog>
                 </CardText>
-                <Dialog
-                    title="Endre kontaktinformasjon"
-                    actions={actions}
-                    modal={false}
-                    open={this.state.open}
-                    onRequestClose={this.handleClose}>
-                    <Row className="EditInfo">
-                        <Col>
-                            <TextField
-                                floatingLabelText="E-post"
-                                defaultValue= { this.state.textfieldEmail }
-                                name="textfieldEmail"
-                                ref="email"
-                                errorText = {this.state.textfieldEmailError}
-                                onChange={ this.handleChange }
-                            />
-                        </Col>
-                        <Col>
-                            <TextField
-                                floatingLabelText="Mobilnummer"
-                                defaultValue={ this.state.textfieldPhone }
-                                name="textfieldPhone"
-                                ref="phone"
-                                errorText = {this.state.textfieldPhoneError}
-                                onChange={ this.handleChange }
-                            />
-                        </Col>
-                    </Row>
-                </Dialog>
             </Card>
 
         )

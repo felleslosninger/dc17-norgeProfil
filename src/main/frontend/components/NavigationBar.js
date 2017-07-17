@@ -1,8 +1,7 @@
 import React from 'react'
-import {AppBar, Tabs, Tab} from 'material-ui'
+import {AppBar, FlatButton} from 'material-ui'
 import {MenuItem} from 'material-ui'
 import Drawer from 'material-ui/Drawer';
-import axios from "axios";
 
 
 class NavigationBar extends React.Component {
@@ -11,7 +10,7 @@ class NavigationBar extends React.Component {
         super(props);
 
         this.state = {
-          status: false, 
+            status: false,
             open: false
         };
     }
@@ -23,27 +22,24 @@ class NavigationBar extends React.Component {
 
 
     render() {
+        let title = <div><img src="img/norgeno.png" height='80' width='auto'/> Digital Borger</div>;
+
         if (this.props.isLoggedIn) {
             return (
-                <div className="navigation">
-                    <AppBar title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle}>
-                        <Tabs>
-                            <Tab label="Logg ut" href="/logout"/>
-                        </Tabs>
-                    </AppBar>
-                    <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} open={this.state.open}>
-                        <MenuItem href = "/">Din profil</MenuItem>
-                        <MenuItem href = "/#/traffic" onTouchTap={this.handleToggle}> Kjøretøy, lisenser og opplæring </MenuItem>
+                <div>
+                    <AppBar className={'Nav'} title={title} onLeftIconButtonTouchTap={this.handleToggle} iconElementRight={<FlatButton label="Logg ut" href="/logout"/>}/>
+                    <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 150}} open={this.state.open}>
+                        <MenuItem href="/#/health">Helsetjenester</MenuItem>
                     </Drawer>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <AppBar title="Digital Borger"
-                            onLeftIconButtonTouchTap={this.handleToggle}
-                            showMenuIconButton={false}>
-                    </AppBar>
+                    <AppBar className={'Nav'} title={title} onLeftIconButtonTouchTap={this.handleToggle} iconElementRight={<FlatButton label="Logg inn" href="/login/idporten"/>}/>
+                    <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 150}} open={this.state.open}>
+                        <MenuItem className={'NavTab'}>Helsetjenester</MenuItem>
+                    </Drawer>
                 </div>
             );
         }

@@ -24,7 +24,7 @@ class Gamification extends React.Component {
             let totalTest = 1;
             let test = 0;
 
-            if(this.props.hasPostbox){
+            if (this.props.hasPostbox) {
                 test++;
             }
 
@@ -34,7 +34,7 @@ class Gamification extends React.Component {
         var phone = () => {
             let totalTest = 1;
             let test = 0;
-            if(this.props.hasPhone){
+            if (this.props.hasPhone) {
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -44,7 +44,7 @@ class Gamification extends React.Component {
             let totalTest = 1;
             let test = 0;
 
-            if(this.props.hasEmail){
+            if (this.props.hasEmail) {
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -54,7 +54,7 @@ class Gamification extends React.Component {
             let totalTest = 1;
             let test = 0;
 
-            if(this.props.hasEid){
+            if (this.props.hasEid) {
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -64,19 +64,19 @@ class Gamification extends React.Component {
             let totalTest = 4;
             let test = 0;
 
-            if(this.props.hasPostbox){
+            if (this.props.hasPostbox) {
                 test++;
             }
 
-            if(this.props.hasPhone){
+            if (this.props.hasPhone) {
                 test++;
             }
 
-            if(this.props.hasEmail){
+            if (this.props.hasEmail) {
                 test++;
             }
 
-            if(this.props.hasEid){
+            if (this.props.hasEid) {
                 test++;
             }
             return ( Math.round((test / totalTest) * 100));
@@ -143,15 +143,15 @@ class Gamification extends React.Component {
             />
         ];
         var checkList = () => {
-            for(var i = 0; i < list.length; i++) {
-                if(list[i].props.value === true) {
-                    viewList.push(<Row key={i+1}>{list[i]}</Row>);
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].props.value === true) {
+                    viewList.push(<Row key={i + 1}>{list[i]}</Row>);
                 }
             }
 
-            for(var i = 0; i < list.length; i++) {
-                if(list[i].props.value === false) {
-                    viewList.push(<Row key={i+1}>{list[i]}</Row>);
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].props.value === false) {
+                    viewList.push(<Row key={i + 1}>{list[i]}</Row>);
                 }
             }
         };
@@ -174,19 +174,16 @@ class Gamification extends React.Component {
             </OverlayTrigger>);
 
 
-
         return (
-            <div>
-            <Row className="Gamification">
-                <h3 className="pageheader">Styrke brukerprofil { overlay } </h3>
-            </Row>
-            <Row>
-                <div className="GamificationBar">
-                    {viewBar}
-                    {checkBar()}
-                </div>
-            </Row>
+            <div className="Gamification">
+                <hr/>
+                <h3 className="pageheader">Styrke brukerprofil {overlay}</h3>
+                {viewBar}
+                {checkBar()}
+
             </div>
+
+
         );
 
 

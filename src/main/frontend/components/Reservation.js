@@ -53,11 +53,11 @@ class Reservation extends React.Component {
 
         if (this.props.reservation === 'NEI') {
             reservationCard = (
-                <Card className="Card">
-                    <Row className="CardHeader">
-                        <Col xs={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
-                        <Col xs={7} lg={8}><h4>Reservasjon</h4></Col>
-                        <Col xs={2} lg={2}> <Help onClick={this.handleOpen} className="InfoBtn" /> </Col>
+                <Card className="Card" containerStyle={{backgroundColor: '#f4f8ec'}}>
+                    <Row className="CardHeader"  style={{backgroundColor: '#d1e6c4'}}>
+                        <Col sm={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
+                        <Col sm={6} lg={7}><h4>Reservasjon</h4></Col>
+                        <Help onClick={this.handleOpen} className="InfoBtn" />
                     </Row>
                     <Dialog
                         title="Brev fra stat og kommune"
@@ -77,8 +77,7 @@ class Reservation extends React.Component {
                             Reservasjonen din kan du enkelt oppheve ved å trykke Opphev reservasjon.
                         </p>
                     </Dialog>
-                    <hr className="Headline"/>
-                    <CardText className="CardText">
+                    <CardText className="CardText" style={{height: '19.5em'}}>
                         <p>
                         Om du reserverer deg mot kommunikasjon på nett vil du motta viktige brev fra det offentlige kun på
                         papir.
@@ -98,11 +97,11 @@ class Reservation extends React.Component {
             )
         } else {
             reservationCard = (
-                <Card className="Card">
-                    <Row className="CardHeader">
-                        <Col xs={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
-                        <Col xs={6} lg={7}><h4>Reservasjon</h4></Col>
-                        <Col xs={3} lg={3}><Help onClick={this.handleOpen} className="InfoBtn"/></Col>
+                <Card className="Card" containerStyle={{backgroundColor: '#f4f8ec'}}>
+                    <Row className="CardHeader"  style={{backgroundColor: '#d1e6c4'}}>
+                        <Col sm={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
+                        <Col sm={6} lg={7}><h4>Reservasjon</h4></Col>
+                        <Col sm={3} lg={3}><Help onClick={this.handleOpen}/></Col>
                     </Row>
                     <Dialog
                         title="Brev fra stat og kommune"
@@ -122,8 +121,7 @@ class Reservation extends React.Component {
                             Reservasjonen din kan du enkelt oppheve ved å trykke Opphev reservasjon.
                         </p>
                     </Dialog>
-                    <hr className="HLine"/>
-                    <CardText className="CardText">
+                    <CardText className="CardText" style={{height: '19.5em'}}>
                         <p>
                         Du har nå reservert deg mot kommunikasjon på nett fra det offentlige.
                         Du vil fra nå motta vedtak og andre brev med innhold som er viktig for deg kun på papir.

@@ -4,6 +4,7 @@ var Col = require('react-bootstrap/lib/Col');
 
 import React, {Component} from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import NavigationBar from '../components/NavigationBar.js';
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
 import Reservation from '../components/Reservation';
@@ -37,6 +38,7 @@ class AppContainer extends Component {
         return (
             <div>
                 <div className="BodyDiv">
+                    <Row className="hr"><hr/></Row>
                     <Username
                         username={this.props.username}
                     />
@@ -75,6 +77,7 @@ class AppContainer extends Component {
                         hasPostbox={this.props.userHasPostbox}
                         hasEid={this.props.userHasEid}
                     />
+                    <Row className="hr"><hr/></Row>
                     <div className="pageheader hideFromMobile"><h3>Aktivitetslogg</h3></div>
                     <Feed
                         ownActivity={this.props.recentUserActivity}
