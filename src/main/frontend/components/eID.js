@@ -86,7 +86,10 @@ class EID extends React.Component {
                 <Row className="CardHeader">
                     <Col xs={3} lg={2} className="Icon">{<EidIcon />}</Col>
                     <Col xs={6} lg={7}><h4>eID</h4></Col>
-                    <Col xs={3}> <Help onClick={this.handleOpen} className="InfoBtn"/> </Col>
+                    <Col xs={3}>
+                        <Help onClick={this.handleOpen} className="InfoBtn"/>
+                        <p className="displayOnlyForReaders"> Spørsmål og svar </p>
+                    </Col>
                 </Row>
                 <Dialog
                     title="Elektronisk ID"

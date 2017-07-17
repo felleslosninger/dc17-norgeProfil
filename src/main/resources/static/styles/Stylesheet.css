@@ -25,6 +25,14 @@ body {
         margin-left: 6em;
         min-width: 30em;
     }
+
+
+    .Card {
+        height: 25em;
+        width: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
@@ -38,6 +46,14 @@ body {
         margin-right: 5em;
         margin-left: 5em;
         min-width: 30em;
+    }
+
+
+    .Card {
+        height: 25em;
+        width: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 }
 
@@ -54,9 +70,17 @@ body {
         margin-left: 4em;
         min-width: 30em;
     }
+
+    .Card {
+        height: 25em;
+        width: 20em;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
 }
 
-/* Portrait phones and smaller */
+/* landscape phones */
 @media (min-width: 481px) and (max-width: 767px) {
     .LogInBtn{
         position:fixed;
@@ -71,6 +95,7 @@ body {
     }
 }
 
+/* Portrait phones and smaller */
 @media (max-width: 480px) {
     .LogInBtn{
         position:fixed;
@@ -84,8 +109,13 @@ body {
         min-width: 30em;
     }
 
+    .Card {
+        height: 25em;
+        width: 23em;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }
-
 
 
 
