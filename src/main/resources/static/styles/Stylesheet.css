@@ -52,6 +52,15 @@ body {
     }
 }
 
+.gamification {
+     margin-top: 50px;
+}
+
+.gameLog {
+    text-align: center;
+    margin: auto;
+}
+
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
 @media (min-width: 992px ) and (max-width: 1192px) {
     .LogInBtn {
