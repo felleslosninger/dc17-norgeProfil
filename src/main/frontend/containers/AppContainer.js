@@ -7,19 +7,57 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import NavigationBar from '../components/NavigationBar.js';
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
-import Reservation from '../components/Reservation.js';
+import Reservation from '../components/Reservation';
 import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
-import Gamification from '../components/Gamification.js';
 import { connect } from "react-redux";
 import { fetchUnusedAuthTypes, fetchPostbox, fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
+import GamificationCard from '../components/GamificationCard';
 
+const createListItem = (description,isActive,score) =>{
+    return({
+        description: description,
+        isActive: isActive,
+        score: score
+    });
+};
+
+const calcGameState = (pointList) => {
+    const levelCap = 100;
+    let points = 0;
+    let maxScore = 0;
+    if(pointList.length > 0){
+        pointList.forEach(function (obj, i) {
+            if(obj.isActive){
+                points += obj.score;
+            }
+            maxScore += obj.score;
+        });
+    }
+
+    let percentage = Math.ceil(100*points/maxScore);
+    let levelProgress = points % levelCap;
+    let level = 1 + (points - (points % levelCap)) / levelCap;
+    if(levelProgress == 0  && level > 1){
+        levelProgress = 100;
+    }
+
+    return({
+        percentage: percentage,
+        levelProgress: levelProgress,
+        level: level,
+        points: points,
+        maxScore: maxScore
+    });
+}
 
 class AppContainer extends Component {
 
     constructor(props){
         super(props);
+
+        this.createList = this.createList.bind(this);
     }
 
     componentDidMount() {
@@ -33,17 +71,25 @@ class AppContainer extends Component {
         this.props.fetchPostbox();
     }
 
+    createList(){
+        let pointList = [];
+        pointList.push(createListItem("Bruker postboks",this.props.userHasPostbox,70));
+        pointList.push(createListItem("Registert epost",this.props.userHasEmail,20));
+        pointList.push(createListItem("Registrert telefon",this.props.userHasPhone,20));
+        pointList.push(createListItem("Bruker EID",this.props.userHasEid,90));
+        return pointList;
+    }
 
     render() {
         return (
             <div>
-                <NavigationBar/>
                 <div className="BodyDiv">
+                    <Row className="hr"><hr/></Row>
                     <Username
                         username={this.props.username}
                     />
                     <Row>
-                        <Col sm={6} lg={3} >
+                        <Col xs={12} sm={6} lg={3} >
                             <ContactInfoCard
                                 onSaveEmail={this.props.changeEmail}
                                 onSavePhone={this.props.changePhone}
@@ -51,19 +97,19 @@ class AppContainer extends Component {
                                 savedPhone={this.props.activeContactPhone}
                             />
                         </Col>
-                        <Col sm={6} lg={3}>
+                        <Col xs={12} sm={6} lg={3}>
                             <Mail
                                 onSetPostbox={this.props.setActivePostbox}
                                 postbox={this.props.activePostbox}
                             />
                         </Col>
-                        <Col sm={6} lg={3}>
+                        <Col xs={12} sm={6} lg={3}>
                             <EID
                                 userActiveEid={this.props.activeEid}
                                 userNonActiveEid={this.props.nonActiveEid}
                             />
                         </Col>
-                        <Col sm={6} lg={3} >
+                        <Col xs={12} sm={6} lg={3} >
                             <Reservation
                                 onSetReservation={this.props.setActiveReservation}
                                 onRemoveReservation={this.props.removeActiveReservation}
@@ -71,13 +117,9 @@ class AppContainer extends Component {
                             />
                         </Col>
                     </Row>
-                    <Gamification
-                        hasEmail={this.props.userHasEmail}
-                        hasPhone={this.props.userHasPhone}
-                        hasPostbox={this.props.userHasPostbox}
-                        hasEid={this.props.userHasEid}
-                    />
-                    <div className="pageheader"><h3>Aktivitetslogg</h3></div>
+                    <GamificationCard levelCap = {100} gameState = {calcGameState(this.createList())} pointList = {this.createList()}/>
+                    <Row className="hr"><hr/></Row>
+                    <div className="pageheader hideFromMobile"><h3>Aktivitetslogg</h3></div>
                     <Feed
                         ownActivity={this.props.recentUserActivity}
                         publicSectorActivity={this.props.recentPublicActivity}

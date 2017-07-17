@@ -39,7 +39,7 @@ class EID extends React.Component {
     render() {
         const listStyle = {
             paddingTop: '0px',
-            marginTop: '0px'
+            marginTop: '0px',
         }
         const fontColorStyle = {
             color: 'black'
@@ -82,7 +82,7 @@ class EID extends React.Component {
         };
 
         return (
-            <Card className="Card">
+            <Card className="Card" containerStyle={{backgroundColor: '#f4f8ec'}}>
                 <Row className="CardHeader">
                     <Col sm={3} lg={2} className="Icon">{<EidIcon />}</Col>
                     <Col sm={6} lg={7}><h4>eID</h4></Col>
@@ -218,8 +218,7 @@ class EID extends React.Component {
                         />
                     </List>
                 </Dialog>
-                <hr className="HLine"/>
-                <CardText style={listStyle}>
+                <CardText className="CardText" style={{height:'28em'}}>
                     <div className="DivoverMeny">
                         <Menu style={listStyle} className="meny" desktop={true}>
                             <div>Tjenester i bruk</div>
