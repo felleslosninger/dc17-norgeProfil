@@ -11,6 +11,10 @@
     TextField {
         font-size: 1em;
     }
+
+    .container {
+        width: 600px;
+    }
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
@@ -19,6 +23,11 @@
         font-size: 1.5em;
         font-stretch: expanded;
     }
+
+    h3{
+        font-size: 1.4em;
+    }
+
     h4 {
         font-size: medium;
         font-stretch: expanded;
@@ -39,6 +48,11 @@
         font-size: 1.9em;
         font-stretch: expanded;
     }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
     h4 {
         font-size: 1em;
     }
@@ -52,15 +66,16 @@
     }
 }
 
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-}
+@media(max-width:767px){
+    Appbar {
+        width: 100%;
+    }
 
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-    body {
-        margin: auto;
-        padding: auto;
+    h3{
+        font-size: 1.7em;
+    }
+    .hideFromMobile{
+        visibility: hidden;
     }
 }
 
@@ -78,9 +93,6 @@
     width: auto;
 }
 
-.Li {
-}
-
 .Li.Info {
     paddingTop: 0px;
     width: 620px;
@@ -96,24 +108,18 @@
     color: black;
 }
 
-.EditBtn {
-    position: absolute;
-    right: 3.2%;
-    bottom: 0;
-
-}
-
-.EditInfo {
-    margin-left: 1.5em;
-}
-
 .HLine {
     margin-right: 1em;
     margin-left: 1em;
 }
 
 .Icon {
-    margin-top: 40px;
+    /*margin-top: 40px;*/
+    margin-top: 2%;
+}
+
+.Feed {
+    margin-bottom: 3em;
 }
 
 .CardText{
@@ -125,23 +131,19 @@
     height: auto;
 }
 
-
 .CardPicture.Small{
     width: 48px;
     height: auto;
 }
 
-.Feed {
-    margin-bottom: 3em;
-}
-
-/**/
-
-
 .EditBtn {
     position: absolute;
     right: 3.2%;
     bottom: 0%;
+}
+
+.EditInfo {
+    margin-left: 1.5em;
 }
 
 .InfoBtn {
@@ -150,15 +152,6 @@
     top: 2%;
 }
 
-.EditInfo {
-    margin-left: 1.5em;
-}
-
-.Icon {
-    margin-top: 40px;
-}
-/**/
-
 
 .ToggleBtn {
     position: absolute;
@@ -166,19 +159,8 @@
     bottom: 0;
 }
 
-/*Styling modal*/
-.ReactModal-open {
-    overflow: hidden;
-}
-
 .ReservationBtn{
     text-align:center;
-}
-
-@media (min-width: 1200px) {
-    .container {
-        width: 600px;
-    }
 }
 
 .SaveBtn {
@@ -188,5 +170,7 @@
     margin: 1%;
 }
 
-
-
+/*Styling modal*/
+.ReactModal-open {
+    overflow: hidden;
+}
