@@ -3,11 +3,6 @@ body {
     height: 100%;
 }
 
-.BodyDiv {
-    margin-right: 7em;
-    margin-left: 7em;
-}
-
 #navbar {
     width: 100%;
 }
@@ -17,17 +12,79 @@ body {
     margin: 3em 0 1.5em 0;
 }
 
+/*Large desktops*/
+@media(min-width: 1193px){
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 45%;
+    }
+
+    .BodyDiv {
+        margin-right: 6em;
+        margin-left: 6em;
+    }
+}
+
+/*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
+@media (min-width: 992px ) and (max-width: 1192px) {
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 38%;
+    }
+    .BodyDiv {
+        margin-right: 5em;
+        margin-left: 5em;
+    }
+}
+
+/*Portrait tablets and small desktops eg. Ipad*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 35%;
+    }
+
+    .BodyDiv {
+        margin-right: 4em;
+        margin-left: 4em;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (min-width: 481px) and (max-width: 767px) {
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 30%;
+    }
+
+    .BodyDiv {
+        margin-right: 3em;
+        margin-left: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .LogInBtn{
+        position:fixed;
+        top: 50%;
+        left: 21%;
+    }
+
+    .BodyDiv {
+        margin-right: 2em;
+        margin-left: 2em;
+    }
+
+}
 
 .Icon {
     margin-top: 2%;
 }
 
-.LogInBtn {
-    position:fixed;
-    top: 50%;
-    left: 45%;
-
-}
 
 
 

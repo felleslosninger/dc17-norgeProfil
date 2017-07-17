@@ -14,11 +14,13 @@ class EnsureLoggedInContainer extends Component {
                                login = {this.props.login}
                                logout = {this.props.logout}
                     />
-                    <Login/>
+                    <Login isLoggedIn = {this.props.isLoggedIn}/>
                 </div>
             );
         }
-        return(this.props.children);
+        else{
+            return(this.props.children);
+        }
     }
 }
 

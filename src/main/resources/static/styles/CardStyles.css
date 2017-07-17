@@ -1,4 +1,3 @@
-
 /*Large desktops and laptops*/
 @media (min-width: 1192px) {
     p {
@@ -20,6 +19,11 @@
         font-size: 1.5em;
         font-stretch: expanded;
     }
+
+    h3{
+        font-size: 1.4em;
+    }
+
     h4 {
         font-size: medium;
         font-stretch: expanded;
@@ -40,6 +44,11 @@
         font-size: 1.9em;
         font-stretch: expanded;
     }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
     h4 {
         font-size: 1em;
     }
@@ -53,12 +62,13 @@
     }
 }
 
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
+@media(max-width:767px){
+    h3{
+        font-size: 1.7em;
+    }
+    .hideFromMobile{
+        visibility: hidden;
+    }
 }
 
 .Card {
@@ -68,14 +78,14 @@
     overflow-x: hidden;
 }
 
+.bodyDiv {
+    min-width: 30em;
+}
 .CardHeader {
     padding-top: 15px;
     margin-right: 1em;
     margin-left: 1em;
     width: auto;
-}
-
-.Li {
 }
 
 .Li.Info {
@@ -122,14 +132,13 @@
     height: auto;
 }
 
+.Feed {
+    margin-bottom: 3em;
+}
 
 .CardPicture.Small{
     width: 48px;
     height: auto;
-}
-
-.Feed {
-    margin-bottom: 3em;
 }
 
 /**/
