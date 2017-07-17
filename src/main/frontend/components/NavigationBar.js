@@ -25,7 +25,7 @@ class NavigationBar extends React.Component {
     render() {
         if (this.props.isLoggedIn) {
             return (
-                <div>
+                <div className="navigation">
                     <AppBar title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle}>
                         <Tabs>
                             <Tab label="Profil "/>
@@ -40,7 +40,7 @@ class NavigationBar extends React.Component {
             );
         } else {
             return (
-                <div>
+                <div className="navigation">
                     <AppBar title="Digital Borger" onLeftIconButtonTouchTap={this.handleToggle}>
                         <Tabs>
                             <Tab label="Logg inn" href="/login/idporten"/>
