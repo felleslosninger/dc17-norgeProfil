@@ -23,6 +23,7 @@ body {
     .BodyDiv {
         margin-right: 6em;
         margin-left: 6em;
+        min-width: 30em;
     }
 }
 
@@ -36,6 +37,7 @@ body {
     .BodyDiv {
         margin-right: 5em;
         margin-left: 5em;
+        min-width: 30em;
     }
 }
 
@@ -50,6 +52,7 @@ body {
     .BodyDiv {
         margin-right: 4em;
         margin-left: 4em;
+        min-width: 30em;
     }
 }
 
@@ -64,6 +67,7 @@ body {
     .BodyDiv {
         margin-right: 3em;
         margin-left: 3em;
+        min-width: 30em;
     }
 }
 
@@ -77,12 +81,9 @@ body {
     .BodyDiv {
         margin-right: 2em;
         margin-left: 2em;
+        min-width: 30em;
     }
 
-}
-
-.Icon {
-    margin-top: 2%;
 }
 
 
