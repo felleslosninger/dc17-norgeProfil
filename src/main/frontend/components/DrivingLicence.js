@@ -12,7 +12,7 @@ class DrivingLicence extends  React.Component {
     render(){
         return (
             <div>
-                <Card>
+                <Card className="Card">
                     <CardTitle title="Dine førerkort" />
                     <CardText>
                         <p>
