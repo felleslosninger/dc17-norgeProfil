@@ -12,8 +12,8 @@ class Teori extends  React.Component {
     render(){
         return (
             <div>
-                <Card>
-                        <CardTitle title="Teori"/>
+                <Card className="Card">
+                    <CardTitle title="Teori"/>
                     <CardText>
                         <p>
                         Hos de fleste førerkortklassene må du ta en teoriprøve for å få godkjent opplæringen. Før du tar

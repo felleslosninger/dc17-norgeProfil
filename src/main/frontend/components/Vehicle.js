@@ -10,7 +10,7 @@ class Vehicle extends  React.Component {
     render(){
         return (
             <div>
-                <Card>
+                <Card className="Card">
                     <CardTitle title="Dine kjøretøy" />
                     <CardText>
                         <p>

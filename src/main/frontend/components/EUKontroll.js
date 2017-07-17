@@ -10,7 +10,7 @@ class Vehicle extends  React.Component {
     render(){
         return (
             <div>
-                <Card>
+                <Card className="Card">
                     <CardTitle title="EU-kontroll" />
                     <CardText>
                         Når bilen har vært på EU-kontroll for første gang, fire år etter førstegangsregistrering, skal

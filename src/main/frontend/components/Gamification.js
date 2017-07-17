@@ -102,17 +102,17 @@ class Gamification extends React.Component {
         ];
         const viewBar = [];
         var checkBar = () => {
-            for(var i = 0; i < bar.length; i++) {
-                if(bar[i].props.value === 100) {
-                    viewBar.push(<Col key={i+1} xs={3}>{bar[i]}</Col>);
+                for(var i = 0; i < bar.length; i++) {
+                    if(bar[i].props.value === 100) {
+                        viewBar.push(<Col key={i+1} xs={3}>{bar[i]}</Col>);
+                    }
                 }
-            }
 
-            for(var i = 0; i < bar.length; i++) {
-                if(bar[i].props.value === 0) {
-                    viewBar.push(<Col key={i+1} xs={3}>{bar[i]}</Col>);
+                for(var i = 0; i < bar.length; i++) {
+                    if(bar[i].props.value === 0) {
+                        viewBar.push(<Col key={i+1} xs={3}>{bar[i]}</Col>);
+                    }
                 }
-            }
         };
 
         const viewList = [];
@@ -180,6 +180,7 @@ class Gamification extends React.Component {
                 <h3 className="pageheader">Styrke brukerprofil {overlay}</h3>
                 {viewBar}
                 {checkBar()}
+
             </div>
 
 

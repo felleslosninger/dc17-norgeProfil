@@ -61,30 +61,30 @@
         font-size: small;
     }
 
-    .CustomP{ /*Class to adapt place for letters in Ipad mode*/
+    .CustomP{ /*Class to adapt paragraph for letters in Ipad mode*/
         width: 30em;
     }
 }
 
 @media(max-width:767px){
-    Appbar {
-        width: 100%;
-    }
-
     h3{
         font-size: 1.7em;
     }
     .hideFromMobile{
         visibility: hidden;
     }
+
+    .EditBtn {
+        position: absolute;
+        right: 34.2%;
+        bottom: 0%;
+    }
+
+    .GamificationBar {
+        width: 25em;
+    }
 }
 
-.Card {
-    height: 25em;
-    width: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
 
 .CardHeader {
     background-color: #d1e6c4;
@@ -141,12 +141,6 @@
     height: auto;
 }
 
-.EditBtn {
-    position: absolute;
-    right: 3.2%;
-    bottom: 0%;
-}
-
 .EditInfo {
     margin-left: 1.5em;
 }
@@ -157,12 +151,12 @@
     top: 2%;
 }
 
-
-.ToggleBtn {
+.EditBtn {
     position: absolute;
-    left: 3.2%;
-    bottom: 0;
+    right: 3.2%;
+    bottom: 3%;
 }
+
 
 .ReservationBtn{
     text-align:center;
@@ -175,6 +169,14 @@
     margin: 1%;
 }
 
+.displayOnlyForReaders {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
 /*Styling modal*/
 .ReactModal-open {
     overflow: hidden;
