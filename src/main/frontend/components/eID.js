@@ -10,7 +10,6 @@ import Help from 'material-ui/svg-icons/action/help-outline';
 import CheckIcon from 'material-ui/svg-icons/action/check-circle';
 import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
 import EidIcon from 'material-ui/svg-icons/action/extension';
-import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
