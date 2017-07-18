@@ -54,19 +54,23 @@ class EID extends React.Component {
             />,
         ];
 
+
         const activeList = [];
+        let ids = [];
         let idsUsed = '';
-        let minidUsed = false;
         let checkActive = () => {
             for (let i = 0; i < this.props.userActiveEid.length; i++) {
-                if (this.props.userActiveEid[i][1].indexOf('MinID') >= 0 && !minidUsed) {
+                if (this.props.userActiveEid[i][1].indexOf('MinID') >= 0) {
                     idsUsed = 'MinID';
-                    minidUsed = true;
+                    if (ids.indexOf("MinID") > -1) {
+                        continue;
+                    }
                 } else if (this.props.userActiveEid[i][1] === 'Federated' || this.props.userActiveEid[i][1] === 'eIDAS') {
                     continue;
                 } else {
-                    idsUsed = this.props.userActiveEid[i][1];
+                    idsUsed = this.props.userActiveEid[i][1].toString();
                 }
+                ids.push(idsUsed);
                 activeList.push(
                     <MenuItem style={fontColorStyle}
                               key={i + 1}
@@ -82,16 +86,17 @@ class EID extends React.Component {
         let checkNonActive = () => {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
                 if (this.props.userNonActiveEid[i].value != 'Unknown') {
-                    if (this.props.userNonActiveEid[i].value.indexOf('MinID') >= 0 && minidUsed) {
+                    if (this.props.userNonActiveEid[i].value.indexOf('MinID') >= 0) {
                         idsNot = 'MinID';
-                        minidUsed = true;
-                        continue;
+                        if (ids.indexOf("MinID") > -1) {
+                            continue;
+                        }
                     } else if (this.props.userNonActiveEid[i].value === 'Federated' || this.props.userNonActiveEid[i].value === 'eIDAS') {
                         continue;
                     } else {
-                        idsNot = this.props.userNonActiveEid[i].value;
+                        idsNot = this.props.userNonActiveEid[i].value.toString();
                     }
-
+                    ids.push(idsNot);
                     nonActiveList.push(
                         <MenuItem style={fontColorStyle}
                                   key={i + 5}
