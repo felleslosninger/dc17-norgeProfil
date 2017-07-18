@@ -27,8 +27,6 @@ class GamificationCard extends Component {
         return(
             <div className="gamification">
                 <Card>
-                    <Row className="pageheader"><h3>Ditt nivå</h3>
-                    </Row>
                     <div className = "ProgressCircle">
                         <Progress
                             width = {200}
