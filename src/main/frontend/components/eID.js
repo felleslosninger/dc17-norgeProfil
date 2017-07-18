@@ -36,6 +36,7 @@ class EID extends React.Component {
         this.setState({open: false});
     };
 
+
     render() {
         const listStyle = {
             paddingTop: '0px',
@@ -54,12 +55,23 @@ class EID extends React.Component {
         ];
 
         const activeList = [];
+        let idsUsed = '';
+        let minidUsed = false;
         let checkActive = () => {
             for (let i = 0; i < this.props.userActiveEid.length; i++) {
+                console.log(this.props.userActiveEid[i][1].indexOf('MinID'))
+                if (this.props.userActiveEid[i][1].indexOf('MinID') >= 0 && !minidUsed) {
+                    idsUsed = 'MinID';
+                    minidUsed = true;
+                } else if (this.props.userActiveEid[i][1] === 'Federated' || this.props.userActiveEid[i][1] === 'eIDAS') {
+                    continue;
+                } else {
+                    idsUsed = this.props.userActiveEid[i][1];
+                }
                 activeList.push(
                     <MenuItem style={fontColorStyle}
                               key={i + 1}
-                              primaryText={this.props.userActiveEid[i][1]}
+                              primaryText={idsUsed}
                               leftIcon={<CheckIcon/>}
                               disabled={true}/>
                 );
@@ -67,13 +79,25 @@ class EID extends React.Component {
         };
 
         const nonActiveList = [];
+        let idsNot = '';
         let checkNonActive = () => {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
+                console.log(this.props.userNonActiveEid[i].value, this.props.userNonActiveEid[i].value.indexOf('MinID'), minidUsed)
                 if (this.props.userNonActiveEid[i].value != 'Unknown') {
+                    if (this.props.userNonActiveEid[i].value.indexOf('MinID') >= 0 && minidUsed) {
+                        idsNot = 'MinID';
+                        minidUsed = true;
+                        continue;
+                    } else if (this.props.userNonActiveEid[i].value === 'Federated' || this.props.userNonActiveEid[i].value === 'eIDAS') {
+                        continue;
+                    } else {
+                        idsNot = this.props.userNonActiveEid[i].value;
+                    }
+
                     nonActiveList.push(
                         <MenuItem style={fontColorStyle}
                                   key={i + 5}
-                                  primaryText={this.props.userNonActiveEid[i].value}
+                                  primaryText={idsNot}
                                   leftIcon={<CancelIcon/>}
                                   disabled={true}/>
                     );
