@@ -4,13 +4,13 @@ var Col = require('react-bootstrap/lib/Col');
 
 import React, {Component} from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import NavigationBar from '../components/NavigationBar.js';
 import ContactInfoCard from '../components/ContactInfoCard';
 import EID from '../components/eID';
 import Reservation from '../components/Reservation';
 import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
+import FacebookShare from '../components/FacebookShare';
 import { connect } from "react-redux";
 import { fetchUnusedAuthTypes, fetchPostbox, fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 import GamificationCard from '../components/GamificationCard';
@@ -120,6 +120,9 @@ class AppContainer extends Component {
                     <Row className="hr"><hr/></Row>
                     <div className="pageheader hideFromMobile"><h3>Din aktivitet</h3></div>
                     <GamificationCard levelCap = {100} gameState = {calcGameState(this.createList())} pointList = {this.createList()}/>
+                    <FacebookShare
+                        score={calcGameState(this.createList())}
+                    />
                     <Row className="hr"><hr/></Row>
                     <div className="pageheader hideFromMobile"><h3>Aktivitetslogg</h3></div>
                     <Feed
