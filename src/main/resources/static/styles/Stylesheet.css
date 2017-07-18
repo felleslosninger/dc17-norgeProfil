@@ -7,23 +7,12 @@ body {
     width: 100%;
 }
 
-.pageheader {
-    margin: 0 0 0.5em 0;
-    background-color: #EBEBEB;
-    padding: 0.3em;
-    min-height: 2.5em;
-}
-
 .Icon {
     margin-top: 2%;
     margin-left: 1em;
 }
 
 
-.Nav {
-    padding: 3em 7em 3em 7em;
-    margin-bottom: 2em;
-}
 
 .hr {
     margin: 2.2em 0.3em 0 0.3em;
@@ -62,6 +51,15 @@ body {
 
 /*Large desktops*/
 @media (min-width: 1193px) {
+    h1{
+        background-color: #EBEBEB;
+    }
+
+    .Nav {
+        padding: 3em 7em 3em 7em;
+        margin-bottom: 2em;
+    }
+
     .LogInBtn {
         position: fixed;
         top: 50%;
@@ -81,6 +79,14 @@ body {
         overflow-y: auto;
         overflow-x: hidden;
     }
+
+    .pageheader {
+        margin: 0 0 0.5em 0;
+        background-color: #EBEBEB;
+        padding: 0.3em;
+        min-height: 2.5em;
+    }
+
 }
 
 .gameLog {
@@ -90,6 +96,14 @@ body {
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
 @media (min-width: 992px ) and (max-width: 1192px) {
+    h1{
+        background-color: #EBEBEB;
+    }
+    .Nav {
+        padding: 3em 7em 3em 7em;
+        margin-bottom: 2em;
+    }
+
     .LogInBtn {
         position: fixed;
         top: 50%;
@@ -109,10 +123,26 @@ body {
         overflow-y: auto;
         overflow-x: hidden;
     }
+
+    .pageheader {
+        margin: 0 0 0.5em 0;
+        background-color: #EBEBEB;
+        padding: 0.3em;
+        min-height: 2.5em;
+    }
+
 }
 
 /*Portrait tablets and small desktops eg. Ipad*/
 @media (min-width: 768px) and (max-width: 991px) {
+    h1{
+        background-color: #EBEBEB;
+    }
+    .Nav {
+        padding: 3em 7em 3em 7em;
+        margin-bottom: 2em;
+    }
+
     .LogInBtn {
         position: fixed;
         top: 50%;
@@ -132,6 +162,15 @@ body {
         overflow-x: hidden;
     }
 
+    .pageheader {
+        margin: 0 0 0.5em 0;
+        background-color: #EBEBEB;
+        padding: 0.3em;
+        min-height: 2.5em;
+        width: 47em;
+    }
+
+
 }
 
 /* Portrait phones and smaller */
@@ -139,6 +178,12 @@ body {
 /* landscape phones */
 
 @media (min-width: 481px) and (max-width: 767px) {
+    .Nav {
+        padding: 3em 7em 3em 7em;
+        margin-bottom: 2em;
+        width: 4em;
+    }
+
     .LogInBtn{
         position:fixed;
         top: 50%;
@@ -150,10 +195,29 @@ body {
         margin-left: 3em;
         min-width: 30em;
     }
+
+    .pageheader {
+        margin: 0 0 0.5em 0;
+        background-color: #EBEBEB;
+        padding: 0.3em;
+        min-height: 2.5em;
+        width: 30em;
+    }
+
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
+    h1{
+        background-color: #EBEBEB;
+    }
+
+    .Nav {
+        padding: 3em 7em 3em 7em;
+        margin-bottom: 2em;
+        width: 2em;
+    }
+
     .LogInBtn{
         position:fixed;
         top: 50%;
@@ -168,9 +232,19 @@ body {
 
     .Card {
         height: 25em;
-        width: 23em;
+        width: 30em;
+        width: 30em;
         overflow-y: auto;
         overflow-x: hidden;
     }
+
+    .pageheader {
+        margin: 0 0 0.5em 0;
+        background-color: #EBEBEB;
+        padding: 0.3em;
+        min-height: 2.5em;
+        width: 30em;
+    }
+
 }
 
