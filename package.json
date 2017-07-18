@@ -12,6 +12,7 @@
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
+    "react-facebook": "^4.0.14",
     "react-material-icons": "^1.0.2",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
