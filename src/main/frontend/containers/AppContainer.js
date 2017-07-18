@@ -120,7 +120,9 @@ class AppContainer extends Component {
                     <Row className="hr"><hr/></Row>
                     <div className="pageheader hideFromMobile"><h3>Din aktivitet</h3></div>
                     <GamificationCard levelCap = {100} gameState = {calcGameState(this.createList())} pointList = {this.createList()}/>
-                    <FacebookShare/>
+                    <FacebookShare
+                        score={calcGameState(this.createList())}
+                    />
                     <Row className="hr"><hr/></Row>
                     <div className="pageheader hideFromMobile"><h3>Aktivitetslogg</h3></div>
                     <Feed
