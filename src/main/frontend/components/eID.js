@@ -59,7 +59,6 @@ class EID extends React.Component {
         let minidUsed = false;
         let checkActive = () => {
             for (let i = 0; i < this.props.userActiveEid.length; i++) {
-                console.log(this.props.userActiveEid[i][1].indexOf('MinID'))
                 if (this.props.userActiveEid[i][1].indexOf('MinID') >= 0 && !minidUsed) {
                     idsUsed = 'MinID';
                     minidUsed = true;
@@ -82,7 +81,6 @@ class EID extends React.Component {
         let idsNot = '';
         let checkNonActive = () => {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
-                console.log(this.props.userNonActiveEid[i].value, this.props.userNonActiveEid[i].value.indexOf('MinID'), minidUsed)
                 if (this.props.userNonActiveEid[i].value != 'Unknown') {
                     if (this.props.userNonActiveEid[i].value.indexOf('MinID') >= 0 && minidUsed) {
                         idsNot = 'MinID';
@@ -242,7 +240,7 @@ class EID extends React.Component {
                         />
                     </List>
                 </Dialog>
-                <CardText className="CardText" style={{height:'28em'}}>
+                <CardText className="CardText" style={{height:'19.5em'}}>
                     <div className="DivoverMeny">
                         <Menu style={listStyle} className="meny" desktop={true}>
                             <div>Tjenester i bruk</div>
