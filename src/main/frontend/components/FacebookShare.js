@@ -11,7 +11,7 @@ class FacebookShare extends Component {
         return (
             <FacebookProvider appId="1590974227639289">
                 <Share href="http://www.norge.no" hashtag="#DigitalBorger" quote={quote}>
-                    <button type="button">Share</button>
+                    <button className="btn-facebook" type="button"><img src="img/fb.png" height={15}/> Del</button>
                 </Share>
             </FacebookProvider>
         );

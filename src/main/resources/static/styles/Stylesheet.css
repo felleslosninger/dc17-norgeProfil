@@ -29,6 +29,37 @@ body {
     margin: 2.2em 0.3em 0 0.3em;
 }
 
+/*Share on Facebook btn*/
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    line-height: 22px;
+    border: 1px solid;
+    border-radius: 2px;
+    box-sizing: content-box;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 8px;
+    text-align: center;
+    text-shadow: none;
+    vertical-align: middle;
+
+    right: 7%;
+    margin-top: 1%;
+    position: absolute;
+}
+
+/*.btn-facebook:hover {*/
+    /*color: #fff;*/
+    /*background-color: #3b5998;*/
+/*}*/
+/*.btn-facebook:focus {*/
+    /*color: #fff;*/
+/*}*/
+
+
 /*Large desktops*/
 @media (min-width: 1193px) {
     .LogInBtn {
