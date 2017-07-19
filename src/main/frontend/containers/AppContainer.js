@@ -41,6 +41,10 @@ const calcGameState = (pointList) => {
     if(levelProgress == 0  && level > 1){
         levelProgress = 100;
     }
+    if(points < 0){
+        points = 0;
+        level = 1;
+    }
 
     return({
         percentage: percentage,
@@ -76,6 +80,7 @@ class AppContainer extends Component {
         pointList.push(createListItem("Registert e-post",this.props.userHasEmail,20));
         pointList.push(createListItem("Registrert mobilnummer",this.props.userHasPhone,20));
         pointList.push(createListItem("Bruker EID",this.props.userHasEid,90));
+        pointList.push(createListItem("Ikke reservert",!this.props.activeReservation,100));
         return pointList;
     }
 
@@ -148,6 +153,12 @@ const mapStateToProps = state => {
     userHasPostbox = activePostbox !== '';
 
     userHasEid = activeEid.length > 0;
+
+    if (activeReservation == 'NEI'){
+        activeReservation = false;
+    } else{
+        activeReservation = true;
+    }
 
     return {
         username: username,
