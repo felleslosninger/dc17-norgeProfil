@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,} from 'material-ui/Table';
 import Cancel from 'material-ui/svg-icons/navigation/cancel';
 import ActionCheckCircle from 'material-ui/svg-icons/action/check-circle';
-
+import {green600, red600} from 'material-ui/styles/colors';
 
 class GameLog extends Component{
 
@@ -15,25 +15,34 @@ class GameLog extends Component{
         let logList = [];
         this.props.pointList.forEach(function (obj, i) {
             let Icon = Cancel;
+            let color = red600;
             if(obj.isActive){
                 Icon = ActionCheckCircle;
+                color = green600;
             }
             const item =
                 <TableRow key  = {i}>
-                    <TableRowColumn>{obj.description}</TableRowColumn>
-                    <TableRowColumn>{obj.score}</TableRowColumn>
-                    <TableRowColumn><Icon/></TableRowColumn>
-                </TableRow>;logList.push(item);
+                    <TableRowColumn style={{width: '25%'}}>{obj.description}</TableRowColumn>
+                    <TableRowColumn style={{width: '7%'}}>{obj.score}</TableRowColumn>
+                    <TableRowColumn style={{width: '7%'}}><Icon color={color}/></TableRowColumn>
+                </TableRow>;
+
+            if (obj.isActive) {
+                logList.unshift(item);
+            } else {
+                logList.push(item);
+            }
+
         });
 
         return(
             <div className="gameLog">
-                <Table selectable = {false}>
+                <Table style={{width: '95%'}} selectable = {false}>
                     <TableHeader adjustForCheckbox = {false} displaySelectAll = {false}>
-                        <TableRow>
-                            <TableHeaderColumn>Beskrivelse</TableHeaderColumn>
-                            <TableHeaderColumn>Poeng</TableHeaderColumn>
-                            <TableHeaderColumn>Status</TableHeaderColumn>
+                        <TableRow displayBorder={false}>
+                            <TableHeaderColumn style={{width: '25%'}}>Beskrivelse</TableHeaderColumn>
+                            <TableHeaderColumn style={{width: '7%'}}>Poeng</TableHeaderColumn>
+                            <TableHeaderColumn style={{width: '7%'}}>Status</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox = {false}>
