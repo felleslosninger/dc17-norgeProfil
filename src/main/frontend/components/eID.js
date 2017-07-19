@@ -10,7 +10,6 @@ import Help from 'material-ui/svg-icons/action/help-outline';
 import CheckIcon from 'material-ui/svg-icons/action/check-circle';
 import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
 import EidIcon from 'material-ui/svg-icons/action/extension';
-import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
@@ -36,6 +35,7 @@ class EID extends React.Component {
         this.setState({open: false});
     };
 
+
     render() {
         const listStyle = {
             paddingTop: '0px',
@@ -53,13 +53,27 @@ class EID extends React.Component {
             />,
         ];
 
+
         const activeList = [];
+        let ids = [];
+        let idsUsed = '';
         let checkActive = () => {
             for (let i = 0; i < this.props.userActiveEid.length; i++) {
+                if (this.props.userActiveEid[i][1].indexOf('MinID') >= 0) {
+                    idsUsed = 'MinID';
+                    if (ids.indexOf("MinID") > -1) {
+                        continue;
+                    }
+                } else if (this.props.userActiveEid[i][1] === 'Federated' || this.props.userActiveEid[i][1] === 'eIDAS') {
+                    continue;
+                } else {
+                    idsUsed = this.props.userActiveEid[i][1].toString();
+                }
+                ids.push(idsUsed);
                 activeList.push(
                     <MenuItem style={fontColorStyle}
                               key={i + 1}
-                              primaryText={this.props.userActiveEid[i][1]}
+                              primaryText={idsUsed}
                               leftIcon={<CheckIcon/>}
                               disabled={true}/>
                 );
@@ -67,13 +81,25 @@ class EID extends React.Component {
         };
 
         const nonActiveList = [];
+        let idsNot = '';
         let checkNonActive = () => {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
                 if (this.props.userNonActiveEid[i].value != 'Unknown') {
+                    if (this.props.userNonActiveEid[i].value.indexOf('MinID') >= 0) {
+                        idsNot = 'MinID';
+                        if (ids.indexOf("MinID") > -1) {
+                            continue;
+                        }
+                    } else if (this.props.userNonActiveEid[i].value === 'Federated' || this.props.userNonActiveEid[i].value === 'eIDAS') {
+                        continue;
+                    } else {
+                        idsNot = this.props.userNonActiveEid[i].value.toString();
+                    }
+                    ids.push(idsNot);
                     nonActiveList.push(
                         <MenuItem style={fontColorStyle}
                                   key={i + 5}
-                                  primaryText={this.props.userNonActiveEid[i].value}
+                                  primaryText={idsNot}
                                   leftIcon={<CancelIcon/>}
                                   disabled={true}/>
                     );
@@ -218,7 +244,7 @@ class EID extends React.Component {
                         />
                     </List>
                 </Dialog>
-                <CardText className="CardText" style={{height:'28em'}}>
+                <CardText className="CardText" style={{height:'19.5em'}}>
                     <div className="DivoverMeny">
                         <Menu style={listStyle} className="meny" desktop={true}>
                             <div>Tjenester i bruk</div>
