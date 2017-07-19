@@ -20,20 +20,20 @@ class GameLog extends Component{
             }
             const item =
                 <TableRow key  = {i}>
-                    <TableRowColumn>{obj.description}</TableRowColumn>
-                    <TableRowColumn>{obj.score}</TableRowColumn>
-                    <TableRowColumn><Icon/></TableRowColumn>
+                    <TableRowColumn style={{width: '25%'}}>{obj.description}</TableRowColumn>
+                    <TableRowColumn style={{width: '7%'}}>{obj.score}</TableRowColumn>
+                    <TableRowColumn style={{width: '7%'}}><Icon/></TableRowColumn>
                 </TableRow>;logList.push(item);
         });
 
         return(
             <div className="gameLog">
-                <Table selectable = {false}>
+                <Table style={{width: '95%'}} selectable = {false}>
                     <TableHeader adjustForCheckbox = {false} displaySelectAll = {false}>
                         <TableRow displayBorder={false}>
-                            <TableHeaderColumn>Beskrivelse</TableHeaderColumn>
-                            <TableHeaderColumn>Poeng</TableHeaderColumn>
-                            <TableHeaderColumn>Status</TableHeaderColumn>
+                            <TableHeaderColumn style={{width: '25%'}}>Beskrivelse</TableHeaderColumn>
+                            <TableHeaderColumn style={{width: '7%'}}>Poeng</TableHeaderColumn>
+                            <TableHeaderColumn style={{width: '7%'}}>Status</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox = {false}>

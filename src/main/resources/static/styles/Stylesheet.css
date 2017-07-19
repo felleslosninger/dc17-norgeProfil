@@ -51,13 +51,6 @@ body {
     position: absolute;
 }
 
-/*.btn-facebook:hover {*/
-    /*color: #fff;*/
-    /*background-color: #3b5998;*/
-/*}*/
-/*.btn-facebook:focus {*/
-    /*color: #fff;*/
-/*}*/
 
 
 /*Large desktops*/
@@ -91,6 +84,11 @@ body {
 
 .gamificationContainer {
     padding: 1em;
+}
+
+.ProgressBar {
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
