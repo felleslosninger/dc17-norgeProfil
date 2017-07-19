@@ -79,7 +79,7 @@ class AppContainer extends Component {
         pointList.push(createListItem("Valgt postkasse",this.props.userHasPostbox,70));
         pointList.push(createListItem("Registert e-post",this.props.userHasEmail,20));
         pointList.push(createListItem("Registrert mobilnummer",this.props.userHasPhone,20));
-        pointList.push(createListItem("Bruker EID",this.props.userHasEid,90));
+        pointList.push(createListItem("Bruker eID",this.props.userHasEid,90));
         pointList.push(createListItem("Ikke reservert",!this.props.activeReservation,100));
         return pointList;
     }
