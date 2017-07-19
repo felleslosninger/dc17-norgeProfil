@@ -3,10 +3,6 @@ body {
     height: 100%;
 }
 
-#navbar {
-    width: 100%;
-}
-
 .pageheader {
     margin: 0 0 0.5em 0;
     background-color: #EBEBEB;
@@ -28,6 +24,29 @@ body {
 .hr {
     margin: 2.2em 0.3em 0 0.3em;
 }
+
+/*Share on Facebook btn*/
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    line-height: 22px;
+    border: 1px solid;
+    border-radius: 2px;
+    box-sizing: content-box;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 8px;
+    text-align: center;
+    text-shadow: none;
+    vertical-align: middle;
+    position: absolute;
+    right: 1.8%;
+    bottom: 3.2%;
+}
+
+
 
 /*Large desktops*/
 @media (min-width: 1193px) {
@@ -52,13 +71,20 @@ body {
     }
 }
 
-.gamification {
-     margin-top: 50px;
-}
-
 .gameLog {
     text-align: center;
     margin: auto;
+    width: 60%;
+}
+
+.gamificationContainer {
+    padding: 1em;
+    position: relative;
+}
+
+.ProgressBar {
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
@@ -106,8 +132,6 @@ body {
     }
 
 }
-
-/* Portrait phones and smaller */
 
 /* landscape phones */
 

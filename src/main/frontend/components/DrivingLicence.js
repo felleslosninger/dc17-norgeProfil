@@ -1,12 +1,7 @@
-/**
- * Created by camp-cms on 12.07.2017.
- */
-
 import React from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions,CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-var Row = require('react-bootstrap/lib/Row');
-var Col = require('react-bootstrap/lib/Col');
+
 
 class DrivingLicence extends  React.Component {
     render(){

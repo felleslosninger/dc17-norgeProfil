@@ -5,7 +5,7 @@ import AppContainer from '../containers/AppContainer';
 
 import HealthContainer from '../containers/HealthContainer';
 import NavBarContainer from '../containers/NavBarContainer';
-import Traffic from '../containers/Traffic';
+import Traffic from '../containers/TrafficContainer';
 import {Provider} from "react-redux";
 import EnsureLoggedInContainer from'../containers/EnsureLoggedInContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
