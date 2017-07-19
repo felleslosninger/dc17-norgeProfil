@@ -1,0 +1,24 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:fdc:difi.no:2017:trafikk:v1"
+           targetNamespace="urn:fdc:difi.no:2017:trafikk:v1"
+           elementFormDefault="qualified">
+
+    <xs:element name="Trafikk" type="TrafikkKort"/>
+
+    <xs:complexType name="TrafikkKort">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="Førerkort" type="Card" maxOccurs="unbounded"/>
+            <xs:element name="TrafikkOpplæring" type="Card" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Card">
+        <xs:sequence>
+            <xs:element name="header" type="xs:normalizedString"/>
+            <xs:element name="actor" type="xs:normalizedString" minOccurs="0"/>
+            <xs:element name="describtion" type="xs:token"/>
+            <xs:element name="lenke" type="xs:normalizedString" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
