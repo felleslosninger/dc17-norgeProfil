@@ -8,12 +8,9 @@ import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoT
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.filter.OAuth2ClientAuthenticationProcessingFilter;
@@ -28,107 +25,110 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.Filter;
+import javax.xml.bind.JAXBException;
+import javax.xml.transform.TransformerException;
 import java.security.Principal;
 import java.util.Arrays;
+
 
 @SpringBootApplication
 @RestController
 @EnableOAuth2Client
 public class NorgeProfilApplication extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	OAuth2ClientContext oauth2ClientContext;
+    @Autowired
+    private OAuth2ClientContext oauth2ClientContext;
 
-	@RequestMapping("/user")
-	public Principal user(Principal principal) {
-		return principal;
-	}
+    @RequestMapping("/user")
+    public Principal user(Principal principal) {
+        return principal;
+    }
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .antMatcher("/**").authorizeRequests()
+                .antMatchers("/", "/login**", "/webjars/**", "/built/**", "/img/**", "/styles/**", "/user", "/data/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))
+                .and()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").permitAll()
+                .and()
+                .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                .and()
+                .addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
+    }
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-				.antMatcher("/**").authorizeRequests()
-				.antMatchers("/", "/login**", "/webjars/**", "/built/**", "/img/**", "/styles/**","/user").permitAll()
-				.anyRequest().authenticated()
-				.and()
-				.exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))
-				.and()
-				.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").permitAll()
-				.and()
-				.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-				.and()
-				.addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
-	}
-
-	public static void main(String[] args) {
-		System.setProperty("javax.net.ssl.trustStoreType", "Windows-ROOT");
-		SpringApplication.run(NorgeProfilApplication.class, args);
-	}
-
-	@Bean
-	public FilterRegistrationBean oauth2ClientFilterRegistration(OAuth2ClientContextFilter filter) {
-		FilterRegistrationBean registration = new FilterRegistrationBean();
-		registration.setFilter(filter);
-		registration.setOrder(-100);
-		return registration;
-	}
+    public static void main(String[] args) throws TransformerException, JAXBException {
+        System.setProperty("javax.net.ssl.trustStoreType", "Windows-ROOT");
+        SpringApplication.run(NorgeProfilApplication.class, args);
+    }
 
 
-	private Filter ssoFilter() {
-		OAuth2ClientAuthenticationProcessingFilter idportenFilter =
-				new OAuth2ClientAuthenticationProcessingFilter("/login/idporten");
+    @Bean
+    public FilterRegistrationBean oauth2ClientFilterRegistration(OAuth2ClientContextFilter filter) {
+        FilterRegistrationBean registration = new FilterRegistrationBean();
+        registration.setFilter(filter);
+        registration.setOrder(-100);
+        return registration;
+    }
 
-		// Log inn user
-		OAuth2RestTemplate idportenTemplate = new OAuth2RestTemplate(idporten(), oauth2ClientContext);
-		idportenFilter.setRestTemplate(idportenTemplate);
 
-		// Obtain user details from userInfo endpoint
-		OAuth2RestTemplate idportenResourceTemplate = new OAuth2RestTemplate(idporten(), oauth2ClientContext);
-		UserInfoTokenServices tokenServices = new UserInfoTokenServices(idportenResource().getUserInfoUri(), idporten().getClientId()); //TODO: Lag egen service som henter data fra OIDC
-		tokenServices.setPrincipalExtractor(map -> new IDPortenUserDetails("Difi Camp 2017", "dc2017@example.com")); // Return user object
-		tokenServices.setAuthoritiesExtractor(map -> Arrays.asList(new SimpleGrantedAuthority("ROLE_DC"))); // Tildel rettigheter
-		//tokenServices.setRestTemplate(idportenTemplate);
-		idportenFilter.setTokenServices(tokenServices);
-		return idportenFilter;
-	}
+    private Filter ssoFilter() {
+        OAuth2ClientAuthenticationProcessingFilter idportenFilter =
+                new OAuth2ClientAuthenticationProcessingFilter("/login/idporten");
 
-	@Bean
-	@ConfigurationProperties("idporten.client")
-	public AuthorizationCodeResourceDetails idporten() {
-		return new AuthorizationCodeResourceDetails();
-	}
+        // Log inn user
+        OAuth2RestTemplate idportenTemplate = new OAuth2RestTemplate(idporten(), oauth2ClientContext);
+        idportenFilter.setRestTemplate(idportenTemplate);
 
-	@Bean
-	@ConfigurationProperties("idporten.resource")
-	public ResourceServerProperties idportenResource() {
-		return new ResourceServerProperties();
-	}
+        // Obtain user details from userInfo endpoint
+        OAuth2RestTemplate idportenResourceTemplate = new OAuth2RestTemplate(idporten(), oauth2ClientContext);
+        UserInfoTokenServices tokenServices = new UserInfoTokenServices(idportenResource().getUserInfoUri(), idporten().getClientId()); //TODO: Lag egen service som henter data fra OIDC
+        tokenServices.setPrincipalExtractor(map -> new IDPortenUserDetails("Difi Camp 2017", "dc2017@example.com")); // Return user object
+        tokenServices.setAuthoritiesExtractor(map -> Arrays.asList(new SimpleGrantedAuthority("ROLE_DC"))); // Tildel rettigheter
+        //tokenServices.setRestTemplate(idportenTemplate);
+        idportenFilter.setTokenServices(tokenServices);
+        return idportenFilter;
+    }
 
-	public class IDPortenUserDetails {
-		private String name;
-		private String email;
+    @Bean
+    @ConfigurationProperties("idporten.client")
+    public AuthorizationCodeResourceDetails idporten() {
+        return new AuthorizationCodeResourceDetails();
+    }
 
-		public IDPortenUserDetails(String name, String email) {
-			this.name = name;
-			this.email = email;
-		}
+    @Bean
+    @ConfigurationProperties("idporten.resource")
+    public ResourceServerProperties idportenResource() {
+        return new ResourceServerProperties();
+    }
 
-		public String getName() {
-			return name;
-		}
+    public class IDPortenUserDetails {
+        private String name;
+        private String email;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+        public IDPortenUserDetails(String name, String email) {
+            this.name = name;
+            this.email = email;
+        }
 
-		public String getEmail() {
-			return email;
-		}
+        public String getName() {
+            return name;
+        }
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
-	}
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+    }
 
 }
