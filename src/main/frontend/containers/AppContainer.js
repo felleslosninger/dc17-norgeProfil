@@ -10,7 +10,6 @@ import Reservation from '../components/Reservation';
 import Mail from '../components/Mail.js';
 import Username from '../components/Username.js';
 import Feed from '../components/Feed.js';
-import FacebookShare from '../components/FacebookShare';
 import { connect } from "react-redux";
 import { fetchUnusedAuthTypes, fetchPostbox, fetchMostUsedAuthTypes, fetchContactInfo, fetchRecentActivity, fetchRecentPublicActivity, fetchUsedServices, saveContactEmail, saveContactPhone, setReservation, removeReservation, setPostbox } from '../utilities/actions';
 import GamificationCard from '../components/GamificationCard';
@@ -77,9 +76,9 @@ class AppContainer extends Component {
 
     createList(){
         let pointList = [];
-        pointList.push(createListItem("Bruker postboks",this.props.userHasPostbox,70));
-        pointList.push(createListItem("Registert epost",this.props.userHasEmail,20));
-        pointList.push(createListItem("Registrert telefon",this.props.userHasPhone,20));
+        pointList.push(createListItem("Valgt postkasse",this.props.userHasPostbox,70));
+        pointList.push(createListItem("Registert e-post",this.props.userHasEmail,20));
+        pointList.push(createListItem("Registrert mobilnummer",this.props.userHasPhone,20));
         pointList.push(createListItem("Bruker EID",this.props.userHasEid,90));
         pointList.push(createListItem("Ikke reservert",!this.props.activeReservation,100));
         return pointList;
@@ -123,11 +122,8 @@ class AppContainer extends Component {
                         </Col>
                     </Row>
                     <Row className="hr"><hr/></Row>
-                    <div className="pageheader hideFromMobile"><h3>Din aktivitet</h3></div>
+                    <div className="pageheader hideFromMobile"><h3>Din profilstyrke</h3></div>
                     <GamificationCard levelCap = {100} gameState = {calcGameState(this.createList())} pointList = {this.createList()}/>
-                    <FacebookShare
-                        score={calcGameState(this.createList())}
-                    />
                     <Row className="hr"><hr/></Row>
                     <div className="pageheader hideFromMobile"><h3>Aktivitetslogg</h3></div>
                     <Feed

@@ -23,9 +23,6 @@ class HealthComponents extends React.Component {
         let YourDoctor = (
             <Card className="CardHeader">
                 <Row className="CardHeader">
-                    {/*<Col sm={3} lg={2} className="Icon">*/}
-                    {/**/}
-                    {/*</Col>*/}
                     <Col sm={6} lg={7}><h4>Din fastlege: </h4> Ola Nordmann</Col>
                 </Row>
             </Card>

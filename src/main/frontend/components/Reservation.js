@@ -102,6 +102,7 @@ class Reservation extends React.Component {
                         <Col sm={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
                         <Col sm={6} lg={7}><h4>Reservasjon</h4></Col>
                         <Help onClick={this.handleOpen} className="InfoBtn" />
+
                     </Row>
                     <Dialog
                         title="Brev fra stat og kommune"

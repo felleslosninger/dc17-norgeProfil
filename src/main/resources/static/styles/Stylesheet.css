@@ -3,10 +3,6 @@ body {
     height: 100%;
 }
 
-#navbar {
-    width: 100%;
-}
-
 .pageheader {
     margin: 0 0 0.5em 0;
     background-color: #EBEBEB;
@@ -45,10 +41,9 @@ body {
     text-align: center;
     text-shadow: none;
     vertical-align: middle;
-
-    right: 7%;
-    margin-top: 1%;
     position: absolute;
+    right: 1.8%;
+    bottom: 3.2%;
 }
 
 
@@ -84,6 +79,7 @@ body {
 
 .gamificationContainer {
     padding: 1em;
+    position: relative;
 }
 
 .ProgressBar {
@@ -136,8 +132,6 @@ body {
     }
 
 }
-
-/* Portrait phones and smaller */
 
 /* landscape phones */
 
