@@ -32,7 +32,7 @@ class Reservation extends React.Component {
     };
 
     handleChange() {
-        if(this.props.reservation === 'NEI') {
+        if(this.props.reservation === false) {
             this.props.onSetReservation();
         } else {
             this.props.onRemoveReservation();
@@ -51,7 +51,7 @@ class Reservation extends React.Component {
 
         let reservationCard = '';
 
-        if (this.props.reservation === 'NEI') {
+        if (this.props.reservation === false) {
             reservationCard = (
                 <Card className="Card" containerStyle={{backgroundColor: '#f4f8ec'}}>
                     <Row className="CardHeader"  style={{backgroundColor: '#d1e6c4'}}>
@@ -101,7 +101,7 @@ class Reservation extends React.Component {
                     <Row className="CardHeader"  style={{backgroundColor: '#d1e6c4'}}>
                         <Col sm={3} lg={2} className="Icon">{<NotificationsOff />}</Col>
                         <Col sm={6} lg={7}><h4>Reservasjon</h4></Col>
-                        <Col sm={3} lg={3}><Help onClick={this.handleOpen}/></Col>
+                        <Help onClick={this.handleOpen} className="InfoBtn" />
                     </Row>
                     <Dialog
                         title="Brev fra stat og kommune"
@@ -152,7 +152,7 @@ class Reservation extends React.Component {
 Reservation.propTypes = {
     onSetReservation: React.PropTypes.func.isRequired,
     onRemoveReservation: React.PropTypes.func.isRequired,
-    reservation: React.PropTypes.string.isRequired,
+    reservation: React.PropTypes.bool.isRequired,
 };
 
 export default Reservation;
