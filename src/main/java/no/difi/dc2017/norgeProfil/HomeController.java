@@ -8,6 +8,14 @@ import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import java.io.File;
+import java.io.IOException;
 
 @Controller
 public class HomeController {
@@ -58,7 +66,6 @@ public class HomeController {
         return response;
     }
 
-
     @RequestMapping(USED_SERVICES)
     public HttpEntity usedServices() {
         return getEntity(USED_SERVICES);
@@ -103,11 +110,6 @@ public class HomeController {
         return getEntity(GET_ALL_AUTH_TYPES);
     }
 
-//    @RequestMapping(EVENT_BY_SNN)
-//    public HttpEntity eventBySnn() {
-//        return getEntity(EVENT_BY_SNN);
-//    }
-
 
     public HttpEntity getEntity(String url){
         String at = oauth2ClientContext.getAccessToken().toString();
@@ -123,6 +125,7 @@ public class HomeController {
         return response;
 
     }
+
 
 
 
