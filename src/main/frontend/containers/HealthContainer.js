@@ -4,7 +4,6 @@ var Col = require('react-bootstrap/lib/Col');
 // var comp2 = require('your/path/to/components').comp2;
 // var comp1 = require('your/path/to/components').comp1;
 
-import NavBar from '../components/NavigationBar';
 import React, {Component} from 'react';
 
 import Username from '../components/Username.js';
