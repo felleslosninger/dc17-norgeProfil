@@ -25,7 +25,14 @@ class GameLog extends Component{
                     <TableRowColumn style={{width: '25%'}}>{obj.description}</TableRowColumn>
                     <TableRowColumn style={{width: '7%'}}>{obj.score}</TableRowColumn>
                     <TableRowColumn style={{width: '7%'}}><Icon color={color}/></TableRowColumn>
-                </TableRow>;logList.push(item);
+                </TableRow>;
+
+            if (obj.isActive) {
+                logList.unshift(item);
+            } else {
+                logList.push(item);
+            }
+
         });
 
         return(
