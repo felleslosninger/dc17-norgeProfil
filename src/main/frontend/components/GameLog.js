@@ -30,7 +30,7 @@ class GameLog extends Component{
             <div className="gameLog">
                 <Table selectable = {false}>
                     <TableHeader adjustForCheckbox = {false} displaySelectAll = {false}>
-                        <TableRow>
+                        <TableRow displayBorder={false}>
                             <TableHeaderColumn>Beskrivelse</TableHeaderColumn>
                             <TableHeaderColumn>Poeng</TableHeaderColumn>
                             <TableHeaderColumn>Status</TableHeaderColumn>

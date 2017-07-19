@@ -55,6 +55,11 @@ body {
 .gameLog {
     text-align: center;
     margin: auto;
+    width: 60%;
+}
+
+.gamificationContainer {
+    padding: 1em;
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */

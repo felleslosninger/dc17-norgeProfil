@@ -1,5 +1,7 @@
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
+var Grid = require('react-bootstrap/lib/Grid');
+
 import { Progress } from 'react-sweet-progress';
 
 import React, {Component} from 'react';
@@ -27,42 +29,54 @@ class GamificationCard extends Component {
         return(
             <div className="gamification">
                 <Card>
-                    <div className = "ProgressCircle">
-                        <Progress
-                            width = {200}
-                            strokeWidth={10}
-                            status = "active"
-                            type="circle"
-                            percent={this.props.gameState.levelProgress}
-                            theme={{
-                                active: {
-                                    symbol: "Level: " + this.props.gameState.level,
-                                    color: this.calcCircleColor(this.props.gameState.levelProgress),
-                                },
-                                default: {
-                                    symbol: "Level: " + this.props.gameState.level,
-                                }
-                            }}
-                        />
+                    <div className="gamificationContainer">
+                        <Row>
+                            <Col lg={6}>
+                                <div className = "ProgressCircle">
+                                    <Progress
+                                        width = {200}
+                                        strokeWidth={10}
+                                        status = "active"
+                                        type="circle"
+                                        percent={this.props.gameState.levelProgress}
+                                        theme={{
+                                            active: {
+                                                symbol: "Nivå: " + this.props.gameState.level,
+                                                color: this.calcCircleColor(this.props.gameState.levelProgress),
+                                            },
+                                            default: {
+                                                symbol: "Nivå: " + this.props.gameState.level,
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            </Col>
+                            <Col lg={6}>
+                                <GameLog pointList = {this.props.pointList}/>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={12}>
+                                <div className = "ProgressBar">
+                                    <Progress
+                                        status = "active"
+                                        width = {200}
+                                        strokeWidth={10}
+                                        percent={this.props.gameState.percentage}
+                                        theme={{
+                                            active: {
+                                                symbol: this.props.gameState.points + "/" + this.props.gameState.maxScore + " Poeng",
+                                                color: this.calcBarColor(this.props.gameState.percentage),
+                                            },
+                                            default: {
+                                                symbol: this.props.gameState.points + "/" + this.props.gameState.maxScore + " Poeng",
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
-                    <div className = "ProgressBar">
-                        <Progress
-                            status = "active"
-                            width = {200}
-                            strokeWidth={10}
-                            percent={this.props.gameState.percentage}
-                            theme={{
-                                active: {
-                                    symbol: this.props.gameState.points + "/" + this.props.gameState.maxScore + " Poeng",
-                                    color: this.calcBarColor(this.props.gameState.percentage),
-                                },
-                                default: {
-                                    symbol: this.props.gameState.points + "/" + this.props.gameState.maxScore + " Poeng",
-                                }
-                            }}
-                        />
-                    </div>
-                    <GameLog pointList = {this.props.pointList}/>
                 </Card>
             </div>
         );
