@@ -1,5 +1,12 @@
-<Forerkort xmlns="urn:fdc:difi.no:2017:forerkort:v1">
-    <Klasse>B</Klasse>
-    <Navn>PERSON-/VAREBIL</Navn>
-    <Gyldighet>06.06.2028</Gyldighet>
-</Forerkort>
+<AlleForerkort xmlns="urn:fdc:difi.no:2017:AlleForerkort:v1">
+    <Forerkort>
+        <Klasse>B</Klasse>
+        <Navn>PERSON-/VAREBIL</Navn>
+        <Gyldighet>06.06.2028</Gyldighet>
+    </Forerkort>
+    <Forerkort>
+        <Klasse>AM</Klasse>
+        <Navn>Moped</Navn>
+        <Gyldighet>06.06.2028</Gyldighet>
+    </Forerkort>
+</AlleForerkort>
