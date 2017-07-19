@@ -5,7 +5,7 @@ var Grid = require('react-bootstrap/lib/Grid');
 import {Progress} from 'react-sweet-progress';
 import FacebookShare from '../components/FacebookShare';
 import React, {Component} from 'react';
-import {Card, CardText} from 'material-ui/Card';
+import {Card} from 'material-ui/Card';
 import GameLog from './GameLog';
 
 class GamificationCard extends Component {
@@ -71,8 +71,7 @@ class GamificationCard extends Component {
                             }}
                         />
                     </div>
-
-                <FacebookShare className="facebook" score={this.props.gameState}/>
+                    <FacebookShare className="facebook" score={this.props.gameState}/>
                 </div>
             </Card>
         );

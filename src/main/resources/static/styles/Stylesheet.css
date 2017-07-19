@@ -3,10 +3,6 @@ body {
     height: 100%;
 }
 
-#navbar {
-    width: 100%;
-}
-
 .pageheader {
     margin: 0 0 0.5em 0;
     background-color: #EBEBEB;
@@ -136,8 +132,6 @@ body {
     }
 
 }
-
-/* Portrait phones and smaller */
 
 /* landscape phones */
 
