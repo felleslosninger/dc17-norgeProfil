@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,} from 'material-ui/Table';
 import Cancel from 'material-ui/svg-icons/navigation/cancel';
 import ActionCheckCircle from 'material-ui/svg-icons/action/check-circle';
-
+import {green600, red600} from 'material-ui/styles/colors';
 
 class GameLog extends Component{
 
@@ -15,14 +15,16 @@ class GameLog extends Component{
         let logList = [];
         this.props.pointList.forEach(function (obj, i) {
             let Icon = Cancel;
+            let color = red600;
             if(obj.isActive){
                 Icon = ActionCheckCircle;
+                color = green600;
             }
             const item =
                 <TableRow key  = {i}>
                     <TableRowColumn style={{width: '25%'}}>{obj.description}</TableRowColumn>
                     <TableRowColumn style={{width: '7%'}}>{obj.score}</TableRowColumn>
-                    <TableRowColumn style={{width: '7%'}}><Icon/></TableRowColumn>
+                    <TableRowColumn style={{width: '7%'}}><Icon color={color}/></TableRowColumn>
                 </TableRow>;logList.push(item);
         });
 
