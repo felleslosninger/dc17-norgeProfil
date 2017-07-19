@@ -1,0 +1,13 @@
+<Fastlege xmlns="urn:fdc:difi.no:2017:fastlege:v1">
+    <Person>
+        <Navn>Ole Hansen</Navn>
+        <Alder>50</Alder>
+        <Kjønn>Mann</Kjønn>
+    </Person>
+    <Legesenter>
+        <Navn>Ole Hansens kliniske klinkk</Navn>
+        <Telefonnummer>+4755339900</Telefonnummer>
+        <Adresse>Portveien 2</Adresse>
+        <Nettside>www.oleErDum.no</Nettside>
+    </Legesenter>
+</Fastlege>
