@@ -1,6 +1,3 @@
-/**
- * Created by camp-cms on 12.07.2017.
- */
 "use strict"
 import React, {Component} from 'react';
 import DrivingLicence from "../components/DrivingLicence";
