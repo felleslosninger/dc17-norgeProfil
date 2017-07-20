@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import http from 'http';
 
 class NorgePlussContainer extends Component {
 
@@ -11,14 +11,15 @@ class NorgePlussContainer extends Component {
     }
 
     fetchFromServer() {
-        axios.get({
-            url: 'https://www.norge.no',
-            method: 'get',
-            responseType: 'html'
-        })
-            .then(function (response){
-               console.log(response);
-            });
+        http.get({
+            hostname: 'www.norge.no',
+            port: 80,
+            path: '/',
+            agent: false  // create a new agent just for this one request
+        }, (res) => {
+            console.log(res);
+            // Do stuff with response
+        });
     }
 
     componentWillMount(){
