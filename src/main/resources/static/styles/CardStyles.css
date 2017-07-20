@@ -146,6 +146,7 @@
 }
 
 .InfoBtn {
+    cursor: pointer;
     position: absolute;
     right: 7%;
     top: 2%;
