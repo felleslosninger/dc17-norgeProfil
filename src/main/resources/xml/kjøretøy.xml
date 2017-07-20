@@ -1,22 +1,24 @@
-<Kjøretøy>
-    <Bil>
-        <Eier>
+<Kjøretøy xmlns="urn:fdc:difi.no:2017:vehicle:v1">
+    <bil>
+        <eier>
             <fornavn>Johan </fornavn>
             <mellomnavn>August</mellomnavn>
             <etternavn>Voll </etternavn>
-            <år>37</år>
-        </Eier>
+            <år>33</år>
+        </eier>
         <fasong>Sedan</fasong>
         <registrering>EL64005</registrering>
-        <girtype>Automat</girtype>
+        <girtype>Manuell</girtype>
         <personbilsegment>Mellomklassen</personbilsegment>
-        <pris>3892000</pris>
+        <pris>323828</pris>
         <antiskrens>Ja</antiskrens>
+        <Idnummer>VARZZZ1JZWB056133</Idnummer>
+        <seter>4</seter>
         <utslipp>
-            <fuel>Elektrisitet</fuel>
+            <drivstoff>Elektrisitet</drivstoff>
         </utslipp>
         <tilhenger>
-            <weight>720kg</weight>
+            <vekt>720kg</vekt>
         </tilhenger>
         <EUkontroll>
             <betalingsdato>
@@ -26,32 +28,40 @@
             </betalingsdato>
             <status>Betalt</status>
             <beløp>2040kr</beløp>
-            <Idnummer>VARZZZ1JZWB056133</Idnummer>
         </EUkontroll>
-    </Bil>
-    <Bil>
-        <Eier>
+    </bil>
+    <bil>
+        <eier>
             <fornavn>Celina</fornavn>
             <etternavn>Fjellheim</etternavn>
-            <år>19</år>
-        </Eier>
+            <år>47</år>
+        </eier>
+        <avgasskrav>Euro 6</avgasskrav>
         <klasse>B</klasse>
-        <fasong>Sedan</fasong>
+        <fasong>Ferrari</fasong>
         <registrering>EL64005</registrering>
         <girtype>Automat</girtype>
-        <personbilsegment>Mellomklassen</personbilsegment>
-        <pris>3892000</pris>
+        <personbilsegment>Luksusklassen</personbilsegment>
+        <pris>4519000</pris>
+        <seter>2</seter>
         <antiskrens>Ja</antiskrens>
+        <Idnummer>VARZZZ1JZWB056133</Idnummer>
         <utslipp>
-            <fuel>Elektrisitet</fuel>
+            <drivstoff>Bensin</drivstoff>
+            <effekt>
+                <mengde>69</mengde>
+                <måleenhet>Hk</måleenhet>
+            </effekt>
+            <sylindervolum>
+                <mengde>6,3</mengde>
+                <måleenhet>l</måleenhet>
+            </sylindervolum>
         </utslipp>
         <tilhenger>
             <weight>720kg</weight>
         </tilhenger>
-    </Bil>
-    <EUkontroll>
-        <status>ubetalt</status>
-        <beløp>792kr</beløp>
-        <Idnummer>VARZZZ1JZWB056133</Idnummer>
-    </EUkontroll>
+        <EUkontroll>
+            <status>ubetalt</status>
+        </EUkontroll>
+    </bil>
 </Kjøretøy>
