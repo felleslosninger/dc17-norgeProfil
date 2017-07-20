@@ -28,7 +28,22 @@ body {
     bottom: 3.2%;
 }
 
+/*Gamification*/
+.gameLog {
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
 
+.gamificationContainer {
+    padding: 1em;
+    position: relative;
+}
+
+.ProgressBar {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
 
 /*Large desktops*/
 @media (min-width: 1193px) {
@@ -68,22 +83,6 @@ body {
         min-height: 2.5em;
     }
 
-}
-
-.gameLog {
-    text-align: center;
-    margin: auto;
-    width: 60%;
-}
-
-.gamificationContainer {
-    padding: 1em;
-    position: relative;
-}
-
-.ProgressBar {
-    margin-top: 2em;
-    margin-bottom: 2em;
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
@@ -166,7 +165,6 @@ body {
 }
 
 /* landscape phones */
-
 @media (min-width: 481px) and (max-width: 767px) {
     .Nav {
         padding: 3em 7em 3em 7em;
