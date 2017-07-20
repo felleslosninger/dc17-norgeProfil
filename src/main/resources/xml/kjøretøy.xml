@@ -1,11 +1,11 @@
 <Kjøretøy>
     <Bil>
-        <forfatter>
+        <Eier>
             <fornavn>Johan </fornavn>
             <mellomnavn>August</mellomnavn>
             <etternavn>Voll </etternavn>
             <år>37</år>
-        </forfatter>
+        </Eier>
         <fasong>Sedan</fasong>
         <registrering>EL64005</registrering>
         <girtype>Automat</girtype>
