@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="https://www.norge.no/profiles/norgeno3/themes/difi3_norgeno3/favicon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="alternate" type="application/rss+xml" title="Norge.no RSS" href="https://www.norge.no/nb/rss.xml" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="https://www.norge.no/profiles/norgeno3/themes/difi3_norgeno3/favicon.ico"
+          type="image/vnd.microsoft.icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Norge.no | Veiviser til offentlige tjenester på nett</title>
+    <title>Søk | Norge.no</title>
     <style type="text/css" media="all">
         @import url("https://www.norge.no/modules/contrib/media/modules/media_wysiwyg/css/media_wysiwyg.base.css?osm4uy");
     </style>
-    <link type="text/css" rel="stylesheet" href="https://www.norge.no/_style/site/norgeno3/style.css?v=1.05" media="screen" />
-    <link type="text/css" rel="stylesheet" href="https://www.norge.no/_style/site/norgeno3/style.css?v=1.00" media="print" />
-    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7COpen+Sans+Condensed:300,700%7CSource+Sans+Pro:200,300,regular,600,700,900%7CInconsolata:400,regular,600,700,900&amp;subset=latin-ext,vietnamese,latin" media="all" />
+    <link type="text/css" rel="stylesheet" href="https://www.norge.no/_style/site/norgeno3/style.css?v=1.05"
+          media="screen"/>
+    <link type="text/css" rel="stylesheet" href="https://www.norge.no/_style/site/norgeno3/style.css?v=1.00"
+          media="print"/>
+    <link type="text/css" rel="stylesheet"
+          href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7COpen+Sans+Condensed:300,700%7CSource+Sans+Pro:200,300,regular,600,700,900%7CInconsolata:400,regular,600,700,900&amp;subset=latin-ext,vietnamese,latin"
+          media="all"/>
     <style type="text/css" media="all">
         @import url("https://www.norge.no/modules/contrib/apachesolr_autocomplete/apachesolr_autocomplete.css?osm4uy");
         @import url("https://www.norge.no/modules/locale/locale.css?osm4uy");
+        @import url("https://www.norge.no/profiles/norgeno3/modules/norgeno3_feedback/css/difi_feedback.css?osm4uy");
     </style>
     <style type="text/css" media="all">
         @import url("https://www.norge.no/profiles/norgeno3/themes/difi3_norgeno3/css/style.css?osm4uy");
@@ -22,26 +27,151 @@
     <script type="text/javascript" src="https://www.norge.no/misc/jquery.js?v=1.4.4"></script>
     <script type="text/javascript" src="https://www.norge.no/misc/jquery.once.js?v=1.2"></script>
     <script type="text/javascript" src="https://www.norge.no/misc/drupal.js?osm4uy"></script>
-    <script type="text/javascript" src="https://www.norge.no/sites/norgeno3/files/languages/nb_02zFdyrTtE1G8JOeMtfL1MSxtSX6vrzpgCXZjCwO0bU.js?osm4uy"></script>
-    <script type="text/javascript" src="https://www.norge.no/modules/contrib/google_analytics/googleanalytics.js?osm4uy"></script>
+    <script type="text/javascript" src="https://www.norge.no/misc/jquery.cookie.js?v=1.0"></script>
+    <script type="text/javascript" src="https://www.norge.no/misc/jquery.form.js?v=2.52"></script>
+    <script type="text/javascript" src="https://www.norge.no/misc/states.js?v=7.56"></script>
+    <script type="text/javascript" src="https://www.norge.no/misc/ajax.js?v=7.56"></script>
+    <script type="text/javascript"
+            src="https://www.norge.no/sites/norgeno3/files/languages/nb_02zFdyrTtE1G8JOeMtfL1MSxtSX6vrzpgCXZjCwO0bU.js?osm4uy"></script>
+    <script type="text/javascript"
+            src="https://www.norge.no/modules/contrib/google_analytics/googleanalytics.js?osm4uy"></script>
     <script type="text/javascript">
-        <!--//--><![CDATA[//><!--
-        (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-12685001-5", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
-        //--><!]]>
+        <!--//-->
+        <![CDATA[//><!--
+        (function (i, s, o, g, r, a, m) {
+            i["GoogleAnalyticsObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+        ga("create", "UA-12685001-5", {"cookieDomain": "auto"});
+        ga("set", "anonymizeIp", true);
+        ga("set", "page", (window.googleanalytics_search_results) ? "\/nb\/search\/site?search=fastlege" : "\/nb\/search\/site?search=no-results%3Afastlege\u0026cat=no-results");
+        ga("send", "pageview");
+        //--><!
+        ]]>
     </script>
     <script type="text/javascript" src="https://www.norge.no/misc/autocomplete.js?v=7.56"></script>
+    <script type="text/javascript" src="https://www.norge.no/modules/contrib/facetapi/facetapi.js?osm4uy"></script>
+    <script type="text/javascript" src="https://www.norge.no/misc/progress.js?v=7.56"></script>
+    <script type="text/javascript" src="https://www.norge.no/misc/textarea.js?v=7.56"></script>
+    <script type="text/javascript"
+            src="https://www.norge.no/profiles/norgeno3/modules/norgeno3_feedback/js/norgeno3_feedback.js?osm4uy"></script>
     <script type="text/javascript">
-        <!--//--><![CDATA[//><!--
-        jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"nb\/","ajaxPageState":{"theme":"difi3_norgeno3","theme_token":"1dblGBPF62-BPg1XhCjphLcNUjOurUqVSWKinALIj7g","js":{"jquery":1,"bootstrap":1,"difi3_flexnav":1,"difi3_tools":1,"difi3_norgeno3_jquery_ui":1,"difi3_norgeno3_theme_tools":1,"difi3_norgeno3_design_tools":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"public:\/\/languages\/nb_02zFdyrTtE1G8JOeMtfL1MSxtSX6vrzpgCXZjCwO0bU.js":1,"modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/autocomplete.js":1},"css":{"modules\/contrib\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"difi3":1,"difi3_print":1,"googlefonts":1,"modules\/contrib\/apachesolr_autocomplete\/apachesolr_autocomplete.css":1,"modules\/locale\/locale.css":1,"profiles\/norgeno3\/themes\/difi3_norgeno3\/css\/style.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/":true}});
-        //--><!]]>
+        <!--//-->
+        <![CDATA[//><!--
+        jQuery.extend(Drupal.settings, {
+            "basePath": "\/",
+            "pathPrefix": "nb\/",
+            "ajaxPageState": {
+                "theme": "difi3_norgeno3",
+                "theme_token": "57NO_I_Aat7MaZ4KMvBIpozT09fJfVnLxmsTFX6gw_s",
+                "js": {
+                    "jquery": 1,
+                    "bootstrap": 1,
+                    "difi3_flexnav": 1,
+                    "difi3_tools": 1,
+                    "difi3_norgeno3_jquery_ui": 1,
+                    "difi3_norgeno3_theme_tools": 1,
+                    "difi3_norgeno3_design_tools": 1,
+                    "misc\/jquery.js": 1,
+                    "misc\/jquery.once.js": 1,
+                    "misc\/drupal.js": 1,
+                    "misc\/jquery.cookie.js": 1,
+                    "misc\/jquery.form.js": 1,
+                    "misc\/states.js": 1,
+                    "misc\/ajax.js": 1,
+                    "public:\/\/languages\/nb_02zFdyrTtE1G8JOeMtfL1MSxtSX6vrzpgCXZjCwO0bU.js": 1,
+                    "modules\/contrib\/google_analytics\/googleanalytics.js": 1,
+                    "0": 1,
+                    "misc\/autocomplete.js": 1,
+                    "modules\/contrib\/facetapi\/facetapi.js": 1,
+                    "misc\/progress.js": 1,
+                    "misc\/textarea.js": 1,
+                    "profiles\/norgeno3\/modules\/norgeno3_feedback\/js\/norgeno3_feedback.js": 1
+                },
+                "css": {
+                    "modules\/contrib\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css": 1,
+                    "difi3": 1,
+                    "difi3_print": 1,
+                    "googlefonts": 1,
+                    "modules\/contrib\/apachesolr_autocomplete\/apachesolr_autocomplete.css": 1,
+                    "modules\/locale\/locale.css": 1,
+                    "profiles\/norgeno3\/modules\/norgeno3_feedback\/css\/difi_feedback.css": 1,
+                    "profiles\/norgeno3\/themes\/difi3_norgeno3\/css\/style.css": 1
+                }
+            },
+            "facetapi": {
+                "facets": [{
+                    "limit": 20,
+                    "id": "facetapi-facet-apachesolrsolr-block-im-field-los-tema",
+                    "searcher": "apachesolr@solr",
+                    "realmName": "block",
+                    "facetName": "im_field_los_tema",
+                    "queryType": "term",
+                    "widget": "facetapi_links",
+                    "showMoreText": "Show more",
+                    "showFewerText": "Show fewer"
+                }, {
+                    "limit": 20,
+                    "id": "facetapi-facet-apachesolrsolr-block-im-field-livsit-ref",
+                    "searcher": "apachesolr@solr",
+                    "realmName": "block",
+                    "facetName": "im_field_livsit_ref",
+                    "queryType": null,
+                    "widget": "facetapi_links",
+                    "showMoreText": "Show more",
+                    "showFewerText": "Show fewer"
+                }]
+            },
+            "googleanalytics": {
+                "trackOutbound": 1,
+                "trackMailto": 1,
+                "trackDownload": 1,
+                "trackDownloadExtensions": "7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"
+            },
+            "urlIsAjaxTrusted": {"\/nb\/search\/site\/fastlege": true, "\/nb\/system\/ajax": true},
+            "ajax": {
+                "edit-boolean-question-ja": {
+                    "callback": "norgeno3_feedback_question_handler",
+                    "wrapper": "form-content",
+                    "speed": "fast",
+                    "event": "change",
+                    "url": "\/nb\/system\/ajax",
+                    "submit": {"_triggering_element_name": "boolean_question"}
+                },
+                "edit-boolean-question-nei": {
+                    "callback": "norgeno3_feedback_question_handler",
+                    "wrapper": "form-content",
+                    "speed": "fast",
+                    "event": "change",
+                    "url": "\/nb\/system\/ajax",
+                    "submit": {"_triggering_element_name": "boolean_question"}
+                },
+                "edit-submit": {
+                    "callback": "norgeno3_feedback_submit_handler",
+                    "wrapper": "form-content",
+                    "method": "replaceWith",
+                    "speed": "fast",
+                    "event": "mousedown",
+                    "keypress": true,
+                    "prevent": "click",
+                    "url": "\/nb\/system\/ajax",
+                    "submit": {"_triggering_element_name": "op", "_triggering_element_value": "Send"}
+                }
+            },
+            "states": {"#edit-open-question": {"visible": true}}
+        });
+        //--><!
+        ]]>
     </script>
 
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/_style/lib/html5shiv/html5shiv-3.7.2.min.js"></script>
-    <script type="text/javascript" src="/_style/lib/respond/respond-1.4.2.min.js"></script>
-    <![endif]-->
 </head>
-<body class="front i18n-nb" >
+<body class="i18n-nb">
 <a id="top"></a>
 <div id="skip-link">
     <a href="#content">Hopp til hovedinnhold </a>
@@ -72,12 +202,19 @@
 
                     </div>
                     <div class="body">
-                        <ul class="language-switcher-locale-url"><li class="523 first"><a href="/nb/om-noregno" class="language-link not-active">Om Norge.no</a></li>
-                            <li class="nb active"><a href="/nb" class="language-link active" xml:lang="nb">Bokmål</a></li>
-                            <li class="nn"><a href="/nn" class="language-link" xml:lang="nn">Nynorsk</a></li>
-                            <li class="en last"><a href="/en" class="language-link" xml:lang="en">English</a></li>
-                        </ul>  </div>
-                </section>		</div>
+                        <ul class="language-switcher-locale-url">
+                            <li class="523 first"><a href="/nb/om-noregno" class="language-link not-active">Om
+                                Norge.no</a></li>
+                            <li class="nb active"><a href="/nb/search/site/fastlege" class="language-link active"
+                                                     xml:lang="nb">Bokmål</a></li>
+                            <li class="nn"><a href="/nn/search/site/fastlege" class="language-link" xml:lang="nn">Nynorsk</a>
+                            </li>
+                            <li class="en last"><a href="/en/search/site/fastlege" class="language-link" xml:lang="en">English</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </div>
 
         <div class="header-footer">
@@ -90,216 +227,1082 @@
 
                 </div>
                 <div class="body">
-                    <form action="/" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
-                        <h2 class="element-invisible">Search form</h2>
-                        <div class="form-item form-type-textfield form-item-search-block-form">
-                            <label class="element-invisible" for="edit-search-block-form--2">Søk </label>
-                            <input title="Skriv inn ønskede søkekriterier." placeholder="Søk" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text form-autocomplete" /><input type="hidden" id="edit-search-block-form--2-autocomplete" value="https://www.norge.no/index.php?q=nb/apachesolr_autocomplete_callback/apachesolr_search_page%3Acore_search" disabled="disabled" class="autocomplete" />
+                    <form action="/nb/search/site/fastlege" method="post" id="search-block-form" accept-charset="UTF-8">
+                        <div>
+                            <div class="container-inline">
+                                <h2 class="element-invisible">Search form</h2>
+                                <div class="form-item form-type-textfield form-item-search-block-form">
+                                    <label class="element-invisible" for="edit-search-block-form--2">Søk </label>
+                                    <input title="Skriv inn ønskede søkekriterier." placeholder="Søk" type="text"
+                                           id="edit-search-block-form--2" name="search_block_form" value="fastlege"
+                                           size="15" maxlength="128" class="form-text form-autocomplete"/><input
+                                        type="hidden" id="edit-search-block-form--2-autocomplete"
+                                        value="https://www.norge.no/index.php?q=nb/apachesolr_autocomplete_callback/apachesolr_search_page%3Acore_search"
+                                        disabled="disabled" class="autocomplete"/>
+                                </div>
+                                <div class="form-actions form-wrapper" id="edit-actions"><input type="submit"
+                                                                                                id="search_block_form_submit_button"
+                                                                                                name="op" value="Søk"
+                                                                                                class="form-submit"/>
+                                </div>
+                                <input type="hidden" name="form_build_id"
+                                       value="form-1QZU1OaKrYBUL6XhPjExH3R4-WsxdSnhg0ocwvk84QI"/>
+                                <input type="hidden" name="form_id" value="search_block_form"/>
+                            </div>
                         </div>
-                        <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="search_block_form_submit_button" name="op" value="Søk" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-6eW5GZW5IBXmvvmCpKO7hB1rHlujHlHnUXkF1qUID2E" />
-                        <input type="hidden" name="form_id" value="search_block_form" />
-                    </div>
-                    </div></form>  </div>
-            </section><section class="box block-norgeno3-meny ">
-            <div class="heading">
-
-            </div>
-            <div class="body">
-                <div class="norgeno3-dropdown-menu compact-menu"><div class="heading"><h2><a href="">Finn tjeneste</a></h2></div><div class="body"><div class="item-list">
-                    <ul>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2831">Arbeid</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2835">Arbeidsliv</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2839">Arbeidssøking og rekruttering</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2843">Inntekt</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2847">Permisjonsordninger</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2851">Barn og familie</a>
-                            <ul>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2859">Barn og foreldre</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2867">Barnehage</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2863">Barnevern og familievern</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2871">Samliv</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2875">Bolig og eiendom</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2879">Bygging</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2883">Eiendom</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2891">Flytting</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2895">Kjøp og salg</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22634">Kommunal planlegging</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2899">Leie og utleie</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22642">Tekniske tjenester</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2903">Forbrukerspørsmål</a>
-                            <ul>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2907">Privatøkonomi</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2911">Varer og tjenester</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2915">Helse</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2919">Folkehelse</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2923">Helsetjenester</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2927">Pasientrettigheter</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2931">Psykisk helse</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2935">Svangerskap og fødsel</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2939">Individ og samfunn</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2943">Beredskap og sikkerhet</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2855">Dødsfall</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2947">Flagg og ordener</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2951">Innbyggerrettigheter</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2955">Media og kommunikasjon</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22638">Personopplysninger</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2959">Politikk og valg</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2963">Religion og livssyn</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2967">Samfunnsplanlegging</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2971">Språk</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22610">Innvandring og integrering</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22614">Innvandring og innreise</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22618">Integrering</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2975">Kultur, idrett og fritid</a>
-                            <ul>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22646">Bibliotek</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22622">Friluftsliv</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2979">Fritid</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22626">Idrett</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22630">Kultur</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2995">Lotteri og pengespill</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2999">Opphavsrett</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3007">Tilskuddsordninger</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3011">Natur og miljø</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3015">Avfallshåndtering</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3019">Energi</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3023">Forurensning og stråling</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3027">Naturforvaltning</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3031">Vær og klima</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3035">Næring</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3043">Fiske, fangst og akvakultur</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3047">Handel og service</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3051">Landbruk</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3039">Næringsutvikling</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3055">Reiselivsnæring</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3059">Omsorg, trygd og sosiale tjenester</a>
-                            <ul>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3063">Avlastning og støtte</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3067">Botilbud</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3071">Omsorgstjenester</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3075">Pensjon</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3079">Transporttjenester</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3083">Økonomiske ytelser</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3087">Rettslige spørsmål</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3091">Erstatningsordninger</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3095">Lovbrudd og straff</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3099">Rettsvesen</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3103">Skatter og avgifter</a>
-                            <ul>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3107">Offentlige avgifter</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3111">Skatt og likning</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3115">Skole og utdanning</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3119">Folkehøgskole</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3123">Grunnskoleopplæring</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3127">Høyere utdanning</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3131">Karakterer og evaluering</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3135">Skolemiljø</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3139">Studiefinansiering</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3143">Videregående opplæring</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3147">Voksenopplæring</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="has-submenu show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3151">Trafikk, reiser og samferdsel</a>
-                            <ul>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3155">Båttrafikk</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3159">Førerkort og sertifikat</a></div></li>
-                                <li class="show-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3163">Kjøretøy</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3167">Kollektivtransport</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3171">Luftfart</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3003">Utenlandsreiser</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3175">Veg og vegtrafikk</a></div></li>
-                                <li class="hide-in-compact-menu"><div class="field-content"><a href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3179">Yrkestransport</a></div></li>
-                                <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                            </ul>
-                        </div></li>
-                        <li class="expand-compact-menu"><div class="field-content"><a href="#">Alle tema</a></div></li>
-                    </ul>
-                </div></div></div><div class="norgeno3-dropdown-menu"><div class="heading"><h2><a href="">Livssituasjoner</a></h2></div><div class="body"><div class="item-list"><ul><li><div class="field-content"><a href="/nb/livssituasjon/ny-i-norge">Ny i Norge</a></div></li><li><div class="field-content"><a href="/nb/livssituasjon/innga-ekteskap">Inngå ekteskap</a></div></li><li><div class="field-content"><a href="/nb/livssituasjon/skilsmisse">Skilsmisse</a></div></li><li><div class="field-content"><a href="/nb/livssituasjon/dodsfall-og-arv">Dødsfall og arv</a></div></li><li><div class="field-content"><a href="/nb/livssituasjon/studere">Studere</a></div></li><li><div class="field-content"><a href="/nb/livssituasjon/miste-og-finne-jobb">Miste og finne jobb</a></div></li><li><div class="field-content"><a href="/nb/livssituasjon/fa-barn">Få barn</a></div></li><li><div class="field-content"><a href="/nb/livssituasjon/flytte">Flytte</a></div></li></ul></div></div></div><div class="norgeno3-dropdown-menu"><div class="heading"><h2><a href="">Digital postkasse</a></h2></div><div class="body"><div class="item-list"><ul><li><div class="field-content"><a href="/nb/velg-digital-postkasse">Velg digital postkasse</a></div></li><li><div class="field-content"><a href="/nb/om-digital-postkasse">Om digital postkasse</a></div></li><li><div class="field-content"><a href="/nb/sporsmal-og-svar">Spørsmål og svar </a></div></li><li><div class="field-content"><a href="/nb/oppdater-kontaktinformasjon">Oppdater kontaktinformasjon</a></div></li><li><div class="field-content"><a href="/nb/slett-kontaktinformasjon">Slett kontaktinformasjon</a></div></li><li><div class="field-content"><a href="/nb/elektronisk-id">Elektronisk ID </a></div></li><li><div class="field-content"><a href="/nb/digital-kommunikasjon">Digital kommunikasjon</a></div></li><li><div class="field-content"><a href="/nb/reservasjon">Reservasjon</a></div></li></ul></div></div></div>  </div>
-        </section>		</div>
-    </div>
-
-
-
-
-
-    <div id="main">
-
-        <section id="content" role="main" tabindex="-1">
-            <h2 class="element-hidden" aria-hidden="true">Innhold</h2>
-
-
-            <section class="box block-norgeno3-forside frontpage-sdp">
+                    </form>
+                </div>
+            </section>
+            <section class="box block-norgeno3-meny ">
                 <div class="heading">
-                    <h2>Digital postkasse</h2>
 
                 </div>
                 <div class="body">
-                    <div class="item-list"><ul><li class="views-row views-row-1 views_row_odd views-row-first"><div class="views-field views-field-field-image"><div class="field-content"><figure><a href="/nb/velg-digital-postkasse" title="Velg digital postkasse"><img src="https://www.norge.no/sites/norgeno3/files/lys314366_b_difi_006-lpr.jpg" alt="" width="2048" height="1330"/></a></figure></div></div><div class="views-field views-field-title"><span class="field-content"><a href="/nb/velg-digital-postkasse">Velg digital postkasse</a></span></div><div class="views-field views-field-field-short-text"><span class="field-content"><a href="/nb/velg-digital-postkasse">Du kan velge mellom Digipost og e-Boks</a></span></div></li><li class="views-row views-row-2 views_row_even"><div class="views-field views-field-field-image"><div class="field-content"><figure><a href="/nb/oppdater-kontaktinformasjon" title="Oppdater kontaktinformasjon"><img src="https://www.norge.no/sites/norgeno3/files/oppdater_kontaktinformasjon_854083_0.jpg" alt="" width="236" height="157"/></a></figure></div></div><div class="views-field views-field-title"><span class="field-content"><a href="/nb/oppdater-kontaktinformasjon">Oppdater kontaktinformasjon</a></span></div><div class="views-field views-field-field-short-text"><span class="field-content"><a href="/nb/oppdater-kontaktinformasjon">Rett mobilnummer og e-postadresse</a></span></div></li><li class="views-row views-row-3 views_row_odd views-row-last"><div class="views-field views-field-field-image"><div class="field-content"><figure><a href="/nb/elektronisk-id" title="Elektronisk ID "><img src="https://www.norge.no/sites/norgeno3/files/eid_1140223_0.jpg" alt="" width="236" height="157"/></a></figure></div></div><div class="views-field views-field-title"><span class="field-content"><a href="/nb/elektronisk-id">Elektronisk ID </a></span></div><div class="views-field views-field-field-short-text"><span class="field-content"><a href="/nb/elektronisk-id">Innlogging til offentlige tjenester på nett</a></span></div></li></ul></div>  </div>
-            </section><section class="box block-norgeno3-forside frontpage-services">
-            <div class="heading">
-                <h2>Mest brukte tjenester</h2>
+                    <div class="norgeno3-dropdown-menu compact-menu">
+                        <div class="heading"><h2><a href="">Finn tjeneste</a></h2></div>
+                        <div class="body">
+                            <div class="item-list">
+                                <ul>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2831">Arbeid</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2835">Arbeidsliv</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2839">Arbeidssøking
+                                                        og rekruttering</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2843">Inntekt</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2847">Permisjonsordninger</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2851">Barn og
+                                            familie</a>
+                                            <ul>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2859">Barn
+                                                        og foreldre</a></div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2867">Barnehage</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2863">Barnevern
+                                                        og familievern</a></div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2871">Samliv</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2875">Bolig og
+                                            eiendom</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2879">Bygging</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2883">Eiendom</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2891">Flytting</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2895">Kjøp
+                                                        og salg</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22634">Kommunal
+                                                        planlegging</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2899">Leie
+                                                        og utleie</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22642">Tekniske
+                                                        tjenester</a></div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2903">Forbrukerspørsmål</a>
+                                            <ul>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2907">Privatøkonomi</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2911">Varer
+                                                        og tjenester</a></div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2915">Helse</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2919">Folkehelse</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2923">Helsetjenester</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2927">Pasientrettigheter</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2931">Psykisk
+                                                        helse</a></div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2935">Svangerskap
+                                                        og fødsel</a></div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2939">Individ og
+                                            samfunn</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2943">Beredskap
+                                                        og sikkerhet</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2855">Dødsfall</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2947">Flagg
+                                                        og ordener</a></div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2951">Innbyggerrettigheter</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2955">Media
+                                                        og kommunikasjon</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22638">Personopplysninger</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2959">Politikk
+                                                        og valg</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2963">Religion
+                                                        og livssyn</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2967">Samfunnsplanlegging</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2971">Språk</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu hide-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22610">Innvandring og
+                                            integrering</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22614">Innvandring
+                                                        og innreise</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22618">Integrering</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu hide-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2975">Kultur, idrett
+                                            og fritid</a>
+                                            <ul>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22646">Bibliotek</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22622">Friluftsliv</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2979">Fritid</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22626">Idrett</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A22630">Kultur</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2995">Lotteri
+                                                        og pengespill</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A2999">Opphavsrett</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3007">Tilskuddsordninger</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu hide-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3011">Natur og
+                                            miljø</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3015">Avfallshåndtering</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3019">Energi</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3023">Forurensning
+                                                        og stråling</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3027">Naturforvaltning</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3031">Vær
+                                                        og klima</a></div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu hide-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3035">Næring</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3043">Fiske,
+                                                        fangst og akvakultur</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3047">Handel
+                                                        og service</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3051">Landbruk</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3039">Næringsutvikling</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3055">Reiselivsnæring</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3059">Omsorg, trygd
+                                            og sosiale tjenester</a>
+                                            <ul>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3063">Avlastning
+                                                        og støtte</a></div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3067">Botilbud</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3071">Omsorgstjenester</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3075">Pensjon</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3079">Transporttjenester</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3083">Økonomiske
+                                                        ytelser</a></div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu hide-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3087">Rettslige
+                                            spørsmål</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3091">Erstatningsordninger</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3095">Lovbrudd
+                                                        og straff</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3099">Rettsvesen</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3103">Skatter og
+                                            avgifter</a>
+                                            <ul>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3107">Offentlige
+                                                        avgifter</a></div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3111">Skatt
+                                                        og likning</a></div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3115">Skole og
+                                            utdanning</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3119">Folkehøgskole</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3123">Grunnskoleopplæring</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3127">Høyere
+                                                        utdanning</a></div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3131">Karakterer
+                                                        og evaluering</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3135">Skolemiljø</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3139">Studiefinansiering</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3143">Videregående
+                                                        opplæring</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3147">Voksenopplæring</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="has-submenu show-in-compact-menu">
+                                        <div class="field-content"><a
+                                                href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3151">Trafikk, reiser
+                                            og samferdsel</a>
+                                            <ul>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3155">Båttrafikk</a>
+                                                    </div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3159">Førerkort
+                                                        og sertifikat</a></div>
+                                                </li>
+                                                <li class="show-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3163">Kjøretøy</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3167">Kollektivtransport</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3171">Luftfart</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3003">Utenlandsreiser</a>
+                                                    </div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3175">Veg
+                                                        og vegtrafikk</a></div>
+                                                </li>
+                                                <li class="hide-in-compact-menu">
+                                                    <div class="field-content"><a
+                                                            href="/nb/search/site?f%5B0%5D=im_field_los_tema%3A3179">Yrkestransport</a>
+                                                    </div>
+                                                </li>
+                                                <li class="expand-compact-menu">
+                                                    <div class="field-content"><a href="#">Alle tema</a></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="expand-compact-menu">
+                                        <div class="field-content"><a href="#">Alle tema</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="norgeno3-dropdown-menu">
+                        <div class="heading"><h2><a href="">Livssituasjoner</a></h2></div>
+                        <div class="body">
+                            <div class="item-list">
+                                <ul>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/livssituasjon/studere">Studere</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/livssituasjon/miste-og-finne-jobb">Miste
+                                            og finne jobb</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/livssituasjon/fa-barn">Få barn</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/livssituasjon/flytte">Flytte</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/livssituasjon/ny-i-norge">Ny i Norge</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/livssituasjon/innga-ekteskap">Inngå
+                                            ekteskap</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/livssituasjon/skilsmisse">Skilsmisse</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/livssituasjon/dodsfall-og-arv">Dødsfall
+                                            og arv</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="norgeno3-dropdown-menu">
+                        <div class="heading"><h2><a href="">Digital postkasse</a></h2></div>
+                        <div class="body">
+                            <div class="item-list">
+                                <ul>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/velg-digital-postkasse">Velg digital
+                                            postkasse</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/om-digital-postkasse">Om digital
+                                            postkasse</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/sporsmal-og-svar">Spørsmål og svar </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/oppdater-kontaktinformasjon">Oppdater
+                                            kontaktinformasjon</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/slett-kontaktinformasjon">Slett
+                                            kontaktinformasjon</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/elektronisk-id">Elektronisk ID </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/digital-kommunikasjon">Digital
+                                            kommunikasjon</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="field-content"><a href="/nb/reservasjon">Reservasjon</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 
+
+    <div id="breadcrumb">
+        <div class="item-list"><h2 class="element-invisible">Navigasjonssti</h2>
+            <ol>
+                <li class="first"><a href="/nb">Framside</a></li>
+                <li>fastlege</li>
+                <li><a href="/nb/search/site/fastlege" class="active">Søk</a></li>
+                <li class="last">→</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div id="above-content">
+        <div>
+            <section class="box block-norgeno3-search norgeno3-search-title">
+                <div class="heading">
+
+                </div>
+                <div class="body">
+                    Du søkte etter: <h1>fastlege</h1></div>
+            </section>
+        </div>
+    </div>
+
+    <div id="main" class="with-aside">
+
+        <section id="content" role="main" tabindex="-1">
+            <h2 class="element-hidden" aria-hidden="true">Innhold</h2>
+            <section class="box block-norgeno3-search norgeno3-search-municipalites">
+                <div class="heading">
+
+                </div>
+                <div class="body">
+                    <div class="municipality-search"></div>
+                </div>
+            </section>
+
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://helsenorge.no/min-helse/Bytte-fastlege?">Bytte fastlege - Min fastlege</a></span>
+                </h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Helfo</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="icon">
+                                    <button id="fastlegepluss">+</button>
+
+                    <a
+                        href="/nb/livssituasjon/flytte" title="Gå til livssituasjon 'Flytte'"><span
+                        class="icon-life-move"></span></a></span></span></div>
+                <div class="views-field-description"><span class="field-content">Her kan du finne fastlegen din, få oversikt over ledige fastleger og bytte fastlege. Du kan bytte fastlege to ganger per kalenderår. Du kan også sette deg på venteliste dersom legen du ønsker ikke er ledig.</span>
+                </div>
             </div>
-            <div class="body">
-                <div class="item-list"><ul><li class="views-row views-row-1 views_row_odd views-row-first"><div class="views-field views-field-title"><span class="field-content"><a href="https://www.norge.no/nb/velg-digital-postkasse"><span class="title">Velg digital postkasse</span><span class="icon-right"></span></a></span></div></li><li class="views-row views-row-2 views_row_even"><div class="views-field views-field-title"><span class="field-content"><a href="https://www.norge.no/nb/oppdater-kontaktinformasjon"><span class="title">Oppdater kontaktinformasjon</span><span class="icon-right"></span></a></span></div></li><li class="views-row views-row-3 views_row_odd"><div class="views-field views-field-title"><span class="field-content"><a href="https://www.nav.no/no/Person/Pensjon/Hva+kan+jeg+fa+i+pensjon"><span class="title">Din pensjon</span><span class="icon-right"></span></a></span></div></li><li class="views-row views-row-4 views_row_even"><div class="views-field views-field-title"><span class="field-content"><a href="http://www.samordnaopptak.no/info/soke/ledige-studieplasser/index.html"><span class="title">Søk ledige studieplassar frå 20. juli</span><span class="icon-right"></span></a></span></div></li><li class="views-row views-row-5 views_row_odd"><div class="views-field views-field-title"><span class="field-content"><a href="https://helsenorge.no/min-helse/Bytte-fastlege?"><span class="title">Bytte fastlege - Min fastlege</span><span class="icon-right"></span></a></span></div></li><li class="views-row views-row-6 views_row_even"><div class="views-field views-field-title"><span class="field-content"><a href="http://www.skatteetaten.no/nn/Person/Skatteoppgjer/Sja-skatteoppgjeret-ditt/"><span class="title">Sjå skatteoppgjeret ditt</span><span class="icon-right"></span></a></span></div></li><li class="views-row views-row-7 views_row_odd"><div class="views-field views-field-title"><span class="field-content"><a href="https://helsenorge.no/turist-i-utlandet/europeisk-helsetrygdkort"><span class="title">Bestill Europeisk helsetrygdkort</span><span class="icon-right"></span></a></span></div></li><li class="views-row views-row-8 views_row_even"><div class="views-field views-field-title"><span class="field-content"><a href="http://www.skatteetaten.no/no/Skjemaer/Flyttemelding-til-folkeregisteret/"><span class="title">Melde flytting innenlands </span><span class="icon-right"></span></a></span></div></li><li class="views-row views-row-9 views_row_odd views-row-last"><div class="views-field views-field-title"><span class="field-content"><a href="https://www.nav.no/no/Person/Arbeid/Dagpenger+ved+arbeidsloshet+og+permittering/Meldekort+hvordan+gjor+du+det/Slik+sender+du+elektroniske+meldekort"><span class="title">Send meldekort elektronisk - NAV</span><span class="icon-right"></span></a></span></div></li></ul></div>  </div>
-        </section><section class="box block-norgeno3-forside frontpage-livssituasjon">
-            <div class="heading">
-                <h2>Tjenester som hører til en livssituasjon</h2>
 
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://www.sismo.no/no/pub/">Avdrag</a></span></h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Statens innkrevingssentral</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="no-icons"></span></span></div>
+                <div class="views-field-description"><span class="field-content">Ved hjelp av tjenesten &quot;Avdrag&quot; kan du dele opp krav fra Statens innkrevingssentral i faste månedsbeløp. Har du flere krav, må du logge deg inn.</span>
+                </div>
             </div>
-            <div class="body">
-                <div class="item-list"><ul><li class="views-row views-row-1 views_row_odd views-row-first"><span class="views-field views-field-title"><span class="field-content"><a href="/nb/livssituasjon/dodsfall-og-arv"><span class="icon"><span class="icon-life-funeral livsit-ikon"></span><img class="bg-cover" src="/profiles/norgeno3/themes/difi3_norgeno3/img/square.gif" alt=""/></span><span class="livsit-title">Dødsfall og arv</span></a></span></span></li><li class="views-row views-row-2 views_row_even"><span class="views-field views-field-title"><span class="field-content"><a href="/nb/livssituasjon/skilsmisse"><span class="icon"><span class="icon-life-divorce livsit-ikon"></span><img class="bg-cover" src="/profiles/norgeno3/themes/difi3_norgeno3/img/square.gif" alt=""/></span><span class="livsit-title">Skilsmisse</span></a></span></span></li><li class="views-row views-row-3 views_row_odd"><span class="views-field views-field-title"><span class="field-content"><a href="/nb/livssituasjon/fa-barn"><span class="icon"><span class="icon-life-pregnancy livsit-ikon"></span><img class="bg-cover" src="/profiles/norgeno3/themes/difi3_norgeno3/img/square.gif" alt=""/></span><span class="livsit-title">Få barn</span></a></span></span></li><li class="views-row views-row-4 views_row_even"><span class="views-field views-field-title"><span class="field-content"><a href="/nb/livssituasjon/flytte"><span class="icon"><span class="icon-life-move livsit-ikon"></span><img class="bg-cover" src="/profiles/norgeno3/themes/difi3_norgeno3/img/square.gif" alt=""/></span><span class="livsit-title">Flytte</span></a></span></span></li><li class="views-row views-row-5 views_row_odd"><span class="views-field views-field-title"><span class="field-content"><a href="/nb/livssituasjon/innga-ekteskap"><span class="icon"><span class="icon-life-marriage livsit-ikon"></span><img class="bg-cover" src="/profiles/norgeno3/themes/difi3_norgeno3/img/square.gif" alt=""/></span><span class="livsit-title">Inngå ekteskap</span></a></span></span></li><li class="views-row views-row-6 views_row_even"><span class="views-field views-field-title"><span class="field-content"><a href="/nb/livssituasjon/miste-og-finne-jobb"><span class="icon"><span class="icon-life-job livsit-ikon"></span><img class="bg-cover" src="/profiles/norgeno3/themes/difi3_norgeno3/img/square.gif" alt=""/></span><span class="livsit-title">Miste og finne jobb</span></a></span></span></li><li class="views-row views-row-7 views_row_odd"><span class="views-field views-field-title"><span class="field-content"><a href="/nb/livssituasjon/ny-i-norge"><span class="icon"><span class="icon-life-norway livsit-ikon"></span><img class="bg-cover" src="/profiles/norgeno3/themes/difi3_norgeno3/img/square.gif" alt=""/></span><span class="livsit-title">Ny i Norge</span></a></span></span></li><li class="views-row views-row-8 views_row_even views-row-last"><span class="views-field views-field-title"><span class="field-content"><a href="/nb/livssituasjon/studere"><span class="icon"><span class="icon-life-study livsit-ikon"></span><img class="bg-cover" src="/profiles/norgeno3/themes/difi3_norgeno3/img/square.gif" alt=""/></span><span class="livsit-title">Studere</span></a></span></span></li></ul></div>  </div>
-        </section>		</section>
 
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://helsenorge.no/min-helse">Mi helse</a></span></h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Direktoratet for e-helse</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="no-icons"></span></span></div>
+                <div class="views-field-description"><span class="field-content">Her er det samla tenester som du kan bruke for å&nbsp;følgje opp helsa di. Du blant anna sjå eigendelane og reseptane dine, byte fastlege, bestille Europeisk helsetrygdkort, sjå oversikt over reseptar, sjå vaksinasjonsstatus for deg sjølv og barna dine og melde frå om biverknader av legemiddel. Fleire tenester er under utvikling.</span>
+                </div>
+            </div>
+
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://www.nav.no/no/Person/Arbeid/Sykmeldt%2C+arbeidsavklaringspenger+og+yrkesskade/digital-sykmelding">Digital sykmelding</a></span>
+                </h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">NAV</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="no-icons"></span></span></div>
+                <div class="views-field-description"><span class="field-content">En del sykmeldte arbeidstakere kan nå motta og sende sykmeldingen elektronisk til arbeidsgiveren sin. Den&nbsp;sykmeldte får et varsel på SMS eller e-post med oppfordring om å logge seg inn på nav.no. Her kan man se sykmeldingen og sende den til arbeidsgiveren.&nbsp;</span>
+                </div>
+            </div>
+
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://www.forbrukerradet.no/forside/kontrakter/">Kontrakter for husleie, kjøp av bruktbil med mer</a></span>
+                </h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Forbrukerrådet</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="icon"><a
+                        href="/nb/livssituasjon/skilsmisse" title="Gå til livssituasjon 'Skilsmisse'"><span
+                        class="icon-life-divorce"></span></a></span><span class="icon"><a
+                        href="/nb/livssituasjon/studere" title="Gå til livssituasjon 'Studere'"><span
+                        class="icon-life-study"></span></a></span></span></div>
+                <div class="views-field-description"><span class="field-content">Det er ofte lurt å bruke kontrakt når du kjøper eller leier. Det blir enklere å fastslå hva dere er blitt enige om og det gjør at du står sterkere ved en eventuell konflikt. Her finner du kontrakt for husleie, kjøp av fast eiendom, håndverkertjenester, bruktbil, brukt bobil, campingvogn,motorsykkel fritidsbåt samt kjøp av husdyr og ting. &nbsp;</span>
+                </div>
+            </div>
+
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://helsenorge.no/kjernejournal">Kjernejournal</a></span></h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Direktoratet for e-helse</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="no-icons"></span></span></div>
+                <div class="views-field-description"><span class="field-content">Kjernejournalen samlar informasjon frå fleire kjelder og gjer desse opplysningane tilgjengelege både for deg og for helsepersonell. Kjernejournal&nbsp;er no teken&nbsp;i bruk&nbsp;i helseregionane Helse&nbsp;Vest,&nbsp;i storparten av Helse&nbsp;Midt-Noreg og i dei fleste kommunane i Akershus,&nbsp;Troms, Vest-Agder og Aust-Agder fylke i tillegg til Oslo universitetssykehus og Sunnaas sykehus.&nbsp;Du kan leggje inn&nbsp;eigne opplysningar, avgrense kven som skal ha tilgang til kjernejournalen, sperre delar av journalen for innsyn&nbsp;eller reservere deg mot å ha ein kjernejournal.</span>
+                </div>
+            </div>
+
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://helsenorge.no/utlendinger-i-norge">Helserettigheter  for utlendinger i Norge</a></span>
+                </h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Direktoratet for e-helse</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="icon"><a
+                        href="/nb/livssituasjon/ny-i-norge" title="Gå til livssituasjon 'Ny i Norge'"><span
+                        class="icon-life-norway"></span></a></span></span></div>
+                <div class="views-field-description"><span class="field-content">Her finner du informasjon om hvilken rett du har til helsehjelp som arbeidstaker&nbsp;fra land innenfor eller utenfor EU/EØS eller Sveits, pensjonist eller turist i Norge. Du finner også hvilke helserettigheter du har som asylsøker eller flykting eller student eller&nbsp;au pair fra land&nbsp;utenfor EU/EØS eller Sveits. &nbsp;</span>
+                </div>
+            </div>
+
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a href="https://helsenorge.no/">Helsenorge.no</a></span>
+                </h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Direktoratet for e-helse</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="icon"><a
+                        href="/nb/livssituasjon/fa-barn" title="Gå til livssituasjon 'Få barn'"><span
+                        class="icon-life-pregnancy"></span></a></span></span></div>
+                <div class="views-field-description"><span class="field-content">Portalen Helsenorge.no er en veiviser til helsetjenesten og selvbetjeningsløsninger i helsesektoren. Portalen presenterer også informasjon om forebygging, helse, sunnhet, sykdom, behandling og den enkeltes rettigheter som pasient. Informasjonen om fritt sykehusvalg som lå på nettstedet frittsykehusvalg.no, er flyttet&nbsp;over på helsenorge.no. Du finner det under menypunktet&nbsp;<a
+                        href="https://helsenorge.no/velg-behandlingssted">Velg behandlingssted</a>.</span></div>
+            </div>
+
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://kommune24-7.no/Prompt.aspx?SubscriberConsumerID=fa24307f-8c3b-4e9e-aae2-8571cb31cfac&amp;eDocumentTemplateID=d6bdddac-a349-431c-a0f9-642b7a893c68">Konsesjon på erverv av fast eiendom </a></span>
+                </h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Rygge kommune</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="no-icons"></span></span></div>
+                <div class="views-field-description"><span class="field-content">Du kan søke om å slippe konsesjon på fast eiendom på visse vilkår.</span>
+                </div>
+            </div>
+
+
+            <div class="one-col difi-search-result-service difi-search-result-item">
+
+
+                <h2 class="views-field-service-title"><span class="field-content"><a
+                        href="https://kommune24-7.no/Prompt.aspx?eDocumentTemplateID=b43db014-3995-446c-9391-59ae9ef4d0db&amp;SubscriberConsumerID=f22b35c5-3cd5-4184-a778-0dc4c514dd85">Konsesjonsfrihet – erverv av fast eiendom </a></span>
+                </h2>
+                <div class="views-field-owner-title">
+                    <div class="field-content">Rakkestad kommune</div>
+                </div>
+                <div class="views-field-ikon"><span class="field-content"><span class="no-icons"></span></span></div>
+                <div class="views-field-description"><span class="field-content">Du kan søke om å slippe konsesjon på fast eiendom på visse vilkår.</span>
+                </div>
+            </div>
+
+            <h2 class="element-invisible">Pages</h2>
+            <div class="item-list">
+                <ul class="pager">
+                    <li class="pager-current first">1</li>
+                    <li class="pager-item"><a title="Go to page 2" href="/nb/search/site/fastlege?page=1">2</a></li>
+                    <li class="pager-item"><a title="Go to page 3" href="/nb/search/site/fastlege?page=2">3</a></li>
+                    <li class="pager-item"><a title="Go to page 4" href="/nb/search/site/fastlege?page=3">4</a></li>
+                    <li class="pager-next"><a title="Go to next page" href="/nb/search/site/fastlege?page=1">neste ›</a>
+                    </li>
+                    <li class="pager-last last"><a title="Go to last page" href="/nb/search/site/fastlege?page=3">siste
+                        »</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <aside>
+            <section class="box block-norgeno3-search norgeno3-search-limit-search">
+                <div class="heading">
+
+                </div>
+                <div class="body">
+                    <h2>Avgrens søk</h2></div>
+            </section>
+            <section class="box block-facetapi">
+                <div class="heading">
+                    <h2>Filter by tema:</h2>
+
+                </div>
+                <div class="body">
+                    <div class="item-list">
+                        <ul class="facetapi-facetapi-links facetapi-facet-im-field-los-tema"
+                            id="facetapi-facet-apachesolrsolr-block-im-field-los-tema">
+                            <li class="collapsed first"><a
+                                    href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A2875" rel="nofollow"
+                                    class="facetapi-inactive" id="facetapi-link"><span
+                                    class="facet">Bolig og eiendom</span> <span class="filterNumber">14</span> <span
+                                    class="element-invisible"> Apply Bolig og eiendom filter </span></a></li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A2915"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--2"><span class="facet">Helse</span> <span
+                                    class="filterNumber">7</span> <span
+                                    class="element-invisible"> Apply Helse filter </span></a></li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A3035"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--3"><span class="facet">Næring</span> <span
+                                    class="filterNumber">7</span> <span
+                                    class="element-invisible"> Apply Næring filter </span></a></li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A3059"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--4"><span class="facet">Omsorg, trygd og sosiale tjenester</span>
+                                <span class="filterNumber">6</span> <span class="element-invisible"> Apply Omsorg, trygd og sosiale tjenester filter </span></a>
+                            </li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A3151"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--5"><span class="facet">Trafikk, reiser og samferdsel</span>
+                                <span class="filterNumber">4</span> <span class="element-invisible"> Apply Trafikk, reiser og samferdsel filter </span></a>
+                            </li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A2903"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--6"><span class="facet">Forbrukerspørsmål</span>
+                                <span class="filterNumber">3</span> <span class="element-invisible"> Apply Forbrukerspørsmål filter </span></a>
+                            </li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A2831"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--7"><span class="facet">Arbeid</span> <span
+                                    class="filterNumber">1</span> <span
+                                    class="element-invisible"> Apply Arbeid filter </span></a></li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A2851"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--8"><span class="facet">Barn og familie</span>
+                                <span class="filterNumber">1</span> <span class="element-invisible"> Apply Barn og familie filter </span></a>
+                            </li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A2939"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--9"><span class="facet">Individ og samfunn</span>
+                                <span class="filterNumber">1</span> <span class="element-invisible"> Apply Individ og samfunn filter </span></a>
+                            </li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A2975"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--10"><span
+                                    class="facet">Kultur, idrett og fritid</span> <span class="filterNumber">1</span>
+                                <span class="element-invisible"> Apply Kultur, idrett og fritid filter </span></a></li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A3011"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--11"><span class="facet">Natur og miljø</span>
+                                <span class="filterNumber">1</span> <span class="element-invisible"> Apply Natur og miljø filter </span></a>
+                            </li>
+                            <li class="collapsed"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A3087"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--12"><span
+                                    class="facet">Rettslige spørsmål</span> <span class="filterNumber">1</span> <span
+                                    class="element-invisible"> Apply Rettslige spørsmål filter </span></a></li>
+                            <li class="collapsed last"><a
+                                    href="/nb/search/site/fastlege?f%5B0%5D=im_field_los_tema%3A3115" rel="nofollow"
+                                    class="facetapi-inactive" id="facetapi-link--13"><span class="facet">Skole og utdanning</span>
+                                <span class="filterNumber">1</span> <span class="element-invisible"> Apply Skole og utdanning filter </span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="box block-facetapi">
+                <div class="heading">
+                    <h2>Filter by livssituasjon:</h2>
+
+                </div>
+                <div class="body">
+                    <div class="item-list">
+                        <ul class="facetapi-facetapi-links facetapi-facet-im-field-livsit-ref"
+                            id="facetapi-facet-apachesolrsolr-block-im-field-livsit-ref">
+                            <li class="leaf first"><a
+                                    href="/nb/search/site/fastlege?f%5B0%5D=im_field_livsit_ref%3A5722" rel="nofollow"
+                                    class="facetapi-inactive" id="facetapi-link--14"><span class="facet">Flytte</span>
+                                <span class="filterNumber">1</span> <span
+                                        class="element-invisible"> Apply Flytte filter </span></a></li>
+                            <li class="leaf"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_livsit_ref%3A5721"
+                                                rel="nofollow" class="facetapi-inactive" id="facetapi-link--15"><span
+                                    class="facet">Få barn</span> <span class="filterNumber">1</span> <span
+                                    class="element-invisible"> Apply Få barn filter </span></a></li>
+                            <li class="leaf"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_livsit_ref%3A5723"
+                                                rel="nofollow" class="facetapi-inactive" id="facetapi-link--16"><span
+                                    class="facet">Ny i Norge</span> <span class="filterNumber">1</span> <span
+                                    class="element-invisible"> Apply Ny i Norge filter </span></a></li>
+                            <li class="leaf"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_livsit_ref%3A5725"
+                                                rel="nofollow" class="facetapi-inactive" id="facetapi-link--17"><span
+                                    class="facet">Skilsmisse</span> <span class="filterNumber">1</span> <span
+                                    class="element-invisible"> Apply Skilsmisse filter </span></a></li>
+                            <li class="leaf last"><a href="/nb/search/site/fastlege?f%5B0%5D=im_field_livsit_ref%3A5719"
+                                                     rel="nofollow" class="facetapi-inactive"
+                                                     id="facetapi-link--18"><span class="facet">Studere</span> <span
+                                    class="filterNumber">1</span> <span
+                                    class="element-invisible"> Apply Studere filter </span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="box block-norgeno3-feedback">
+                <div class="heading">
+                    <h2>Fant du det du lette etter?</h2>
+
+                </div>
+                <div class="body">
+                    <form action="/nb/search/site/fastlege" method="post" id="norgeno3-feedback-feedback-form"
+                          accept-charset="UTF-8">
+                        <div>
+                            <div id="form-content">
+                                <div class="description"></div>
+                                <div class="form-item form-type-radios form-item-boolean-question">
+                                    <label class="element-invisible" for="edit-boolean-question">Ja/Nei <span
+                                            class="form-required" title="This field is required.">*</span></label>
+                                    <div id="edit-boolean-question" class="form-radios">
+                                        <div class="form-item form-type-radio form-item-boolean-question">
+                                            <input title="Ja" type="radio" id="edit-boolean-question-ja"
+                                                   name="boolean_question" value="Ja" class="form-radio"/> <label
+                                                class="option" for="edit-boolean-question-ja">Ja </label>
+
+                                        </div>
+                                        <div class="form-item form-type-radio form-item-boolean-question">
+                                            <input title="Nei" type="radio" id="edit-boolean-question-nei"
+                                                   name="boolean_question" value="Nei" class="form-radio"/> <label
+                                                class="option" for="edit-boolean-question-nei">Nei </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-item form-type-textarea form-item-open-question">
+                                    <label for="edit-open-question">Hva lette du etter? <span class="form-required"
+                                                                                              title="This field is required.">*</span></label>
+                                    <div class="form-textarea-wrapper resizable"><textarea
+                                            onblur="if (this.value == &#039;&#039;) {this.value = &#039;&#039;}"
+                                            onfocus="if (this.value == &#039;&#039;) {this.value = &#039;&#039;}"
+                                            id="edit-open-question" name="open_question" cols="60" rows="2"
+                                            class="form-textarea required"></textarea></div>
+                                </div>
+                                <div class="form-item form-type-textfield form-item-skjult">
+                                    <label class="element-invisible" for="edit-skjult">skjult </label>
+                                    <input aria-hidden="true" class="skjult form-text" tabindex="-1"
+                                           style="display: none" type="text" id="edit-skjult" name="skjult" value=""
+                                           size="60" maxlength="128"/>
+                                </div>
+                                <div class="form-item form-type-textfield form-item-info">
+                                    <label class="element-invisible" for="edit-info">info </label>
+                                    <input aria-hidden="true" class="skjult form-text" tabindex="-1"
+                                           style="display: none" type="text" id="edit-info" name="info"
+                                           value="aHR0cHM6Ly93d3cubm9yZ2Uubm8vbmIvc2VhcmNoL3NpdGUvZmFzdGxlZ2V8KnxTw7hr"
+                                           size="60" maxlength="1024"/>
+                                </div>
+                                <input title="Send" type="submit" id="edit-submit" name="op" value="Send"
+                                       class="form-submit"/></div>
+                            <input type="hidden" name="form_build_id"
+                                   value="form-t9r8Er5rhALkfvwPvHzscj8pFvgXFMNwixyABXkNTvQ"/>
+                            <input type="hidden" name="form_id" value="norgeno3_feedback_feedback_form"/>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </aside>
     </div>
 
 
@@ -347,11 +1350,14 @@
         <div class="footer-footer">
             <div class="footer-decoration"></div>
         </div>
-    </footer>	</div>
+    </footer>
+</div>
 
 <a class="scroll-to-top" href="#top" title="Go to top of page">
-    <span class="hidden">Go to top of page </span><div class="up-arrow">↑</div>
-</a>  <script type="text/javascript" src="/_style/lib/jquery/jquery-1.11.1.min.js"></script>
+    <span class="hidden">Go to top of page </span>
+    <div class="up-arrow">↑</div>
+</a>
+<script type="text/javascript" src="/_style/lib/jquery/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="/_style/lib/bootstrap3/js/bootstrap.js"></script>
 <script type="text/javascript" src="https://www.norge.no/themes/contrib/difi3/js/jquery.flexnav.min.js?osm4uy"></script>
 <script type="text/javascript" src="https://www.norge.no/themes/contrib/difi3/js/tools.js?osm4uy"></script>
