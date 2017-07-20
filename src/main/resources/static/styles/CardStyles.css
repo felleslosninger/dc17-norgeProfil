@@ -7,6 +7,7 @@
     .Icon {
         /*margin-top: 40px;*/
         margin-top: 2%;
+        margin-left: 2em;
     }
 /*
     p {
@@ -47,6 +48,7 @@
     .Icon {
         /*margin-top: 40px;*/
         margin-top: 2%;
+        margin-left: 2em;
     }
 
     .InfoBtn {
@@ -72,6 +74,7 @@
     .Icon {
         /*margin-top: 40px;*/
         margin-top: 2%;
+        margin-left: 1em;
     }
 
     Divider {
@@ -102,6 +105,7 @@
     .Icon {
         /*margin-top: 40px;*/
         margin-top: 2%;
+        margin-left: 1em;
     }
     .hideFromMobile{
         visibility: hidden;
