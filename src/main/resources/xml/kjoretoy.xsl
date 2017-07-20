@@ -4,12 +4,12 @@
 
         <xsl:template match="ns:kjoretoy">
             <xsl:for-each select="ns:bil">
-                <xsl:value-of select="ns:eier/ns:fornavn"/>
+                <div><xsl:value-of select="ns:eier/ns:fornavn"/>
                 <xsl:if test="ns:eier/ns:mellomnavn">
                     <xsl:value-of select="ns:eier/ns:mellomnavn"/>
                 </xsl:if>
-                <xsl:value-of select="ns:eier/ns:etternavn"/>
-                <xsl:value-of select="ns:eukontroll/ns:status"/>
+                <xsl:value-of select="ns:eier/ns:etternavn"/></div>
+                <div><xsl:value-of select="ns:eukontroll/ns:status"/></div>
             </xsl:for-each>
         </xsl:template>
 </xsl:stylesheet>
