@@ -44,6 +44,8 @@ public class NorgeProfilApplication extends WebSecurityConfigurerAdapter {
         return principal;
     }
 
+
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

@@ -8,14 +8,6 @@ import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.io.IOException;
 
 @Controller
 public class HomeController {
@@ -24,7 +16,10 @@ public class HomeController {
     public String index() {
         return ("index");
     }
-
+    @RequestMapping("/norge")
+    public String norge(){
+        return ("norgeno");
+    }
     @Autowired
     OAuth2ClientContext oauth2ClientContext;
     private final static String KRR_URI = "https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/person";

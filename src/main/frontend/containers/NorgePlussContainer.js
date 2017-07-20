@@ -3,7 +3,7 @@ import http from 'http';
 
 class NorgePlussContainer extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             norgeno: ''
@@ -22,16 +22,18 @@ class NorgePlussContainer extends Component {
         });
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.fetchFromServer();
         this.setState({
             norgeno: ''
         });
     }
 
-    render(){
-        return(
-            <h1>Hello</h1>
+    render() {
+        return (
+            <div>
+        hei
+            </div>
         );
     }
 }
