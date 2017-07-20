@@ -10,7 +10,7 @@ import {Provider} from "react-redux";
 import EnsureLoggedInContainer from'../containers/EnsureLoggedInContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
+import NorgePlussContainer from '../containers/NorgePlussContainer';
 
 
 const muiTheme = getMuiTheme({
@@ -47,19 +47,21 @@ const Routes = ({store}) => (
     <Provider store = {store}>
         <MuiThemeProvider muiTheme={muiTheme}>
             <HashRouter>
-                <div>
-                    <NavBarContainer/>
-                    <Switch>
-                        <EnsureLoggedInContainer>
-                            <Switch>
-                                <Route path='/health' component={HealthContainer}/>
-                                <Route path="/traffic" component={Traffic}/>
-                                <Route path='/' component={AppContainer}/>
-                            </Switch>
-
-                        </EnsureLoggedInContainer>
-                    </Switch>
-                </div>
+                <Switch>
+                    <Route path = '/norgepluss' component={NorgePlussContainer}/>
+                    <div>
+                        <NavBarContainer/>
+                        <Switch>
+                            <EnsureLoggedInContainer>
+                                <Switch>
+                                    <Route path='/health' component={HealthContainer}/>
+                                    <Route path="/traffic" component={Traffic}/>
+                                    <Route path='/' component={AppContainer}/>
+                                </Switch>
+                            </EnsureLoggedInContainer>
+                        </Switch>
+                    </div>
+                </Switch>
             </HashRouter>
         </MuiThemeProvider>
     </Provider>
