@@ -5,7 +5,7 @@
 
     <xsl:template match="fs:Traffic">
         <xsl:for-each select="fs:DrivingLicence">
-            <div> <xsl:value-of select="fs:header"/></div>
+            <div> <xsl:value-of select="fs:header"/> </div>
             <div> <xsl:value-of select="fs:actor"/></div>
             <div> <xsl:value-of select="fs:description"/></div>
             <a href="{fs:link}"> Hjemmeside </a>

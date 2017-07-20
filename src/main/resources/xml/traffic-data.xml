@@ -13,14 +13,9 @@
         </link>
     </DrivingLicence>
     <DrivingLearning>
-        <header>
-            Mer om oppkjøring
-        </header>
-        <actor>
-            Statens vegvesen
-        </actor>
-        <description>
-            For å ta en oppkjøring må vandel være godkjent, all obligatorisk opplæring skal være fullført og registrert i
+        <header>Mer om oppkjøring</header>
+        <actor>Statens vegvesen</actor>
+        <description>For å ta en oppkjøring må vandel være godkjent, all obligatorisk opplæring skal være fullført og registrert i
             Statens vegvesen systemer, helseattest skal være levert og teoriprøven skal være bestått. Du må selv anskaffe
             et godkjent kjøretøy du kan kjøre opp med, du kan f. eks få tak i dette hos mange kjøreskoler. Trenger du en
             spesial

@@ -1,0 +1,57 @@
+<Kjøretøy>
+    <Bil>
+        <forfatter>
+            <fornavn>Johan </fornavn>
+            <mellomnavn>August</mellomnavn>
+            <etternavn>Voll </etternavn>
+            <år>37</år>
+        </forfatter>
+        <fasong>Sedan</fasong>
+        <registrering>EL64005</registrering>
+        <girtype>Automat</girtype>
+        <personbilsegment>Mellomklassen</personbilsegment>
+        <pris>3892000</pris>
+        <antiskrens>Ja</antiskrens>
+        <utslipp>
+            <fuel>Elektrisitet</fuel>
+        </utslipp>
+        <tilhenger>
+            <weight>720kg</weight>
+        </tilhenger>
+        <EUkontroll>
+            <betalingsdato>
+                <dag>24.</dag>
+                <måned>April</måned>
+                <år>2017</år>
+            </betalingsdato>
+            <status>Betalt</status>
+            <beløp>2040kr</beløp>
+            <Idnummer>VARZZZ1JZWB056133</Idnummer>
+        </EUkontroll>
+    </Bil>
+    <Bil>
+        <Eier>
+            <fornavn>Celina</fornavn>
+            <etternavn>Fjellheim</etternavn>
+            <år>19</år>
+        </Eier>
+        <klasse>B</klasse>
+        <fasong>Sedan</fasong>
+        <registrering>EL64005</registrering>
+        <girtype>Automat</girtype>
+        <personbilsegment>Mellomklassen</personbilsegment>
+        <pris>3892000</pris>
+        <antiskrens>Ja</antiskrens>
+        <utslipp>
+            <fuel>Elektrisitet</fuel>
+        </utslipp>
+        <tilhenger>
+            <weight>720kg</weight>
+        </tilhenger>
+    </Bil>
+    <EUkontroll>
+        <status>ubetalt</status>
+        <beløp>792kr</beløp>
+        <Idnummer>VARZZZ1JZWB056133</Idnummer>
+    </EUkontroll>
+</Kjøretøy>
