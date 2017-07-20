@@ -79,8 +79,10 @@ class AppContainer extends Component {
         pointList.push(createListItem("Valgt postkasse",this.props.userHasPostbox,70));
         pointList.push(createListItem("Registert e-post",this.props.userHasEmail,20));
         pointList.push(createListItem("Registrert mobilnummer",this.props.userHasPhone,20));
-        pointList.push(createListItem("Bruker eID",this.props.userHasEid,90));
+        // pointList.push(createListItem("Bruker eID",this.props.userHasEid,90));
         pointList.push(createListItem("Ikke reservert",!this.props.activeReservation,100));
+        pointList.push(createListItem("Registert nivå 3 eID",!this.props.levelThree,10));
+        pointList.push(createListItem("Registert nivå 4 eID",!this.props.levelFour,30));
         return pointList;
     }
 
@@ -160,6 +162,21 @@ const mapStateToProps = state => {
         activeReservation = true;
     }
 
+    let levelThree = false;
+    let levelFour = false;
+
+    for (let i = 0; i < activeEid.length; i++) {
+        if (activeEid[i][1].indexOf('MinID') >= 0) {
+            levelThree = true;
+        }
+        if(activeEid[i][1].indexOf('BankID') >= 0 || activeEid[i][1].indexOf('BankID') >= 0 || activeEid[i][1].indexOf('Commfides') >= 0 ||
+            activeEid[i][1].indexOf('BuyPass') >= 0 || activeEid[i][1].indexOf('BankID mobil') >= 0) {
+            levelFour = true;
+        }
+    }
+
+    console.log(activeEid, levelFour, levelThree);
+
     return {
         username: username,
         activeContactEmail: activeContactEmail,
@@ -174,6 +191,8 @@ const mapStateToProps = state => {
         userHasEid: userHasEid,
         recentUserActivity: recentUserActivity.slice(0, 10),
         recentPublicActivity: recentPublicActivity.slice(0, 10),
+        levelThree: levelThree,
+        levelFour: levelFour
     }
 };
 
