@@ -53,7 +53,7 @@ const calcGameState = (pointList) => {
         points: points,
         maxScore: maxScore
     });
-}
+};
 
 class AppContainer extends Component {
 
@@ -162,20 +162,18 @@ const mapStateToProps = state => {
         activeReservation = true;
     }
 
-    let levelThree = false;
-    let levelFour = false;
+    let levelThree = true;
+    let levelFour = true;
 
     for (let i = 0; i < activeEid.length; i++) {
         if (activeEid[i][1].indexOf('MinID') >= 0) {
-            levelThree = true;
+            levelThree = false;
         }
         if(activeEid[i][1].indexOf('BankID') >= 0 || activeEid[i][1].indexOf('BankID') >= 0 || activeEid[i][1].indexOf('Commfides') >= 0 ||
             activeEid[i][1].indexOf('BuyPass') >= 0 || activeEid[i][1].indexOf('BankID mobil') >= 0) {
-            levelFour = true;
+            levelFour = false;
         }
     }
-
-    console.log(activeEid, levelFour, levelThree);
 
     return {
         username: username,
