@@ -16,10 +16,23 @@ public class HomeController {
     public String index() {
         return ("index");
     }
+
     @RequestMapping("/norge")
     public String norge(){
         return ("norgeno");
     }
+
+    @RequestMapping("/reservasjon")
+    public String reservasjon(){
+        return ("reservasjon");
+    }
+
+    @RequestMapping("/sertifikat")
+    public String sertifikat(){
+        return ("sertifikat");
+    }
+
+
     @Autowired
     OAuth2ClientContext oauth2ClientContext;
     private final static String KRR_URI = "https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/person";
