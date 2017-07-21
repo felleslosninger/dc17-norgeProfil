@@ -28,7 +28,11 @@ class NorgePlussContainer extends Component {
 
     render() {
         return (
-            <InfoBox/>
+            <div>
+                <InfoBox/>
+                <InfoBox/>
+                <InfoBox/>
+            </div>
         );
     }
 }
