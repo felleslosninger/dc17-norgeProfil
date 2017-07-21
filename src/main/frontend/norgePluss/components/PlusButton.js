@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import AddCircle from 'material-ui/svg-icons/content/add-circle';
+
 
 class PlusButton extends Component {
 
@@ -14,7 +16,7 @@ class PlusButton extends Component {
 
     render(){
         return(
-            <button onClick = {this.toggle}>+</button>
+            <AddCircle onClick = {this.toggle}/>
         );
     }
 }
