@@ -1,0 +1,58 @@
+<Traffic xmlns="urn:fdc:difi.no:2017:traffic:v1">
+    <DrivingLicence>
+        <header>
+            Anmelde tyveri eller skade
+        </header>
+        <actor>Politiet.no</actor>
+        <description>
+            Du veiledes gjennom anmeldelsen og får svar på om du kan levere den på nett, eller om du må kontakte lokalt
+            politi for å avtale anmeldelsen.
+        </description>
+        <link>
+            https://politiet.no/tjenester/anmelde/
+        </link>
+    </DrivingLicence>
+    <DrivingLearning>
+        <header>Mer om oppkjøring</header>
+        <actor>Statens vegvesen</actor>
+        <description>For å ta en oppkjøring må vandel være godkjent, all obligatorisk opplæring skal være fullført og registrert i
+            Statens vegvesen systemer, helseattest skal være levert og teoriprøven skal være bestått. Du må selv anskaffe
+            et godkjent kjøretøy du kan kjøre opp med, du kan f. eks få tak i dette hos mange kjøreskoler. Trenger du en
+            spesial
+        </description>
+        <link>
+            https://www.vegvesen.no/forerkort/ta-forerkort/oppkjoring/mer-om-oppkjoring/mer-om-oppkjoring
+        </link>
+    </DrivingLearning>
+    <DrivingLearning>
+        <header>Viktig å vite ved valg av kjøreskole</header>
+        <description>
+            Ditt valg av trafikkskole er avgjørende for hvordan du senere vil tenke og ta beslutninger i trafikken.
+            Undersøk derfor hva familie og venner forteller om din kjøreskole.
+
+            Undervisningstiden skal utnyttes effektivt. Du skal kunne forvente logisk progresjon i opplæringen og
+            effektiv utnyttelse av kjøretimene. Du skal kunne forvente en godt planlagt undervisning. Trafikklæreren
+            skal ha full oppmerksomhet på din opplæring i hele kjøretimen. Be om hjemmelekse hvis du øvingskjører
+            privat. Og forvent å få vite hva dere skal jobbe med i neste kjøretime.
+
+            Billigst er ikke nødvendigvis best. Det kan bli dyrt å kjøpe billig. Det er ikke alltid at billige
+            kjøretimer gir den billigste opplæringen til slutt. Vær forsiktig med å betale ut store beløp før du har
+            gjennomført opplæringen. Skulle du benytte deg av pakketilbud så sørg for å undersøke hva som er inkludert
+            i tilbudet. Sørg alltid for å få kvittering, også når du betaler kontant.
+        </description>
+    </DrivingLearning>
+    <DrivingLearning>
+        <header>
+            Opplæringsmodeller for føreropplæring
+        </header>
+        <actor>
+            Statens vegvesen
+        </actor>
+        <description>
+            Se opplæringsmoddellene til hver klasse
+        </description>
+        <link>
+            https://www.vegvesen.no/_attachment/61088/binary/864937?fast_title=Oppl%C3%A6ringsmodeller+%28trinnene+innen+hver+klasse%29.pdf">
+        </link>
+    </DrivingLearning>
+</Traffic>

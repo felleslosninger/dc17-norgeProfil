@@ -1,74 +1,111 @@
 /*Large desktops and laptops*/
 @media (min-width: 1192px) {
+    .HeaderImg{
+        height: 2em;
+        width: auto;
+    }
+    .Icon {
+        /*margin-top: 40px;*/
+        margin-top: 2%;
+        margin-left: 2em;
+    }
+/*
     p {
         font-size: 1em;
     }
-
+*/
     ListItem {
         font-size: 1em;
     }
 
-    TextField {
+/*    TextField {
         font-size: 1em;
     }
-
+*/
     .container {
         width: 600px;
+    }
+
+    .EditBtn {
+        position: absolute;
+        right: 3.2%;
+        bottom: 3%;
+    }
+
+    .InfoBtn {
+        position: absolute;
+        right: 11%;
+        top: 2%;
     }
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
 @media (min-width: 992px ) and (max-width: 1192px) {
-    h1 {
-        font-size: 1.5em;
-        font-stretch: expanded;
+    .HeaderImg{
+        height: 2em;
+        width: auto;
+    }
+    .Icon {
+        /*margin-top: 40px;*/
+        margin-top: 2%;
+        margin-left: 2em;
     }
 
-    h3{
-        font-size: 1.4em;
+    .InfoBtn {
+        position: absolute;
+        right: 20%;
+        top: 2%;
     }
 
-    h4 {
-        font-size: medium;
-        font-stretch: expanded;
-    }
 
-    p{
-        font-size: 1em;
+    .EditBtn {
+        position: absolute;
+        right: 3.2%;
+        bottom: 3%;
     }
 }
 
 /*Portrait tablets and small desktops eg. Ipad*/
 @media (min-width: 768px) and (max-width: 991px) {
+    .HeaderImg{
+        height: 2em;
+        width: auto;
+    }
+    .Icon {
+        /*margin-top: 40px;*/
+        margin-top: 2%;
+        margin-left: 1em;
+    }
+
     Divider {
         margin: auto;
     }
 
-    h1 {
-        font-size: 1.9em;
-        font-stretch: expanded;
+    .EditBtn {
+        position: absolute;
+        right: 13.2%;
+        bottom: 3%;
     }
 
-    h3 {
-        font-size: 1.8em;
+
+    .InfoBtn {
+        position: absolute;
+        right: 17%;
+        top: 2%;
     }
 
-    h4 {
-        font-size: 1em;
-    }
-
-    p {
-        font-size: small;
-    }
-
-    .CustomP{ /*Class to adapt paragraph for letters in Ipad mode*/
-        width: 30em;
-    }
 }
 
 @media(max-width:767px){
-    h3{
-        font-size: 1.7em;
+    .HeaderImg{
+        height: 1em;
+        width: auto;
+    }
+
+    .Icon {
+        /*margin-top: 40px;*/
+        margin-top: 2%;
+        margin-left: 1em;
     }
     .hideFromMobile{
         visibility: hidden;
@@ -81,8 +118,20 @@
     }
 
     .GamificationBar {
-        width: 25em;
+        background-color: #d1e6c4;
+        width: 18em;
     }
+
+    .ProfileProgress {
+        margin-top: 1em;
+    }
+
+    .InfoBtn {
+        position: absolute;
+        right: 7%;
+        top: 2%;
+    }
+
 }
 
 
@@ -115,11 +164,6 @@
     margin-left: 1em;
 }
 
-.Icon {
-    /*margin-top: 40px;*/
-    margin-top: 2%;
-}
-
 .Feed {
     margin-bottom: 3em;
 }
@@ -144,20 +188,6 @@
 .EditInfo {
     margin-left: 1.5em;
 }
-
-.InfoBtn {
-    cursor: pointer;
-    position: absolute;
-    right: 7%;
-    top: 2%;
-}
-
-.EditBtn {
-    position: absolute;
-    right: 3.2%;
-    bottom: 3%;
-}
-
 
 .ReservationBtn{
     text-align:center;
