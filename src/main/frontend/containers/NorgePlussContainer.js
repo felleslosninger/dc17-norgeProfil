@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import http from 'http';
+import axios from "axios";
+
 
 class NorgePlussContainer extends Component {
 
@@ -11,15 +13,10 @@ class NorgePlussContainer extends Component {
     }
 
     fetchFromServer() {
-        http.get({
-            hostname: 'www.norge.no',
-            port: 80,
-            path: '/',
-            agent: false  // create a new agent just for this one request
-        }, (res) => {
-            console.log(res);
-            // Do stuff with response
-        });
+        axios.get("http://localhost:8080/data/fastlege").then( (response) => {
+            console.log(response);
+            this.setState({norgeno: response.data})
+        })
     }
 
     componentWillMount() {
@@ -32,7 +29,8 @@ class NorgePlussContainer extends Component {
     render() {
         return (
             <div>
-        hei
+                {$("div").html = this.state.norgeno}
+
             </div>
         );
     }
