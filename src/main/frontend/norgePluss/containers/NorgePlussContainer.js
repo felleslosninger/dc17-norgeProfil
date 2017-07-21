@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import http from 'http';
 import axios from "axios";
-
+import InfoBox from "../components/InfoBox";
 
 class NorgePlussContainer extends Component {
 
@@ -28,10 +28,7 @@ class NorgePlussContainer extends Component {
 
     render() {
         return (
-            <div>
-                {$("div").html = this.state.norgeno}
-
-            </div>
+            <InfoBox/>
         );
     }
 }

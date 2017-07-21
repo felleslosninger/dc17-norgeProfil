@@ -10,7 +10,7 @@ import {Provider} from "react-redux";
 import EnsureLoggedInContainer from'../containers/EnsureLoggedInContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import NorgePlussContainer from '../containers/NorgePlussContainer';
+import NorgePlussContainer from '../norgePluss/containers/NorgePlussContainer';
 
 
 const muiTheme = getMuiTheme({
