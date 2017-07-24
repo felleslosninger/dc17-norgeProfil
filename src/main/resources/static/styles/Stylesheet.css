@@ -3,28 +3,6 @@ body {
     height: 100%;
 }
 
-.pageheader {
-    margin: 0 0 0.5em 0;
-    background-color: #EBEBEB;
-    padding: 0.3em;
-    min-height: 2.5em;
-}
-
-.Icon {
-    margin-top: 2%;
-    margin-left: 1em;
-}
-
-
-.Nav {
-    padding: 3em 7em 3em 7em;
-    margin-bottom: 2em;
-}
-
-.hr {
-    margin: 2.2em 0.3em 0 0.3em;
-}
-
 /*Share on Facebook btn*/
 .btn-facebook {
     color: #fff;
@@ -56,6 +34,27 @@ body {
 .gamificationContainer {
     padding: 1em;
     position: relative;
+}
+
+.hr {
+    margin: 2.2em 0.3em 0 0.3em;
+}
+
+.Icon {
+    margin-top: 2%;
+    margin-left: 1em;
+}
+
+.Nav {
+    padding: 3em 7em 3em 7em;
+    margin-bottom: 2em;
+}
+
+.pageheader {
+    margin: 0 0 0.5em 0;
+    background-color: #EBEBEB;
+    padding: 0.3em;
+    min-height: 2.5em;
 }
 
 .ProgressBar {
