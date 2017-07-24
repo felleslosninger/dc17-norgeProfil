@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import axios from "axios";
 import InfoBox from "../components/InfoBox";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-const boxInfo = (id, title, subTitle, description) => {
+const boxInfo = (id, title, subTitle, description, url) => {
     return(
-        <InfoBox key = {id} title = {title}  subTitle =  {subTitle} description = {description} />
+        <InfoBox key = {id} title = {title}  subTitle =  {subTitle} description = {description} url = {url}/>
     );
 }
 
@@ -21,7 +20,8 @@ class NorgePlussContainer extends Component {
 
     createInfoList(){
         let infoList = [];
-        infoList.push(boxInfo(1,"Bytte fastlege - Min fastlege", "Helfo", "Her kan du finne fastlegen din, få oversikt over ledige fastleger og bytte fastlege. Du kan bytte fastlege to ganger per kalenderår. Du kan også sette deg på venteliste dersom legen du ønsker ikke er ledig."))
+        infoList.push(boxInfo(1,"Bytte fastlege - Min fastlege", "Helfo", "Her kan du finne fastlegen din, få oversikt over ledige fastleger og bytte fastlege. Du kan bytte fastlege to ganger per kalenderår. Du kan også sette deg på venteliste dersom legen du ønsker ikke er ledig.", "http://localhost:8080/data/fastlege"));
+        infoList.push(boxInfo(2,"Bytte fastlege - sertifikat", "Helfo", "Her kan du finne fastlegen din, få oversikt over ledige fastleger og bytte fastlege. Du kan bytte fastlege to ganger per kalenderår. Du kan også sette deg på venteliste dersom legen du ønsker ikke er ledig.", "http://localhost:8080/data/fastlege"));
 
         return(infoList);
     }
@@ -35,15 +35,7 @@ class NorgePlussContainer extends Component {
         }
     }
 
-    fetchFromServer() {
-        axios.get("http://localhost:8080/data/fastlege").then( (response) => {
-            console.log(response);
-            this.setState({norgeno: response.data})
-        })
-    }
-
     componentWillMount() {
-        this.fetchFromServer();
         this.setState({
             norgeno: ''
         });
