@@ -1,22 +1,29 @@
 import React, {Component} from 'react';
 import PlusButton from '../components/PlusButton'
+import axios from "axios";
+
 class InfoBox extends Component {
 
     constructor(props){
         super(props);
         this.state = {
             plusClicked: false,
-            descClicked:false
-        }
+            descClicked:false,
+            plussDesc: ""
+        };
 
         this.togglePlus = this.togglePlus.bind(this);
         this.toggleDesc = this.toggleDesc.bind(this);
+        this.fetchFromServer = this.fetchFromServer.bind(this);
     }
 
     togglePlus(){
         this.setState({
             plusClicked: !this.state.plusClicked
         });
+        if(this.state.plusClicked && this.state.plusDesc != ""){
+            this.fetchFromServer();
+        }
     }
 
     toggleDesc(){
@@ -25,14 +32,22 @@ class InfoBox extends Component {
         });
     }
 
+    fetchFromServer() {
+        axios.get(this.props.url).then((response) => {
+            console.log(response);
+            this.setState({plussDesc: JSON.parse(response.data)})
+        })
+    }
+
+
     render(){
         let plusDesc = "";
         let infoDesc = "" ;
         if(this.state.plusClicked){
-            plusDesc =  <div className="views-field-description"><span className="field-content">{this.props.description}</span></div>;
+            plusDesc =  <div className="views-field-description"><span className="field-content">{this.state.plussDesc}</span></div>;
 
         }else{
-            plusDesc =  "";//<div className="views-field-description"><span className="field-content"></span></div>;
+            plusDesc =  "";
 
         }
 
@@ -40,7 +55,7 @@ class InfoBox extends Component {
             infoDesc =  <div className="views-field-description"><span className="field-content">{this.props.description}</span></div>;
 
         }else{
-            infoDesc = "";//<div className="views-field-description"><span className="field-content"></span></div>;
+            infoDesc = "";
 
         }
 
