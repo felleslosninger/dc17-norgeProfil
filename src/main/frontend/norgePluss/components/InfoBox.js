@@ -6,15 +6,27 @@ class InfoBox extends Component {
         super(props);
         this.state = {
             plusClicked: false,
-            descClicked:false;
+            descClicked:false
         }
+
+        this.togglePlus = this.togglePlus.bind(this);
+        this.toggleDesc = this.toggleDesc.bind(this);
     }
 
     togglePlus(){
-        
+        this.setState({
+            plusClicked: !this.state.plusClicked
+        });
+    }
+
+    toggleDesc(){
+        this.setState({
+            descClicked: !this.state.descClicked
+        });
     }
 
     render(){
+
         return(
             <div className="one-col difi-search-result-service difi-search-result-item">
 
@@ -28,10 +40,10 @@ class InfoBox extends Component {
                     <div className="field-content">{this.props.subTitle}</div>
                 </div>
                 <div className="buttonContainer">
-                    <PlusButton text = "Beskrivelse"/>
-                    <PlusButton text = "Pluss"/>
+                    <PlusButton text = "Beskrivelse" toggle = {this.toggleDesc} isClicked = {this.state.descClicked}/>
+                    <PlusButton text = "Pluss" toggle = {this.togglePlus} isClicked = {this.state.plusClicked}/>
                 </div>
-                <div className="views-field-description">
+                <div className="views-field-description" style="display:none">
                     <span className="field-content">{this.props.description}</span>
                 </div>
 
