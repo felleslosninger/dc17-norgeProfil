@@ -34,8 +34,8 @@ class InfoBox extends Component {
 
     fetchFromServer() {
         axios.get(this.props.url).then((response) => {
-            console.log(response);
-            this.setState({plussDesc: JSON.parse(response.data)})
+            console.log(response.data);
+            this.setState({plussDesc: response.data})
         })
     }
 
@@ -44,7 +44,7 @@ class InfoBox extends Component {
         let plusDesc = "";
         let infoDesc = "" ;
         if(this.state.plusClicked){
-            plusDesc =  <div className="views-field-description"><span className="field-content">{this.state.plussDesc}</span></div>;
+            plusDesc =  <div className="views-field-description"><span className="field-content"dangerouslySetInnerHTML={{__html: this.state.plussDesc}}></span></div>;
 
         }else{
             plusDesc =  "";
