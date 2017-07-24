@@ -1,6 +1,33 @@
 import React, {Component} from 'react';
 import PlusButton from '../components/PlusButton'
 import axios from "axios";
+import RefreshIndicator from 'material-ui/RefreshIndicator';
+
+
+
+const style = {
+    container: {
+        position: 'relative',
+    },
+    refresh: {
+        display: 'inline-block',
+        position: 'relative',
+    },
+};
+
+const loading = () => {
+    return(
+        <div style={style.container}>
+            <RefreshIndicator
+                size={40}
+                left={10}
+                top={0}
+                status="loading"
+                style={style.refresh}
+            /></div>
+    );
+}
+
 
 class InfoBox extends Component {
 
@@ -9,7 +36,8 @@ class InfoBox extends Component {
         this.state = {
             plusClicked: false,
             descClicked:false,
-            plussDesc: ""
+            plussDesc: loading(),
+            hasLoaded: false
         };
 
         this.togglePlus = this.togglePlus.bind(this);
@@ -21,7 +49,7 @@ class InfoBox extends Component {
         this.setState({
             plusClicked: !this.state.plusClicked
         });
-        if(this.state.plusClicked && this.state.plusDesc != ""){
+        if(this.state.plusClicked && !this.state.hasLoaded){
             this.fetchFromServer();
         }
     }
@@ -35,7 +63,7 @@ class InfoBox extends Component {
     fetchFromServer() {
         axios.get(this.props.url).then((response) => {
             console.log(response.data);
-            this.setState({plussDesc: response.data})
+            this.setState({plussDesc: response.data, hasLoaded:true})
         })
     }
 
@@ -58,8 +86,6 @@ class InfoBox extends Component {
             infoDesc = "";
 
         }
-
-
 
         return(
             <div className="one-col difi-search-result-service difi-search-result-item">
