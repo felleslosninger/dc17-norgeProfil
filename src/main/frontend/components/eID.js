@@ -72,11 +72,11 @@ class EID extends React.Component {
                 ids.push(idsUsed);
                 activeList.push(
                     <MenuItem style={fontColorStyle}
-                              key={i + 1}
-                              primaryText={idsUsed}
-                              leftIcon={<CheckIcon/>}
-                              disabled={true}/>
-                );
+                key={i + 1}
+                primaryText={idsUsed}
+                leftIcon={<CheckIcon/>}
+                disabled={true}/>
+            );
             }
         };
 
