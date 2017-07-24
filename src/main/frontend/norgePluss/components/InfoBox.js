@@ -26,6 +26,25 @@ class InfoBox extends Component {
     }
 
     render(){
+        let plusDesc = "";
+        let infoDesc = "" ;
+        if(this.state.plusClicked){
+            plusDesc =  <div className="views-field-description"><span className="field-content">{this.props.description}</span></div>;
+
+        }else{
+            plusDesc =  "";//<div className="views-field-description"><span className="field-content"></span></div>;
+
+        }
+
+        if(this.state.descClicked){
+            infoDesc =  <div className="views-field-description"><span className="field-content">{this.props.description}</span></div>;
+
+        }else{
+            infoDesc = "";//<div className="views-field-description"><span className="field-content"></span></div>;
+
+        }
+
+
 
         return(
             <div className="one-col difi-search-result-service difi-search-result-item">
@@ -43,10 +62,8 @@ class InfoBox extends Component {
                     <PlusButton text = "Beskrivelse" toggle = {this.toggleDesc} isClicked = {this.state.descClicked}/>
                     <PlusButton text = "Pluss" toggle = {this.togglePlus} isClicked = {this.state.plusClicked}/>
                 </div>
-                <div className="views-field-description" style="display:none">
-                    <span className="field-content">{this.props.description}</span>
-                </div>
-
+                    {infoDesc}
+                    {plusDesc}
             </div>
         );
     }
