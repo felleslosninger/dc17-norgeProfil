@@ -4,6 +4,14 @@ class InfoBox extends Component {
 
     constructor(props){
         super(props);
+        this.state = {
+            plusClicked: false,
+            descClicked:false;
+        }
+    }
+
+    togglePlus(){
+        
     }
 
     render(){
@@ -19,15 +27,9 @@ class InfoBox extends Component {
                 <div className="views-field-owner-title">
                     <div className="field-content">{this.props.subTitle}</div>
                 </div>
-                <div className="views-field-ikon">
-                    <span className="field-content">
-                        <span className="icon">
-                            <a href="/nb/livssituasjon/flytte" title="Gå til livssituasjon 'Flytte'">
-                                <span className="icon-life-move"></span>
-                            </a>
-                        </span>
-                    </span>
-                    <PlusButton/>
+                <div className="buttonContainer">
+                    <PlusButton text = "Beskrivelse"/>
+                    <PlusButton text = "Pluss"/>
                 </div>
                 <div className="views-field-description">
                     <span className="field-content">{this.props.description}</span>

@@ -171,3 +171,45 @@ body {
     }
 }
 
+.pluss{
+    font-size: 0.7em;
+    color: #555;
+    display: block;
+    float: left;
+    text-decoration: none;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.spinIcon{
+    font-size: 1.857214em;
+    color: #91938d;
+    vertical-align: middle;
+    margin-left: .46154em;
+    display: inline-block;
+    border-radius: 0.5em;
+    transition: 0.25s all;
+
+    transform: rotate(180deg);
+
+}
+
+.spinIconDown{
+    font-size: 1.857214em;
+    color: #91938d;
+    vertical-align: middle;
+    margin-left: .46154em;
+    display: inline-block;
+    border-radius: 0.5em;
+    transition: 0.25s all;
+
+}
+
+.buttonContainer {
+    background-color: #ebebeb;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+}
+
+
