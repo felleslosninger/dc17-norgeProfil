@@ -19,12 +19,12 @@ const norgeProfil = () => {
 const norgePluss = () => {
 
     ReactDOM.render(
-        <HeaderContainer/>,
+        <HeaderContainer store = {store}/>,
         document.getElementById('header')
     );
 
     ReactDOM.render(
-        <NorgePlussContainer/>,
+        <NorgePlussContainer store = {store}/>,
         document.getElementById('boxList')
     );
 }
