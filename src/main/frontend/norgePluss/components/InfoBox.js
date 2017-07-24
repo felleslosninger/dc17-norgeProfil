@@ -43,7 +43,7 @@ class InfoBox extends Component {
                     <PlusButton text = "Beskrivelse" toggle = {this.toggleDesc} isClicked = {this.state.descClicked}/>
                     <PlusButton text = "Pluss" toggle = {this.togglePlus} isClicked = {this.state.plusClicked}/>
                 </div>
-                <div className="views-field-description" style="display:none">
+                <div className="views-field-description">
                     <span className="field-content">{this.props.description}</span>
                 </div>
 
