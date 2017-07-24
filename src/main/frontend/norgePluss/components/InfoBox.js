@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
-
+import PlusButton from '../components/PlusButton'
 class InfoBox extends Component {
+
+    constructor(props){
+        super(props);
+    }
 
     render(){
         return(
@@ -9,25 +13,26 @@ class InfoBox extends Component {
 
                 <h2 className="views-field-service-title">
                     <span className="field-content">
-                        <a href="https://helsenorge.no/min-helse/Bytte-fastlege?">Bytte fastlege - Min fastlege</a>
+                        <a href="https://helsenorge.no/min-helse/Bytte-fastlege?">{this.props.title}</a>
                     </span>
                 </h2>
                 <div className="views-field-owner-title">
-                    <div className="field-content">Helfo</div>
+                    <div className="field-content">{this.props.subTitle}</div>
                 </div>
                 <div className="views-field-ikon">
                     <span className="field-content">
                         <span className="icon">
-                            <div id="fastlegepluss"></div>
                             <a href="/nb/livssituasjon/flytte" title="Gå til livssituasjon 'Flytte'">
                                 <span className="icon-life-move"></span>
                             </a>
                         </span>
                     </span>
+                    <PlusButton/>
                 </div>
                 <div className="views-field-description">
-                    <span className="field-content">Her kan du finne fastlegen din, få oversikt over ledige fastleger og bytte fastlege. Du kan bytte fastlege to ganger per kalenderår. Du kan også sette deg på venteliste dersom legen du ønsker ikke er ledig.</span>
+                    <span className="field-content">{this.props.description}</span>
                 </div>
+
             </div>
         );
     }
