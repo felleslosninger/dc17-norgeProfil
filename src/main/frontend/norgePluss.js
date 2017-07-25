@@ -5,25 +5,28 @@ import configureStore from "./utilities/store";
 import NorgePlussContainer from './norgePluss/containers/NorgePlussContainer';
 import HeaderContainer from './norgePluss/containers/HeaderContainer';
 import GamificationContainer from './norgePluss/containers/GamificationContainer'
+import {Provider} from "react-redux";
 
-
-const store =
-    configureStore();
-
+const store = configureStore();
 
 const norgePluss = () => {
 
     ReactDOM.render(
-        <HeaderContainer store = {store}/>,
+        <Provider store = {store}>
+            <HeaderContainer/>
+        </Provider>,
         document.getElementById('header')
     );
 
 
 
     ReactDOM.render(
-        <NorgePlussContainer store = {store}/>,
+        <Provider store = {store}>
+            <NorgePlussContainer/>
+        </Provider>,
         document.getElementById('boxList')
     );
 };
 
 norgePluss();
+//testPluss();
