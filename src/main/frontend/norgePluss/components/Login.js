@@ -13,8 +13,6 @@ const styling = {
     marginTop: '1em',
 };
 
-const store =
-    configureStore();
 
 
 class Login extends Component {
@@ -24,18 +22,13 @@ class Login extends Component {
     }
 
     render(){
-
+        console.log(this.props);
         let loginText = "Logg inn";
         let loginLink = "/login/idporten";
 
         if(this.props.isLoggedIn) {
             loginText = "Logg ut";
             loginLink = "/logout";
-
-            ReactDOM.render(
-                <GamificationContainer store = {store}/>,
-                document.getElementById('gamificationBox')
-            );
         }
 
         return(
@@ -50,21 +43,6 @@ class Login extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    let {app:{isLoggedIn}} = state;
-
-    return{
-        isLoggedIn: isLoggedIn,
-    }
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        login: () => dispatch(login()),
-        logout: () => dispatch(logout())
-    }
-};
-
 injectTapEventPlugin();
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default Login;
