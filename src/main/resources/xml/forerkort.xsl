@@ -11,18 +11,17 @@
 
 
     <xsl:template match="fk:AlleForerkort/fk:Forerkort">
-        <div>
-            <ul>
-                <li>
-                    <xsl:value-of select="fk:Klasse"/>
-                </li>
-                <li>
-                    <xsl:value-of select="fk:Navn"/>
-                </li>
-                <li>
-                    <xsl:value-of select="fk:Gyldighet"/>
-                </li>
-            </ul>
+        <div style="display: inline-block; margin-right:25px;">
+            <div>
+                <b>Klasse: </b> <xsl:value-of select="fk:Klasse"/>
+            </div>
+            <div>
+                <b>Type: </b> <xsl:value-of select="fk:Navn"/>
+            </div>
+            <div>
+                <b>Gyldig til: </b> <xsl:value-of select="fk:Gyldighet"/>
+
+            </div>
         </div>
     </xsl:template>
 

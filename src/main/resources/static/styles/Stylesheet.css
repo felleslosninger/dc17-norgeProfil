@@ -186,9 +186,6 @@ body {
     display: inline-block;
     border-radius: 0.5em;
     transition: 0.25s all;
-
-    transform: rotate(180deg);
-
 }
 
 .spinIconDown{
@@ -199,7 +196,7 @@ body {
     display: inline-block;
     border-radius: 0.5em;
     transition: 0.25s all;
-
+    transform: rotate(180deg);
 }
 
 .buttonContainer {
@@ -267,5 +264,11 @@ body {
     }
 }
 
-
+@font-face {
+    font-family: 'norgeno';
+    src: url("../fonts/norgeno.eot");
+    src: url("../fonts/norgeno.eot") format("embedded-opentype"), url("../fonts/norgeno.woff") format("woff"), url("../fonts/norgeno.ttf") format("truetype"), url("../fonts/norgeno.svg") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
 
