@@ -26,6 +26,13 @@ const norgePluss = () => {
         </Provider>,
         document.getElementById('boxList')
     );
+
+    ReactDOM.render(
+        <Provider store = {store}>
+            <GamificationContainer/>
+        </Provider>,
+        document.getElementById('gamificationBox')
+    );
 };
 
 norgePluss();
