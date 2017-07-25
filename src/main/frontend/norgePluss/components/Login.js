@@ -37,14 +37,14 @@ const mapStateToProps = state => {
     return{
         isLoggedIn: isLoggedIn,
     }
-}
+};
 
 const mapDispatchToProps = dispatch => {
     return {
         login: () => dispatch(login()),
         logout: () => dispatch(logout())
     }
-}
+};
 
 injectTapEventPlugin();
 

@@ -20,6 +20,6 @@ const norgePluss = () => {
         <NorgePlussContainer store = {store}/>,
         document.getElementById('boxList')
     );
-}
+};
 
 norgePluss();
