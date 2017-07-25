@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import FlatButton from 'material-ui/FlatButton';
 import AuthCheck from '../../components/AutchCheck';
 import {login,logout} from '../../utilities/actions';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 
 const styling = {
@@ -18,7 +19,6 @@ class Login extends Component {
     }
 
     render(){
-        console.log(this.props);
         return(
             <div>
                 <AuthCheck isLoggedIn= {this.props.isLoggedIn}
@@ -46,6 +46,6 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-
+injectTapEventPlugin();
 
 export default connect(mapStateToProps,mapDispatchToProps)(Login);

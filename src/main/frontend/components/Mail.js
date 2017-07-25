@@ -102,6 +102,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Hva er en digital postkasse?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
                                         <p className="CustomP">
@@ -122,6 +123,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Er digital postkasse det samme som E-post?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
                                         <p className="CustomP">
@@ -138,6 +140,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Hvem kan opprette en digital postkasse?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
                                         <p className="CustomP">
@@ -155,6 +158,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Kan jeg ha to digitale postkasser?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
                                         <p className="CustomP">
@@ -169,6 +173,7 @@ class Mail extends React.Component {
                             <ListItem
                                 primaryText="Koster det noe å ha digital postkasse?"
                                 initiallyOpen={false}
+                                primaryTogglesNestedList={true}
                                 nestedItems={[
                                     <ListItem key={1} disabled={true} className="Li Info">
                                         <p className="CustomP">

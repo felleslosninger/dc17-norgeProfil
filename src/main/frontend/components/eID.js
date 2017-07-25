@@ -8,11 +8,10 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import Help from 'material-ui/svg-icons/action/help-outline';
 import CheckIcon from 'material-ui/svg-icons/action/check-circle';
-import CancelIcon from 'material-ui/svg-icons/navigation/cancel';
 import EidIcon from 'material-ui/svg-icons/action/extension';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import Divider from 'material-ui/Divider';
+import {green600} from 'material-ui/styles/colors';
 
 class EID extends React.Component {
 
@@ -54,7 +53,7 @@ class EID extends React.Component {
         ];
 
 
-        const activeList = [];
+        const eidList = [];
         let ids = [];
         let idsUsed = '';
         let checkActive = () => {
@@ -70,17 +69,16 @@ class EID extends React.Component {
                     idsUsed = this.props.userActiveEid[i][1].toString();
                 }
                 ids.push(idsUsed);
-                activeList.push(
+                eidList.unshift(
                     <MenuItem style={fontColorStyle}
-                key={i + 1}
-                primaryText={idsUsed}
-                leftIcon={<CheckIcon/>}
-                disabled={true}/>
-            );
+                              key={i + 1}
+                              primaryText={idsUsed}
+                              leftIcon={<CheckIcon color={green600}/>}
+                              disabled={true}/>
+                );
             }
         };
 
-        const nonActiveList = [];
         let idsNot = '';
         let checkNonActive = () => {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
@@ -96,11 +94,11 @@ class EID extends React.Component {
                         idsNot = this.props.userNonActiveEid[i].value.toString();
                     }
                     ids.push(idsNot);
-                    nonActiveList.push(
+                    eidList.push(
                         <MenuItem style={fontColorStyle}
                                   key={i + 5}
                                   primaryText={idsNot}
-                                  leftIcon={<CancelIcon/>}
+                                  leftIcon={<div/>}
                                   disabled={true}/>
                     );
                 }
@@ -247,13 +245,10 @@ class EID extends React.Component {
                 <CardText className="CardText" style={{height:'19.5em'}}>
                     <div className="DivoverMeny">
                         <Menu style={listStyle} className="meny" desktop={true}>
-                            <div>Tjenester i bruk</div>
-                            {activeList}
+                            <div>Tjenester:</div>
                             {checkActive()}
-                            <Divider />
-                            <div>Andre tjenester</div>
-                            {nonActiveList}
                             {checkNonActive()}
+                            {eidList}
                         </Menu>
                     </div>
                 </CardText>

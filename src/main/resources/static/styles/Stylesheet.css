@@ -3,28 +3,6 @@ body {
     height: 100%;
 }
 
-.pageheader {
-    margin: 0 0 0.5em 0;
-    background-color: #EBEBEB;
-    padding: 0.3em;
-    min-height: 2.5em;
-}
-
-.Icon {
-    margin-top: 2%;
-    margin-left: 1em;
-}
-
-
-.Nav {
-    padding: 3em 7em 3em 7em;
-    margin-bottom: 2em;
-}
-
-.hr {
-    margin: 2.2em 0.3em 0 0.3em;
-}
-
 /*Share on Facebook btn*/
 .btn-facebook {
     color: #fff;
@@ -46,7 +24,43 @@ body {
     bottom: 3.2%;
 }
 
+/*Gamification*/
+.gameLog {
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
 
+.gamificationContainer {
+    padding: 1em;
+    position: relative;
+}
+
+.hr {
+    margin: 2.2em 0.3em 0 0.3em;
+}
+
+.Icon {
+    margin-top: 2%;
+    margin-left: 1em;
+}
+
+.Nav {
+    padding: 3em 7em 3em 7em;
+    margin-bottom: 2em;
+}
+
+.pageheader {
+    margin: 0 0 0.5em 0;
+    background-color: #EBEBEB;
+    padding: 0.3em;
+    min-height: 2.5em;
+}
+
+.ProgressBar {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
 
 /*Large desktops*/
 @media (min-width: 1193px) {
@@ -69,22 +83,6 @@ body {
         overflow-y: auto;
         overflow-x: hidden;
     }
-}
-
-.gameLog {
-    text-align: center;
-    margin: auto;
-    width: 60%;
-}
-
-.gamificationContainer {
-    padding: 1em;
-    position: relative;
-}
-
-.ProgressBar {
-    margin-top: 2em;
-    margin-bottom: 2em;
 }
 
 /*Landscape tablets and medium desktops eg. laptop with HidPI Screen */
@@ -134,7 +132,6 @@ body {
 }
 
 /* landscape phones */
-
 @media (min-width: 481px) and (max-width: 767px) {
     .LogInBtn{
         position:fixed;
