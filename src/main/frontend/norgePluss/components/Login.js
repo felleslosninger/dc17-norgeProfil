@@ -22,7 +22,6 @@ class Login extends Component {
     }
 
     render(){
-        console.log(this.props);
         let loginText = "Logg inn";
         let loginLink = "/login/idporten";
 

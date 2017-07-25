@@ -11,7 +11,7 @@
 
 
     <xsl:template match="fk:AlleForerkort/fk:Forerkort">
-        <div style="display: inline-block; margin-left:25px;">
+        <div style="display: inline-block; margin-right:25px;">
             <div>
                 <b>Klasse: </b> <xsl:value-of select="fk:Klasse"/>
             </div>

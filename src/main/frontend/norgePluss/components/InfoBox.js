@@ -52,7 +52,6 @@ class InfoBox extends Component {
     render() {
         let plusContent = "";
         let infoContent = "";
-        console.log(this.props.isLoggedIn, " isLoggedIn");
         if (!this.props.isLoggedIn && this.state.plusClicked) {
             plusContent = <div className="views-field-description">
                             <span className="field-content"><FlatButton backgroundColor="#c3dfdf" label="Logg inn" href="/login/idporten"/>
