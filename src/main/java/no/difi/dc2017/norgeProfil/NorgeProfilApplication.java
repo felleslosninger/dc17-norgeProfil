@@ -44,11 +44,13 @@ public class NorgeProfilApplication extends WebSecurityConfigurerAdapter {
         return principal;
     }
 
+
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .antMatcher("/**").authorizeRequests()
-                .antMatchers("/", "/login**", "/webjars/**", "/built/**", "/img/**", "/styles/**", "/user", "/data/**").permitAll()
+                .antMatchers("/", "/login**", "/webjars/**", "/built/**", "/img/**", "/styles/**", "/user", "/data/**", "/norge", "/sertifikat", "/reservasjon").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))

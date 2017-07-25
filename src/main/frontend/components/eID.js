@@ -53,7 +53,7 @@ class EID extends React.Component {
         ];
 
 
-        const activeList = [];
+        const eidList = [];
         let ids = [];
         let idsUsed = '';
         let checkActive = () => {
@@ -69,7 +69,7 @@ class EID extends React.Component {
                     idsUsed = this.props.userActiveEid[i][1].toString();
                 }
                 ids.push(idsUsed);
-                activeList.push(
+                eidList.unshift(
                     <MenuItem style={fontColorStyle}
                               key={i + 1}
                               primaryText={idsUsed}
@@ -79,7 +79,6 @@ class EID extends React.Component {
             }
         };
 
-        const nonActiveList = [];
         let idsNot = '';
         let checkNonActive = () => {
             for (let i = 0; i < this.props.userNonActiveEid.length; i++) {
@@ -95,7 +94,7 @@ class EID extends React.Component {
                         idsNot = this.props.userNonActiveEid[i].value.toString();
                     }
                     ids.push(idsNot);
-                    nonActiveList.push(
+                    eidList.push(
                         <MenuItem style={fontColorStyle}
                                   key={i + 5}
                                   primaryText={idsNot}
@@ -247,10 +246,9 @@ class EID extends React.Component {
                     <div className="DivoverMeny">
                         <Menu style={listStyle} className="meny" desktop={true}>
                             <div>Tjenester:</div>
-                            {activeList}
                             {checkActive()}
-                            {nonActiveList}
                             {checkNonActive()}
+                            {eidList}
                         </Menu>
                     </div>
                 </CardText>

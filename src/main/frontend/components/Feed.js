@@ -63,7 +63,7 @@ class Feed extends React.Component {
         if (this.props.ownActivity.length === 0) {
             yourActivityList.push (
                 <div key={1}>
-                    <h4>Ingen nylig aktivitet</h4>
+                    <h4 className="FeedText">Ingen nylig aktivitet</h4>
                 </div>
             )
         } else {
@@ -104,7 +104,7 @@ class Feed extends React.Component {
         if (this.props.publicSectorActivity.length === 0) {
             publicSectorsActivityList.push (
                 <div key={1}>
-                    <h4>Ingen nylig aktivitet</h4>
+                    <h4 className="FeedText">Ingen nylig aktivitet</h4>
                 </div>
             )
         } else {

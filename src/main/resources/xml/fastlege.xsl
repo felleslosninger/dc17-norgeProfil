@@ -5,8 +5,8 @@
 
     <xsl:template match="fs:Fastlege">
         <div>
-            <div><xsl:value-of select="fs:Person/fs:Navn"/></div>
-            <div><xsl:value-of select="fs:Legesenter/fs:Telefonnummer"/></div>
+            <div>Navn: <xsl:value-of select="fs:Person/fs:Navn"/></div>
+            <div>Telefonnummer: <xsl:value-of select="fs:Legesenter/fs:Telefonnummer"/></div>
             <a href="{fs:Legesenter/fs:Nettside}">Hjemmeside</a>
         </div>
     </xsl:template>

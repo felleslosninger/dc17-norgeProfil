@@ -85,6 +85,12 @@
     }
 }
 
+@media (min-width: 1200px) {
+    .container {
+        width: 600px;
+    }
+}
+
 
 .CardHeader {
     background-color: #d1e6c4;
@@ -93,6 +99,67 @@
     /*margin-right: 1em;*/
     /*margin-left: 1em;*/
     /*width: 100%;*/
+}
+
+.CardPicture.Medium{
+    width:  60px;
+    height: auto;
+}
+
+.CardPicture.Small{
+    width: 48px;
+    height: auto;
+}
+
+.CardText{
+    padding-bottom: 1em;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f8ec;
+}
+
+.displayOnlyForReaders {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+.EditInfo {
+    margin-left: 1.5em;
+}
+
+.EditBtn {
+    position: absolute;
+    right: 3.2%;
+    bottom: 3%;
+}
+
+.Feed {
+    margin-bottom: 3em;
+}
+
+.FeedText{
+    padding-left: 20px;
+}
+
+.HLine {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.Icon {
+    /*margin-top: 40px;*/
+    margin-top: 2%;
+}
+
+.InfoBtn {
+    cursor: pointer;
+    position: absolute;
+    right: 7%;
+    top: 2%;
 }
 
 .Li.Info {
@@ -110,58 +177,6 @@
     color: black;
 }
 
-.HLine {
-    margin-right: 1em;
-    margin-left: 1em;
-}
-
-.Icon {
-    /*margin-top: 40px;*/
-    margin-top: 2%;
-}
-
-.Feed {
-    margin-bottom: 3em;
-}
-
-.CardText{
-    padding-bottom: 1em;
-    width: 100%;
-    height: 100%;
-    background-color: #f4f8ec;
-}
-
-.CardPicture.Medium{
-    width:  60px;
-    height: auto;
-}
-
-.CardPicture.Small{
-    width: 48px;
-    height: auto;
-}
-
-.EditInfo {
-    margin-left: 1.5em;
-}
-
-.InfoBtn {
-    position: absolute;
-    right: 7%;
-    top: 2%;
-}
-
-.EditBtn {
-    position: absolute;
-    right: 3.2%;
-    bottom: 3%;
-}
-
-
-.ReservationBtn{
-    text-align:center;
-}
-
 .ProgressCircle{
     text-align:center;
     padding-bottom: 20px;
@@ -172,14 +187,18 @@
     margin:auto;
     width: 75%;
 }
+
+.ReservationBtn{
+    text-align:center;
+}
+
 .react-sweet-progress {
     /*width: 75%!important;*/
 }
 
-@media (min-width: 1200px) {
-    .container {
-        width: 600px;
-    }
+/*Styling modal*/
+.ReactModal-open {
+    overflow: hidden;
 }
 
 .SaveBtn {
@@ -187,17 +206,4 @@
     right: 1%;
     bottom: 1%;
     margin: 1%;
-}
-
-.displayOnlyForReaders {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
-}
-/*Styling modal*/
-.ReactModal-open {
-    overflow: hidden;
 }
