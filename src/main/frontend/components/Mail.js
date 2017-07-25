@@ -30,14 +30,17 @@ class Mail extends React.Component {
     handleChange() {
         this.props.onSetPostbox('');
         this.setState({open: false});
+        //logger.warning("Bruker har bedt om å endre postkasse");
     }
 
     handleDigipost() {
         this.props.onSetPostbox('Digipost')
+        //logger.warning("Bruker har bedt om å opprette postkasse til Digipost");
     }
 
     handleEboks() {
         this.props.onSetPostbox('e-Boks')
+        //logger.warning("Bruker har bedt om å opprette postkasse til E-boks");
     }
 
     handleOpen() {

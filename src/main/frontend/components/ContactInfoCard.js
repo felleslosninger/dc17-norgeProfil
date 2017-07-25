@@ -58,7 +58,6 @@ class ContactInfoCard extends React.Component {
         this.setState({
             [target.name]: target.value
         });
-
     }
 
 
@@ -68,7 +67,9 @@ class ContactInfoCard extends React.Component {
                 open: false,
             });
             this.props.onSaveEmail(this.state.textfieldEmail);
+            //logger.debug("Bruker endrer E-mail" + textfieldEmail);
             this.props.onSavePhone(this.state.textfieldPhone);
+            //logger.debug("Bruker enderer telefon" + textfieldPhone);
         }
 
     };
@@ -81,6 +82,7 @@ class ContactInfoCard extends React.Component {
             this.setState({
                 textfieldEmailError: "Epostadressen du har tastet inn er ikke gyldig"
             });
+            //logger.error("Brukertastet ugyldig e-post adresse:\t" + this.state.textfieldEmail);
             return false;
         } else {
             this.setState({
@@ -98,6 +100,7 @@ class ContactInfoCard extends React.Component {
             this.setState({
                 textfieldPhoneError: "Mobilnummeret du har tastet inn er ikke gyldig"
             });
+            //logger.error("Ugyldig telefon nummer er tastet: " + this.state.textfield.PhoneError);
             return false;
         } else {
             this.setState({

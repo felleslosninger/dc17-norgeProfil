@@ -34,8 +34,10 @@ class Reservation extends React.Component {
     handleChange() {
         if(this.props.reservation === false) {
             this.props.onSetReservation();
+            //logger.log("Bruker registrerer seg mot reservering");
         } else {
             this.props.onRemoveReservation();
+            //logger.log("Bruker fjerner seg fra reservering");
         }
     }
 

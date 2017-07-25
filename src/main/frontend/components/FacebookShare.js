@@ -15,6 +15,7 @@ class FacebookShare extends Component {
                 </Share>
             </FacebookProvider>
         );
+        //logger.info("Bruker la ut facebook notification" + quote);
     }
 }
 

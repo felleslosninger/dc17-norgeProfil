@@ -127,11 +127,11 @@ class AppContainer extends Component {
                     <div className="pageheader hideFromMobile"><h3>Din profilstyrke</h3></div>
                     <GamificationCard levelCap = {100} gameState = {calcGameState(this.createList())} pointList = {this.createList()}/>
                     <Row className="hr"><hr/></Row>
-                    <div className="pageheader hideFromMobile"><h3>Aktivitetslogg</h3></div>
+                    <div className="pageheader hideFromMobile"><h3>Aktivitetslogg</h3>
                     <Feed
                         ownActivity={this.props.recentUserActivity}
                         publicSectorActivity={this.props.recentPublicActivity}
-                    />
+                    /></div>
                 </div>
             </div>
         );

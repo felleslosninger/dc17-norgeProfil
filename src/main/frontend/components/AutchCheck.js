@@ -20,6 +20,7 @@ class AuthCheck extends Component {
                     this.props.logout();
                 } else {
                     if (response.data.authenticated) {
+                        //logger.info("bruker logget inn");
                         this.props.login();
                     }
                     else {
