@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import configureStore from "./utilities/store";
 import NorgePlussContainer from './norgePluss/containers/NorgePlussContainer';
 import HeaderContainer from './norgePluss/containers/HeaderContainer';
+import GamificationContainer from './norgePluss/containers/GamificationContainer'
+
 
 const store =
     configureStore();
@@ -15,6 +17,8 @@ const norgePluss = () => {
         <HeaderContainer store = {store}/>,
         document.getElementById('header')
     );
+
+
 
     ReactDOM.render(
         <NorgePlussContainer store = {store}/>,
