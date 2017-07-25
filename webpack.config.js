@@ -2,13 +2,16 @@
 let path = require('path');
 let webpack = require('webpack');
 module.exports = {
-    entry: './src/main/frontend/Main.js',
+    entry: {
+        'norgeProfil':'./src/main/frontend/norgeProfil.js',
+        'norgePluss':'./src/main/frontend/norgePluss.js'
+    },
     devtool: 'sourcemaps',
     cache: true,
     debug: true,
     output: {
-        path: __dirname,
-        filename: './src/main/resources/static/built/bundle.js'
+        path: path.resolve(__dirname,'src/main/resources/static/built'),
+        filename: '[name].js'
     },
     module: {
         loaders: [
