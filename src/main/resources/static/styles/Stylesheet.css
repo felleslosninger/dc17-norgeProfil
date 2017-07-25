@@ -186,9 +186,6 @@ body {
     display: inline-block;
     border-radius: 0.5em;
     transition: 0.25s all;
-
-    transform: rotate(180deg);
-
 }
 
 .spinIconDown{
@@ -199,7 +196,7 @@ body {
     display: inline-block;
     border-radius: 0.5em;
     transition: 0.25s all;
-
+    transform: rotate(180deg);
 }
 
 .buttonContainer {
