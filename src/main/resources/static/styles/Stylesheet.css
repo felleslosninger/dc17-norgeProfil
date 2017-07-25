@@ -267,5 +267,11 @@ body {
     }
 }
 
-
+@font-face {
+    font-family: 'norgeno';
+    src: url("../fonts/norgeno.eot");
+    src: url("../fonts/norgeno.eot") format("embedded-opentype"), url("../fonts/norgeno.woff") format("woff"), url("../fonts/norgeno.ttf") format("truetype"), url("../fonts/norgeno.svg") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
 
