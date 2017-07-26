@@ -29,6 +29,9 @@ const infoStyle = {
     fontSize: '12pt',
 };
 
+const colStyle = {
+    width: '100%',
+};
 
 class GamificationBox extends Component {
 
@@ -62,7 +65,8 @@ class GamificationBox extends Component {
                                 reserverer seg mot kommunikasjon på nett.
                                 <br/>
                                 <br/>
-                                Se mer på din profil
+                                Se mer på <a href="/#/">din profil</a>
+
                             </span>
                         </div>
                     </Col>
@@ -70,11 +74,11 @@ class GamificationBox extends Component {
                     <Col lg={7}>
                         <div className="gContainer">
                             <Row>
-                                <Col lg={6}>
+                                <Col lg={6} style={colStyle}>
                                     <div className="ProgressCircle">
                                         <Progress
-                                            width={200}
-                                            strokeWidth={10}
+                                            width={190}
+                                            strokeWidth={7}
                                             status="active"
                                             type="circle"
                                             percent={this.props.gameState.levelProgress}

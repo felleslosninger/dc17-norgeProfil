@@ -39,6 +39,7 @@ body {
 .gContainer {
     margin: 2em;
     position: relative;
+    text-align: center;
 }
 
 .hr {
