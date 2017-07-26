@@ -23,7 +23,7 @@ class Login extends Component {
 
     render(){
         let loginText = "Logg inn";
-        let loginLink = "/login/idporten";
+        let loginLink = "/login/idporten?location=" + window.location.pathname;
 
         if(this.props.isLoggedIn) {
             loginText = "Logg ut";
