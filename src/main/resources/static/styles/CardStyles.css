@@ -180,6 +180,7 @@
 .ProgressCircle{
     text-align:center;
     padding-bottom: 20px;
+    padding-top: 50px;
 }
 .ProgressBar{
     text-align: center!important;
