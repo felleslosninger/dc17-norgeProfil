@@ -18,8 +18,8 @@ const norgePluss = () => {
         document.getElementById('header')
     );
 
-
     let boxList = document.getElementById('boxList');
+    let gamification = document.getElementById('gamificationBox');
 
     if(boxList){
         ReactDOM.render(
@@ -27,6 +27,15 @@ const norgePluss = () => {
                 <NorgePlussContainer/>
             </Provider>,
             boxList
+        );
+    }
+
+    if(gamification){
+        ReactDOM.render(
+            <Provider store = {store}>
+                <GamificationContainer/>
+            </Provider>,
+            gamification
         );
     }
 };
