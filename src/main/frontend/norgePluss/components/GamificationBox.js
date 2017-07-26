@@ -12,14 +12,21 @@ const styling = {
     marginBottom: '1em',
 };
 
-const progressStyling = {
-    marginLeft: '10em',
-    marginTop: '10em',
-    fontSize: '70%',
+const progressCircleStyling = {
+    // marginLeft: '10em',
+    marginTop: '1em',
+    fontSize: '100%',
 };
 
+const progressBarStyling = {
+    width: '25em',
+    fontSize: '100%',
+};
+
+
 const infoStyle = {
-    padding: '4em',
+    padding: '3em',
+    fontSize: '12pt',
 };
 
 
@@ -44,28 +51,34 @@ class GamificationBox extends Component {
         return (
             <Card className="gamification" style={styling}>
                 <Row>
-                    <Col lg={6}>
+                    <Col lg={5}>
                         <div style={infoStyle}>
-                            <h4>Digital Borger</h4>
-                            Halloooooooooahdsbfio<br/>
-                            sdhfoiadshfoishdif<br/>
-                            Se mer på din profil
-
+                            <h3>Digital Borger</h3>
+                            <span>
+                                Som digital borger vil man kunne signere og
+                                motta informasjon fra staten på nett. Man kan logge
+                                inn på, og ta i bruk, offentlige tjenester.
+                                En fullverdig digital borger er en som ikke
+                                reserverer seg mot kommunikasjon på nett.
+                                <br/>
+                                <br/>
+                                Se mer på din profil
+                            </span>
                         </div>
                     </Col>
 
-                    <Col lg={6}>
-                        <div className="gamificationContainer">
+                    <Col lg={7}>
+                        <div className="gContainer">
                             <Row>
                                 <Col lg={6}>
                                     <div className="ProgressCircle">
                                         <Progress
-                                            width={100}
+                                            width={200}
                                             strokeWidth={10}
                                             status="active"
                                             type="circle"
-                                            style={progressStyling}
                                             percent={this.props.gameState.levelProgress}
+                                            style={progressCircleStyling}
                                             theme={{
                                                 active: {
                                                     symbol: "Nivå: " + this.props.gameState.level,
@@ -82,10 +95,8 @@ class GamificationBox extends Component {
                             <div className="ProgressBar">
                                 <Progress
                                     status="active"
-                                    width={100}
-                                    strokeWidth={10}
-                                    style={progressStyling}
                                     percent={this.props.gameState.percentage}
+                                    style={progressBarStyling}
                                     theme={{
                                         active: {
                                             symbol: this.props.gameState.points + "/" + this.props.gameState.maxScore + " Poeng",
@@ -97,7 +108,6 @@ class GamificationBox extends Component {
                                     }}
                                 />
                             </div>
-                            <FacebookShare className="facebook" score={this.props.gameState}/>
                         </div>
                     </Col>
                 </Row>

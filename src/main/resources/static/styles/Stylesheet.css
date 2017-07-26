@@ -36,6 +36,11 @@ body {
     position: relative;
 }
 
+.gContainer {
+    margin: 2em;
+    position: relative;
+}
+
 .hr {
     margin: 2.2em 0.3em 0 0.3em;
 }
