@@ -19,13 +19,16 @@ const norgePluss = () => {
     );
 
 
+    let boxList = document.getElementById('boxList');
 
-    ReactDOM.render(
-        <Provider store = {store}>
-            <NorgePlussContainer/>
-        </Provider>,
-        document.getElementById('boxList')
-    );
+    if(boxList){
+        ReactDOM.render(
+            <Provider store = {store}>
+                <NorgePlussContainer/>
+            </Provider>,
+            boxList
+        );
+    }
 };
 
 norgePluss();
