@@ -1,4 +1,4 @@
-package no.difi.dc2017.norgeProfil;
+package no.difi.dc2017.norgeProfil.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
