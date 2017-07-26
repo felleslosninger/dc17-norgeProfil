@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import PlusButton from '../components/PlusButton'
 import axios from "axios";
-import RefreshIndicator from 'material-ui/RefreshIndicator';
+import FlatButton from 'material-ui/FlatButton';
+import AuthCheck from "../../components/AutchCheck"
+
 
 class InfoBox extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             plusClicked: false,
-            descClicked:false,
+            descClicked: false,
             plussDesc: "",
             hasLoaded: false
         };
@@ -19,9 +21,9 @@ class InfoBox extends Component {
         this.fetchFromServer = this.fetchFromServer.bind(this);
     }
 
-    togglePlus(){
+    togglePlus() {
 
-        if(!this.state.plusClicked && !this.state.hasLoaded){
+        if (!this.state.plusClicked && !this.state.hasLoaded) {
             this.fetchFromServer();
         }
 
@@ -31,7 +33,7 @@ class InfoBox extends Component {
 
     }
 
-    toggleDesc(){
+    toggleDesc() {
         this.setState({
             descClicked: !this.state.descClicked
         });
@@ -41,35 +43,50 @@ class InfoBox extends Component {
         axios.get(this.props.url).then((response) => {
             this.setState({
                 plussDesc: response.data,
-                hasLoaded:true});
+                hasLoaded: true
+            });
         });
     }
 
 
-    render(){
+    render() {
         let plusContent = "";
-        let infoContent = "" ;
-        if(this.state.plusClicked){
-            if(this.state.hasLoaded) {
-                plusContent = <div className="views-field-description"><span className="field-content" dangerouslySetInnerHTML={{__html: this.state.plussDesc}}></span>
-                </div>;
+        let infoContent = "";
+        let path = "/login/idporten?location=" + window.location.pathname;
+        if (!this.props.isLoggedIn && this.state.plusClicked) {
+            plusContent = <div className="views-field-description">
+                            <span className="field-content"><FlatButton backgroundColor="#c3dfdf" label="Logg inn" href={path} />
+                            </span>
+                        </div>;
+        } else {
+
+            if (this.state.plusClicked) {
+                if (this.state.hasLoaded) {
+                    plusContent = <div className="views-field-description"><span className="field-content"
+                                                                                 dangerouslySetInnerHTML={{__html: this.state.plussDesc}}></span>
+                    </div>;
+                }
+                else {
+                    plusContent = <div className="views-field-description"><span className="field-content"><div
+                        className="loader">Loading...</div></span>
+                    </div>;
+                }
+            } else {
+                plusContent = "";
             }
-            else{
-                plusContent = <div className="views-field-description"><span className="field-content"><div className="loader">Loading...</div></span>
-                </div>;
-            }
-        }else{
-            plusContent =  "";
         }
 
-        if(this.state.descClicked){
-            infoContent =  <div className="views-field-description"><span className="field-content">{this.props.description}</span></div>;
-        }else{
+
+        if (this.state.descClicked) {
+            infoContent =
+                <div className="views-field-description"><span className="field-content">{this.props.description}</span>
+                </div>;
+        } else {
             infoContent = "";
 
         }
 
-        return(
+        return (
             <div className="one-col difi-search-result-service difi-search-result-item">
 
 
@@ -82,8 +99,8 @@ class InfoBox extends Component {
                     <div className="field-content">{this.props.subTitle}</div>
                 </div>
                 <div className="buttonContainer">
-                    <PlusButton text = "Beskrivelse" toggle = {this.toggleDesc} isClicked = {this.state.descClicked}/>
-                    <PlusButton text = "Pluss" toggle = {this.togglePlus} isClicked = {this.state.plusClicked}/>
+                    <PlusButton text="Beskrivelse" toggle={this.toggleDesc} isClicked={this.state.descClicked}/>
+                    <PlusButton text="Pluss" toggle={this.togglePlus} isClicked={this.state.plusClicked}/>
                 </div>
                 {infoContent}
                 {plusContent}

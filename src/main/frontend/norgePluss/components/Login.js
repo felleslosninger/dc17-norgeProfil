@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {connect} from "react-redux";
 import FlatButton from 'material-ui/FlatButton';
 import AuthCheck from '../../components/AutchCheck';
 import {login,logout} from '../../utilities/actions';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
+import GamificationContainer from '../containers/GamificationContainer'
+import configureStore from "../../utilities/store";
 
 const styling = {
     marginLeft: '19em',
     marginTop: '1em',
 };
+
 
 
 class Login extends Component {
@@ -19,33 +22,26 @@ class Login extends Component {
     }
 
     render(){
+        let loginText = "Logg inn";
+        let loginLink = "/login/idporten?location=" + window.location.pathname;
+
+        if(this.props.isLoggedIn) {
+            loginText = "Logg ut";
+            loginLink = "/logout";
+        }
+
         return(
             <div>
                 <AuthCheck isLoggedIn= {this.props.isLoggedIn}
                            login = {this.props.login}
                            logout = {this.props.logout}
                 />
-                <FlatButton backgroundColor="#c3dfdf" label="Logg inn" style={styling} href="/login/idporten"/>
+                <FlatButton backgroundColor="#c3dfdf" label={loginText} style={styling} href={loginLink}/>
             </div>
         );
     }
 }
 
-const mapStateToProps = state => {
-    let {app:{isLoggedIn}} = state;
-
-    return{
-        isLoggedIn: isLoggedIn,
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        login: () => dispatch(login()),
-        logout: () => dispatch(logout())
-    }
-}
-
 injectTapEventPlugin();
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default Login;
