@@ -63,6 +63,13 @@ body {
     min-height: 2.5em;
 }
 
+#pageheader {
+    margin: 0 0 0.5em 0;
+    background-color: #EBEBEB;
+    padding: 0.3em;
+    min-height: 2.5em;
+}
+
 .ProgressBar {
     margin-top: 2em;
     margin-bottom: 2em;

@@ -6,6 +6,7 @@ import {login,logout} from '../../utilities/actions';
 import {connect} from "react-redux";
 
 
+
 const muiTheme = getMuiTheme({
     palette: {
         primary1Color: 'rgb(10, 79, 117)',
@@ -56,6 +57,9 @@ class HeaderContainer extends Component {
                                 </ul>
                             </div>
                         </section>
+                    </div>
+                    <div id="profileUsername">
+
                     </div>
                     <div id="login">
                         <Login isLoggedIn = {this.props.isLoggedIn} login = {this.props.login} logout = {this.props.logout}/>
