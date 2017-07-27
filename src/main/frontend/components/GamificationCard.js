@@ -56,13 +56,13 @@ class GamificationCard extends Component {
     }
 
     componentDidMount(){
-        const background = document.querySelector(".react-sweet-progress-circle> path:first-of-type");
-        background.style.stroke = this.calcLevelColor(this.state.level-1);
+        //const background = document.querySelector(".react-sweet-progress-circle> path:first-of-type");
+        //background.style.stroke = this.calcLevelColor(this.state.level-1);
     }
 
     componentDidUpdate(){
-        const background = document.querySelector(".react-sweet-progress-circle> path:first-of-type");
-        background.style.stroke = this.calcLevelColor(this.state.level-1);
+        //const background = document.querySelector(".react-sweet-progress-circle> path:first-of-type");
+        //background.style.stroke = this.calcLevelColor(this.state.level-1);
     }
 
     calcBarColor(value) {
@@ -81,15 +81,40 @@ class GamificationCard extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        console.log(this.props.pointList);
-        console.log(nextProps.pointList);
-
-
-
+        console.log("willRecieveProps");
         if(nextProps.pointList != this.props.pointList){
             const gameState = calcGameState(nextProps.pointList);
-            console.log(gameState);
-            this.setState(gameState);
+            if(gameState.level > this.state.level){
+                this.setState({
+                    levelProgress:100
+                });
+                setTimeout(() => {
+                    this.setState({
+                        levelProgress:0
+                    });
+                },500);
+                setTimeout(() => {
+                    this.setState(gameState);
+                },800);
+            }
+            else if(gameState.level < this.state.level){
+                this.setState({
+                    levelProgress:0
+                });
+
+                setTimeout(() => {
+                    this.setState({
+                        levelProgress:100
+                    });
+                },300);
+
+                setTimeout(() => {
+                    this.setState(gameState);
+                },600);
+            }
+            else{
+                this.setState(gameState);
+            }
         }
     }
 
