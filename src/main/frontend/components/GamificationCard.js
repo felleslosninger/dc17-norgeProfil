@@ -51,18 +51,24 @@ class GamificationCard extends Component {
             levelProgress: 0,
             level: 0,
             points: 0,
-            maxScore: 0
+            maxScore: 0,
+            onTop: 1,
         }
     }
 
     componentDidMount(){
-        const background = document.querySelector(".react-sweet-progress-circle> path:first-of-type");
-        background.style.stroke = this.calcLevelColor(this.state.level-1);
+        this.setState({
+            circle1:document.getElementsByClassName("ProgressCircle")[0],
+            circle2: document.getElementsByClassName("ProgressCircle2")[0]
+        });
+
+        //const background = document.querySelector(".react-sweet-progress-circle> path:first-of-type");
+        //background.style.stroke = this.calcLevelColor(this.state.level-1);
     }
 
     componentDidUpdate(){
-        const background = document.querySelector(".react-sweet-progress-circle> path:first-of-type");
-        background.style.stroke = this.calcLevelColor(this.state.level-1);
+        //const background = document.querySelector(".react-sweet-progress-circle> path:first-of-type");
+        //background.style.stroke = this.calcLevelColor(this.state.level-1);
     }
 
     calcBarColor(value) {
@@ -88,8 +94,36 @@ class GamificationCard extends Component {
 
         if(nextProps.pointList != this.props.pointList){
             const gameState = calcGameState(nextProps.pointList);
-            console.log(gameState);
+
+            if(gameState.level > this.state.level){
+
+                this.state.circle1.style.zIndex = 2;
+                this.state.circle2.style.zIndex = 1;
+
+                this.setState({
+                    circle1: this.state.circle2,
+                    circle2: this.state.circle1,
+                });
+
+                if(this.state.onTop === 1){
+                    this.setState({
+                        onTop:2
+                    });
+                }
+                else{
+                    this.setState({
+                        onTop:1
+                    });
+                }
+            }
+            else if(gameState.level < this.state.level){
+
+            }
+            else{
+
+            }
             this.setState(gameState);
+            console.log(gameState);
         }
     }
 
