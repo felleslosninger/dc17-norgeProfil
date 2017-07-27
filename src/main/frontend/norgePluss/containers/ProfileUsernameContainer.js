@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
-import Login from '../components/Login'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {login,logout} from '../../utilities/actions';
 import {connect} from "react-redux";
 import ProfileUsername from "../components/ProfileUsername";
-
-
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -15,17 +12,25 @@ const muiTheme = getMuiTheme({
     }
 });
 
-class HeaderContainer extends Component {
+class ProfileUsernameContainer extends Component {
 
     constructor(props){
         super(props);
+
     }
 
     render() {
+        if(this.props.isLoggedIn){
+            return(
+                <MuiThemeProvider muiTheme = {muiTheme}>
+                    <ProfileUsername/>
+                </MuiThemeProvider>
+            );
+        }
         return(
-            <MuiThemeProvider muiTheme = {muiTheme}>
-                <Login isLoggedIn = {this.props.isLoggedIn} login = {this.props.login} logout = {this.props.logout}/>
-            </MuiThemeProvider>
+            <div>
+
+            </div>
         );
     }
 }
@@ -45,4 +50,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(HeaderContainer);
+export default connect(mapStateToProps,mapDispatchToProps)(ProfileUsernameContainer);

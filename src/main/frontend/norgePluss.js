@@ -7,6 +7,7 @@ import HeaderContainer from './norgePluss/containers/HeaderContainer';
 import GamificationContainer from './norgePluss/containers/GamificationContainer'
 import {Provider} from "react-redux";
 import UserContainer from './norgePluss/containers/UserContainer'
+import ProfileUsernameContainer from "./norgePluss/containers/ProfileUsernameContainer";
 
 
 const store = configureStore();
@@ -16,12 +17,13 @@ const norgePluss = () => {
     let boxList = document.getElementById('boxList');
     let gamification = document.getElementById('gamificationBox');
     let user = document.getElementById('userheader');
+    let profileUsername = document.getElementById('profileUsername');
 
     ReactDOM.render(
         <Provider store = {store}>
             <HeaderContainer/>
         </Provider>,
-        document.getElementById('header')
+        document.getElementById('login')
     );
 
     if(boxList){
@@ -50,6 +52,16 @@ const norgePluss = () => {
             user
         );
     }
+
+    if(profileUsername){
+        ReactDOM.render(
+            <Provider store = {store}>
+                <ProfileUsernameContainer/>
+            </Provider>,
+            profileUsername
+        );
+    }
+
 
 };
 
