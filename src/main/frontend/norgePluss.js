@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from "./utilities/store";
 import NorgePlussContainer from './norgePluss/containers/NorgePlussContainer';
-import HeaderContainer from './norgePluss/containers/HeaderContainer';
+import LoginContainer from './norgePluss/containers/LoginContainer';
 import GamificationContainer from './norgePluss/containers/GamificationContainer'
 import {Provider} from "react-redux";
 import UserContainer from './norgePluss/containers/UserContainer'
@@ -21,7 +21,7 @@ const norgePluss = () => {
 
     ReactDOM.render(
         <Provider store = {store}>
-            <HeaderContainer/>
+            <LoginContainer/>
         </Provider>,
         document.getElementById('login')
     );
