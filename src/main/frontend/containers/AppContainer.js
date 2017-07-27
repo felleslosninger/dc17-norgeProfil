@@ -22,39 +22,6 @@ const createListItem = (description,isActive,score) =>{
     });
 };
 
-const calcGameState = (pointList) => {
-    const levelCap = 100;
-    let points = 0;
-    let maxScore = 0;
-    if(pointList.length > 0){
-        pointList.forEach(function (obj, i) {
-            if(obj.isActive){
-                points += obj.score;
-            }
-            maxScore += obj.score;
-        });
-    }
-
-    let percentage = Math.ceil(100*points/maxScore);
-    let levelProgress = points % levelCap;
-    let level = 1 + (points - (points % levelCap)) / levelCap;
-    if(levelProgress == 0  && level > 1){
-        levelProgress = 100;
-    }
-    if(points < 0){
-        points = 0;
-        level = 1;
-    }
-
-    return({
-        percentage: percentage,
-        levelProgress: levelProgress,
-        level: level,
-        points: points,
-        maxScore: maxScore
-    });
-};
-
 class AppContainer extends Component {
 
     constructor(props){
@@ -125,7 +92,7 @@ class AppContainer extends Component {
                     </Row>
                     <Row className="hr"><hr/></Row>
                     <div className="pageheader hideFromMobile"><h3>Din profilstyrke</h3></div>
-                    <GamificationCard levelCap = {100} gameState = {calcGameState(this.createList())} pointList = {this.createList()}/>
+                    <GamificationCard levelCap = {100} pointList = {this.createList()}/>
                     <Row className="hr"><hr/></Row>
                     <div className="pageheader hideFromMobile"><h3>Aktivitetslogg</h3></div>
                     <Feed
