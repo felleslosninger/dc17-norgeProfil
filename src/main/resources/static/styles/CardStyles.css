@@ -181,7 +181,18 @@
     text-align:center;
     padding-bottom: 20px;
     padding-top: 50px;
+    position:absolute;
+    z-index:1;
 }
+
+.ProgressCircle2{
+    text-align:center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    position:absolute;
+    z-index:2;
+}
+
 .ProgressBar{
     text-align: center!important;
     justify-content: center;

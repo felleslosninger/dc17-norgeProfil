@@ -62,11 +62,6 @@ body {
     margin-bottom: 2em;
 }
 
-
-.react-sweet-progress-circle> path:first-of-type{
-    stroke:#000;
-}
-
 /*Large desktops*/
 @media (min-width: 1193px) {
     .LogInBtn {

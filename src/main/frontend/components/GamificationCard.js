@@ -117,6 +117,24 @@ class GamificationCard extends Component {
                                     }}
                                 />
                             </div>
+                            <div className="ProgressCircle2">
+                                <Progress
+                                    width={200}
+                                    strokeWidth={10}
+                                    status="active"
+                                    type="circle"
+                                    percent={this.state.levelProgress}
+                                    theme={{
+                                        active: {
+                                            symbol: "Nivå: " + this.state.level,
+                                            color: this.calcLevelColor(this.state.level),
+                                        },
+                                        default: {
+                                            symbol: "Nivå: " + this.state.level,
+                                        }
+                                    }}
+                                />
+                            </div>
                         </Col>
                         <Col lg={6}>
                             <GameLog pointList={this.props.pointList}/>
