@@ -52,12 +52,12 @@ class InfoBox extends Component {
     render() {
         let plusContent = "";
         let infoContent = "";
+        let path = "/login/idporten?location=" + window.location.pathname;
         if (!this.props.isLoggedIn && this.state.plusClicked) {
             plusContent = <div className="views-field-description">
-                            <span className="field-content"><FlatButton backgroundColor="#c3dfdf" label="Logg inn" href="/login/idporten"/>
+                            <span className="field-content"><FlatButton backgroundColor="#c3dfdf" label="Logg inn" href={path} />
                             </span>
                         </div>;
-
         } else {
 
             if (this.state.plusClicked) {

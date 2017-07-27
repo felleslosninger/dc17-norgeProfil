@@ -1,10 +1,7 @@
-package no.difi.dc2017.norgeProfil;
+package no.difi.dc2017.norgeProfil.web;
 
-
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.sf.saxon.s9api.*;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +28,6 @@ public class DataController {
     public void postConstruct() {
         xsltCompiler = new Processor(false).newXsltCompiler();
     }
-
 
     @ResponseBody
     @RequestMapping(value = "/{key}", method = RequestMethod.GET)

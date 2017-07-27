@@ -7,6 +7,9 @@ idporten:
     tokenName: code
     authenticationScheme: query
     clientAuthenticationScheme: query
+    pre-established-redirect-uri: http://localhost:8080/login/idporten
+    registered-redirect-uri: http://localhost:8080/login/idporten
+    use-current-uri: false
     scope:
      - openid
      - profile
