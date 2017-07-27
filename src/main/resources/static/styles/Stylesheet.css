@@ -75,6 +75,12 @@ body {
     margin-bottom: 2em;
 }
 
+
+#profileUsername {
+    width: 1em;
+    color: pink;
+}
+
 /*Large desktops*/
 @media (min-width: 1193px) {
     .LogInBtn {

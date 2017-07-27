@@ -1,9 +1,6 @@
 
 import React, {Component} from 'react';
 
-
-
-
 class Username extends Component {
 
     constructor(props) {
@@ -13,7 +10,7 @@ class Username extends Component {
 
     render() {
         return (
-            <div>
+            <div id="username">
                 Kari Nordmann
             </div>
         );
