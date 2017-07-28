@@ -48,7 +48,9 @@ class GamificationCard extends Component {
 
         this.state = {
             percentage: 0,
-            levelProgress: 0,
+            levelprogress: 0,
+            circleProgress1: 0,
+            circleProgress2: 0,
             level: 0,
             points: 0,
             maxScore: 0,
@@ -86,44 +88,103 @@ class GamificationCard extends Component {
         return "hsl(" + h + ",100%, 50%)";
     }
 
+    swapCircles(){
+        this.state.circle1.style.setProperty("z-index", "1", "important");
+        this.state.circle2.style.setProperty("z-index", "2", "important");
+
+        this.setState({
+            circle1: this.state.circle2,
+            circle2: this.state.circle1,
+        });
+
+        if(this.state.onTop === 1){
+            this.setState({
+                onTop:2
+            });
+        }
+        else{
+            this.setState({
+                onTop:1
+            });
+        }
+    }
+
     componentWillReceiveProps(nextProps){
-        console.log(this.props.pointList);
-        console.log(nextProps.pointList);
-
-
 
         if(nextProps.pointList != this.props.pointList){
             const gameState = calcGameState(nextProps.pointList);
 
             if(gameState.level > this.state.level){
-
-                this.state.circle1.style.zIndex = 2;
-                this.state.circle2.style.zIndex = 1;
-
-                this.setState({
-                    circle1: this.state.circle2,
-                    circle2: this.state.circle1,
-                });
-
                 if(this.state.onTop === 1){
                     this.setState({
-                        onTop:2
+                        circleProgress1:100,
+                        circleProgress2: 0,
+                    });
+
+                    setTimeout(()=>{
+                        this.swapCircles();
+                        this.setState({
+                            circleProgress1:0,
+                            circleProgress2: gameState.levelProgress
+                        });
+                    },500);
+                }
+                else{
+                    this.setState({
+                        circleProgress1:0,
+                        circleProgress2: 100,
+                    });
+
+                    setTimeout(()=>{
+                        this.swapCircles();
+                        this.setState({
+                            circleProgress1:gameState.levelProgress,
+                            circleProgress2: 0,
+                        });
+                    },500);
+                }
+            }
+            else if(gameState.level < this.state.level){
+                if(this.state.onTop === 1){
+                    this.setState({
+                        circleProgress1:1,
+                        circleProgress2: 100,
+                    });
+
+                    setTimeout(()=>{
+                        this.swapCircles();
+                        this.setState({
+                            circleProgress2: gameState.levelProgress
+                        });
+                    },500);
+                }
+                else{
+                    this.setState({
+                        circleProgress1:100,
+                        circleProgress2: 1,
+                    });
+
+                    setTimeout(()=>{
+                        this.swapCircles();
+                        this.setState({
+                            circleProgress1:gameState.levelProgress,
+                        });
+                    },600);
+                }
+            }
+            else{
+                if(this.state.onTop===1){
+                    this.setState({
+                        circleProgress1: gameState.levelProgress
                     });
                 }
                 else{
                     this.setState({
-                        onTop:1
+                        circleProgress2: gameState.levelProgress
                     });
                 }
             }
-            else if(gameState.level < this.state.level){
-
-            }
-            else{
-
-            }
             this.setState(gameState);
-            console.log(gameState);
         }
     }
 
@@ -139,7 +200,7 @@ class GamificationCard extends Component {
                                     strokeWidth={10}
                                     status="active"
                                     type="circle"
-                                    percent={this.state.levelProgress}
+                                    percent={this.state.circleProgress1}
                                     theme={{
                                         active: {
                                             symbol: "Nivå: " + this.state.level,
@@ -157,7 +218,7 @@ class GamificationCard extends Component {
                                     strokeWidth={10}
                                     status="active"
                                     type="circle"
-                                    percent={this.state.levelProgress}
+                                    percent={this.state.circleProgress2}
                                     theme={{
                                         active: {
                                             symbol: "Nivå: " + this.state.level,
