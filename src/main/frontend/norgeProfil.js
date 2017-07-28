@@ -1,7 +1,7 @@
 "use strict";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from './utilities/Routes';
+import Routes from './utilities/routes';
 import configureStore from "./utilities/store";
 
 
