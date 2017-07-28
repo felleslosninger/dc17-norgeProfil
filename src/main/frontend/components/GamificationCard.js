@@ -127,6 +127,7 @@ class GamificationCard extends Component {
                             circleProgress1:0,
                             circleProgress2: gameState.levelProgress
                         });
+                        this.setState(gameState);
                     },500);
                 }
                 else{
@@ -141,6 +142,7 @@ class GamificationCard extends Component {
                             circleProgress1:gameState.levelProgress,
                             circleProgress2: 0,
                         });
+                        this.setState(gameState);
                     },500);
                 }
             }
@@ -156,6 +158,8 @@ class GamificationCard extends Component {
                         this.setState({
                             circleProgress2: gameState.levelProgress
                         });
+                        this.setState(gameState);
+
                     },500);
                 }
                 else{
@@ -169,6 +173,7 @@ class GamificationCard extends Component {
                         this.setState({
                             circleProgress1:gameState.levelProgress,
                         });
+                        this.setState(gameState);
                     },600);
                 }
             }
@@ -184,7 +189,6 @@ class GamificationCard extends Component {
                     });
                 }
             }
-            this.setState(gameState);
         }
     }
 
