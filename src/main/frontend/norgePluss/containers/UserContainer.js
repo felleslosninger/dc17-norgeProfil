@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import Username from '../components/Username'
+// import Username from '../components/Username'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {login,logout} from '../../utilities/actions';
 import {connect} from "react-redux";
+
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -24,7 +25,7 @@ class UserContainer extends Component {
             return(
                 <MuiThemeProvider muiTheme = {muiTheme}>
                     <div id="pageheader">
-                        <h1><Username/></h1>
+                        <h1>&nbsp; Kari Nordmann</h1>
                     </div>
                 </MuiThemeProvider>
             );

@@ -3,7 +3,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {login,logout} from '../../utilities/actions';
 import {connect} from "react-redux";
-import ProfileUsername from "../components/ProfileUsername";
+import AccountIcon from 'material-ui/svg-icons/action/account-circle'
+
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -11,6 +12,11 @@ const muiTheme = getMuiTheme({
         alternateTextColor: 'rgb(246, 170, 111)',
     }
 });
+
+
+const styling = {
+    color: 'white',
+};
 
 class ProfileUsernameContainer extends Component {
 
@@ -23,7 +29,9 @@ class ProfileUsernameContainer extends Component {
         if(this.props.isLoggedIn){
             return(
                 <MuiThemeProvider muiTheme = {muiTheme}>
-                    <ProfileUsername/>
+                    <div className="userName">
+                        <AccountIcon style={styling}/><a href="/#/">&nbsp; Kari Nordmann</a>
+                    </div>
                 </MuiThemeProvider>
             );
         }

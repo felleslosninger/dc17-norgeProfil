@@ -4,8 +4,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {login,logout} from '../../utilities/actions';
 import {connect} from "react-redux";
-import ProfileUsername from "../components/ProfileUsername";
-
 
 
 const muiTheme = getMuiTheme({

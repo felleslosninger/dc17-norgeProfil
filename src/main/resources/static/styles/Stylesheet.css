@@ -75,12 +75,6 @@ body {
     margin-bottom: 2em;
 }
 
-
-#profileUsername {
-    width: 1em;
-    color: pink;
-}
-
 /*Large desktops*/
 @media (min-width: 1193px) {
     .LogInBtn {
@@ -291,3 +285,35 @@ body {
     font-style: normal
 }
 
+.userName{
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 42em;
+    bottom: 1.4em;
+    display: flex;
+
+}
+
+
+header .header-body{
+    position: relative;
+}
+
+#profileUsername a:link{
+    color: white;
+    text-decoration: none;
+}
+
+#profileUsername a:visited{
+    color: white;
+    text-decoration: none;
+}
+#profileUsername a:hover{
+    color: white;
+    text-decoration: none;
+}
+#profileUsername a:active{
+    color: white;
+    text-decoration: none;
+}
