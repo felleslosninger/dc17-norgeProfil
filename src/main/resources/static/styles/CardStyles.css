@@ -181,12 +181,29 @@
     text-align:center;
     padding-bottom: 20px;
     padding-top: 50px;
+    position:absolute;
+    z-index:1 !important;
+    left: 50%;
 }
+
+.ProgressCircle2{
+    text-align:center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    position:absolute;
+    z-index:2 !important;
+    left: 50%
+}
+
 .ProgressBar{
     text-align: center!important;
     justify-content: center;
     margin:auto;
     width: 75%;
+}
+
+.circleContainer{
+
 }
 
 .ReservationBtn{
