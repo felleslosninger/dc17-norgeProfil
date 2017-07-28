@@ -198,41 +198,43 @@ class GamificationCard extends Component {
                 <div className="gamificationContainer">
                     <Row>
                         <Col lg={6}>
-                            <div className="ProgressCircle">
-                                <Progress
-                                    width={200}
-                                    strokeWidth={10}
-                                    status="active"
-                                    type="circle"
-                                    percent={this.state.circleProgress1}
-                                    theme={{
-                                        active: {
-                                            symbol: "Nivå: " + this.state.level,
-                                            color: this.calcLevelColor(this.state.level),
-                                        },
-                                        default: {
-                                            symbol: "Nivå: " + this.state.level,
-                                        }
-                                    }}
-                                />
-                            </div>
-                            <div className="ProgressCircle2">
-                                <Progress
-                                    width={200}
-                                    strokeWidth={10}
-                                    status="active"
-                                    type="circle"
-                                    percent={this.state.circleProgress2}
-                                    theme={{
-                                        active: {
-                                            symbol: "Nivå: " + this.state.level,
-                                            color: this.calcLevelColor(this.state.level),
-                                        },
-                                        default: {
-                                            symbol: "Nivå: " + this.state.level,
-                                        }
-                                    }}
-                                />
+                            <div className="circleContainer">
+                                <div className="ProgressCircle">
+                                    <Progress
+                                        width={200}
+                                        strokeWidth={10}
+                                        status="active"
+                                        type="circle"
+                                        percent={this.state.circleProgress1}
+                                        theme={{
+                                            active: {
+                                                symbol: "Nivå: " + this.state.level,
+                                                color: this.calcLevelColor(this.state.level),
+                                            },
+                                            default: {
+                                                symbol: "Nivå: " + this.state.level,
+                                            }
+                                        }}
+                                    />
+                                </div>
+                                <div className="ProgressCircle2">
+                                    <Progress
+                                        width={200}
+                                        strokeWidth={10}
+                                        status="active"
+                                        type="circle"
+                                        percent={this.state.circleProgress2}
+                                        theme={{
+                                            active: {
+                                                symbol: "Nivå: " + this.state.level,
+                                                color: this.calcLevelColor(this.state.level),
+                                            },
+                                            default: {
+                                                symbol: "Nivå: " + this.state.level,
+                                            }
+                                        }}
+                                    />
+                                </div>
                             </div>
                         </Col>
                         <Col lg={6}>
