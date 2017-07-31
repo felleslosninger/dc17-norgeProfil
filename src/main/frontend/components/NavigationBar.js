@@ -31,7 +31,7 @@ class NavigationBar extends React.Component {
                     <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 150}} open={this.state.open}>
                         <MenuItem href="/#/" onTouchTap={this.handleToggle}>Din profil</MenuItem>
                         <MenuItem href="/norge" onTouchTap={this.handleToggle}>Norge +</MenuItem>
-                        <MenuItem href="/sertifikat" onTouchTap={this.handleToggle}>Søk: Eksempel Sertifikat</MenuItem>
+                        <MenuItem href="/norgepluss" onTouchTap={this.handleToggle}>Norge+ søk-eksempel</MenuItem>
                     </Drawer>
                 </div>
             );
