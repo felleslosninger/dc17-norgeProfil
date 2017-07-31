@@ -27,7 +27,7 @@ public class HomeController {
         return ("reservasjon");
     }
 
-    @RequestMapping("/sertifikat")
+    @RequestMapping("/norgepluss")
     public String sertifikat(){
         return ("sertifikat");
     }
