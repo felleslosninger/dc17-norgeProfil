@@ -31,8 +31,8 @@ class NorgePlussContainer extends Component {
                 this.props.isLoggedIn));
         infoList.push(boxInfo(3,
             "Melde flytting innenlands", "Skatteetaten", "Flytter du innen Norge, må du melde fra til folkeregisteret innen 8 dager etter at du flyttet. Folkeregisteret er en del av skattekontoret. Er du student, kan du som hovedregel velge om du vil være registrert på studiestedet eller på hjemstedet. Er du pendler, gjelder spesielle regler. Skatteetaten og Lånekassen kan gi mer informasjon.",
-            "http://localhost:8080/data/adresse"
-            ));
+            "http://localhost:8080/data/adresse",
+            this.props.isLoggedIn));
         return(infoList);
     }
 
